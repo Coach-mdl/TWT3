@@ -1,7 +1,7 @@
 //pritority 10
 //@ts-check
-
-const WaystonesRecipes = (event) => {
+//kubejs\server_scripts\waystones\recipes.js
+ServerEvents.recipes(event => {
 
     console.log('skollerninnilooks init')
     
@@ -14,12 +14,11 @@ const WaystonesRecipes = (event) => {
      // @ts-ignore
      event.recipes.tfc.welding('minecraft:ender_pearl','firmalife:metal/sheet/chromium','tfc:gem/amethyst')
      // @ts-ignore
-     event.custom({
-      type:"tfc:quern",
+     event.recipes.tfc.quern({
       ingredient: {item: 'minecraft:ender_pearl'},
       result: {item: 'waystones:warp_dust', count: 4}
-
-     })
+    })
+     
      // @ts-ignore
      event.recipes.kubejs.shaped('twt:blank_scroll',
      [
@@ -32,4 +31,4 @@ const WaystonesRecipes = (event) => {
        P: '#forge:paper'
      })
   
-  }
+  })
