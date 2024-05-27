@@ -2,7 +2,17 @@
 //kubejs\server_scripts\item_tags.js
 ServerEvents.tags('item', event => {
     
-    //Aether Compat
-    //event.add('tfc:hammers', 'aether:hammer_of_kingbdogz')
-    //event.add('tfc:flux', 'aether:swet_ball')
+    event.add('create:sandpaper', 'tfc:sandpaper')
+
+    // @ts-ignore
+    event.add('twt:raw_gems', [ 
+    'tfc:ore/diamond',
+    'tfc:ore/amethyst',
+    'tfc:ore/emerald',
+    'tfc:ore/lapis_lazuli',
+    'tfc:ore/opal',
+    'tfc:ore/pyrite',
+    'tfc:ore/ruby',
+    'tfc:ore/sapphire',
+    'tfc:ore/topaz'])
 })
