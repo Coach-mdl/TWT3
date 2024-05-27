@@ -15,7 +15,7 @@
     heating.custom(
         {   type: 'tfc:heating',
             ingredient: {item: 'create:powdered_obsidian'},
-            result_fluid: {fluid: 'twt:molten_obsidian',
+            result_fluid: {fluid: 'kubejs:molten_obsidian',
                 amount: 100},
                 temperature: 1300}
     )
@@ -23,15 +23,13 @@
     heating.custom(
         {   type: 'tfc:heating',
             ingredient: {item: 'waystones:warp_dust'},
-            result_fluid: {fluid: 'twt:unstable_warp_fluid',
+            result_fluid: {fluid: 'kubejs:unstable_warp_fluid',
                 amount: 500},
                 temperature: 1300}
     )
+    
  }) 
-//Use for metals or items you want to group together.
-   //TFCEvents.data(event => {
-   //event.metal('twt:molten_obsidian', 1710, 3.500, 'create:powdered_obsidian', null, null, 1, 'twt:obsidian')
-   //})
+
 
 
 
