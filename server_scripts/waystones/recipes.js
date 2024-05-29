@@ -9,9 +9,10 @@ ServerEvents.recipes(event => {
       'warp_scroll',
       'bound_scroll'
     ]
+
 //Removes some pre-existing recipes.
 
-     event.remove({mod: 'waystones'}) 
+     event.remove({not: {output: 'waystones:attuned_shard'}, mod: 'waystones'}) 
          
      //Adds new recipes. Waystones will be available at steel as well as warp stones and it's counterparts. Warp scrolls will require access to a few create things.
      
@@ -60,7 +61,15 @@ ServerEvents.recipes(event => {
     'waystones:return_scroll', 
 ], 'kubejs:blank_scroll', [
     event.recipes.createDeploying('kubejs:unfinished_scroll', ['kubejs:unfinished_scroll', 'minecraft:gold_nugget']),
-    event.recipes.createFilling('kubejs:unfinished_scroll', ['kubejs:unfinished_scroll', 'minecraft:water']),
-    event.recipes.createDeploying('kubejs:unfinished_scroll', ['kubejs:unfinished_scroll', 'minecraft:diamond']),
+    event.recipes.createFilling('kubejs:unfinished_scroll', ['kubejs:unfinished_scroll', Fluid.of('kubejs:unstable_warp_fluid', 200)]),
+    event.recipes.createDeploying('kubejs:unfinished_scroll', ['kubejs:unfinished_scroll', 'minecraft:purple_dye']),
+]).transitionalItem('kubejs:unfinished_scroll')
+
+event.recipes.createSequencedAssembly([
+  'waystones:bound_scroll', 
+], 'kubejs:blank_scroll', [
+  event.recipes.createDeploying('kubejs:unfinished_scroll', ['kubejs:unfinished_scroll', 'minecraft:gold_nugget']),
+  event.recipes.createFilling('kubejs:unfinished_scroll', ['kubejs:unfinished_scroll', Fluid.of('kubejs:unstable_warp_fluid', 400)]),
+  event.recipes.createDeploying('kubejs:unfinished_scroll', ['kubejs:unfinished_scroll', 'minecraft:purple_dye']),
 ]).transitionalItem('kubejs:unfinished_scroll')   
 }) 
