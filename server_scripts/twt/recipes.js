@@ -15,6 +15,7 @@ const nuggetIngot = [
   'minecraft:iron',
   'minecraft:gold',
   'create:zinc',
+  'create:copper',
   'minecraft:copper',
   'create:brass'
 ]
@@ -24,11 +25,13 @@ ServerEvents.recipes(event => {
     nuggetIngot.forEach((nuggy) => {
     event.remove({type: "minecraft:crafting_shaped", output: `${nuggy}_ingot`})
   })
+  nuggetIngot.forEach((nuggy) => {
+    event.remove({type: "minecraft:crafting_shaped", output: `${nuggy}_block`})
+  })
   
  creategempolishing.forEach((cutgem) => {
   // Make sure to use `back quotes` when using a ${}. 'Single' or "double" quotes will give a KJS error.
   event.remove({id: `tfc:${cutgem}_cut`})
-  event.remove({input: 'tfmg:mesh_concrete'})
 })
   event.replaceInput({input: 'minecraft:gold_ingot'}, 'minecraft:gold_ingot', '#forge:ingots/gold')
   event.custom({
@@ -55,5 +58,6 @@ ServerEvents.recipes(event => {
     nuggeting('create:brass_nugget', '#forge:ingots/brass')
     nuggeting('minecraft:iron_nugget', '#forge:ingots/cast_iron')
     nuggeting('minecraft:gold_nugget', '#forge:ingots/gold')
-    
+  
+ 
 })

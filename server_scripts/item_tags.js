@@ -1,8 +1,9 @@
-//@ts-check
+
 //kubejs\server_scripts\item_tags.js
 ServerEvents.tags('item', event => {
     
     event.add('create:sandpaper', 'tfc:sandpaper')
+    event.add('forge:plates', '#forge:sheets')
 
     // @ts-ignore
     event.add('twt:raw_gems', [ 
