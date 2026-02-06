@@ -1,0 +1,30 @@
+//TODO
+DUPES:
+- Create copper ingots have vanilla recipe
+
+CHANGES:
+- Give simple radio consistency. Change recipes so players can access the items earlier.
+- Limit parcool. Change default keybinds.
+- Add consistency to Corail Tombstone.
+
+CREATE:
+- Remove duplicate recipes.
+- Create recipes for glassworking products.
+- Add consistency between Create and Woodencog recipes.
+- TFC Steel does not have a mechanical press recipe
+
+NEXT UPDATE
+
+ADDITIONS:
+- Vampirism
+- MCA
+- Create addons
+- VS Clockwork (Prepare for crashes)
+- MAYBE look into that butchery mod. There's a few different ones.
+
+CHANGES:
+- Add winter forageables for new players. Requires Lychee
+- Remove Cold Sweat as it is punishing for new players and unfun for existing players. REMOVE RECIPES.
+- Remove Corpse mod as it is no longer needed.
+- Add Adze module to TFC Modular. Probably wise to update the mod.
+

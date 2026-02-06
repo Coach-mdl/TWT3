@@ -1,0 +1,44 @@
+{
+  "targets": [
+    "kubejs:mystique"
+  ],
+  "models": [
+    {
+      "model": "kubejs:item/mystique_0",
+      "conditions": [
+        {
+          "type": "count",
+          "max": 7
+        }
+      ]
+    },
+    {
+      "model": "kubejs:item/mystique_1",
+      "conditions": [
+        {
+          "type": "count",
+          "max": 15
+        }
+      ]
+    },
+    {
+      "model": "kubejs:item/mystique_2",
+      "conditions": [
+        {
+          "type": "count",
+          "max": 31
+        }
+      ]
+    },
+	{
+      "model": "kubejs:item/mystique_3",
+      "conditions": [
+        {
+          "type": "count",
+          "max": 64
+        }
+      ]
+    }
+	
+  ]
+}
