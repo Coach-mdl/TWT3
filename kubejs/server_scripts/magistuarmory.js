@@ -1,9 +1,6 @@
 "use strict";
 //MagistuArmory is Epic Knights.
-/**
- *
- * @param {Internal.RecipesEventJS} event
- */
+
 const MagistuArmoryRecipes = (event) => {
 
     //removal

@@ -1,9 +1,6 @@
 "use strict";
 
-/**
- *
- * @param {Internal.RecipesEventJS} event
- */
+
 const ParcoolRecipes = (event) => {
 
     //replace

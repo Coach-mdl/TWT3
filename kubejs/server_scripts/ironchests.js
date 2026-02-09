@@ -1,9 +1,6 @@
 "use strict";
 
-/**
- *
- * @param {Internal.RecipesEventJS} event
- */
+
 const IronchestRecipes = (event) => {
 
     //removal
@@ -66,10 +63,7 @@ const IronchestRecipes = (event) => {
 
 }
 
-/**
- *
- * @param {Internal.TFCDataEventJS} event
- */
+
 
 const IronchestsData = (event) => {
 

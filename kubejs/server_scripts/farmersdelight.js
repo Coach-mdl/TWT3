@@ -1,9 +1,6 @@
 "use strict";
 
-/**
- *
- * @param {Internal.RecipesEventJS} event
- */
+
 const FarmersDelightRecipes = (event) => {
 
     //removal
@@ -14,4 +11,22 @@ const FarmersDelightRecipes = (event) => {
     event.remove({id: 'farmersdelight:cutting/leather_leggings'})
     event.remove({id: 'farmersdelight:cutting/leather_boots'})
 
+    //Create Filling
+    event.custom({
+        type: 'create:filling',
+        ingredients: [
+            {
+                amount: 250,
+                fluid: 'create:honey'
+            },
+            {
+                item: 'tfc:empty_jar'
+            }
+        ],
+        results: [
+            {
+                item: 'tfc:jar/honey'
+            }
+        ]
+    })
 }

@@ -1,9 +1,5 @@
 "use strict";
 
-/**
- *
- * @param {Internal.RecipesEventJS} event
- */
 const TFCRecipes = (event) => {
 
     //replace
@@ -18,33 +14,64 @@ const TFCRecipes = (event) => {
         .resultItem(Item.of('tfc:rock/loose/andesite', 1))
 
     //Create Milling
-    event.custom({
-        type: 'create:milling',
-        ingredients: [
-            {
-                item: 'create:limestone'
-            }
-        ],
-        processingTime: 300,
-        results: [
-            {
-                count: 2,
-                item: 'tfc:rock/loose/limestone'
-            },
-            {
-                chance: 0.25,
-                count: 2,
-                item: 'tfc:rock/loose/limestone'
-            }
-        ]
-    })
+    function milkconversion(input) {
+        event.custom({
+            type: 'create:filling',
+            ingredients: [
+                {
+                    fluid: input,
+                    amount: 250
+                },
+                {
+                    item: 'minecraft:glass_bottle'
+                }
+            ],
+            results: [
+                {
+                    item: 'farmersdelight:milk_bottle'
+                }
+            ]
+        })
+    }
+
+    milkconversion('firmalife:coconut_milk')
+    milkconversion('firmalife:yak_milk')
+    milkconversion('firmalife:goat_milk')
+
+    //Create Mixing
+
+    //WoodenCog Heated Pressing
+    function missingpressrecipes(input, min, max, output) {
+        event.custom({
+            type: 'woodencog:heated_pressing',
+            ingredients: [
+                {
+                    ingredient: {item: input},
+                    min_temp: min,
+                    max_temp: max
+                }
+            ],
+            results: [
+                {
+                    item: output,
+                    temperature: 0,
+                    copy_heat: true,
+                    cooling: 0
+                }
+            ]
+        })
+    }
+
+    missingpressrecipes('tfc:metal/ingot/pig_iron', 921, 1535, 'tfc:metal/ingot/high_carbon_steel')
+    missingpressrecipes('tfc:metal/ingot/high_carbon_steel', 924, 1540, 'tfc:metal/ingot/steel')
+    missingpressrecipes('tfc:metal/ingot/high_carbon_black_steel', 924, 1540, 'tfc:metal/ingot/black_steel')
+    missingpressrecipes('tfc:metal/ingot/high_carbon_red_steel', 924, 1540, 'tfc:metal/ingot/red_steel')
+    missingpressrecipes('tfc:metal/ingot/high_carbon_blue_steel', 924, 1540, 'tfc:metal/ingot/blue_steel')
+
+    //WoodenCog Heated Compacting
+
 
 }
-
-/**
- *
- * @param {Internal.TFCDataEventJS} event
- */
 
 const TFCData = (event) => {
 
@@ -60,10 +87,6 @@ const TFCData = (event) => {
 
 }
 
-/**
- *
- * @param {TagEvent.Item} event
- */
 const TFCItemTags = (event) => {
 
     event.add('tfc:hammers', 'magistuarmory:blacksmith_hammer')

@@ -1,9 +1,6 @@
 "use strict";
 
-/**
- *
- * @param {Internal.RecipesEventJS} event
- */
+
 const TWTRecipes = (event) => {
 
     //removal
@@ -330,10 +327,7 @@ const TWTRecipes = (event) => {
 
 }
 
-/**
- *
- * @param {Internal.TFCDataEventJS} event
- */
+
 
 const TWTData = (event) => {
 
@@ -356,29 +350,19 @@ const TWTData = (event) => {
 
 }
 
-/**
- *
- * @param {TagEvent.Item} event
- */
+
 const TWTItemTags = (event) => {
 
     event.add('twt:create_component_nuggets', ['minecraft:iron_nugget', 'create:zinc_nugget'])
     event.add('twt:corals', ['minecraft:tube_coral', 'minecraft:brain_coral', 'minecraft:bubble_coral', 'minecraft:fire_coral', 'minecraft:horn_coral', 'tfc:coral/tube_coral', 'tfc:coral/brain_coral', 'tfc:coral/bubble_coral', 'tfc:coral/fire_coral', 'tfc:coral/horn_coral'])
 }
 
-/**
- *
- * @param {TagEvent.Item} event
- */
+
 const ErrorSilencerItemTags = (event) => {
 
     event.add('tfc:pileable_sheets', 'minecraft:barrier')
 }
 
-/**
- *
- * @param {TagEvent.Block} event
- */
 const ErrorSilencerBlockTags = (event) => {
 
     event.add('minecraft:replaceable', 'farmersdelight:wild_cabbages')
@@ -438,10 +422,7 @@ const ErrorSilencerBlockTags = (event) => {
         'cold_sweat:slush'])
 }
 
-/**
- *
- * @param {Internal.TFCDataEventJS} event
- */
+
 
 const ErrorSilencerData = (event) => {
 

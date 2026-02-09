@@ -1,0 +1,11 @@
+CHANGES:
+- Completely reworked file structure in KJS folder (again).
+- Added recipes for create chocolate and honey.
+- Added recipe for vanilla glass bottles.
+- Added more entries to the create:sleepers tag.
+- Added recipes to convert other milks into cow's milk.
+- Added Renewable recipes for zinc and iron that don't require vanilla item glorp.
+- All duplicate DFC ores now drop their IE counterparts.
+- Fixed a dupe with copper ingots.
+- Removed all alloy smelter recipes as the IE alloy smelter is unobtainable.
+- Steel and above now have WoodenCog heated pressing and welding recipes.

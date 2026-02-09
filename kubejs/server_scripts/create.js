@@ -1,12 +1,5 @@
-//This file is for create related recipe changes. Since create and it's addons are going to need a barrel of tweaks, I'm putting most of create's stuff in its own file.
-//Tags and TFC data should still go in the respective files as those have higher load priorities. This file is strictly recipes. There will be exceptions in places where i've made custom functions.
-
 "use strict";
 
-/**
- *
- * @param {Internal.RecipesEventJS} event
- */
 const CreateRecipes = (event) => {
 
     //removal
@@ -14,6 +7,11 @@ const CreateRecipes = (event) => {
     event.remove({id: 'create:crafting/materials/brass_ingot_from_compacting'})
     event.remove({id: 'create:crafting/materials/zinc_nugget_from_decompacting'})
     event.remove({id: 'create:crafting/materials/brass_nugget_from_decompacting'})
+    event.remove({id: 'create:crafting/materials/copper_ingot'})
+    event.remove({id: 'create:crafting/materials/copper_nugget'})
+    event.remove({id: 'minecraft:copper_block'})
+    event.remove({id: 'minecraft:copper_ingot'})
+    event.remove({id: 'minecraft:copper_ingot_from_waxed_copper_block'})
     event.remove({id: 'create:mixing/brass_ingot'})
 
     event.remove({id: 'create:crushing/leather_horse_armor'})
@@ -23,6 +21,8 @@ const CreateRecipes = (event) => {
     event.remove({id: 'woodencog:rock_knapping/andesite_alloy'})
     event.remove({id: 'create:mixing/andesite_alloy_from_zinc'})
     event.remove({id: 'create:mixing/andesite_alloy'})
+
+    event.remove({id: 'create:mixing/chocolate'})
 
     //replace
     event.replaceOutput(
@@ -69,12 +69,83 @@ const CreateRecipes = (event) => {
         ]
     })
 
-}
+    event.custom({
+        type: 'create:mixing',
+        heatRequirement: 'heated',
+        ingredients: [
+            {
+                tag: 'forge:seeds/cocoa'
+            },
+            {
+                fluid: 'minecraft:milk',
+                amount: 1000
+            },
+            {
+                tag: 'tfc:sweetener'
+            }
+        ],
+        results: [
+            {
+                amount: 1000,
+                fluid: 'create:chocolate'
+            }
+        ]
+    })
 
-/**
- *
- * @param {Internal.TFCDataEventJS} event
- */
+    event.custom({
+        type: 'create:mixing',
+        heatRequirement: 'heated',
+        ingredients: [
+            {
+                item: 'firmalife:raw_honey'
+            }
+        ],
+        results: [
+            {
+                amount: 250,
+                fluid: 'create:honey'
+            }
+        ]
+    })
+
+    //Create Emptying
+    event.custom({
+        type: 'create:emptying',
+        ingredients: [
+            {
+                item: 'firmalife:jar/honey'
+            }
+        ],
+        results: [
+            {
+                amount: 250,
+                fluid: 'create:honey'
+            },
+            {
+                item: 'tfc:empty_jar'
+            }
+        ]
+    })
+
+    event.custom({
+        type: 'create:filling',
+        ingredients: [
+            {
+                amount: 250,
+                fluid: 'create:honey'
+            },
+            {
+                item: 'tfc:empty_jar'
+            }
+        ],
+        results: [
+            {
+                item: 'tfc:jar/honey'
+            }
+        ]
+    })
+
+}
 
 const CreateData = (event) => {
 
@@ -87,5 +158,10 @@ const CreateData = (event) => {
         food.saturation(1)
     })
 
+}
+
+const CreateItemTags = (event) => {
+
+    event.add('create:sleepers', '#forge:smooth_stone_slab')
 }
                      

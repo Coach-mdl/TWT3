@@ -1,6 +1,5 @@
 //TODO
 DUPES:
-- Create copper ingots have vanilla recipe
 
 CHANGES:
 - Give simple radio consistency. Change recipes so players can access the items earlier.

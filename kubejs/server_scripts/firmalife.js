@@ -1,9 +1,6 @@
 "use strict";
 
-/**
- *
- * @param {Internal.RecipesEventJS} event
- */
+
 const FirmalifeRecipes = (event) => {
 
     //Create Sequenced Assembly

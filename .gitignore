@@ -124,7 +124,6 @@ embeddium-options.json
 .cache/
 .mixin.out/
 crash-reports/
-data/
 disabledmods/
 Distant_Horizons_server_data/
 easy_npc/
@@ -144,6 +143,7 @@ screenshots/
 shaderpacks/
 xaero/
 XaeroWaypoints_BACKUP240807/
+/data/fabricDefaultResourcePacks.dat
 
 instance.json
 options.txt
@@ -152,3 +152,8 @@ rhino.local.properties
 servers.dat_old
 usercache.json
 usernamecache.json
+/config/presencefootsteps/userconfig.json
+/config/sounds/mod_utils.json
+/config/weaponmaster_ydm-common.toml
+/config/sounds/world.json
+/config/sounds/chat.json

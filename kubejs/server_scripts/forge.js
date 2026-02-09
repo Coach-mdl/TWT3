@@ -1,9 +1,6 @@
 "use strict";
 
-/**
- *
- * @param {TagEvent.Item} event
- */
+
 const ForgeItemTags = (event) => {
 
     event.add('forge:gems/amethyst', 'tfc:gem/amethyst')

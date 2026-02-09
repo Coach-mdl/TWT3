@@ -1,9 +1,6 @@
 "use strict";
 
-/**
- *
- * @param {Internal.RecipesEventJS} event
- */
+
 const DFCRecipes = (event) => {
 
     //removal
@@ -61,10 +58,7 @@ const DFCRecipes = (event) => {
 
 }
 
-/**
- *
- * @param {Internal.TFCDataEventJS} event
- */
+
 
 const DFCData = (event) => {
 
@@ -78,5 +72,25 @@ const DFCData = (event) => {
     missingheats('dfc:metal/rod/platinum')
     missingheats('dfc:metal/rod/lead')
     missingheats('dfc:metal/rod/alumina')
+
+}
+
+const DFCLoot = (event) => {
+
+    function DFCoreconversion(block, ore, replacement) {
+        event.addBlockLootModifier(block).replaceLoot(ore, replacement);
+    }
+    DFCoreconversion(/^dfc:ore\/rich_bauxite\/.*$/, 'dfc:ore/rich_bauxite', 'tfc_ie_addon:ore/rich_bauxite');
+    DFCoreconversion(/^dfc:ore\/normal_bauxite\/.*$/, 'dfc:ore/normal_bauxite', 'tfc_ie_addon:ore/normal_bauxite');
+    DFCoreconversion(/^dfc:ore\/poor_bauxite\/.*$/, 'dfc:ore/poor_bauxite', 'tfc_ie_addon:ore/poor_bauxite');
+    DFCoreconversion('dfc:ore/small_bauxite','dfc:ore/small_bauxite', 'tfc_ie_addon:ore/small_bauxite');
+    DFCoreconversion(/^dfc:ore\/rich_native_aluminum\/.*$/, 'dfc:ore/rich_native_aluminum', 'tfc_ie_addon:ore/rich_bauxite');
+    DFCoreconversion(/^dfc:ore\/normal_native_aluminum\/.*$/, 'dfc:ore/normal_native_aluminum', 'tfc_ie_addon:ore/normal_bauxite');
+    DFCoreconversion(/^dfc:ore\/poor_native_aluminum\/.*$/, 'dfc:ore/poor_native_aluminum', 'tfc_ie_addon:ore/poor_bauxite');
+    DFCoreconversion('dfc:ore/small_native_aluminum','dfc:ore/small_native_aluminum', 'tfc_ie_addon:ore/small_bauxite');
+    DFCoreconversion(/^dfc:ore\/rich_galena\/.*$/, 'dfc:ore/rich_galena', 'tfc_ie_addon:ore/rich_galena');
+    DFCoreconversion(/^dfc:ore\/normal_galena\/.*$/, 'dfc:ore/normal_galena', 'tfc_ie_addon:ore/normal_galena');
+    DFCoreconversion(/^dfc:ore\/poor_galena\/.*$/, 'dfc:ore/poor_galena', 'tfc_ie_addon:ore/poor_galena');
+    DFCoreconversion('dfc:ore/small_galena','dfc:ore/small_galena', 'tfc_ie_addon:ore/small_galena');
 
 }

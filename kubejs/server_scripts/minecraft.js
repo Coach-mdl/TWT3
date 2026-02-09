@@ -1,9 +1,5 @@
 "use strict";
 
-/**
- *
- * @param {Internal.RecipesEventJS} event
- */
 const VanillaRecipes = (event) => {
 
     //removal
@@ -68,6 +64,10 @@ const VanillaRecipes = (event) => {
         }
     )
 
+    //shapeless
+    event.shapeless(Item.of('minecraft:glass_bottle', 1),
+        ['#tfc:glass_bottles'])
+
     //Furnace
     event.smelting('minecraft:charcoal', '#tfc:pit_kiln_logs').xp(0.35)
     event.smelting('minecraft:glass', 'tfc:silica_glass_batch').xp(0.35)
@@ -115,11 +115,6 @@ const VanillaRecipes = (event) => {
 
 }
 
-/**
- *
- * @param {Internal.TFCDataEventJS} event
- */
-
 const VanillaData = (event) => {
 
     //Heat Definitions
@@ -130,12 +125,7 @@ const VanillaData = (event) => {
 
 }
 
-/**
- *
- * @param {TagEvent.Item} event
- */
 const VanillaItemTags = (event) => {
 
     event.add('minecraft:compasses', 'firmaciv:firmaciv_compass')
-
 }

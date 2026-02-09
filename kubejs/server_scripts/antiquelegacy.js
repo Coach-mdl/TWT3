@@ -1,9 +1,6 @@
 "use strict";
 
-/**
- *
- * @param {Internal.RecipesEventJS} event
- */
+
 const AntiqueLegacyRecipes = (event) => {
 
     //shapeless

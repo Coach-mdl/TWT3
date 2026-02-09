@@ -1,15 +1,12 @@
 "use strict";
 
-/**
- *
- * @param {Internal.RecipesEventJS} event
- */
+
 const ImmersiveEngineeringRecipes = (event) => {
 
     //removal
     event.remove({output: 'immersiveengineering:nugget_steel'})
     event.remove({id: /^immersiveengineering:crafting\/nugget_.*_to_ingot_.*$/})
-    event.remove({type: 'immersiveengineering:alloysmelter'})
+    event.remove({id: /^immersiveengineering:alloysmelter\/.*$/})
 
     //replace
     event.replaceInput(
@@ -63,10 +60,7 @@ const ImmersiveEngineeringRecipes = (event) => {
     })
 }
 
-/**
- *
- * @param {Internal.TFCDataEventJS} event
- */
+
 
 const ImmersiveEngineeringData = (event) => {
 

@@ -24,6 +24,7 @@ ServerEvents.tags('item', event => {
     ErrorSilencerItemTags(event)
     TWTItemTags(event)
     VanillaItemTags(event)
+    CreateItemTags(event)
     ForgeItemTags(event)
     TFCItemTags(event)
 })
@@ -32,16 +33,20 @@ ServerEvents.tags('block', event => {
     ErrorSilencerBlockTags(event)
 })
 
+LootJS.modifiers(event => {
+    DFCLoot(event)
+})
+
 //TFC Data should load before recipes as some TFC recipes depend on them.
 TFCEvents.data(event => {
     ErrorSilencerData(event)
+    TWTData(event)
+    VanillaData(event)
+    TFCData(event)
+    CreateData(event)
     DFCData(event)
     IronchestsData(event)
-    TFCData(event)
-    VanillaData(event)
     ImmersiveEngineeringData(event)
-    TWTData(event)
-    CreateData(event)
 })
 
 ServerEvents.recipes(event => {
