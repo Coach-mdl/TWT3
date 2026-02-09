@@ -11,7 +11,22 @@ CREATE:
 - Remove duplicate recipes.
 - Create recipes for glassworking products.
 - Add consistency between Create and Woodencog recipes.
-- TFC Steel does not have a mechanical press recipe
+- TFC Steel does not have a mechanical press recipe.
+- Most addon ores do not have a woodencog mixing recipe.
+
+ADDITIONS: 
+- Create Additions
+- CopyCat+
+- Steam & Rails.
+- Sounds or Mambience
+- Punchy
+- In Control
+
+REMOVE:
+- Lootbeams
+- Cold Sweat & TFC compat
+- Corpse
+- Caelum & TFC Compat
 
 NEXT UPDATE
 
