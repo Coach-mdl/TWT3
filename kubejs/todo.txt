@@ -21,12 +21,15 @@ ADDITIONS:
 - Sounds or Mambience
 - Punchy
 - In Control
+- JEI
 
 REMOVE:
 - Lootbeams
 - Cold Sweat & TFC compat
 - Corpse
 - Caelum & TFC Compat
+- REI and addon
+- JER
 
 NEXT UPDATE
 
