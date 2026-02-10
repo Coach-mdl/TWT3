@@ -40,6 +40,7 @@ const TFCRecipes = (event) => {
 
     //Create Mixing
 
+    //WoodenCog recipes aren't working for some reason. I don't understand this.
     //WoodenCog Heated Pressing
     function missingpressrecipes(input, min, max, output) {
         event.custom({
@@ -69,7 +70,32 @@ const TFCRecipes = (event) => {
     missingpressrecipes('tfc:metal/ingot/high_carbon_blue_steel', 924, 1540, 'tfc:metal/ingot/blue_steel')
 
     //WoodenCog Heated Compacting
-
+    event.custom({
+        type: 'woodencog:heated_compacting',
+        ingredients: [
+            {
+                ingredient: {item: 'tfc:metal/ingot/weak_steel'},
+                min_temp: 924,
+                max_temp: 1535
+            },
+            {
+                ingredient: {item: 'tfc:metal/ingot/pig_iron'},
+                min_temp: 921,
+                max_temp: 1535
+            },
+            {
+                ingredient: {item: 'tfc:powder/flux'}
+            }
+        ],
+        results: [
+            {
+                item: 'tfc:metal/ingot/high_carbon_black_steel',
+                temperature: 0,
+                copy_heat: true,
+                cooling: 0
+            }
+        ]
+    })
 
 }
 

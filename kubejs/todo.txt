@@ -13,6 +13,7 @@ CREATE:
 - TFC Steel does not have a mechanical press recipe.
 - Most addon ores do not have a woodencog mixing recipe.
 
+When working on other mods, make sure you have a duplicate instance so that you can still access the server.
 ADDITIONS: 
 - Create Additions
 - CopyCat+
