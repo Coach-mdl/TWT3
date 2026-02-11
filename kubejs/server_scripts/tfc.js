@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 const TFCRecipes = (event) => {
 
@@ -47,16 +47,20 @@ const TFCRecipes = (event) => {
             type: 'woodencog:heated_pressing',
             ingredients: [
                 {
-                    ingredient: {item: input},
+                    type: 'woodencog:heated',
+                    ingredient: {
+                        item: input
+                    },
                     min_temp: min,
                     max_temp: max
                 }
             ],
             results: [
                 {
+                    type: 'heated',
                     item: output,
-                    temperature: 0,
                     copy_heat: true,
+                    temperature: 0,
                     cooling: 0
                 }
             ]
@@ -74,16 +78,19 @@ const TFCRecipes = (event) => {
         type: 'woodencog:heated_compacting',
         ingredients: [
             {
+                type: 'woodencog_heated',
                 ingredient: {item: 'tfc:metal/ingot/weak_steel'},
                 min_temp: 924,
                 max_temp: 1535
             },
             {
+                type: 'woodencog_heated',
                 ingredient: {item: 'tfc:metal/ingot/pig_iron'},
                 min_temp: 921,
                 max_temp: 1535
             },
             {
+                type: 'heated',
                 ingredient: {item: 'tfc:powder/flux'}
             }
         ],
@@ -102,8 +109,8 @@ const TFCRecipes = (event) => {
 const TFCData = (event) => {
 
     //Heat Definitions
-    event.itemHeat("tfc:metal/bucket/blue_steel", 2.0, 1000, 1200)
-    event.itemHeat("tfc:metal/bucket/red_steel", 2.0, 1000, 1200)
+    event.itemHeat('tfc:metal/bucket/blue_steel', 2.0, 1000, 1200)
+    event.itemHeat('tfc:metal/bucket/red_steel', 2.0, 1000, 1200)
 
     event.itemHeat('tfc:rock/loose/rhyolite', 0.85, null, null)
 
