@@ -5,6 +5,11 @@ const VanillaRecipes = (event) => {
     //removal
     event.remove({id: /^minecraft:.*_ingot_from_nuggets$/})
     event.remove({id: 'minecraft:tripwire_hook'})
+    event.remove({output: 'minecraft:gold_ingot'})
+    event.remove({output: 'minecraft:gold_block'})
+    event.remove({output: 'minecraft:copper_ingot'})
+    event.remove({output: 'minecraft:iron_ingot'})
+    event.remove({output: 'minecraft:iron_block'})
 
     //replace
     event.replaceInput(

@@ -299,6 +299,41 @@ const TWTRecipes = (event) => {
     nuggetdeploying('tfc:metal/ingot/bismuth_bronze', 'knightsofterrafirma:bismuth_bronze_nugget')
     nuggetdeploying('tfc:metal/ingot/bronze', 'antiquelegacy:bronze_nugget')
 
+    //Create Mixing
+    function powdermelting(input, output) {
+        event.custom({
+            type: 'create:mixing',
+            heatRequirement: 'heated',
+            ingredients: [
+                {
+                    item: input
+                }
+            ],
+            results: [
+                {
+                    amount: 5,
+                    fluid: output
+                }
+            ]
+        })
+    }
+
+    powdermelting('tfc:powder/native_copper', 'tfc:metal/copper')
+    powdermelting('tfc:powder/native_gold', 'tfc:metal/gold')
+    powdermelting('tfc:powder/hematite', 'tfc:metal/cast_iron')
+    powdermelting('tfc:powder/native_silver', 'tfc:metal/silver')
+    powdermelting('tfc:powder/cassiterite', 'tfc:metal/tin')
+    powdermelting('tfc:powder/bismuthinite', 'tfc:metal/bismuth')
+    powdermelting('tfc:powder/garnierite', 'tfc:metal/nickel')
+    powdermelting('tfc:powder/malachite', 'tfc:metal/copper')
+    powdermelting('tfc:powder/magnetite', 'tfc:metal/cast_iron')
+    powdermelting('tfc:powder/limonite', 'tfc:metal/cast_iron')
+    powdermelting('tfc:powder/sphalerite', 'tfc:metal/zinc')
+    powdermelting('tfc:powder/tetrahedrite', 'tfc:metal/copper')
+    powdermelting('tfc_ie_addon:powder/bauxite', 'tfc_ie_addon:metal/aluminum')
+    powdermelting('tfc_ie_addon:powder/galena', 'tfc_ie_addon:metal/lead')
+    powdermelting('tfc_ie_addon:powder/uraninite', 'tfc_ie_addon:metal/uranium')
+
     //Create Washing
     event.custom({
         type: 'create:splashing',
@@ -325,8 +360,48 @@ const TWTRecipes = (event) => {
         ]
     })
 
-}
+    //WoodenCog Heated Compacting
+    function doublesheets(input1, min1, input2, min2, output) {
+        event.custom({
+            type: 'woodencog:heated_compacting',
+            ingredients: [
+                {
+                    type: 'woodencog:heated',
+                    ingredient: {item: input1},
+                    min_temp: min1,
+                    max_temp: 3000
+                },
+                {
+                    type: 'woodencog:heated',
+                    ingredient: {item: input2},
+                    min_temp: min2,
+                    max_temp: 3000
+                },
+                {
+                    type: 'woodencog:heated',
+                    ingredient: {item: 'tfc:powder/flux'},
+                    max_temp: 3000
+                }
+            ],
+            results: [
+                {
+                    type: 'heated',
+                    item: output,
+                    temperature: 0,
+                    copy_heat: true,
+                    cooling: 0
+                }
+            ]
+        })
+    }
 
+    $tfcMetals.forEach((metal) => {
+        doublesheets(`tfc:metal/sheet/${metal}`, 400,
+            `tfc:metal/sheet/${metal}`, 400,
+            `tfc:metal/double_sheet/${metal}`
+        )
+    })
+}
 
 
 const TWTData = (event) => {
@@ -335,6 +410,7 @@ const TWTData = (event) => {
     function nuggetheats(input) {
         event.itemHeat(input, 0.4, null, null)
     }
+
     nuggetheats('minecraft:gold_nugget')
     nuggetheats('immersiveengineering:nugget_lead')
     nuggetheats('immersiveengineering:nugget_silver')
@@ -421,7 +497,6 @@ const ErrorSilencerBlockTags = (event) => {
         'create:chocolate',
         'cold_sweat:slush'])
 }
-
 
 
 const ErrorSilencerData = (event) => {

@@ -2,6 +2,8 @@
 
 
 const HandcraftedRecipes = (event) => {
+    //removal
+    event.remove({id: 'handcrafted:hammer'})
 
     //replace
     event.replaceInput(
@@ -43,6 +45,28 @@ const HandcraftedRecipes = (event) => {
         {mod: 'handcrafted'},
         'minecraft:tropical_fish',
         'tfc:food/tropical_fish'
+    )
+
+    //SHAPED
+    event.shaped('handcrafted:hammer',
+        [
+            ' L',
+            'S '
+        ],
+        {
+            L: '#minecraft:logs',
+            S: '#forge:rods/wooden'
+        }
+    )
+    event.shaped('handcrafted:hammer',
+        [
+            'L ',
+            ' S'
+        ],
+        {
+            L: '#minecraft:logs',
+            S: '#forge:rods/wooden'
+        }
     )
 
 }

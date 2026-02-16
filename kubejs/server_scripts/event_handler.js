@@ -14,6 +14,7 @@ Furthermore, separating recipes by mod makes it easier to find errors and genera
 const $nuggetcompat = ['immersiveengineering:nugget_lead', 'immersiveengineering:nugget_silver', 'antiquelegacy:copper_nugget', 'immersiveengineering:nugget_nickel', 'antiquelegacy:bronze_nugget', 'minecraft:iron_nugget', 'knightsofterrafirma:black_bronze_nugget', 'knightsofterrafirma:bismuth_bronze_nugget', 'magistuarmory:steel_nugget', 'immersiveengineering:nugget_uranium', 'antiquelegacy:tin_nugget', 'immersiveengineering:nugget_electrum', 'immersiveengineering:nugget_constantan', 'minecraft:gold_nugget', 'immersiveengineering:nugget_copper', 'immersiveengineering:nugget_aluminum']
 const $ores = ['native_copper', 'native_gold', 'hematite', 'native_silver', 'cassiterite', 'bismuthinite', 'garnierite', 'malachite', 'magnetite', 'limonite', 'sphalerite', 'tetrahedrite']
 const $metals = ['bismuth', 'bismuth_bronze', 'black_bronze', 'bronze', 'brass', 'copper', 'gold', 'nickel', 'rose_gold', 'silver', 'tin', 'zinc', 'sterling_silver', 'wrought_iron', 'cast_iron', 'steel', 'black_steel', 'blue_steel', 'red_steel', 'aluminum', 'alumina', 'lead', 'pewter', 'platinum']
+const $tfcMetals = ['bismuth', 'bismuth_bronze', 'black_bronze', 'bronze', 'brass', 'copper', 'gold', 'nickel', 'rose_gold', 'silver', 'tin', 'zinc', 'sterling_silver', 'wrought_iron', 'cast_iron', 'steel', 'black_steel', 'blue_steel', 'red_steel']
 const $AllOres = ['chromite', 'native_copper', 'native_gold', 'hematite', 'native_silver', 'cassiterite', 'bismuthinite', 'garnierite', 'malachite', 'magnetite', 'limonite', 'sphalerite', 'tetrahedrite', 'bauxite', 'galena', 'native_aluminum', 'native_platinum', 'uraninite']
 const $dfcOres = ['native_platinum', 'native_aluminum', 'bauxite', 'galena']
 const $IEores = ['bauxite', 'galena', 'uraninite']
@@ -27,6 +28,7 @@ ServerEvents.tags('item', event => {
     CreateItemTags(event)
     ForgeItemTags(event)
     TFCItemTags(event)
+    JEItags(event)
 })
 
 ServerEvents.tags('block', event => {

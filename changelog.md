@@ -9,3 +9,7 @@ CHANGES:
 - Fixed a dupe with copper ingots.
 - Removed all alloy smelter recipes as the IE alloy smelter is unobtainable.
 - Steel and above now have WoodenCog heated pressing and welding recipes.
+- Create mixing for melting ore dusts.
+- Made the Handcrafted hammer less expensive.
+- Hidden some redundant items in JEI.
+- Removed some redundant recipes.

@@ -42,7 +42,7 @@ const TFCRecipes = (event) => {
 
     //WoodenCog recipes aren't working for some reason. I don't understand this.
     //WoodenCog Heated Pressing
-    function missingpressrecipes(input, min, max, output) {
+    function missingpressrecipes(input, min, output) {
         event.custom({
             type: 'woodencog:heated_pressing',
             ingredients: [
@@ -52,7 +52,7 @@ const TFCRecipes = (event) => {
                         item: input
                     },
                     min_temp: min,
-                    max_temp: max
+                    max_temp: 3000
                 }
             ],
             results: [
@@ -67,42 +67,63 @@ const TFCRecipes = (event) => {
         })
     }
 
-    missingpressrecipes('tfc:metal/ingot/pig_iron', 921, 1535, 'tfc:metal/ingot/high_carbon_steel')
-    missingpressrecipes('tfc:metal/ingot/high_carbon_steel', 924, 1540, 'tfc:metal/ingot/steel')
-    missingpressrecipes('tfc:metal/ingot/high_carbon_black_steel', 924, 1540, 'tfc:metal/ingot/black_steel')
-    missingpressrecipes('tfc:metal/ingot/high_carbon_red_steel', 924, 1540, 'tfc:metal/ingot/red_steel')
-    missingpressrecipes('tfc:metal/ingot/high_carbon_blue_steel', 924, 1540, 'tfc:metal/ingot/blue_steel')
+    missingpressrecipes('tfc:metal/ingot/pig_iron', 921, 'tfc:metal/ingot/high_carbon_steel')
+    missingpressrecipes('tfc:metal/ingot/high_carbon_steel', 924, 'tfc:metal/ingot/steel')
+    missingpressrecipes('tfc:metal/ingot/high_carbon_black_steel', 924, 'tfc:metal/ingot/black_steel')
+    missingpressrecipes('tfc:metal/ingot/high_carbon_red_steel', 924, 'tfc:metal/ingot/red_steel')
+    missingpressrecipes('tfc:metal/ingot/high_carbon_blue_steel', 924, 'tfc:metal/ingot/blue_steel')
 
     //WoodenCog Heated Compacting
-    event.custom({
-        type: 'woodencog:heated_compacting',
-        ingredients: [
-            {
-                type: 'woodencog_heated',
-                ingredient: {item: 'tfc:metal/ingot/weak_steel'},
-                min_temp: 924,
-                max_temp: 1535
-            },
-            {
-                type: 'woodencog_heated',
-                ingredient: {item: 'tfc:metal/ingot/pig_iron'},
-                min_temp: 921,
-                max_temp: 1535
-            },
-            {
-                type: 'heated',
-                ingredient: {item: 'tfc:powder/flux'}
-            }
-        ],
-        results: [
-            {
-                item: 'tfc:metal/ingot/high_carbon_black_steel',
-                temperature: 0,
-                copy_heat: true,
-                cooling: 0
-            }
-        ]
-    })
+    function missingcompactingrecipes(input1, min1, input2, min2, output) {
+        event.custom({
+            type: 'woodencog:heated_compacting',
+            ingredients: [
+                {
+                    type: 'woodencog:heated',
+                    ingredient: {item: input1},
+                    min_temp: min1,
+                    max_temp: 3000
+                },
+                {
+                    type: 'woodencog:heated',
+                    ingredient: {item: input2},
+                    min_temp: min2,
+                    max_temp: 3000
+                },
+                {
+                    type: 'woodencog:heated',
+                    ingredient: {item: 'tfc:powder/flux'},
+                    max_temp: 3000
+                }
+            ],
+            results: [
+                {
+                    type: 'heated',
+                    item: output,
+                    temperature: 0,
+                    copy_heat: true,
+                    cooling: 0
+                }
+            ]
+        })
+    }
+
+    missingcompactingrecipes(
+        'tfc:metal/ingot/weak_steel', 924,
+        'tfc:metal/ingot/pig_iron', 921,
+        'tfc:metal/ingot/high_carbon_black_steel'
+    )
+    missingcompactingrecipes(
+        'tfc:metal/ingot/weak_red_steel', 924,
+        'tfc:metal/ingot/black_steel', 921,
+        'tfc:metal/ingot/high_carbon_red_steel'
+    )
+    missingcompactingrecipes(
+        'tfc:metal/ingot/weak_blue_steel', 924,
+        'tfc:metal/ingot/black_steel', 921,
+        'tfc:metal/ingot/high_carbon_blue_steel'
+    )
+
 
 }
 
