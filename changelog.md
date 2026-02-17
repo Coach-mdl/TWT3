@@ -13,3 +13,60 @@ CHANGES:
 - Made the Handcrafted hammer less expensive.
 - Hidden some redundant items in JEI.
 - Removed some redundant recipes.
+- Updated Forge to 47.4.13
+
+REMOVED:
+- Lootbeams
+- Cold Sweat & Compat
+- Corpse
+- Caelum & Compat
+- REI & Compat
+- JER
+
+ADDED:
+- YDM's WeaponMaster
+- JEI (No more messing with this)
+- Sounds & M.R.U
+- Punchy (Can be disabled in config)
+- CreateJS
+- Create: Crafts & Additions
+- Create: Copycat+
+- Create: Steam & Rails
+- Create: Better FPS
+- Petrol's Parts For Create & Petrolpark Library
+- Create: Blocks & Bogies
+- TFMG
+- TFMGJS
+- TFMG Virtual Oil Deposit
+- Immersive Aircraft & Firma Aircraft
+- Man of Many Planes
+- TFC Ruins (You'll find these in new chunks)
+- Survivor's Delight & Survivor's Utilities
+- Lychee & LycheeJS
+
+UPDATED:
+- Cupboard
+- Dynamic FPS
+- Easy NPC Bundle
+- Easy NPC Config UI
+- Easy NPC
+- Epic Knights
+- EveryComp
+- Exposure
+- Extreme Sound Muffler
+- Farmer's Delight
+- Firmalife
+- FTB Essentials
+- FTB Teams 
+- Fusion
+- Geckolib
+- ImmediatelyFast
+- LootJS
+- ModernFix
+- Moonlight
+- Parcool
+- Simple Voice Chat
+- Sort it out
+- TFC Groomer
+- Xaero's Minimap
+- Xaero's Worldmap

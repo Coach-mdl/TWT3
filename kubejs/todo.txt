@@ -12,36 +12,15 @@ CREATE:
 - Add consistency between Create and Woodencog recipes.
 - Most addon ores do not have a woodencog mixing recipe.
 
-When working on other mods, make sure you have a duplicate instance so that you can still access the server.
-ADDITIONS: 
-- Create Additions
-- CopyCat+
-- Steam & Rails.
-- Sounds or Mambience
-- Punchy
-- In Control
-- JEI
-
-REMOVE:
-- Lootbeams
-- Cold Sweat & TFC compat
-- Corpse
-- Caelum & TFC Compat
-- REI and addon
-- JER
-
 NEXT UPDATE
 
 ADDITIONS:
 - Vampirism
 - MCA
-- Create addons
 - VS Clockwork (Prepare for crashes)
 - MAYBE look into that butchery mod. There's a few different ones.
 
 CHANGES:
 - Add winter forageables for new players. Requires Lychee
-- Remove Cold Sweat as it is punishing for new players and unfun for existing players. REMOVE RECIPES.
-- Remove Corpse mod as it is no longer needed.
 - Add Adze module to TFC Modular. Probably wise to update the mod.
 

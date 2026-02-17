@@ -1,0 +1,21 @@
+
+[general]
+	#How many items can be put into skillet block at once.
+	#Range: 1 ~ 32
+	skilletSlotNumber = 8
+	#The modifier for the 'Cabinet Stored' food trait. Values less than 1 extend food lifetime, values greater than one decrease it. A value of zero stops decay.
+	#Range: 0.0 ~ 1.7976931348623157E308
+	traitCabinetStoredModifier = 0.5
+	#The modifier for the 'Skillet Cooked' food trait. Values less than 1 extend food lifetime, values greater than one decrease it. A value of zero stops decay.
+	#Range: 0.0 ~ 1.7976931348623157E308
+	traitSkilletCookedModifier = 0.8
+	#How many ticks rich soil should boost the growth of the block above it.
+	#Range: 0 ~ 240000
+	richSoilGrowthBoostTick = 2400
+	#How many degrees of temperature deviated from usual range is allowed for crops planted on rich soil farmlands to grow.
+	#Range: 0 ~ 100
+	richSoilFarmlandTemperatureExpansion = 5
+	#How many percentile of hydration deviated from usual range is allowed for crops planted on rich soil farmlands to grow.
+	#Range: 0 ~ 100
+	richSoilFarmlandHydrationExpansion = 5
+

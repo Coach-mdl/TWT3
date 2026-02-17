@@ -19,6 +19,7 @@ const $AllOres = ['chromite', 'native_copper', 'native_gold', 'hematite', 'nativ
 const $dfcOres = ['native_platinum', 'native_aluminum', 'bauxite', 'galena']
 const $IEores = ['bauxite', 'galena', 'uraninite']
 const $woods = ['acacia', 'ash', 'aspen', 'birch', 'blackwood', 'chestnut', 'douglas_fir', 'hickory', 'kapok', 'mangrove', 'maple', 'oak', 'palm', 'pine', 'rosewood', 'sequoia', 'spruce', 'sycamore', 'white_cedar', 'willow']
+const $tfmgExistingIngots = ['steel', 'cast_iron', 'aluminum', 'lead', 'nickel', 'constantan']
 
 //Tags should always load before anything that uses them.
 ServerEvents.tags('item', event => {
@@ -26,6 +27,7 @@ ServerEvents.tags('item', event => {
     TWTItemTags(event)
     VanillaItemTags(event)
     CreateItemTags(event)
+    TFMGTags(event)
     ForgeItemTags(event)
     TFCItemTags(event)
     JEItags(event)
@@ -58,6 +60,7 @@ ServerEvents.recipes(event => {
     FirmalifeRecipes(event)
     BeneathRecipes(event)
     CreateRecipes(event)
+    TFMGRecipes(event)
     ImmersiveEngineeringRecipes(event)
     FarmersDelightRecipes(event)
     WaystonesRecipes(event)

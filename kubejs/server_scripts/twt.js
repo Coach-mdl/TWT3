@@ -84,6 +84,7 @@ const TWTRecipes = (event) => {
     nuggetheating('antiquelegacy:tin_nugget', 230, 'tfc:metal/tin')
     nuggetheating('create:zinc_nugget', 420, 'tfc:metal/zinc')
     nuggetheating('create:brass_nugget', 930, 'tfc:metal/brass')
+    nuggetheating('tfmg:cast_iron_nugget', 1535, 'tfc:metal/cast_iron')
 
     function oredustsmelting(input, temperature, output) {
         event.recipes.tfc.heating(input, temperature)
@@ -158,6 +159,7 @@ const TWTRecipes = (event) => {
     nuggetsmithing('tfc:metal/ingot/tin', '20x antiquelegacy:tin_nugget')
     nuggetsmithing('tfc:metal/ingot/zinc', '20x create:zinc_nugget')
     nuggetsmithing('tfc:metal/ingot/brass', '20x create:brass_nugget')
+    nuggetsmithing('tfc:metal/ingot/cast_iron', '20x tfmg:cast_iron_nugget')
 
     //TFC Quern
     $metals.forEach((metal) => {
@@ -298,6 +300,7 @@ const TWTRecipes = (event) => {
     nuggetdeploying('tfc:metal/ingot/black_bronze', 'knightsofterrafirma:black_bronze_nugget')
     nuggetdeploying('tfc:metal/ingot/bismuth_bronze', 'knightsofterrafirma:bismuth_bronze_nugget')
     nuggetdeploying('tfc:metal/ingot/bronze', 'antiquelegacy:bronze_nugget')
+    nuggetdeploying('tfc:metal/ingot/cast_iron', 'tfmg:cast_iron_nugget')
 
     //Create Mixing
     function powdermelting(input, output) {
@@ -423,6 +426,7 @@ const TWTData = (event) => {
     nuggetheats('immersiveengineering:nugget_aluminum')
     nuggetheats('create:zinc_nugget')
     nuggetheats('create:brass_nugget')
+    nuggetheats('tfmg:cast_iron_nugget')
 
 }
 
@@ -437,19 +441,17 @@ const TWTItemTags = (event) => {
 const ErrorSilencerItemTags = (event) => {
 
     event.add('tfc:pileable_sheets', 'minecraft:barrier')
+    event.add('tfc:pileable_ingots', ['tfmg:aluminum_ingot', 'tfmg:lead_ingot', 'tfmg:constantan_ingot', 'createaddition:electrum_ingot'])
 }
 
 const ErrorSilencerBlockTags = (event) => {
 
-    event.add('minecraft:replaceable', 'farmersdelight:wild_cabbages')
-    event.add('minecraft:replaceable', 'farmersdelight:wild_beetroots')
-    event.add('minecraft:replaceable', 'farmersdelight:wild_carrots')
-    event.add('minecraft:replaceable', 'farmersdelight:wild_onions')
-    event.add('minecraft:replaceable', 'farmersdelight:wild_potatoes')
-    event.add('minecraft:replaceable', 'farmersdelight:wild_rice')
-    event.add('minecraft:replaceable', 'farmersdelight:wild_tomatoes')
-    event.add('minecraft:replaceable', 'rnr:fluid/concrete')
-    event.add('minecraft:replaceable', 'mca:infernal_flame')
+    event.add('minecraft:replaceable', ['farmersdelight:wild_cabbages', 'farmersdelight:wild_beetroots', 'farmersdelight:wild_carrots',
+        'farmersdelight:wild_onions', 'farmersdelight:wild_potatoes', 'farmersdelight:wild_rice', 'farmersdelight:wild_tomatoes',
+        'rnr:fluid/concrete', 'mca:infernal_flame', 'railways:casing_collision', 'tfmg:crude_oil', 'tfmg:heavy_oil', 'tfmg:gasoline',
+        'tfmg:diesel', 'tfmg:naphtha', 'tfmg:kerosene', 'tfmg:creosote', 'tfmg:molten_steel', 'tfmg:molten_slag', 'tfmg:molten_plastic',
+        'tfmg:liquid_silicon', 'tfmg:lubrication_oil', 'tfmg:cooling_fluid', 'tfmg:napalm', 'tfmg:sulfuric_acid', 'tfmg:liquid_concrete',
+        'tfmg:liquid_asphalt', 'tfmg:green_fire', 'tfmg:blue_fire', 'tfmg:lithium_fire', 'createaddition:seed_oil', 'createaddition:bioethanol'])
 
     event.add('tfc:can_collapse', [
         'dfc:ore/asbestos/blueschist',
