@@ -10,6 +10,119 @@ const TWTRecipes = (event) => {
 
     })
 
+    //Replace
+    event.replaceInput(
+        {input: 'minecraft:campfire'},
+        'minecraft:campfire',
+        'minecraft:charcoal'
+    )
+    event.replaceInput(
+        {input: 'minecraft:iron_block'},
+        'minecraft:iron_block',
+        'tfc:metal/double_ingot/wrought_iron'
+    )
+    event.replaceInput(
+        {input: 'minecraft:smooth_stone'},
+        'minecraft:smooth_stone',
+        '#forge:stone'
+    )
+    event.replaceInput(
+        {input: 'minecraft:dried_kelp'},
+        'minecraft:dried_kelp',
+        'tfc:food/dried_kelp'
+    )
+    event.replaceInput(
+        {input: 'minecraft:chest'},
+        'minecraft:chest',
+        '#forge:chests'
+    )
+    event.replaceInput(
+        {id: 'man_of_many_planes:scarlet_biplane'},
+        'minecraft:iron_ingot',
+        'tfc:metal/sheet/wrought_iron'
+    )
+    event.replaceInput(
+        {input: 'minecraft:barrel'},
+        'minecraft:barrel',
+        '#tfc:barrels'
+    )
+
+    //WoodenCog Heated Compacting
+    function missingcompactingrecipes(input1, min1, input2, min2, output) {
+        event.custom({
+            type: 'woodencog:heated_compacting',
+            ingredients: [
+                {
+                    type: 'woodencog:heated',
+                    ingredient: {item: input1},
+                    min_temp: min1,
+                    max_temp: 3000
+                },
+                {
+                    type: 'woodencog:heated',
+                    ingredient: {item: input2},
+                    min_temp: min2,
+                    max_temp: 3000
+                },
+                {
+                    type: 'woodencog:heated',
+                    ingredient: {item: 'tfc:powder/flux'},
+                    max_temp: 3000
+                }
+            ],
+            results: [
+                {
+                    type: 'heated',
+                    item: output,
+                    temperature: 0,
+                    copy_heat: true,
+                    cooling: 0
+                }
+            ]
+        })
+    }
+
+    missingcompactingrecipes(
+        'tfc:metal/ingot/weak_steel', 924,
+        'tfc:metal/ingot/pig_iron', 921,
+        'tfc:metal/ingot/high_carbon_black_steel'
+    )
+    missingcompactingrecipes(
+        'tfc:metal/ingot/weak_red_steel', 924,
+        'tfc:metal/ingot/black_steel', 921,
+        'tfc:metal/ingot/high_carbon_red_steel'
+    )
+    missingcompactingrecipes(
+        'tfc:metal/ingot/weak_blue_steel', 924,
+        'tfc:metal/ingot/black_steel', 921,
+        'tfc:metal/ingot/high_carbon_blue_steel'
+    )
+    missingcompactingrecipes(
+        'immersiveengineering:ingot_electrum', 600,
+        'immersiveengineering:ingot_electrum', 600,
+        'tfc_ie_addon:metal/double_ingot/electrum'
+    )
+    missingcompactingrecipes(
+        'immersiveengineering:ingot_constantan', 600,
+        'immersiveengineering:ingot_constantan', 600,
+        'tfc_ie_addon:metal/double_ingot/constantan'
+    )
+    missingcompactingrecipes(
+        'immersiveengineering:ingot_aluminum', 600,
+        'immersiveengineering:ingot_aluminum', 600,
+        'tfc_ie_addon:metal/double_ingot/aluminum'
+    )
+    missingcompactingrecipes(
+        'immersiveengineering:ingot_lead', 300,
+        'immersiveengineering:ingot_lead', 300,
+        'tfc_ie_addon:metal/double_ingot/lead'
+    )
+    missingcompactingrecipes(
+        'immersiveengineering:ingot_uranium', 600,
+        'immersiveengineering:ingot_uranium', 600,
+        'tfc_ie_addon:metal/double_ingot/uranium'
+    )
+
     //Shapeless
     $ores.forEach((ore) => {
             event.recipes.tfc.extra_products_shapeless_crafting(
@@ -168,25 +281,15 @@ const TWTRecipes = (event) => {
 
     //Create Cutting
     function woodsawing(output, input, amount) {
-        event.custom({
-            type: 'create:cutting',
-            ingredients: [
-                {
-                    item: input
-                }
+        event.recipes.create.cutting(
+            [
+                Item.of(output, amount),
+                Item.of('immersiveengineering:dust_wood', 1).withChance(0.70)
             ],
-            results: [
-                {
-                    item: output,
-                    count: amount
-                },
-                {
-                    item: 'immersiveengineering:dust_wood',
-                    count: 1,
-                    chance: 0.70
-                }
+            [
+                Item.of(input)
             ]
-        })
+        )
     }
 
     $woods.forEach((wood) => {
@@ -210,77 +313,69 @@ const TWTRecipes = (event) => {
     woodsawing(`beneath:wood/lumber/warped`, `beneath:wood/planks/warped_slab`, 2)
 
     //Create Crushing
-    event.custom({
-        type: 'create:crushing',
-        ingredients: [
-            {
-                item: 'create:scoria'
-            }
+    event.recipes.create.crushing(
+        [
+            Item.of('tfc:powder/tetrahedrite', 2).withChance(0.45),
+            Item.of('tfc:powder/cassiterite', 3).withChance(0.25),
+            Item.of('tfc:powder/magnetite', 1).withChance(0.15)
         ],
-        results: [
-            {
-                item: 'minecraft:soul_sand',
-                count: 1,
-                chance: 0.45
-            },
-            {
-                item: 'create:cinder_flour',
-                count: 1,
-                chance: 0.15
-            },
-            {
-                item: 'tfc:ore/small_limonite',
-                count: 1,
-                chance: 0.15
-            },
-            {
-                item: 'tfc:powder/sulfur',
-                count: 2,
-                chance: 0.05
-            }
-        ]
-    }).id('twt:scoria_crushing')
-    event.custom({
-        type: 'create:crushing',
-        ingredients: [
-            {
-                item: 'beneath:crackrack'
-            }
+        [
+            'tfc:rock/raw/gabbro'
         ],
-        results: [
-            {
-                item: 'tfc:powder/sphalerite',
-                count: 2,
-                chance: 0.25
-            },
-            {
-                item: 'tfc:powder/sphalerite',
-                count: 1,
-                chance: 0.15
-            }
-        ]
-    }).id('twt:sphalerite_from_crackrack')
+        500
+    ).id('twt:gabbro_crushing')
+
+    event.recipes.create.crushing(
+        [
+            Item.of('tfc:rock/loose/limestone', 2),
+            Item.of('tfc:rock/loose/limestone', 2).withChance(0.45),
+            Item.of('tfmg:limesand', 1),
+            Item.of('tfc:powder/native_silver', 1).withChance(0.35),
+            Item.of('minecraft:lime_dye', 1).withChance(0.01)
+        ],
+        [
+            'create:limestone'
+        ],
+        500
+    ).id('twt:create_limestone_crushing')
+
+    event.recipes.create.crushing(
+        [
+            Item.of('minecraft:soul_sand', 1).withChance(0.45),
+            Item.of('create:cinder_flour', 1).withChance(0.15),
+            Item.of('tfc:ore/small_limonite', 3).withChance(0.35),
+            Item.of('tfc:powder/sulfur', 2).withChance(0.25)
+        ],
+        [
+            'create:scoria'
+        ],
+        500
+    ).id('twt:scoria_crushing')
+
+    event.recipes.create.crushing(
+        [
+            Item.of('tfc:powder/sphalerite', 2).withChance(0.35),
+            Item.of('tfc:powder/sphalerite', 2).withChance(0.15),
+            Item.of('tfmg:crushed_raw_lithium', 1).withChance(0.25),
+            Item.of('beneath:crackrack_rock', 2).withChance(0.70)
+        ],
+        [
+            'beneath:crackrack'
+        ],
+        500
+    ).id('twt:crackrack_crushing')
 
     //Create Deploying
     function nuggetdeploying(input, output) {
-        event.custom({
-            type: 'create:deploying',
-            ingredients: [
-                {
-                    item: input
-                },
-                {
-                    tag: 'tfc:chisels'
-                }
+        event.recipes.create.deploying(
+            [
+                Item.of(output, 20)
             ],
-            keepHeldItem: true,
-            results: [
-                {
-                    count: 20,
-                    item: output
-                }
-            ]
-        })
+            [
+                Item.of(input),
+                '#tfc:chisels'
+            ],
+        ).keepHeldItem()
     }
 
     nuggetdeploying('tfc:metal/ingot/gold', 'minecraft:gold_nugget')
@@ -304,21 +399,14 @@ const TWTRecipes = (event) => {
 
     //Create Mixing
     function powdermelting(input, output) {
-        event.custom({
-            type: 'create:mixing',
-            heatRequirement: 'heated',
-            ingredients: [
-                {
-                    item: input
-                }
+        event.recipes.create.mixing(
+            [
+                Fluid.of(output, 5)
             ],
-            results: [
-                {
-                    amount: 5,
-                    fluid: output
-                }
+            [
+                Item.of(input)
             ]
-        })
+        )
     }
 
     powdermelting('tfc:powder/native_copper', 'tfc:metal/copper')
@@ -338,30 +426,16 @@ const TWTRecipes = (event) => {
     powdermelting('tfc_ie_addon:powder/uraninite', 'tfc_ie_addon:metal/uranium')
 
     //Create Washing
-    event.custom({
-        type: 'create:splashing',
-        ingredients: [
-            {
-                item: 'tfc:rock/gravel/basalt'
-            }
+    event.recipes.create.splashing(
+        [
+            Item.of('tfc:rock/loose/basalt', 1).withChance(0.30),
+            Item.of('beneath:crackrack_rock', 1).withChance(0.50),
+            Item.of('rnr:gravel_fill/basalt', 4)
         ],
-        results: [
-            {
-                item: 'tfc:rock/loose/basalt',
-                count: 1,
-                chance: 0.30
-            },
-            {
-                item: 'beneath:crackrack_rock',
-                count: 1,
-                chance: 0.10
-            },
-            {
-                item: 'rnr:gravel_fill/basalt',
-                count: 4
-            }
+        [
+            Item.of('tfc:rock/gravel/basalt')
         ]
-    })
+    ).id('twt:basalt_gravel_splashing')
 
     //WoodenCog Heated Compacting
     function doublesheets(input1, min1, input2, min2, output) {
@@ -382,7 +456,7 @@ const TWTRecipes = (event) => {
                 },
                 {
                     type: 'woodencog:heated',
-                    ingredient: {item: 'tfc:powder/flux'},
+                    ingredient: {tag: 'tfc:flux'},
                     max_temp: 3000
                 }
             ],

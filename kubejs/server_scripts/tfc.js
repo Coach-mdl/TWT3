@@ -73,58 +73,6 @@ const TFCRecipes = (event) => {
     missingpressrecipes('tfc:metal/ingot/high_carbon_red_steel', 924, 'tfc:metal/ingot/red_steel')
     missingpressrecipes('tfc:metal/ingot/high_carbon_blue_steel', 924, 'tfc:metal/ingot/blue_steel')
 
-    //WoodenCog Heated Compacting
-    function missingcompactingrecipes(input1, min1, input2, min2, output) {
-        event.custom({
-            type: 'woodencog:heated_compacting',
-            ingredients: [
-                {
-                    type: 'woodencog:heated',
-                    ingredient: {item: input1},
-                    min_temp: min1,
-                    max_temp: 3000
-                },
-                {
-                    type: 'woodencog:heated',
-                    ingredient: {item: input2},
-                    min_temp: min2,
-                    max_temp: 3000
-                },
-                {
-                    type: 'woodencog:heated',
-                    ingredient: {item: 'tfc:powder/flux'},
-                    max_temp: 3000
-                }
-            ],
-            results: [
-                {
-                    type: 'heated',
-                    item: output,
-                    temperature: 0,
-                    copy_heat: true,
-                    cooling: 0
-                }
-            ]
-        })
-    }
-
-    missingcompactingrecipes(
-        'tfc:metal/ingot/weak_steel', 924,
-        'tfc:metal/ingot/pig_iron', 921,
-        'tfc:metal/ingot/high_carbon_black_steel'
-    )
-    missingcompactingrecipes(
-        'tfc:metal/ingot/weak_red_steel', 924,
-        'tfc:metal/ingot/black_steel', 921,
-        'tfc:metal/ingot/high_carbon_red_steel'
-    )
-    missingcompactingrecipes(
-        'tfc:metal/ingot/weak_blue_steel', 924,
-        'tfc:metal/ingot/black_steel', 921,
-        'tfc:metal/ingot/high_carbon_blue_steel'
-    )
-
-
 }
 
 const TFCData = (event) => {
@@ -146,4 +94,5 @@ const TFCItemTags = (event) => {
     event.add('tfc:hammers', 'magistuarmory:blacksmith_hammer')
     event.add('tfc:saplings', ['tfc:wood/sapling/willow', 'firmalife:plant/cocoa_sapling', 'firmalife:plant/fig_sapling', 'tfc:plant/cherry_sapling', 'tfc:plant/green_apple_sapling', 'tfc:plant/lemon_sapling', 'tfc:plant/olive_sapling', 'tfc:plant/orange_sapling', 'tfc:plant/peach_sapling', 'tfc:plant/plum_sapling', 'tfc:plant/red_apple_sapling', 'tfc:plant/banana_sapling', 'tfc:wood/sapling/acacia', 'tfc:wood/sapling/ash', 'tfc:wood/sapling/aspen', 'tfc:wood/sapling/birch', 'tfc:wood/sapling/blackwood', 'tfc:wood/sapling/chestnut', 'tfc:wood/sapling/douglas_fir', 'tfc:wood/sapling/kapok', 'tfc:wood/sapling/maple', 'tfc:wood/sapling/oak', 'tfc:wood/sapling/pine', 'tfc:wood/sapling/rosewood', 'tfc:wood/sapling/sequoia', 'tfc:wood/sapling/spruce', 'tfc:wood/sapling/sycamore', 'tfc:wood/sapling/white_cedar'])
     event.add('tfc:compost_browns_low', 'farmersdelight:tree_bark')
+    event.add('tfc:flux', 'tfmg:limesand')
 }

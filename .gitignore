@@ -157,3 +157,5 @@ usernamecache.json
 /config/weaponmaster_ydm-common.toml
 /config/sounds/world.json
 /config/sounds/chat.json
+/config/railways-client.toml
+/config/copycats-client.toml

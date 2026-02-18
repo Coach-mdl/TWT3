@@ -23,6 +23,11 @@ const CreateRecipes = (event) => {
     event.remove({id: 'create:mixing/andesite_alloy'})
 
     event.remove({id: 'create:mixing/chocolate'})
+    event.remove({id: 'create:haunting/soul_campfire'})
+    event.remove({id: 'create:crafting/kinetics/mechanical_press'})
+    event.remove({id: 'woodencog:crafting/schematics/schematicannon'})
+    event.remove({id: 'woodencog:crafting/schematics/schematic_and_quill'})
+    event.remove({id: 'woodencog:crafting/schematics/empty_schematic'})
 
     //replace
     event.replaceOutput(

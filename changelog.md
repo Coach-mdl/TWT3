@@ -5,6 +5,7 @@ CHANGES:
 - Added more entries to the create:sleepers tag.
 - Added recipes to convert other milks into cow's milk.
 - Added Renewable recipes for zinc and iron that don't require vanilla item glorp.
+- Renewable tin, copper and silver.
 - All duplicate DFC ores now drop their IE counterparts.
 - Fixed a dupe with copper ingots.
 - Removed all alloy smelter recipes as the IE alloy smelter is unobtainable.
@@ -13,6 +14,10 @@ CHANGES:
 - Made the Handcrafted hammer less expensive.
 - Hidden some redundant items in JEI.
 - Removed some redundant recipes.
+- Recipes that require a block of metal now require a double ingot instead.
+- IE unobtainable metal blocks are now obtainable.
+- Schematicannons are now obtainable.
+- TFC dried kelp can now be used for create recipes that use dried kelp.
 - Updated Forge to 47.4.13
 
 REMOVED:
@@ -27,7 +32,7 @@ ADDED:
 - YDM's WeaponMaster
 - JEI (No more messing with this)
 - Sounds & M.R.U
-- Punchy (Can be disabled in config)
+- Punchy (Can be disabled in its config)
 - CreateJS
 - Create: Crafts & Additions
 - Create: Copycat+
