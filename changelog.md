@@ -48,6 +48,7 @@ ADDED:
 - TFC Ruins (You'll find these in new chunks)
 - Survivor's Delight & Survivor's Utilities
 - Lychee & LycheeJS
+- In Control
 
 UPDATED:
 - Cupboard
@@ -73,5 +74,6 @@ UPDATED:
 - Simple Voice Chat
 - Sort it out
 - TFC Groomer
+- Waystones
 - Xaero's Minimap
 - Xaero's Worldmap

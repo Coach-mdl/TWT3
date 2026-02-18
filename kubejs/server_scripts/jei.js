@@ -9,5 +9,6 @@ const JEItags = (event) => {
         'epic_knights_ores_and_alloys:tin_nugget', 'epic_knights_ores_and_alloys:silver_nugget', 'epic_knights_ores_and_alloys:steel_nugget', 'immersiveengineering:nugget_steel',
         'immersiveengineering:alloybrick', 'immersiveengineering:slab_alloybrick', 'immersiveengineering:blastbrick', 'immersiveengineering:slab_blastbrick',
         'immersiveengineering:slab_blastbrick_reinforced', 'immersiveengineering:blastbrick_reinforced', 'immersiveengineering:blast_furnace', 'immersiveengineering:alloy_smelter',
-        'immersiveengineering:advanced_blast_furnace', /^tfmg:.*_ore$/, /^tfmg:raw_.*/])
+        'immersiveengineering:advanced_blast_furnace', /^tfmg:.*_ore$/, /^tfmg:raw_.*/, 'tfmg:fireproof_brick', 'tfmg:fireclay_ball', 'tfmg:coal_coke', 'tfmg:coal_coke_block', 
+        'tfmg:nitrate_dust', /^createaddition:electrum_(sheet|ingot|nugget|block)$/])
 }

@@ -2,110 +2,123 @@
 
 const TFMGRecipes = (event) => {
     //Removal
-    event.remove({id: 'tfmg:sequenced_assembly/heavy_plate'})
-    event.remove({id: 'tfmg:compacting/cast_iron'})
-    event.remove({id: 'tfmg:coking/coal'})
-    event.remove({id: 'tfmg:coking/charcoal'})
-    event.remove({id: 'tfmg:filling/hardened_planks'})
-    event.remove({id: 'tfmg:constantan_wire_from_ingots_constantan_stonecutting'})
-    event.remove({id: /^tfmg:crafting\/kinetics\/cast_iron_(nugget|ingot)_from_.*compacting$/})
-    event.remove({id: 'tfmg:crafting/kinetics/fireproof_bricks'})
-    event.remove({id: 'tfmg:pressing/aluminum_ingot'})
-    event.remove({output: /^tfmg:steel_(ingot|nugget|block|pickaxe|sword|hoe|shovel|axe|helmet|chestplate|leggings|boots)$/})
-    event.remove({output: /^tfmg:lead_(sheet|ingot|nugget|block|pickaxe|sword|hoe|shovel|axe)$/})
-    event.remove({output: /^tfmg:aluminum_(sheet|ingot|nugget|block|pickaxe|sword|hoe|shovel|axe)$/})
-    event.remove({output: /^tfmg:nickel_(sheet|ingot|nugget|block)$/})
-    event.remove({output: /^tfmg:constantan_(ingot|nugget|block)$/})
-    event.remove({id: 'tfmg:crafting/kinetics/cast_iron_block_from_compacting'})
-    event.remove({id: 'tfmg:crafting/kinetics/coal_coke_block'})
-    event.remove({id: 'tfmg:crushing/limestone'})
-    event.remove({id: 'tfmg:crafting/kinetics/lithium_block_from_compacting'})
+    event.remove({ id: 'tfmg:sequenced_assembly/heavy_plate' })
+    event.remove({ id: 'tfmg:compacting/cast_iron' })
+    event.remove({ id: 'tfmg:coking/coal' })
+    event.remove({ id: 'tfmg:coking/charcoal' })
+    event.remove({ id: 'tfmg:filling/hardened_planks' })
+    event.remove({ id: 'tfmg:constantan_wire_from_ingots_constantan_stonecutting' })
+    event.remove({ id: /^tfmg:crafting\/kinetics\/cast_iron_(nugget|ingot)_from_.*compacting$/ })
+    event.remove({ id: 'tfmg:crafting/kinetics/fireproof_bricks' })
+    event.remove({ id: 'tfmg:pressing/aluminum_ingot' })
+    event.remove({ output: /^tfmg:steel_(ingot|nugget|block|pickaxe|sword|hoe|shovel|axe|helmet|chestplate|leggings|boots)$/ })
+    event.remove({ output: /^tfmg:lead_(sheet|ingot|nugget|block|pickaxe|sword|hoe|shovel|axe)$/ })
+    event.remove({ output: /^tfmg:aluminum_(sheet|ingot|nugget|block|pickaxe|sword|hoe|shovel|axe)$/ })
+    event.remove({ output: /^tfmg:nickel_(sheet|ingot|nugget|block)$/ })
+    event.remove({ output: /^tfmg:constantan_(ingot|nugget|block)$/ })
+    event.remove({ id: 'tfmg:crafting/kinetics/cast_iron_block_from_compacting' })
+    event.remove({ id: 'tfmg:crafting/kinetics/coal_coke_block' })
+    event.remove({ id: 'tfmg:crushing/limestone' })
+    event.remove({ id: 'tfmg:crafting/kinetics/lithium_block_from_compacting' })
+    event.remove({ id: 'tfmg:crushing/coal_coke' })
+    event.remove({ id: 'tfmg:smelting/fireproof_brick' })
+    event.remove({ id: 'tfmg:crushing/dirt' })
 
 
     //Replace
     event.replaceInput(
-        {id: 'tfmg:crafting/kinetics/lithium_blade'},
+        { input: 'tfmg:coal_coke_dust' },
+        'tfmg:coal_coke_dust',
+        'immersiveengineering:dust_coke'
+    )
+    event.replaceInput(
+        { id: 'tfmg:mixing/thermite' },
+        'create:crimsite',
+        'tfc:powder/hematite'
+    )
+    event.replaceInput(
+        { id: 'tfmg:crafting/kinetics/lithium_blade' },
         'tfmg:steel_sword',
         'tfc:metal/sword/steel'
     )
     event.replaceInput(
-        {input: 'tfmg:coal_coke_block'},
+        { input: 'tfmg:coal_coke_block' },
         'tfmg:coal_coke_block',
         'immersiveengineering:coke'
     )
     event.replaceOutput(
-        {output: 'tfmg:creosote'},
+        { output: 'tfmg:creosote' },
         'tfmg:creosote',
         'immersiveengineering:creosote'
     )
     event.replaceInput(
-        {input: 'tfmg:creosote'},
+        { input: 'tfmg:creosote' },
         'tfmg:creosote',
         'immersiveengineering:creosote'
     )
     event.replaceInput(
-        {input: 'tfmg:heavy_plate'},
+        { input: 'tfmg:heavy_plate' },
         'tfmg:heavy_plate',
         '#forge:plates/steel'
     )
     event.replaceInput(
-        {input: 'tfmg:steel_ingot'},
+        { input: 'tfmg:nitrate_dust' },
+        'tfmg:nitrate_dust',
+        '#forge:dusts/saltpeter'
+    )
+    event.replaceInput(
+        { input: 'tfmg:steel_ingot' },
         'tfmg:steel_ingot',
         '#forge:ingots/steel'
     )
     event.replaceInput(
-        {input: 'tfmg:fireclay_ball'},
+        { input: 'tfmg:fireclay_ball' },
         'tfmg:fireclay_ball',
         'tfc:fire_clay'
     )
     event.replaceInput(
-        {input: 'tfmg:fireproof_brick'},
-        'tfmg:fireproof_brick',
-        'tfc:ceramic/fire_brick'
-    )
-    event.replaceInput(
-        {input: 'tfmg:sulfur_dust'},
+        { input: 'tfmg:sulfur_dust' },
         'tfmg:sulfur_dust',
         '#forge:dusts/sulfur'
     )
     event.replaceInput(
-        {input: 'tfmg:limesand'},
+        { input: 'tfmg:limesand' },
         'tfmg:limesand',
-        'tfc:powder/flux'
+        '#tfc:flux'
     )
     event.replaceInput(
-        {input: 'tfmg:coal_coke'},
+        { input: 'tfmg:coal_coke' },
         'tfmg:coal_coke',
-        'immersiveengineering:coal_coke'
+        '#forge:coal_coke'
     )
     event.replaceOutput(
-        {output: 'tfmg:coal_coke'},
+        { output: 'tfmg:coal_coke' },
         'tfmg:coal_coke',
         'immersiveengineering:coal_coke'
     )
     event.replaceInput(
-        {input: 'create:crushed_raw_iron'},
+        { input: 'create:crushed_raw_iron' },
         'create:crushed_raw_iron',
         '#tfmg:steel_creation'
     )
     event.replaceInput(
-        {input: 'minecraft:coal'},
+        { input: 'minecraft:coal' },
         'minecraft:coal',
         '#tfmg:fuel_compat'
     )
     event.replaceOutput(
-        {id: 'tfmg:factory_floor_from_ingots_aluminum_stonecutting'},
+        { id: 'tfmg:factory_floor_from_ingots_aluminum_stonecutting' },
         'tfmg:factory_floor',
         Item.of('tfmg:factory_floor', 8)
     )
     $tfmgExistingIngots.forEach((metal) => {
         event.replaceInput(
-            {input: `tfmg:${metal}_ingot`},
+            { input: `tfmg:${metal}_ingot` },
             `tfmg:${metal}_ingot`,
             `#forge:ingots/${metal}`
         )
         event.replaceInput(
-            {input: `tfmg:${metal}_sheet`},
+            { input: `tfmg:${metal}_sheet` },
             `tfmg:${metal}_sheet`,
             `#forge:plates/${metal}`
         )
@@ -147,8 +160,9 @@ const TFMGRecipes = (event) => {
     )
 
     //TFMG Coking
-    event.recipes.tfmg.coking('#tfmg:fuel_compat', ['immersiveengineering:coal_coke', Fluid.of('immersiveengineering:creosote', 1), Fluid.of('tfmg:carbon_dioxide', 30)], 2000)
-    event.recipes.tfmg.coking('#minecraft:logs', ['minecraft:charcoal', Fluid.of('immersiveengineering:creosote', 2), Fluid.of('tfmg:carbon_dioxide', 20)], 1000)
+    event.recipes.tfmg.coking('#tfmg:fuel_compat', ['immersiveengineering:coal_coke', Fluid.of('immersiveengineering:creosote', 1), Fluid.of('tfmg:carbon_dioxide', 20)], 500)
+    event.recipes.tfmg.coking('#minecraft:logs', ['minecraft:charcoal', Fluid.of('immersiveengineering:creosote', 1), Fluid.of('tfmg:carbon_dioxide', 20)], 250)
+    event.recipes.tfmg.coking('#c:storage_blocks/coal', ['immersiveengineering:coke', Fluid.of('immersiveengineering:creosote', 1), Fluid.of('tfmg:carbon_dioxide', 20)], 5000)
 
     //Sequenced Assembly (I hate these)
     event.recipes.create.sequenced_assembly(

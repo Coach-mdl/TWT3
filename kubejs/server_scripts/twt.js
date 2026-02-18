@@ -7,6 +7,7 @@ const TWTRecipes = (event) => {
     $nuggetcompat.forEach((nugget) => {
 
         event.remove({not: {type: 'tfc:anvil'}, output: `${nugget}`})
+        event.remove({id: 'exposure:lightroom'})
 
     })
 
@@ -46,6 +47,12 @@ const TWTRecipes = (event) => {
         'minecraft:barrel',
         '#tfc:barrels'
     )
+    event.replaceInput(
+        {input: 'minecraft:iron_trapdoor'},
+        'minecraft:iron_trapdoor',
+        'tfc:metal/sheet/wrought_iron'
+    )
+    
 
     //WoodenCog Heated Compacting
     function missingcompactingrecipes(input1, min1, input2, min2, output) {

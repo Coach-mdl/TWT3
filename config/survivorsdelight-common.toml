@@ -18,4 +18,12 @@
 	#How many percentile of hydration deviated from usual range is allowed for crops planted on rich soil farmlands to grow.
 	#Range: 0 ~ 100
 	richSoilFarmlandHydrationExpansion = 5
+	#If false, crops with no proper crop block entity would be popped off on rich soil farmlands.
+	richSoilFarmlandAllowNonTFCCrop = true
+	#Chance (0~1) for rich soil random tick to spawn a mushroom on the block above, if it is air.
+	#Range: 0.0 ~ 1.0
+	richSoilRandomMushroomChance = 1.0
+	#Chance (0~1) that the spawned mushroom is a brown mushroom. (Otherwise red mushroom)
+	#Range: 0.0 ~ 1.0
+	richSoilRandomMushroomBrownChance = 0.1
 

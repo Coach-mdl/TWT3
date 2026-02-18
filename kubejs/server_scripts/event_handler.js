@@ -62,6 +62,7 @@ ServerEvents.recipes(event => {
     BeneathRecipes(event)
     CreateRecipes(event)
     TFMGRecipes(event)
+    createadditionRecipes(event)
     ImmersiveEngineeringRecipes(event)
     FarmersDelightRecipes(event)
     AlekishipsRecipes(event)
