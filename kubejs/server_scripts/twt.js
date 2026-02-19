@@ -6,53 +6,72 @@ const TWTRecipes = (event) => {
     //removal
     $nuggetcompat.forEach((nugget) => {
 
-        event.remove({not: {type: 'tfc:anvil'}, output: `${nugget}`})
-        event.remove({id: 'exposure:lightroom'})
+        event.remove({ not: { type: 'tfc:anvil' }, output: `${nugget}` })
+        event.remove({ id: 'exposure:lightroom' })
 
     })
 
     //Replace
     event.replaceInput(
-        {input: 'minecraft:campfire'},
+        { input: 'minecraft:campfire' },
         'minecraft:campfire',
         'minecraft:charcoal'
     )
     event.replaceInput(
-        {input: 'minecraft:iron_block'},
+        { input: 'minecraft:iron_block' },
         'minecraft:iron_block',
         'tfc:metal/double_ingot/wrought_iron'
     )
     event.replaceInput(
-        {input: 'minecraft:smooth_stone'},
+        { input: 'minecraft:smooth_stone' },
         'minecraft:smooth_stone',
         '#forge:stone'
     )
     event.replaceInput(
-        {input: 'minecraft:dried_kelp'},
+        { input: 'minecraft:dried_kelp' },
         'minecraft:dried_kelp',
         'tfc:food/dried_kelp'
     )
     event.replaceInput(
-        {input: 'minecraft:chest'},
+        { input: 'minecraft:chest' },
         'minecraft:chest',
         '#forge:chests'
     )
     event.replaceInput(
-        {id: 'man_of_many_planes:scarlet_biplane'},
+        { id: 'man_of_many_planes:scarlet_biplane' },
         'minecraft:iron_ingot',
         'tfc:metal/sheet/wrought_iron'
     )
     event.replaceInput(
-        {input: 'minecraft:barrel'},
+        { input: 'minecraft:barrel' },
         'minecraft:barrel',
         '#tfc:barrels'
     )
     event.replaceInput(
-        {input: 'minecraft:iron_trapdoor'},
+        { input: 'minecraft:iron_trapdoor' },
         'minecraft:iron_trapdoor',
-        'tfc:metal/sheet/wrought_iron'
+        'tfc:metal/sheet/wrought_iro'
     )
-    
+
+    //Create Milling
+    function oldOreDust(input, output) {
+        event.recipes.create.milling(
+            [
+                output
+            ],
+            [
+                input
+            ]
+        )
+    }
+    /*
+    PLayers should no longer be able to obtain the other types of bauxite.
+    This is a lazy recipe for anyone who still has it.
+    */
+    oldOreDust(/^dfc:ore\/.*_native_aluminum$/, '6x tfc_ie_addon:powder/bauxite')
+    oldOreDust(/^dfc:ore\/.*_bauxite$/, '6x tfc_ie_addon:powder/bauxite')
+    oldOreDust(/^dfc:ore\/.*_galena$/, '6x tfc_ie_addon:powder/galena')
+
 
     //WoodenCog Heated Compacting
     function missingcompactingrecipes(input1, min1, input2, min2, output) {
@@ -61,19 +80,19 @@ const TWTRecipes = (event) => {
             ingredients: [
                 {
                     type: 'woodencog:heated',
-                    ingredient: {item: input1},
+                    ingredient: { item: input1 },
                     min_temp: min1,
                     max_temp: 3000
                 },
                 {
                     type: 'woodencog:heated',
-                    ingredient: {item: input2},
+                    ingredient: { item: input2 },
                     min_temp: min2,
                     max_temp: 3000
                 },
                 {
                     type: 'woodencog:heated',
-                    ingredient: {item: 'tfc:powder/flux'},
+                    ingredient: { item: 'tfc:powder/flux' },
                     max_temp: 3000
                 }
             ],
@@ -132,43 +151,43 @@ const TWTRecipes = (event) => {
 
     //Shapeless
     $ores.forEach((ore) => {
-            event.recipes.tfc.extra_products_shapeless_crafting(
-                [{item: `tfc:ore/small_${ore}`, count: 1}],
-                event.recipes.tfc.damage_inputs_shapeless_crafting(
-                    event.recipes.minecraft.crafting_shapeless(
-                        `tfc:ore/normal_${ore}`,
-                        ['#tfc:hammers', `tfc:ore/rich_${ore}`]
-                    )
+        event.recipes.tfc.extra_products_shapeless_crafting(
+            [{ item: `tfc:ore/small_${ore}`, count: 1 }],
+            event.recipes.tfc.damage_inputs_shapeless_crafting(
+                event.recipes.minecraft.crafting_shapeless(
+                    `tfc:ore/normal_${ore}`,
+                    ['#tfc:hammers', `tfc:ore/rich_${ore}`]
                 )
             )
-        }
+        )
+    }
     )
     $dfcOres.forEach((ore) => {
-            event.recipes.tfc.extra_products_shapeless_crafting(
-                [{item: `dfc:ore/small_${ore}`, count: 1}],
-                event.recipes.tfc.damage_inputs_shapeless_crafting(
-                    event.recipes.minecraft.crafting_shapeless(
-                        `dfc:ore/normal_${ore}`,
-                        ['#tfc:hammers', `dfc:ore/rich_${ore}`]
-                    )
+        event.recipes.tfc.extra_products_shapeless_crafting(
+            [{ item: `dfc:ore/small_${ore}`, count: 1 }],
+            event.recipes.tfc.damage_inputs_shapeless_crafting(
+                event.recipes.minecraft.crafting_shapeless(
+                    `dfc:ore/normal_${ore}`,
+                    ['#tfc:hammers', `dfc:ore/rich_${ore}`]
                 )
             )
-        }
+        )
+    }
     )
     $IEores.forEach((ore) => {
-            event.recipes.tfc.extra_products_shapeless_crafting(
-                [{item: `tfc_ie_addon:ore/small_${ore}`, count: 1}],
-                event.recipes.tfc.damage_inputs_shapeless_crafting(
-                    event.recipes.minecraft.crafting_shapeless(
-                        `tfc_ie_addon:ore/normal_${ore}`,
-                        ['#tfc:hammers', `tfc_ie_addon:ore/rich_${ore}`]
-                    )
+        event.recipes.tfc.extra_products_shapeless_crafting(
+            [{ item: `tfc_ie_addon:ore/small_${ore}`, count: 1 }],
+            event.recipes.tfc.damage_inputs_shapeless_crafting(
+                event.recipes.minecraft.crafting_shapeless(
+                    `tfc_ie_addon:ore/normal_${ore}`,
+                    ['#tfc:hammers', `tfc_ie_addon:ore/rich_${ore}`]
                 )
             )
-        }
+        )
+    }
     )
     event.recipes.tfc.extra_products_shapeless_crafting(
-        [{item: `firmalife:ore/small_chromite`, count: 1}],
+        [{ item: `firmalife:ore/small_chromite`, count: 1 }],
         event.recipes.tfc.damage_inputs_shapeless_crafting(
             event.recipes.minecraft.crafting_shapeless(
                 `firmalife:ore/normal_chromite`,
@@ -451,19 +470,19 @@ const TWTRecipes = (event) => {
             ingredients: [
                 {
                     type: 'woodencog:heated',
-                    ingredient: {item: input1},
+                    ingredient: { item: input1 },
                     min_temp: min1,
                     max_temp: 3000
                 },
                 {
                     type: 'woodencog:heated',
-                    ingredient: {item: input2},
+                    ingredient: { item: input2 },
                     min_temp: min2,
                     max_temp: 3000
                 },
                 {
                     type: 'woodencog:heated',
-                    ingredient: {tag: 'tfc:flux'},
+                    ingredient: { tag: 'tfc:flux' },
                     max_temp: 3000
                 }
             ],
@@ -485,6 +504,7 @@ const TWTRecipes = (event) => {
             `tfc:metal/double_sheet/${metal}`
         )
     })
+
 }
 
 

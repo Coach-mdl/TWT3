@@ -18,6 +18,8 @@ CHANGES:
 - IE unobtainable metal blocks are now obtainable.
 - Schematicannons are now obtainable.
 - TFC dried kelp can now be used for create recipes that use dried kelp.
+- DFC galena, bauxite and aluminum ore now drop IE variants. Old ores can be ground into 6 bauxite dust.
+- Another ore doubling method for aluminum that stacks with IE's method.
 - Updated Forge to 47.4.13
 
 REMOVED:

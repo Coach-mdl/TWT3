@@ -23,13 +23,29 @@ const TFMGRecipes = (event) => {
     event.remove({ id: 'tfmg:crushing/coal_coke' })
     event.remove({ id: 'tfmg:smelting/fireproof_brick' })
     event.remove({ id: 'tfmg:crushing/dirt' })
-
+    event.remove({ id: 'tfmg:industrial_blasting/steel_from_raw_iron' })
+    event.remove({ id: 'tfmg:industrial_blasting/steel' })
+    event.remove({ id: 'tfmg:industrial_blasting/steel_from_dust' })
+    event.remove({ id: 'createaddition:compat/immersiveengineering/crushing/coal_coke' })
+    event.remove({ id: 'create:crushing/compat/immersiveengineering/coal_coke' })
+    event.remove({ id: 'tfmg:vat_machine_recipe/arc_furnace_steel' })
+    event.remove({ id: 'tfmg:crafting/kinetics/fireclay' })
 
     //Replace
     event.replaceInput(
-        { input: 'tfmg:coal_coke_dust' },
-        'tfmg:coal_coke_dust',
-        'immersiveengineering:dust_coke'
+        { input: 'tfmg:fireproof_brick'},
+        'tfmg:fireproof_brick',
+        'tfc:ceramic/fire_brick'
+    )
+    event.replaceInput(
+        { input: 'immersiveengineering:dust_coke' },
+        'immersiveengineering:dust_coke',
+        '#tfmg:blast_furnace_fuel'
+    )
+    event.replaceOutput(
+        { output: 'immersiveengineering:dust_coke' },
+        'immersiveengineering:dust_coke',
+        'tfmg:coal_coke_dust'
     )
     event.replaceInput(
         { id: 'tfmg:mixing/thermite' },
@@ -122,7 +138,31 @@ const TFMGRecipes = (event) => {
             `tfmg:${metal}_sheet`,
             `#forge:plates/${metal}`
         )
+        event.replaceInput(
+            { id: 'tfmg:crafting/kinetics/copper_cable_hub' },
+            'minecraft:copper_ingot',
+            '#forge:nuggets/copper'
+        )
+        event.replaceInput(
+            { id: 'tfmg:crafting/kinetics/aluminum_cable_hub' },
+            'minecraft:copper_ingot',
+            '#forge:nuggets/aluminum'
+        )
     })
+
+    //TFC Quern
+    event.recipes.tfc.quern(Item.of('tfmg:coal_coke_dust'), 'immersiveengineering:coal_coke')
+
+    //Create Milling
+    event.recipes.create.milling(
+        [
+            Item.of('tfmg:coal_coke_dust')
+        ],
+        [
+            Item.of('immersiveengineering:coal_coke')
+        ],
+        300
+    ).id('twt:coke_milling')
 
     //TFC Heating
     event.recipes.tfc.heating('tfmg:crushed_raw_lithium', 180.5).resultItem('tfmg:lithium_ingot')
@@ -164,6 +204,119 @@ const TFMGRecipes = (event) => {
     event.recipes.tfmg.coking('#minecraft:logs', ['minecraft:charcoal', Fluid.of('immersiveengineering:creosote', 1), Fluid.of('tfmg:carbon_dioxide', 20)], 250)
     event.recipes.tfmg.coking('#c:storage_blocks/coal', ['immersiveengineering:coke', Fluid.of('immersiveengineering:creosote', 1), Fluid.of('tfmg:carbon_dioxide', 20)], 5000)
 
+    //Create Compacting
+    event.recipes.create.compacting(
+        [
+            Item.of('tfmg:bauxite_powder')
+        ],
+        [
+            Item.of('tfc_ie_addon:powder/bauxite', 20)
+        ],
+    ).heated()
+
+    //TFMG Industrial Blasting
+    //Custom has to be used here. The schema won't add multiple outputs.
+    event.custom({
+        type: 'tfmg:industrial_blasting',
+        hotAirUsage: 20,
+        ingredients: [
+            {
+                tag: 'tfmg:steel_creation',
+            },
+            {
+                tag: 'tfc:flux'
+            }
+        ],
+        processingTime: 1000,
+        results: [
+            {
+                fluid: 'tfc:metal/pig_iron',
+                amount: 100
+            },
+            {
+                fluid: 'tfmg:molten_slag',
+                amount: 100
+            },
+            {
+                fluid: 'tfmg:furnace_gas',
+                amount: 200
+            }
+        ]
+    }).id('twt:industrial_blasting/pig_iron')
+
+    //TFMG vat_machine_recipe
+    //We're going with custom here because the KJS schema physically hurts me to look at.
+    event.custom({
+        type: 'tfmg:vat_machine_recipe',
+        allowedVatTypes: [
+            'tfmg:firebrick_lined_vat'
+        ],
+        ingredients: [
+            {
+                tag: 'tfmg:steel_creation'
+            },
+            {
+                tag: 'tfc:flux'
+            },
+            {
+                tag: 'tfmg:blast_furnace_fuel'
+            }
+        ],
+        machines: [
+            'tfmg:graphite_electrode',
+            'tfmg:graphite_electrode',
+            'tfmg:graphite_electrode'
+        ],
+        minSize: 9,
+        processingTime: 500,
+        results: [
+            {
+                item: 'tfmg:coal_coke_dust',
+                chance: 0.9
+            },
+            {
+                fluid: 'tfc:metal/pig_iron',
+                amount: 100
+            },
+            {
+                fluid: 'tfmg:molten_slag',
+                amount: 200
+            }
+        ]
+    }).id('twt:vat_machine_recipe/steel_creation')
+
+    event.custom({
+        type: 'tfmg:vat_machine_recipe',
+        allowedVatTypes: [
+            'tfmg:steel_vat',
+            'tfmg:firebrick_lined_vat'
+        ],
+        heatRequirement: 'heated',
+        ingredients: [
+            {
+                item: 'tfmg:bauxite_powder'
+            },
+            {
+                item: 'tfmg:bauxite_powder'
+            },
+            {
+                item: 'tfmg:bauxite_powder'
+            }
+        ],
+        machines: [
+            'tfmg:electrode',
+            'tfmg:electrode'
+        ],
+        minSize: 1,
+        processingTime: 500,
+        results: [
+            {
+                fluid: 'tfc_ie_addon:metal/aluminum',
+                amount: 600
+            }
+        ]
+    }).id('twt:vat_machine_recipe/aluminum')
+
     //Sequenced Assembly (I hate these)
     event.recipes.create.sequenced_assembly(
         [
@@ -187,6 +340,7 @@ const TFMGTags = (event) => {
     event.add('twt:treated_woods', ['tfmg:hardened_planks', 'immersiveengineering:treated_wood_horizontal'])
     event.add('tfc:deals_slashing_damage', 'tfmg:lithium_blade')
     event.add('tfmg:flux', '#tfc:flux')
+    event.add('tfmg:blast_furnace_fuel', 'immersiveengineering:dust_coke')
 }
 
 const TFMGData = (event) => {

@@ -3,50 +3,51 @@
 const CreateRecipes = (event) => {
 
     //removal
-    event.remove({id: 'create:crafting/materials/zinc_ingot_from_compacting'})
-    event.remove({id: 'create:crafting/materials/brass_ingot_from_compacting'})
-    event.remove({id: 'create:crafting/materials/zinc_nugget_from_decompacting'})
-    event.remove({id: 'create:crafting/materials/brass_nugget_from_decompacting'})
-    event.remove({id: 'create:crafting/materials/copper_ingot'})
-    event.remove({id: 'create:crafting/materials/copper_nugget'})
-    event.remove({id: 'minecraft:copper_block'})
-    event.remove({id: 'minecraft:copper_ingot'})
-    event.remove({id: 'minecraft:copper_ingot_from_waxed_copper_block'})
-    event.remove({id: 'create:mixing/brass_ingot'})
+    event.remove({ id: 'create:crafting/materials/zinc_ingot_from_compacting' })
+    event.remove({ id: 'create:crafting/materials/brass_ingot_from_compacting' })
+    event.remove({ id: 'create:crafting/materials/zinc_nugget_from_decompacting' })
+    event.remove({ id: 'create:crafting/materials/brass_nugget_from_decompacting' })
+    event.remove({ id: 'create:crafting/materials/copper_ingot' })
+    event.remove({ id: 'create:crafting/materials/copper_nugget' })
+    event.remove({ id: 'minecraft:copper_block' })
+    event.remove({ id: 'minecraft:copper_ingot' })
+    event.remove({ id: 'minecraft:copper_ingot_from_waxed_copper_block' })
+    event.remove({ id: 'create:mixing/brass_ingot' })
 
-    event.remove({id: 'create:crushing/leather_horse_armor'})
-    event.remove({id: 'create:milling/saddle'})
+    event.remove({ id: 'create:crushing/leather_horse_armor' })
+    event.remove({ id: 'create:milling/saddle' })
 
-    event.remove({id: 'create:crafting/kinetics/basin'})
-    event.remove({id: 'woodencog:rock_knapping/andesite_alloy'})
-    event.remove({id: 'create:mixing/andesite_alloy_from_zinc'})
-    event.remove({id: 'create:mixing/andesite_alloy'})
+    event.remove({ id: 'create:crafting/kinetics/basin' })
+    event.remove({ id: 'woodencog:rock_knapping/andesite_alloy' })
+    event.remove({ id: 'create:mixing/andesite_alloy_from_zinc' })
+    event.remove({ id: 'create:mixing/andesite_alloy' })
 
-    event.remove({id: 'create:mixing/chocolate'})
-    event.remove({id: 'create:haunting/soul_campfire'})
-    event.remove({id: 'create:crafting/kinetics/mechanical_press'})
-    event.remove({id: 'woodencog:crafting/schematics/schematicannon'})
-    event.remove({id: 'woodencog:crafting/schematics/schematic_and_quill'})
-    event.remove({id: 'woodencog:crafting/schematics/empty_schematic'})
+    event.remove({ id: 'create:mixing/chocolate' })
+    event.remove({ id: 'create:haunting/soul_campfire' })
+    event.remove({ id: 'create:crafting/kinetics/mechanical_press' })
+    event.remove({ id: 'woodencog:crafting/schematics/schematicannon' })
+    event.remove({ id: 'woodencog:crafting/schematics/schematic_and_quill' })
+    event.remove({ id: 'woodencog:crafting/schematics/empty_schematic' })
+    event.remove({ id: 'woodencog:crafting/materials/rose_quartz' })
 
     //replace
     event.replaceOutput(
-        {mod: 'create'},
+        { mod: 'create' },
         'create:zinc_ingot',
         'tfc:metal/ingot/zinc'
     )
     event.replaceOutput(
-        {mod: 'create'},
+        { mod: 'create' },
         'create:brass_ingot',
         'tfc:metal/ingot/brass'
     )
     event.replaceInput(
-        {id: 'create:crafting/materials/andesite_alloy'},
+        { id: 'create:crafting/materials/andesite_alloy' },
         'minecraft:andesite',
         'tfc:rock/raw/andesite'
     )
     event.replaceInput(
-        {id: 'create:crafting/materials/andesite_alloy_from_zinc'},
+        { id: 'create:crafting/materials/andesite_alloy_from_zinc' },
         'minecraft:andesite',
         'tfc:rock/raw/andesite'
     )
@@ -169,4 +170,3 @@ const CreateItemTags = (event) => {
 
     event.add('create:sleepers', '#forge:smooth_stone_slab')
 }
-                     
