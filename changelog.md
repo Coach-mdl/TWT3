@@ -3,7 +3,7 @@ CHANGES:
 - Added recipes for create chocolate and honey.
 - Added recipe for vanilla glass bottles.
 - Added more entries to the create:sleepers tag.
-- Added recipes to convert other milks into cow's milk.
+- Added recipes to convert other milks into standard milk.
 - Added Renewable recipes for zinc and iron that don't require vanilla item glorp.
 - Renewable tin, copper and silver.
 - All duplicate DFC ores now drop their IE counterparts.
@@ -20,6 +20,7 @@ CHANGES:
 - TFC dried kelp can now be used for create recipes that use dried kelp.
 - DFC galena, bauxite and aluminum ore now drop IE variants. Old ores can be ground into 6 bauxite dust.
 - Another ore doubling method for aluminum that stacks with IE's method.
+- IE insulating glass has an easier recipe.
 - Updated Forge to 47.4.13
 
 REMOVED:
@@ -40,6 +41,7 @@ ADDED:
 - Create: Copycat+
 - Create: Steam & Rails
 - Create: Better FPS
+- Create: Enchantment Industry
 - Petrol's Parts For Create & Petrolpark Library
 - Create: Blocks & Bogies
 - TFMG

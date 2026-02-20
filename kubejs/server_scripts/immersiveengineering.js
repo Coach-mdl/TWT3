@@ -4,31 +4,32 @@
 const ImmersiveEngineeringRecipes = (event) => {
 
     //removal
-    event.remove({ output: 'immersiveengineering:nugget_steel' })
-    event.remove({ id: /^immersiveengineering:crafting\/nugget_.*_to_ingot_.*$/ })
-    event.remove({ id: /^immersiveengineering:alloysmelter\/.*$/ })
-    event.remove({ output: 'immersiveengineering:ingot_nickel' })
-    event.remove({ output: 'immersiveengineering:ingot_silver' })
-    event.remove({ output: 'immersiveengineering:ingot_steel' })
-    event.remove({ id: 'immersiveengineering:blastfurnace/steel_block' })
-    event.remove({ id: 'immersiveengineering:crafting/storage_constantan_to_ingot_constantan' })
-    event.remove({ id: 'immersiveengineering:crafting/storage_electrum_to_ingot_electrum' })
-    event.remove({ id: 'immersiveengineering:crafting/storage_aluminum_to_ingot_aluminum' })
-    event.remove({ id: 'immersiveengineering:crafting/storage_lead_to_ingot_lead' })
+    event.remove({output: 'immersiveengineering:nugget_steel'})
+    event.remove({id: /^immersiveengineering:crafting\/nugget_.*_to_ingot_.*$/})
+    event.remove({id: /^immersiveengineering:alloysmelter\/.*$/})
+    event.remove({output: 'immersiveengineering:ingot_nickel'})
+    event.remove({output: 'immersiveengineering:ingot_silver'})
+    event.remove({output: 'immersiveengineering:ingot_steel'})
+    event.remove({id: 'immersiveengineering:blastfurnace/steel_block'})
+    event.remove({id: 'immersiveengineering:crafting/storage_constantan_to_ingot_constantan'})
+    event.remove({id: 'immersiveengineering:crafting/storage_electrum_to_ingot_electrum'})
+    event.remove({id: 'immersiveengineering:crafting/storage_aluminum_to_ingot_aluminum'})
+    event.remove({id: 'immersiveengineering:crafting/storage_lead_to_ingot_lead'})
+    event.remove({id: 'immersiveengineering:arcfurnace/insulating_glass'})
 
     //replace
     event.replaceInput(
-        { id: 'immersiveengineering:crafting/voltmeter' },
+        {id: 'immersiveengineering:crafting/voltmeter'},
         'minecraft:compass',
         '#minecraft:compasses'
     )
     event.replaceInput(
-        { id: 'tfc_ie_addon:metalpress/steel_block' },
+        {id: 'tfc_ie_addon:metalpress/steel_block'},
         '#forge:ingots/steel',
         Item.of('tfc:metal/double_ingot/steel', 1)
     )
     event.replaceInput(
-        { id: 'tfc_ie_addon:metalpress/uranium_block' },
+        {id: 'tfc_ie_addon:metalpress/uranium_block'},
         '#forge:ingots/uranium',
         Item.of('tfc_ie_addon:metal/double_ingot/uranium', 1)
     )
@@ -53,40 +54,25 @@ const ImmersiveEngineeringRecipes = (event) => {
     )
 
     //Shapeless
-    event.shapeless(
-        [
-            'immersiveengineering:slag'
-        ],
-        [
-            'tfmg:slag_block'
-        ]
-    )
+    event.shapeless(Item.of('immersiveengineering:slag', 1),
+        ['tfmg:slag_block'])
 
     //TFC Heating
     event.recipes.tfc.heating('minecraft:bricks', 600)
         .resultItem('immersiveengineering:clinker_brick')
 
     //Create Mixing
-    event.custom({
-        type: 'create:mixing',
-        heatRequirement: 'heated',
-        ingredients: [
-            {
-                tag: 'forge:glass'
-            },
-            {
-                tag: 'forge:dusts/iron'
-            }
+    event.recipes.create.mixing(
+        [
+            Item.of('immersiveengineering:insulating_glass', 2)
         ],
-        results: [
-            {
-                count: 2,
-                item: 'immersiveengineering:insulating_glass'
-            }
+        [
+            '#forge:glass',
+            /^tfc:powder\/(hematite|limonite|magnetite)/
         ]
-    })
-}
+    )
 
+}
 
 
 const ImmersiveEngineeringData = (event) => {

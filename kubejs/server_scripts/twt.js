@@ -6,49 +6,49 @@ const TWTRecipes = (event) => {
     //removal
     $nuggetcompat.forEach((nugget) => {
 
-        event.remove({ not: { type: 'tfc:anvil' }, output: `${nugget}` })
-        event.remove({ id: 'exposure:lightroom' })
+        event.remove({not: {type: 'tfc:anvil'}, output: `${nugget}`})
+        event.remove({id: 'exposure:lightroom'})
 
     })
 
     //Replace
     event.replaceInput(
-        { input: 'minecraft:campfire' },
+        {input: 'minecraft:campfire'},
         'minecraft:campfire',
         'minecraft:charcoal'
     )
     event.replaceInput(
-        { input: 'minecraft:iron_block' },
+        {input: 'minecraft:iron_block'},
         'minecraft:iron_block',
         'tfc:metal/double_ingot/wrought_iron'
     )
     event.replaceInput(
-        { input: 'minecraft:smooth_stone' },
+        {input: 'minecraft:smooth_stone'},
         'minecraft:smooth_stone',
         '#forge:stone'
     )
     event.replaceInput(
-        { input: 'minecraft:dried_kelp' },
+        {input: 'minecraft:dried_kelp'},
         'minecraft:dried_kelp',
         'tfc:food/dried_kelp'
     )
     event.replaceInput(
-        { input: 'minecraft:chest' },
+        {input: 'minecraft:chest'},
         'minecraft:chest',
         '#forge:chests'
     )
     event.replaceInput(
-        { id: 'man_of_many_planes:scarlet_biplane' },
+        {id: 'man_of_many_planes:scarlet_biplane'},
         'minecraft:iron_ingot',
         'tfc:metal/sheet/wrought_iron'
     )
     event.replaceInput(
-        { input: 'minecraft:barrel' },
+        {input: 'minecraft:barrel'},
         'minecraft:barrel',
         '#tfc:barrels'
     )
     event.replaceInput(
-        { input: 'minecraft:iron_trapdoor' },
+        {input: 'minecraft:iron_trapdoor'},
         'minecraft:iron_trapdoor',
         'tfc:metal/sheet/wrought_iro'
     )
@@ -64,6 +64,7 @@ const TWTRecipes = (event) => {
             ]
         )
     }
+
     /*
     PLayers should no longer be able to obtain the other types of bauxite.
     This is a lazy recipe for anyone who still has it.
@@ -80,19 +81,19 @@ const TWTRecipes = (event) => {
             ingredients: [
                 {
                     type: 'woodencog:heated',
-                    ingredient: { item: input1 },
+                    ingredient: {item: input1},
                     min_temp: min1,
                     max_temp: 3000
                 },
                 {
                     type: 'woodencog:heated',
-                    ingredient: { item: input2 },
+                    ingredient: {item: input2},
                     min_temp: min2,
                     max_temp: 3000
                 },
                 {
                     type: 'woodencog:heated',
-                    ingredient: { item: 'tfc:powder/flux' },
+                    ingredient: {item: 'tfc:powder/flux'},
                     max_temp: 3000
                 }
             ],
@@ -151,49 +152,64 @@ const TWTRecipes = (event) => {
 
     //Shapeless
     $ores.forEach((ore) => {
-        event.recipes.tfc.extra_products_shapeless_crafting(
-            [{ item: `tfc:ore/small_${ore}`, count: 1 }],
-            event.recipes.tfc.damage_inputs_shapeless_crafting(
-                event.recipes.minecraft.crafting_shapeless(
-                    `tfc:ore/normal_${ore}`,
-                    ['#tfc:hammers', `tfc:ore/rich_${ore}`]
+            event.recipes.tfc.extra_products_shapeless_crafting(
+                [{item: `tfc:ore/small_${ore}`, count: 1}],
+                event.recipes.tfc.damage_inputs_shapeless_crafting(
+                    event.recipes.minecraft.crafting_shapeless(
+                        `tfc:ore/normal_${ore}`,
+                        ['#tfc:hammers', `tfc:ore/rich_${ore}`]
+                    )
                 )
             )
-        )
-    }
+        }
     )
     $dfcOres.forEach((ore) => {
-        event.recipes.tfc.extra_products_shapeless_crafting(
-            [{ item: `dfc:ore/small_${ore}`, count: 1 }],
-            event.recipes.tfc.damage_inputs_shapeless_crafting(
-                event.recipes.minecraft.crafting_shapeless(
-                    `dfc:ore/normal_${ore}`,
-                    ['#tfc:hammers', `dfc:ore/rich_${ore}`]
+            event.recipes.tfc.extra_products_shapeless_crafting(
+                [{item: `dfc:ore/small_${ore}`, count: 1}],
+                event.recipes.tfc.damage_inputs_shapeless_crafting(
+                    event.recipes.minecraft.crafting_shapeless(
+                        `dfc:ore/normal_${ore}`,
+                        ['#tfc:hammers', `dfc:ore/rich_${ore}`]
+                    )
                 )
             )
-        )
-    }
+        }
     )
     $IEores.forEach((ore) => {
-        event.recipes.tfc.extra_products_shapeless_crafting(
-            [{ item: `tfc_ie_addon:ore/small_${ore}`, count: 1 }],
-            event.recipes.tfc.damage_inputs_shapeless_crafting(
-                event.recipes.minecraft.crafting_shapeless(
-                    `tfc_ie_addon:ore/normal_${ore}`,
-                    ['#tfc:hammers', `tfc_ie_addon:ore/rich_${ore}`]
+            event.recipes.tfc.extra_products_shapeless_crafting(
+                [{item: `tfc_ie_addon:ore/small_${ore}`, count: 1}],
+                event.recipes.tfc.damage_inputs_shapeless_crafting(
+                    event.recipes.minecraft.crafting_shapeless(
+                        `tfc_ie_addon:ore/normal_${ore}`,
+                        ['#tfc:hammers', `tfc_ie_addon:ore/rich_${ore}`]
+                    )
                 )
             )
-        )
-    }
+        }
     )
     event.recipes.tfc.extra_products_shapeless_crafting(
-        [{ item: `firmalife:ore/small_chromite`, count: 1 }],
+        [{item: `firmalife:ore/small_chromite`, count: 1}],
         event.recipes.tfc.damage_inputs_shapeless_crafting(
             event.recipes.minecraft.crafting_shapeless(
                 `firmalife:ore/normal_chromite`,
                 ['#tfc:hammers', `firmalife:ore/rich_chromite`]
             )
         )
+    )
+    event.shapeless(Item.of('magistuarmory:gold_heavywarhammer', 1)
+            .enchant('tombstone:sanctified', 1)
+            .withNBT("{Damage:0,display:{Name:'{\"bold\":true,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false,\"color\":\"#CC8899\",\"text\":\"Sphalhammer\"}'}}"),
+        [
+        'tfmg:oil_hammer',
+        'tfmg:thermite_grenade',
+        'precisionprospecting:metal/prospector_drill/steel',
+        'tfmg:pumpjack_hammer_head',
+        'create_enchantment_industry:hyper_experience_bottle',
+        'minecraft:tnt',
+        'minecraft:tnt',
+        'minecraft:tnt',
+        'tfc:ore/rich_sphalerite'
+        ],
     )
 
     //TFC Heating
@@ -470,19 +486,19 @@ const TWTRecipes = (event) => {
             ingredients: [
                 {
                     type: 'woodencog:heated',
-                    ingredient: { item: input1 },
+                    ingredient: {item: input1},
                     min_temp: min1,
                     max_temp: 3000
                 },
                 {
                     type: 'woodencog:heated',
-                    ingredient: { item: input2 },
+                    ingredient: {item: input2},
                     min_temp: min2,
                     max_temp: 3000
                 },
                 {
                     type: 'woodencog:heated',
-                    ingredient: { tag: 'tfc:flux' },
+                    ingredient: {tag: 'tfc:flux'},
                     max_temp: 3000
                 }
             ],
@@ -552,7 +568,8 @@ const ErrorSilencerBlockTags = (event) => {
         'rnr:fluid/concrete', 'mca:infernal_flame', 'railways:casing_collision', 'tfmg:crude_oil', 'tfmg:heavy_oil', 'tfmg:gasoline',
         'tfmg:diesel', 'tfmg:naphtha', 'tfmg:kerosene', 'tfmg:creosote', 'tfmg:molten_steel', 'tfmg:molten_slag', 'tfmg:molten_plastic',
         'tfmg:liquid_silicon', 'tfmg:lubrication_oil', 'tfmg:cooling_fluid', 'tfmg:napalm', 'tfmg:sulfuric_acid', 'tfmg:liquid_concrete',
-        'tfmg:liquid_asphalt', 'tfmg:green_fire', 'tfmg:blue_fire', 'tfmg:lithium_fire', 'createaddition:seed_oil', 'createaddition:bioethanol'])
+        'tfmg:liquid_asphalt', 'tfmg:green_fire', 'tfmg:blue_fire', 'tfmg:lithium_fire', 'createaddition:seed_oil', 'createaddition:bioethanol',
+        'create_enchantment_industry:ink'])
 
     event.add('tfc:can_collapse', [
         'dfc:ore/asbestos/blueschist',

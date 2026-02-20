@@ -65,6 +65,7 @@ ServerEvents.recipes(event => {
     TFMGRecipes(event)
     createadditionRecipes(event)
     FarmersDelightRecipes(event)
+    LycheeRecipes(event)
     AlekishipsRecipes(event)
     WaystonesRecipes(event)
     SNSRecipes(event)

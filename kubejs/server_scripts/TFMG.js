@@ -145,7 +145,7 @@ const TFMGRecipes = (event) => {
         )
         event.replaceInput(
             { id: 'tfmg:crafting/kinetics/aluminum_cable_hub' },
-            'minecraft:copper_ingot',
+            '#forge:ingots/aluminum',
             '#forge:nuggets/aluminum'
         )
     })
@@ -324,14 +324,30 @@ const TFMGRecipes = (event) => {
         ],
         '#forge:plates/steel',
         [
-            event.recipes.create.deploying('tfmg:steel_mechanism', ['tfmg:steel_mechanism', '#forge:wires/copper']),
-            event.recipes.create.deploying('tfmg:steel_mechanism', ['tfmg:steel_mechanism', 'tfmg:steel_cogwheel']),
-            event.recipes.create.deploying('tfmg:steel_mechanism', ['tfmg:steel_mechanism', 'create:electron_tube']),
-            event.recipes.create.pressing('tfmg:steel_mechanism', 'tfmg:steel_mechanism', '#forge:plates/steel'),
-            event.recipes.create.deploying('tfmg:steel_mechanism', ['tfmg:steel_mechanism', 'tfmg:screw']),
-            event.recipes.create.deploying('tfmg:steel_mechanism', ['tfmg:steel_mechanism', 'tfmg:screwdriver']).keepHeldItem(),
+            event.recipes.create.deploying('tfmg:unfinished_steel_mechanism', ['tfmg:unfinished_steel_mechanism', '#forge:wires/copper']),
+            event.recipes.create.deploying('tfmg:unfinished_steel_mechanism', ['tfmg:unfinished_steel_mechanism', 'tfmg:steel_cogwheel']),
+            event.recipes.create.deploying('tfmg:unfinished_steel_mechanism', ['tfmg:unfinished_steel_mechanism', 'create:electron_tube']),
+            event.recipes.create.pressing('tfmg:unfinished_steel_mechanism', 'tfmg:unfinished_steel_mechanism', '#forge:plates/steel'),
+            event.recipes.create.deploying('tfmg:unfinished_steel_mechanism', ['tfmg:unfinished_steel_mechanism', 'tfmg:screw']),
+            event.recipes.create.deploying('tfmg:unfinished_steel_mechanism', ['tfmg:unfinished_steel_mechanism', 'tfmg:screwdriver']).keepHeldItem(),
         ]
-    ).transitionalItem('tfmg:steel_mechanism').loops(1)
+    ).transitionalItem('tfmg:unfinished_steel_mechanism').loops(1).id('twt:sequenced_assembly/steel_mechanism')
+
+    event.recipes.create.sequenced_assembly(
+        [
+            'tfmg:electric_motor'
+        ],
+        'tfmg:heavy_machinery_casing',
+        [
+            event.recipes.create.deploying('tfmg:unfinished_electric_motor', ['tfmg:unfinished_electric_motor', 'tfmg:rotor']),
+            event.recipes.create.deploying('tfmg:unfinished_electric_motor', ['tfmg:unfinished_electric_motor', 'tfmg:stator']),
+            event.recipes.create.deploying('tfmg:unfinished_electric_motor', ['tfmg:unfinished_electric_motor', 'tfmg:screwdriver']).keepHeldItem(),
+            event.recipes.create.deploying('tfmg:unfinished_electric_motor', ['tfmg:unfinished_electric_motor', 'tfmg:electromagnetic_coil']),
+            event.recipes.create.deploying('tfmg:unfinished_electric_motor', ['tfmg:unfinished_electric_motor', 'tfmg:magnet']),
+            event.recipes.create.deploying('tfmg:unfinished_electric_motor', ['tfmg:unfinished_electric_motor', 'create:shaft']),
+            event.recipes.create.deploying('tfmg:unfinished_electric_motor', ['tfmg:unfinished_electric_motor', 'create:mechanical_bearing']),
+        ]
+    ).transitionalItem('tfmg:unfinished_electric_motor').loops(1).id('twt:sequenced_assembly/electric_motor')
 }
 
 const TFMGTags = (event) => {
