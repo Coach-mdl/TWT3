@@ -33,7 +33,7 @@ const TFMGRecipes = (event) => {
 
     //Replace
     event.replaceInput(
-        { input: 'tfmg:fireproof_brick'},
+        { input: 'tfmg:fireproof_brick' },
         'tfmg:fireproof_brick',
         'tfc:ceramic/fire_brick'
     )
@@ -148,6 +148,23 @@ const TFMGRecipes = (event) => {
             '#forge:ingots/aluminum',
             '#forge:nuggets/aluminum'
         )
+    })
+
+    //TFMG casting
+    function tfmgCasting(input, output, id) {
+        event.recipes.tfmg.casting(
+            Fluid.of(input, 100),
+            [
+                output
+            ],
+            100
+        ).id(id)
+    }
+    $tfcMetals.forEach((metal) => {
+        tfmgCasting(`tfc:metal/${metal}`, `tfc:metal/ingot/${metal}`, `twt:tfmgcasting/${metal}`)
+    })
+    $IEMetals.forEach((metal) => {
+        tfmgCasting(`tfc_ie_addon:metal/${metal}`, `immersiveengineering:ingot_${metal}`, `twt:tfmgcasting/${metal}`)
     })
 
     //TFC Quern

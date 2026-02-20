@@ -15,6 +15,7 @@ const $nuggetcompat = ['immersiveengineering:nugget_lead', 'immersiveengineering
 const $ores = ['native_copper', 'native_gold', 'hematite', 'native_silver', 'cassiterite', 'bismuthinite', 'garnierite', 'malachite', 'magnetite', 'limonite', 'sphalerite', 'tetrahedrite']
 const $metals = ['bismuth', 'bismuth_bronze', 'black_bronze', 'bronze', 'brass', 'copper', 'gold', 'nickel', 'rose_gold', 'silver', 'tin', 'zinc', 'sterling_silver', 'wrought_iron', 'cast_iron', 'steel', 'black_steel', 'blue_steel', 'red_steel', 'aluminum', 'alumina', 'lead', 'pewter', 'platinum']
 const $tfcMetals = ['bismuth', 'bismuth_bronze', 'black_bronze', 'bronze', 'brass', 'copper', 'gold', 'nickel', 'rose_gold', 'silver', 'tin', 'zinc', 'sterling_silver', 'wrought_iron', 'cast_iron', 'steel', 'black_steel', 'blue_steel', 'red_steel']
+const $IEMetals = ['aluminum', 'lead', 'uranium', 'constantan', 'electrum']
 const $AllOres = ['chromite', 'native_copper', 'native_gold', 'hematite', 'native_silver', 'cassiterite', 'bismuthinite', 'garnierite', 'malachite', 'magnetite', 'limonite', 'sphalerite', 'tetrahedrite', 'bauxite', 'galena', 'native_aluminum', 'native_platinum', 'uraninite']
 const $dfcOres = ['native_platinum', 'native_aluminum', 'bauxite', 'galena']
 const $IEores = ['bauxite', 'galena', 'uraninite']

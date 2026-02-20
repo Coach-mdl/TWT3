@@ -196,9 +196,8 @@ const TWTRecipes = (event) => {
             )
         )
     )
-    event.shapeless(Item.of('magistuarmory:gold_heavywarhammer', 1)
-            .enchant('tombstone:sanctified', 1)
-            .withNBT("{Damage:0,display:{Name:'{\"bold\":true,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false,\"color\":\"#CC8899\",\"text\":\"Sphalhammer\"}'}}"),
+    event.shapeless(Item.of('magistuarmory:tin_heavywarhammer', 1)
+            .withNBT("{Damage:60,display:{Name:'{\"bold\":true,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false,\"color\":\"#523d42\",\"text\":\"Unblessed Sphalhammer\"}'}}"),
         [
         'tfmg:oil_hammer',
         'tfmg:thermite_grenade',

@@ -159,3 +159,6 @@ usernamecache.json
 /config/sounds/chat.json
 /config/railways-client.toml
 /config/copycats-client.toml
+kubejs/server_scripts/TFMG.js
+config/chat_heads.json5
+config/NoChatReports/NCR-Client.json

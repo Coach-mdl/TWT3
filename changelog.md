@@ -52,6 +52,9 @@ ADDED:
 - TFC Ruins (You'll find these in new chunks)
 - Survivor's Delight & Survivor's Utilities
 - Lychee & LycheeJS
+- No Chat Restrictions
+- No Chat Reports
+- Chat Heads
 - In Control
 
 UPDATED:
