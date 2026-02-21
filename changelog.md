@@ -42,6 +42,7 @@ ADDED:
 - Create: Steam & Rails
 - Create: Better FPS
 - Create: Enchantment Industry
+- Create: Vintage
 - Petrol's Parts For Create & Petrolpark Library
 - Create: Blocks & Bogies
 - TFMG
@@ -56,6 +57,8 @@ ADDED:
 - No Chat Reports
 - Chat Heads
 - In Control
+- Macaw's Doors
+- Macaw's Trapdoors
 
 UPDATED:
 - Cupboard

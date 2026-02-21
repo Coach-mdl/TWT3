@@ -1,6 +1,6 @@
 
 
-const createadditionRecipes = (event) => {
+const CreateadditionRecipes = (event) => {
     //removal
     event.remove({ output: /^createaddition:electrum_(sheet|ingot|nugget|block)$/ })
     event.remove({ id: 'immersiveengineering:metalpress/rod_copper' })

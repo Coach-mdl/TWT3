@@ -149,5 +149,5 @@
 	depositMaxReserves = 10000
 	#.
 	#Makes deposits bottomless.
-	infiniteDeposits = false
+	infiniteDeposits = true
 

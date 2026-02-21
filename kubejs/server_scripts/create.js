@@ -29,6 +29,8 @@ const CreateRecipes = (event) => {
     event.remove({ id: 'woodencog:crafting/schematics/schematic_and_quill' })
     event.remove({ id: 'woodencog:crafting/schematics/empty_schematic' })
     event.remove({ id: 'woodencog:crafting/materials/rose_quartz' })
+    event.remove({ id: 'create:crafting/materials/brass_block_from_compacting' })
+    event.remove({ id: 'create:crafting/materials/brass_ingot_from_decompacting' })
 
     //replace
     event.replaceOutput(
@@ -50,6 +52,11 @@ const CreateRecipes = (event) => {
         { id: 'create:crafting/materials/andesite_alloy_from_zinc' },
         'minecraft:andesite',
         'tfc:rock/raw/andesite'
+    )
+    event.replaceInput(
+        { mod: 'woodencog' },
+        'minecraft:sugar',
+        '#tfc:sweetener'
     )
 
     //shapeless
@@ -75,6 +82,15 @@ const CreateRecipes = (event) => {
         ]
     })
 
+    //IE Press
+    event.recipes.immersiveengineering.metal_press(
+        'create:brass_block', 'tfc:metal/double_ingot/brass', 'tfc_ie_addon:mold_block', 1000
+    )
+    event.recipes.immersiveengineering.metal_press(
+        'minecraft:copper_block', 'tfc:metal/double_ingot/copper', 'tfc_ie_addon:mold_block', 1000
+    )
+
+    //Create Mixing
     event.custom({
         type: 'create:mixing',
         heatRequirement: 'heated',
@@ -133,23 +149,13 @@ const CreateRecipes = (event) => {
         ]
     })
 
-    event.custom({
-        type: 'create:filling',
-        ingredients: [
-            {
-                amount: 250,
-                fluid: 'create:honey'
-            },
-            {
-                item: 'tfc:empty_jar'
-            }
-        ],
-        results: [
-            {
-                item: 'tfc:jar/honey'
-            }
+    event.recipes.create.filling(
+        'firmalife:jar/honey',
+        [
+            Fluid.of('create:honey', 250),
+            'tfc:empty_jar'
         ]
-    })
+    )
 
 }
 

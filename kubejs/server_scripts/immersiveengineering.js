@@ -74,6 +74,10 @@ const ImmersiveEngineeringRecipes = (event) => {
 
 }
 
+const ImmersiveengineeringFluidTags = (event) => {
+
+    event.add('forge:biodiesel', 'tfmg:diesel')
+}
 
 const ImmersiveEngineeringData = (event) => {
 

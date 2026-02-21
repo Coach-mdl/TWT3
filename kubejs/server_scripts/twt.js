@@ -614,7 +614,7 @@ const ErrorSilencerBlockTags = (event) => {
         'create:fake_track',
         'create:honey',
         'create:chocolate',
-        'cold_sweat:slush'])
+        'vintage:sulfuric_acid'])
 }
 
 

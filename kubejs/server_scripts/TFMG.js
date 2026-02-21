@@ -30,6 +30,7 @@ const TFMGRecipes = (event) => {
     event.remove({ id: 'create:crushing/compat/immersiveengineering/coal_coke' })
     event.remove({ id: 'tfmg:vat_machine_recipe/arc_furnace_steel' })
     event.remove({ id: 'tfmg:crafting/kinetics/fireclay' })
+    event.remove({ id: 'createaddition:liquid_burning/biodiesel'})
 
     //Replace
     event.replaceInput(
@@ -380,4 +381,8 @@ const TFMGData = (event) => {
 
     //Heat Defs
     event.itemHeat('tfmg:crushed_raw_lithium', 0.4, null, null)
+
+    //lampFuel
+    event.lampFuel('tfmg:kerosene', '#tfc:lamps', 8000),
+    event.lampFuel('tfmg:naphtha', '#tfc:lamps', 10000)
 }

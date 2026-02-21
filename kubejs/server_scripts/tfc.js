@@ -4,7 +4,7 @@ const TFCRecipes = (event) => {
 
     //replace
     event.replaceInput(
-        {id: 'tfc:crafting/fire_clay'},
+        { id: 'tfc:crafting/fire_clay' },
         'tfc:powder/graphite',
         '#forge:dusts/coal_coke'
     )
@@ -72,6 +72,47 @@ const TFCRecipes = (event) => {
     missingpressrecipes('tfc:metal/ingot/high_carbon_black_steel', 924, 'tfc:metal/ingot/black_steel')
     missingpressrecipes('tfc:metal/ingot/high_carbon_red_steel', 924, 'tfc:metal/ingot/red_steel')
     missingpressrecipes('tfc:metal/ingot/high_carbon_blue_steel', 924, 'tfc:metal/ingot/blue_steel')
+
+    //Create sequenced_assembly
+    event.recipes.create.sequenced_assembly(
+        [
+            Item.of('tfc:empty_jar')
+        ],
+        '#tfc:glass_batches_tier_2',
+        [
+            event.recipes.create.deploying('tfc:empty_jar', ['tfc:empty_jar', 'tfc:blowpipe']).keepHeldItem(),
+            event.recipes.create.deploying('tfc:empty_jar', ['tfc:empty_jar', 'tfc:jacks']).keepHeldItem(),
+            event.recipes.create.deploying('tfc:empty_jar', ['tfc:empty_jar', 'tfc:wool_cloth']).keepHeldItem(),
+            event.recipes.create.deploying('tfc:empty_jar', ['tfc:empty_jar', 'tfc:gem_saw']).keepHeldItem()
+        ]
+    ).transitionalItem('tfc:empty_jar').loops(1).id('twt:sequenced_assembly/empty_jar')
+
+    event.recipes.create.sequenced_assembly(
+        [
+            Item.of('tfc:lens')
+        ],
+        'tfc:silica_glass_batch',
+        [
+            event.recipes.create.deploying('tfc:lens', ['tfc:lens', 'tfc:blowpipe']).keepHeldItem(),
+            event.recipes.create.deploying('tfc:lens', ['tfc:lens', 'tfc:blowpipe']).keepHeldItem(),
+            event.recipes.create.deploying('tfc:lens', ['tfc:lens', 'tfc:wool_cloth']).keepHeldItem(),
+            event.recipes.create.deploying('tfc:lens', ['tfc:lens', 'tfc:gem_saw']).keepHeldItem()
+        ]
+    ).transitionalItem('tfc:lens').loops(1).id('twt:sequenced_assembly/lens')
+
+    event.recipes.create.sequenced_assembly(
+        [
+            Item.of('tfc:lamp_glass')
+        ],
+        '#tfc:glass_batches',
+        [
+            event.recipes.create.deploying('tfc:lamp_glass', ['tfc:lamp_glass', 'tfc:blowpipe']).keepHeldItem(),
+            event.recipes.create.deploying('tfc:lamp_glass', ['tfc:lamp_glass', 'tfc:jacks']).keepHeldItem(),
+            event.recipes.create.deploying('tfc:lamp_glass', ['tfc:lamp_glass', 'tfc:paddle']).keepHeldItem(),
+            event.recipes.create.deploying('tfc:lamp_glass', ['tfc:lamp_glass', 'tfc:blowpipe']).keepHeldItem(),
+            event.recipes.create.deploying('tfc:lamp_glass', ['tfc:lamp_glass', 'tfc:gem_saw']).keepHeldItem()
+        ]
+    ).transitionalItem('tfc:lamp_glass').loops(1).id('twt:sequenced_assembly/lamp_glass')
 
 }
 

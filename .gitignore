@@ -162,3 +162,4 @@ usernamecache.json
 kubejs/server_scripts/TFMG.js
 config/chat_heads.json5
 config/NoChatReports/NCR-Client.json
+config/vintage-client.toml

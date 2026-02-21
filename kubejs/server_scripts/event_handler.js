@@ -38,6 +38,10 @@ ServerEvents.tags('block', event => {
     ErrorSilencerBlockTags(event)
 })
 
+ServerEvents.tags('fluid', event => {
+    ImmersiveengineeringFluidTags(event)
+})
+
 LootJS.modifiers(event => {
     DFCLoot(event)
 })
@@ -64,7 +68,8 @@ ServerEvents.recipes(event => {
     ImmersiveEngineeringRecipes(event)
     CreateRecipes(event)
     TFMGRecipes(event)
-    createadditionRecipes(event)
+    CreateadditionRecipes(event)
+    VintageRecipes(event)
     FarmersDelightRecipes(event)
     LycheeRecipes(event)
     AlekishipsRecipes(event)
