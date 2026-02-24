@@ -2,10 +2,12 @@
 "use strict";
 
 //Picked up this trick from TFG.
-/*This file loads all events in a specific order. This is more modular than setting a priority.
-Furthermore, separating recipes by mod makes it easier to find errors and generally makes it safer if something goes
+/*
+ This file loads all events in a specific order. This is more modular than setting a priority.
+ Furthermore, separating recipes by mod makes it easier to find errors and generally makes it safer if something goes
  wrong. The TWT namespace will be the home for any functions that bridge across mods or things that don't quite
-  fit anywhere else such as recipes with multiple outputs. Scripts load in typical top to bottom fashion.
+ fit anywhere else such as recipes with multiple outputs. Scripts load in typical top to bottom fashion.
+ Misc is for one and done recipes/tags. That way you don't have to create a new file just for a single recipe/tag.
  */
 
 //Code for mods that are compats of another mod should be stored within the main mods files. IE, IE TFC Compat
@@ -63,27 +65,20 @@ ServerEvents.recipes(event => {
     TWTRecipes(event)
     VanillaRecipes(event)
     TFCRecipes(event)
-    FirmalifeRecipes(event)
-    BeneathRecipes(event)
     ImmersiveEngineeringRecipes(event)
     CreateRecipes(event)
     TFMGRecipes(event)
     CreateadditionRecipes(event)
-    VintageRecipes(event)
+    MiscRecipes(event)
     FarmersDelightRecipes(event)
     LycheeRecipes(event)
-    AlekishipsRecipes(event)
     WaystonesRecipes(event)
-    SNSRecipes(event)
     ToolbeltRecipes(event)
     TombstoneRecipes(event)
     HandcraftedRecipes(event)
     DFCRecipes(event)
-    BSARecipes(event)
     MagistuArmoryRecipes(event)
-    AntiqueLegacyRecipes(event)
     ParcoolRecipes(event)
     IronchestRecipes(event)
     MusketModRecipes(event)
-    SimpleRadioRecipes(event)
 })

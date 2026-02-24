@@ -1,3 +1,6 @@
+"use strict";
+
+
 const JEItags = (event) => {
 
     event.add('jei:hidden_items', ['minecraft:spawner', 'minecraft:gold_block', 'minecraft:gold_ingot',

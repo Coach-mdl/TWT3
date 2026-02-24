@@ -31,6 +31,8 @@ const CreateRecipes = (event) => {
     event.remove({ id: 'woodencog:crafting/materials/rose_quartz' })
     event.remove({ id: 'create:crafting/materials/brass_block_from_compacting' })
     event.remove({ id: 'create:crafting/materials/brass_ingot_from_decompacting' })
+    event.remove({ id: 'create:crafting/materials/zinc_ingot_from_decompacting' })
+    event.remove({ id: 'create:crafting/materials/zinc_block_from_compacting' })
 
     //replace
     event.replaceOutput(
@@ -63,25 +65,6 @@ const CreateRecipes = (event) => {
     event.shapeless(Item.of('create:tree_fertilizer', 2),
         ['#minecraft:small_flowers', '#minecraft:small_flowers', '#twt:corals', 'minecraft:bone_meal'])
 
-    event.custom({
-        type: 'create:mixing',
-        heatRequirement: 'heated',
-        ingredients: [
-            {
-                tag: 'twt:create_component_nuggets'
-            },
-            {
-                item: 'tfc:rock/raw/andesite'
-            }
-        ],
-        results: [
-            {
-                count: 1,
-                item: 'create:andesite_alloy'
-            }
-        ]
-    })
-
     //IE Press
     event.recipes.immersiveengineering.metal_press(
         'create:brass_block', 'tfc:metal/double_ingot/brass', 'tfc_ie_addon:mold_block', 1000
@@ -89,65 +72,43 @@ const CreateRecipes = (event) => {
     event.recipes.immersiveengineering.metal_press(
         'minecraft:copper_block', 'tfc:metal/double_ingot/copper', 'tfc_ie_addon:mold_block', 1000
     )
+    event.recipes.immersiveengineering.metal_press(
+        'create:zinc_block', 'tfc:metal/double_ingot/zinc', 'tfc_ie_addon:mold_block', 1000
+    )
 
     //Create Mixing
-    event.custom({
-        type: 'create:mixing',
-        heatRequirement: 'heated',
-        ingredients: [
-            {
-                tag: 'forge:seeds/cocoa'
-            },
-            {
-                fluid: 'minecraft:milk',
-                amount: 1000
-            },
-            {
-                tag: 'tfc:sweetener'
-            }
-        ],
-        results: [
-            {
-                amount: 1000,
-                fluid: 'create:chocolate'
-            }
-        ]
-    })
 
-    event.custom({
-        type: 'create:mixing',
-        heatRequirement: 'heated',
-        ingredients: [
-            {
-                item: 'firmalife:raw_honey'
-            }
-        ],
-        results: [
-            {
-                amount: 250,
-                fluid: 'create:honey'
-            }
+    event.recipes.create.mixing(
+        'create:andesite_alloy',
+        [
+            '#twt:create_component_nuggets',
+            'tfc:rock/raw/andesite'
         ]
-    })
+    ).heated().id('twt:mixing/andesite_alloy')
+
+    event.recipes.create.mixing(
+        Fluid.of('create:chocolate', 1000),
+        [
+            '#forge:seeds/cocoa',
+            '#tfc:sweetener',
+            Fluid.of('minecraft:milk', 1000)
+        ]
+    ).heated().id('twt:mixing/chocolate')
+
+    event.recipes.create.mixing(
+        Fluid.of('create:honey', 250),
+        'firmalife:raw_honey'
+    ).heated().id('twt:mixing/honey')
 
     //Create Emptying
-    event.custom({
-        type: 'create:emptying',
-        ingredients: [
-            {
-                item: 'firmalife:jar/honey'
-            }
+    event.recipes.create.emptying(
+        [
+            Fluid.of('create:honey', 250),
+            'tfc:empty_jar'
         ],
-        results: [
-            {
-                amount: 250,
-                fluid: 'create:honey'
-            },
-            {
-                item: 'tfc:empty_jar'
-            }
-        ]
-    })
+        'firmalife:jar/honey'
+    ).id('twt:emptying/honey')
+
 
     event.recipes.create.filling(
         'firmalife:jar/honey',
@@ -155,7 +116,7 @@ const CreateRecipes = (event) => {
             Fluid.of('create:honey', 250),
             'tfc:empty_jar'
         ]
-    )
+    ).id('twt:filling/honey')
 
 }
 
@@ -168,6 +129,11 @@ const CreateData = (event) => {
         food.vegetables(0.5)
         food.water(30)
         food.saturation(1)
+    })
+    event.foodItem('create:bar_of_chocolate', food => {
+        food.hunger(2)
+        food.dairy(0.5)
+        food.grain(0.5)
     })
 
 }

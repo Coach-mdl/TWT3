@@ -47,6 +47,16 @@ const VanillaRecipes = (event) => {
         'minecraft:fishing_rod',
         '#forge:tools/fishing_rods'
     )
+    event.replaceInput(
+        {input: 'minecraft:sand'},
+        'minecraft:sand',
+        '#forge:sand'
+    )
+    event.replaceInput(
+        {input: 'minecraft:iron_trapdoor'},
+        'minecraft:iron_trapdoor',
+        'tfc:metal/sheet/wrought_iron'
+    )
 
     //shaped
     event.recipes.kubejs.shaped('minecraft:anvil',
@@ -133,4 +143,5 @@ const VanillaData = (event) => {
 const VanillaItemTags = (event) => {
 
     event.add('minecraft:compasses', 'firmaciv:firmaciv_compass')
+    event.add('c:gems/lapis', 'tfc:gem/lapis_lazuli')
 }

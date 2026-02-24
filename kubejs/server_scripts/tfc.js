@@ -38,9 +38,14 @@ const TFCRecipes = (event) => {
     milkconversion('firmalife:yak_milk')
     milkconversion('firmalife:goat_milk')
 
-    //Create Mixing
+    //Vintage Hammering
+    event.recipes.vintage.hammering(
+        'tfc:refined_iron_bloom', 'tfc:raw_iron_bloom'
+    ).hammerBlows(3).anvilBlock('minecraft:anvil').id('twt:hammering/bloom_to_refined')
+    event.recipes.vintage.hammering(
+        'tfc:metal/ingot/wrought_iron', 'tfc:refined_iron_bloom'
+    ).hammerBlows(3).anvilBlock('minecraft:anvil').id('twt:hammering/refined_to_ingot')
 
-    //WoodenCog recipes aren't working for some reason. I don't understand this.
     //WoodenCog Heated Pressing
     function missingpressrecipes(input, min, output) {
         event.custom({
@@ -74,6 +79,16 @@ const TFCRecipes = (event) => {
     missingpressrecipes('tfc:metal/ingot/high_carbon_blue_steel', 924, 'tfc:metal/ingot/blue_steel')
 
     //Create sequenced_assembly
+    event.recipes.create.sequenced_assembly(
+        'tfc:empty_jar_with_lid',
+        'tfc:empty_jar',
+        [
+            event.recipes.create.deploying('tfc:empty_jar', ['tfc:empty_jar', 'firmalife:beeswax']),
+            event.recipes.create.deploying('tfc:empty_jar', ['tfc:empty_jar', 'farmersdelight:canvas']),
+            event.recipes.create.deploying('tfc:empty_jar', ['tfc:empty_jar', '#forge:string'])
+        ]
+    ).loops(1).transitionalItem('tfc:empty_jar').id('twt:sequenced_assembly/empty_jar_with_lid')
+
     event.recipes.create.sequenced_assembly(
         [
             Item.of('tfc:empty_jar')

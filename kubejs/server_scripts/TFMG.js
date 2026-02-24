@@ -1,5 +1,7 @@
 //Ty Smash
 
+"use strict";
+
 const TFMGRecipes = (event) => {
     //Removal
     event.remove({ id: 'tfmg:sequenced_assembly/heavy_plate' })
@@ -30,7 +32,7 @@ const TFMGRecipes = (event) => {
     event.remove({ id: 'create:crushing/compat/immersiveengineering/coal_coke' })
     event.remove({ id: 'tfmg:vat_machine_recipe/arc_furnace_steel' })
     event.remove({ id: 'tfmg:crafting/kinetics/fireclay' })
-    event.remove({ id: 'createaddition:liquid_burning/biodiesel'})
+    event.remove({ id: 'createaddition:liquid_burning/biodiesel' })
 
     //Replace
     event.replaceInput(
@@ -234,106 +236,88 @@ const TFMGRecipes = (event) => {
 
     //TFMG Industrial Blasting
     //Custom has to be used here. The schema won't add multiple outputs.
-    event.custom({
-        type: 'tfmg:industrial_blasting',
-        hotAirUsage: 20,
-        ingredients: [
-            {
-                tag: 'tfmg:steel_creation',
-            },
-            {
-                tag: 'tfc:flux'
-            }
+    
+    event.recipes.tfmg.industrial_blasting(
+        [
+            '#tfmg:steel_creation',
+            '#tfc:flux'
         ],
-        processingTime: 1000,
-        results: [
-            {
-                fluid: 'tfc:metal/pig_iron',
-                amount: 100
-            },
-            {
-                fluid: 'tfmg:molten_slag',
-                amount: 100
-            },
-            {
-                fluid: 'tfmg:furnace_gas',
-                amount: 200
-            }
-        ]
-    }).id('twt:industrial_blasting/pig_iron')
+        [
+            Fluid.of('tfc:metal/pig_iron', 100),
+            Fluid.of('tfmg:molten_slag', 100),
+            Fluid.of('tfmg:furnace_gas', 200)
+        ], 
+        1000
+        
+    ).id('twt:industrial_blasting/pig_iron')
 
     //TFMG vat_machine_recipe
-    //We're going with custom here because the KJS schema physically hurts me to look at.
-    event.custom({
-        type: 'tfmg:vat_machine_recipe',
-        allowedVatTypes: [
-            'tfmg:firebrick_lined_vat'
+    event.recipes.tfmg.vat_machine_recipe(
+        [
+            'tfc:metal/ingot/cast_iron',
+            '#tfmg:blast_furnace_fuel'
         ],
-        ingredients: [
-            {
-                tag: 'tfmg:steel_creation'
-            },
-            {
-                tag: 'tfc:flux'
-            },
-            {
-                tag: 'tfmg:blast_furnace_fuel'
-            }
-        ],
-        machines: [
-            'tfmg:graphite_electrode',
-            'tfmg:graphite_electrode',
-            'tfmg:graphite_electrode'
-        ],
-        minSize: 9,
-        processingTime: 500,
-        results: [
-            {
-                item: 'tfmg:coal_coke_dust',
-                chance: 0.9
-            },
-            {
-                fluid: 'tfc:metal/pig_iron',
-                amount: 100
-            },
-            {
-                fluid: 'tfmg:molten_slag',
-                amount: 200
-            }
+        [
+            Item.of('tfmg:coal_coke_dust').withChance(0.9),
+            'tfc:metal/ingot/wrought_iron',
+            Fluid.of('tfmg:molten_slag', 200)
         ]
-    }).id('twt:vat_machine_recipe/steel_creation')
-
-    event.custom({
-        type: 'tfmg:vat_machine_recipe',
-        allowedVatTypes: [
-            'tfmg:steel_vat',
-            'tfmg:firebrick_lined_vat'
+    ).allowedVatTypes('tfmg:firebrick_lined_vat')
+    .machines('tfmg:graphite_electrode', 'tfmg:graphite_electrode', 'tfmg:graphite_electrode')
+    .processingTime(500)
+    .id('twt:vat_machine_recipe/wrought_iron')
+    
+    event.recipes.tfmg.vat_machine_recipe(
+        [
+            '#tfmg:steel_creation',
+            '#tfmg:blast_furnace_fuel',
+            '#tfc:flux'
         ],
-        heatRequirement: 'heated',
-        ingredients: [
-            {
-                item: 'tfmg:bauxite_powder'
-            },
-            {
-                item: 'tfmg:bauxite_powder'
-            },
-            {
-                item: 'tfmg:bauxite_powder'
-            }
-        ],
-        machines: [
-            'tfmg:electrode',
-            'tfmg:electrode'
-        ],
-        minSize: 1,
-        processingTime: 500,
-        results: [
-            {
-                fluid: 'tfc_ie_addon:metal/aluminum',
-                amount: 600
-            }
+        [
+            Item.of('tfmg:coal_coke_dust').withChance(0.9),
+            Fluid.of('tfc:metal/pig_iron', 100),
+            Fluid.of('tfmg:molten_slag', 200)
         ]
-    }).id('twt:vat_machine_recipe/aluminum')
+    ).allowedVatTypes('tfmg:firebrick_lined_vat')
+    .machines('tfmg:graphite_electrode', 'tfmg:graphite_electrode', 'tfmg:graphite_electrode')
+    .processingTime(500)
+    .minSize(9)
+    .id('twt:vat_machine_recipe/steel_creation')
+    
+    event.recipes.tfmg.vat_machine_recipe(
+        [
+            Item.of('tfmg:bauxite_powder', 3)
+        ],
+        [
+            Fluid.of('tfc_ie_addon:metal/aluminum', 600)
+        ]
+    ).allowedVatTypes('tfmg:firebrick_lined_vat', 'tfmg:steel_vat')
+    .machines('tfmg:electrode', 'tfmg:electrode')
+    .processingTime(500)
+    .minSize(1)
+    .heated()
+    .id('twt:vat_machine_recipe/aluminum')
+    
+    event.recipes.tfmg.vat_machine_recipe(
+        [
+            Item.of('minecraft:charcoal', 32),
+            Item.of('tfc:metal/ingot/cast_iron', 16)
+        ],
+        [
+            Item.of('tfc:raw_iron_bloom', 16),
+            Item.of('tfc:raw_iron_bloom', 8).withChance(0.3),
+            Item.of('immersiveengineering:slag', 8),
+            Item.of('tfc:powder/sphalerite', 16),
+            Fluid.of('tfmg:carbon_dioxide', 16000),
+            Fluid.of('tfmg:molten_slag', 200),
+            Fluid.of('tfc:metal/pig_iron', 350).withChance(0.3)
+        ]
+    ).allowedVatTypes('tfmg:firebrick_lined_vat')
+    .machines('tfmg:zinc_electrode', 'tfmg:zinc_electrode', 'tfmg:zinc_electrode')
+    .processingTime(10000)
+    .minSize(9)
+    .superheated()
+    .id('twt:vat_machine_recipe/bloomery')
 
     //Sequenced Assembly (I hate these)
     event.recipes.create.sequenced_assembly(
@@ -384,5 +368,5 @@ const TFMGData = (event) => {
 
     //lampFuel
     event.lampFuel('tfmg:kerosene', '#tfc:lamps', 8000),
-    event.lampFuel('tfmg:naphtha', '#tfc:lamps', 10000)
+        event.lampFuel('tfmg:naphtha', '#tfc:lamps', 10000)
 }

@@ -47,11 +47,6 @@ const TWTRecipes = (event) => {
         'minecraft:barrel',
         '#tfc:barrels'
     )
-    event.replaceInput(
-        {input: 'minecraft:iron_trapdoor'},
-        'minecraft:iron_trapdoor',
-        'tfc:metal/sheet/wrought_iro'
-    )
 
     //Create Milling
     function oldOreDust(input, output) {

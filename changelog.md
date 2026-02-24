@@ -1,89 +1,14 @@
 CHANGES:
-- Completely reworked file structure in KJS folder (again).
-- Added recipes for create chocolate and honey.
-- Added recipe for vanilla glass bottles.
-- Added more entries to the create:sleepers tag.
-- Added recipes to convert other milks into standard milk.
-- Added Renewable recipes for zinc and iron that don't require vanilla item glorp.
-- Renewable tin, copper and silver.
-- All duplicate DFC ores now drop their IE counterparts.
-- Fixed a dupe with copper ingots.
-- Removed all alloy smelter recipes as the IE alloy smelter is unobtainable.
-- Steel and above now have WoodenCog heated pressing and welding recipes.
-- Create mixing for melting ore dusts.
-- Made the Handcrafted hammer less expensive.
-- Hidden some redundant items in JEI.
-- Removed some redundant recipes.
-- Recipes that require a block of metal now require a double ingot instead.
-- IE unobtainable metal blocks are now obtainable.
-- Schematicannons are now obtainable.
-- TFC dried kelp can now be used for create recipes that use dried kelp.
-- DFC galena, bauxite and aluminum ore now drop IE variants. Old ores can be ground into 6 bauxite dust.
-- Another ore doubling method for aluminum that stacks with IE's method.
-- IE insulating glass has an easier recipe.
-- Updated Forge to 47.4.13
+- TFC lapis can be used in the creation of hyper experience
+- TNT now uses TFC sand
+- Added press recipe for zinc blocks.
+- Create chocolate now has food data.
+- An insane iron blooming recipe using TFMG vats.
 
 REMOVED:
-- Lootbeams
-- Cold Sweat & Compat
-- Corpse
-- Caelum & Compat
-- REI & Compat
-- JER
+- SimpleRadio (No one used it)
+- Create Vintage
 
 ADDED:
-- YDM's WeaponMaster
-- JEI (No more messing with this)
-- Sounds & M.R.U
-- Punchy (Can be disabled in its config)
-- CreateJS
-- Create: Crafts & Additions
-- Create: Copycat+
-- Create: Steam & Rails
-- Create: Better FPS
-- Create: Enchantment Industry
-- Create: Vintage
-- Petrol's Parts For Create & Petrolpark Library
-- Create: Blocks & Bogies
-- TFMG
-- TFMGJS
-- TFMG Virtual Oil Deposit
-- Immersive Aircraft & Firma Aircraft
-- Man of Many Planes
-- TFC Ruins (You'll find these in new chunks)
-- Survivor's Delight & Survivor's Utilities
-- Lychee & LycheeJS
-- No Chat Restrictions
-- No Chat Reports
-- Chat Heads
-- In Control
-- Macaw's Doors
-- Macaw's Trapdoors
 
 UPDATED:
-- Cupboard
-- Dynamic FPS
-- Easy NPC Bundle
-- Easy NPC Config UI
-- Easy NPC
-- Epic Knights
-- EveryComp
-- Exposure
-- Extreme Sound Muffler
-- Farmer's Delight
-- Firmalife
-- FTB Essentials
-- FTB Teams 
-- Fusion
-- Geckolib
-- ImmediatelyFast
-- LootJS
-- ModernFix
-- Moonlight
-- Parcool
-- Simple Voice Chat
-- Sort it out
-- TFC Groomer
-- Waystones
-- Xaero's Minimap
-- Xaero's Worldmap
