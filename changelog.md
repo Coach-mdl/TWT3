@@ -10,5 +10,22 @@ REMOVED:
 - Create Vintage
 
 ADDED:
+Flerovium
+Spark
+Observable
+Animal Pens
+Terrific Trash Cans
+A Bunch of Macaw's stuff
+ReHooked
+Distant Friends
+Create Photomovement
+Create Hypertubes
+PonderJS
+EntityJS
+Keybind Bundles
+A Secret Something...
+Neruina
+Mods Optimiser
+
 
 UPDATED:

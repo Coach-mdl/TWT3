@@ -286,7 +286,9 @@ const TFMGRecipes = (event) => {
     
     event.recipes.tfmg.vat_machine_recipe(
         [
-            Item.of('tfmg:bauxite_powder', 3)
+            'tfmg:bauxite_powder',
+            'tfmg:bauxite_powder',
+            'tfmg:bauxite_powder'
         ],
         [
             Fluid.of('tfc_ie_addon:metal/aluminum', 600)
@@ -297,27 +299,6 @@ const TFMGRecipes = (event) => {
     .minSize(1)
     .heated()
     .id('twt:vat_machine_recipe/aluminum')
-    
-    event.recipes.tfmg.vat_machine_recipe(
-        [
-            Item.of('minecraft:charcoal', 32),
-            Item.of('tfc:metal/ingot/cast_iron', 16)
-        ],
-        [
-            Item.of('tfc:raw_iron_bloom', 16),
-            Item.of('tfc:raw_iron_bloom', 8).withChance(0.3),
-            Item.of('immersiveengineering:slag', 8),
-            Item.of('tfc:powder/sphalerite', 16),
-            Fluid.of('tfmg:carbon_dioxide', 16000),
-            Fluid.of('tfmg:molten_slag', 200),
-            Fluid.of('tfc:metal/pig_iron', 350).withChance(0.3)
-        ]
-    ).allowedVatTypes('tfmg:firebrick_lined_vat')
-    .machines('tfmg:zinc_electrode', 'tfmg:zinc_electrode', 'tfmg:zinc_electrode')
-    .processingTime(10000)
-    .minSize(9)
-    .superheated()
-    .id('twt:vat_machine_recipe/bloomery')
 
     //Sequenced Assembly (I hate these)
     event.recipes.create.sequenced_assembly(
