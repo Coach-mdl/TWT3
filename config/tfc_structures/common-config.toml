@@ -1,0 +1,20 @@
+#Print all biomes, biome tags and structures to logs upon world loading
+#You'll able to find it with [BIOME], [BIOME_TAG] and [STRUCTURE] tags
+biomesTagsStructuresToLogs = false
+#Should Dynamic TFC Structures fallback to mod built-in loot tables or not
+#It will be happen if mod can't get overridden loot table from lootTablesOverrideMap of Structure
+#(eg, it will use tfc_structures:chests/desert_pyramid instead of minecraft:chests/desert_pyramid)
+fallbackToTfcStructuresLoot = true
+#Dimensions where structure blocks will be replaced
+allowedDimensions = ["minecraft:overworld"]
+#List to separate mossy blocks from others (it will generate #mossy_stones tag)
+mossyBlocks = ["minecraft:mossy_cobblestone", "minecraft:mossy_cobblestone_slab", "minecraft:mossy_cobblestone_stairs", "minecraft:mossy_cobblestone_wall", "minecraft:mossy_stone_brick_slab", "minecraft:mossy_stone_brick_stairs", "minecraft:mossy_stone_brick_wall", "minecraft:mossy_stone_bricks"]
+#List to separate stripped logs from others (it will generate #stripped_log tag)
+strippedLogs = ["minecraft:stripped_oak_log", "minecraft:stripped_spruce_log", "minecraft:stripped_birch_log", "minecraft:stripped_jungle_log", "minecraft:stripped_acacia_log", "minecraft:stripped_dark_oak_log", "minecraft:stripped_mangrove_log", "minecraft:stripped_cherry_log"]
+#List to separate stripped wood from others (it will generate #stripped_wood tag)
+strippedWood = ["minecraft:stripped_oak_wood", "minecraft:stripped_spruce_wood", "minecraft:stripped_birch_wood", "minecraft:stripped_jungle_wood", "minecraft:stripped_acacia_wood", "minecraft:stripped_dark_oak_wood", "minecraft:stripped_mangrove_wood", "minecraft:stripped_cherry_wood"]
+#List to separate cracked bricks from others (it will generate #cracked_bricks tag)
+crackedBricks = ["minecraft:cracked_stone_bricks", "minecraft:cracked_deepslate_bricks", "minecraft:cracked_deepslate_tiles"]
+#Loot table that will be used as emptyChestLootTable field for every new Structure in StructureConfig
+defaultEmptyChestLootTable = ""
+

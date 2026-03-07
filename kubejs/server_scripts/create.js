@@ -33,6 +33,9 @@ const CreateRecipes = (event) => {
     event.remove({ id: 'create:crafting/materials/brass_ingot_from_decompacting' })
     event.remove({ id: 'create:crafting/materials/zinc_ingot_from_decompacting' })
     event.remove({ id: 'create:crafting/materials/zinc_block_from_compacting' })
+    event.remove({ id: 'woodencog:crafting/kinetics/windmill_bearing' })
+    event.remove({ id: 'create:item_application/brass_casing_from_wood_using_deployer' })
+    event.remove({ id: 'create:item_application/brass_casing_from_wood' })
 
     //replace
     event.replaceOutput(

@@ -1,0 +1,599 @@
+{
+  "structures": {
+    "aether:bronze_dungeon": {
+      "replacementPreset": "overworld-common",
+      "emptyChestLootTable": "",
+      "lootTablesOverrideMap": {}
+    },
+    "aether:gold_dungeon": {
+      "replacementPreset": "overworld-common",
+      "emptyChestLootTable": "",
+      "lootTablesOverrideMap": {}
+    },
+    "aether:large_aercloud": {
+      "replacementPreset": "overworld-common",
+      "emptyChestLootTable": "",
+      "lootTablesOverrideMap": {}
+    },
+    "aether:silver_dungeon": {
+      "replacementPreset": "overworld-common",
+      "emptyChestLootTable": "",
+      "lootTablesOverrideMap": {}
+    },
+    "alekiships:unfinished_rowboat_birch": {
+      "replacementPreset": "overworld-common",
+      "emptyChestLootTable": "",
+      "lootTablesOverrideMap": {}
+    },
+    "alekiships:unfinished_rowboat_cherry": {
+      "replacementPreset": "overworld-common",
+      "emptyChestLootTable": "",
+      "lootTablesOverrideMap": {}
+    },
+    "alekiships:unfinished_rowboat_dark_oak": {
+      "replacementPreset": "overworld-common",
+      "emptyChestLootTable": "",
+      "lootTablesOverrideMap": {}
+    },
+    "alekiships:unfinished_rowboat_oak": {
+      "replacementPreset": "overworld-common",
+      "emptyChestLootTable": "",
+      "lootTablesOverrideMap": {}
+    },
+    "alekiships:unfinished_rowboat_spruce": {
+      "replacementPreset": "overworld-common",
+      "emptyChestLootTable": "",
+      "lootTablesOverrideMap": {}
+    },
+    "alekiships:unfinished_sloop_birch": {
+      "replacementPreset": "overworld-common",
+      "emptyChestLootTable": "",
+      "lootTablesOverrideMap": {}
+    },
+    "alekiships:unfinished_sloop_cherry": {
+      "replacementPreset": "overworld-common",
+      "emptyChestLootTable": "",
+      "lootTablesOverrideMap": {}
+    },
+    "alekiships:unfinished_sloop_dark_oak": {
+      "replacementPreset": "overworld-common",
+      "emptyChestLootTable": "",
+      "lootTablesOverrideMap": {}
+    },
+    "alekiships:unfinished_sloop_oak": {
+      "replacementPreset": "overworld-common",
+      "emptyChestLootTable": "",
+      "lootTablesOverrideMap": {}
+    },
+    "alekiships:unfinished_sloop_spruce": {
+      "replacementPreset": "overworld-common",
+      "emptyChestLootTable": "",
+      "lootTablesOverrideMap": {}
+    },
+    "betterdeserttemples:desert_temple": {
+      "replacementPreset": "overworld-common",
+      "emptyChestLootTable": "",
+      "lootTablesOverrideMap": {}
+    },
+    "bettermineshafts:mineshaft_acacia": {
+      "replacementPreset": "overworld-common",
+      "emptyChestLootTable": "",
+      "lootTablesOverrideMap": {}
+    },
+    "bettermineshafts:mineshaft_desert": {
+      "replacementPreset": "overworld-common",
+      "emptyChestLootTable": "",
+      "lootTablesOverrideMap": {}
+    },
+    "bettermineshafts:mineshaft_dripstone": {
+      "replacementPreset": "overworld-common",
+      "emptyChestLootTable": "",
+      "lootTablesOverrideMap": {}
+    },
+    "bettermineshafts:mineshaft_ice": {
+      "replacementPreset": "overworld-common",
+      "emptyChestLootTable": "",
+      "lootTablesOverrideMap": {}
+    },
+    "bettermineshafts:mineshaft_jungle": {
+      "replacementPreset": "overworld-common",
+      "emptyChestLootTable": "",
+      "lootTablesOverrideMap": {}
+    },
+    "bettermineshafts:mineshaft_lush": {
+      "replacementPreset": "overworld-common",
+      "emptyChestLootTable": "",
+      "lootTablesOverrideMap": {}
+    },
+    "bettermineshafts:mineshaft_mesa": {
+      "replacementPreset": "overworld-common",
+      "emptyChestLootTable": "",
+      "lootTablesOverrideMap": {}
+    },
+    "bettermineshafts:mineshaft_mushroom": {
+      "replacementPreset": "overworld-common",
+      "emptyChestLootTable": "",
+      "lootTablesOverrideMap": {}
+    },
+    "bettermineshafts:mineshaft_oak": {
+      "replacementPreset": "overworld-common",
+      "emptyChestLootTable": "",
+      "lootTablesOverrideMap": {}
+    },
+    "bettermineshafts:mineshaft_overgrown": {
+      "replacementPreset": "overworld-common",
+      "emptyChestLootTable": "",
+      "lootTablesOverrideMap": {}
+    },
+    "bettermineshafts:mineshaft_red_desert": {
+      "replacementPreset": "overworld-common",
+      "emptyChestLootTable": "",
+      "lootTablesOverrideMap": {}
+    },
+    "bettermineshafts:mineshaft_spruce": {
+      "replacementPreset": "overworld-common",
+      "emptyChestLootTable": "",
+      "lootTablesOverrideMap": {}
+    },
+    "bettermineshafts:mineshaft_spruce_snowy": {
+      "replacementPreset": "overworld-common",
+      "emptyChestLootTable": "",
+      "lootTablesOverrideMap": {}
+    },
+    "betterstrongholds:stronghold": {
+      "replacementPreset": "overworld-common",
+      "emptyChestLootTable": "",
+      "lootTablesOverrideMap": {}
+    },
+    "dungeons_arise:abandoned_temple": {
+      "replacementPreset": "overworld-common",
+      "emptyChestLootTable": "",
+      "lootTablesOverrideMap": {}
+    },
+    "dungeons_arise:aviary": {
+      "replacementPreset": "overworld-common",
+      "emptyChestLootTable": "",
+      "lootTablesOverrideMap": {}
+    },
+    "dungeons_arise:bandit_towers": {
+      "replacementPreset": "overworld-common",
+      "emptyChestLootTable": "",
+      "lootTablesOverrideMap": {}
+    },
+    "dungeons_arise:bandit_village": {
+      "replacementPreset": "overworld-common",
+      "emptyChestLootTable": "",
+      "lootTablesOverrideMap": {}
+    },
+    "dungeons_arise:bathhouse": {
+      "replacementPreset": "overworld-common",
+      "emptyChestLootTable": "",
+      "lootTablesOverrideMap": {}
+    },
+    "dungeons_arise:ceryneian_hind": {
+      "replacementPreset": "overworld-common",
+      "emptyChestLootTable": "",
+      "lootTablesOverrideMap": {}
+    },
+    "dungeons_arise:coliseum": {
+      "replacementPreset": "overworld-common",
+      "emptyChestLootTable": "",
+      "lootTablesOverrideMap": {}
+    },
+    "dungeons_arise:fishing_hut": {
+      "replacementPreset": "overworld-common",
+      "emptyChestLootTable": "",
+      "lootTablesOverrideMap": {}
+    },
+    "dungeons_arise:foundry": {
+      "replacementPreset": "overworld-common",
+      "emptyChestLootTable": "",
+      "lootTablesOverrideMap": {}
+    },
+    "dungeons_arise:giant_mushroom": {
+      "replacementPreset": "overworld-common",
+      "emptyChestLootTable": "",
+      "lootTablesOverrideMap": {}
+    },
+    "dungeons_arise:greenwood_pub": {
+      "replacementPreset": "overworld-common",
+      "emptyChestLootTable": "",
+      "lootTablesOverrideMap": {}
+    },
+    "dungeons_arise:heavenly_challenger": {
+      "replacementPreset": "overworld-common",
+      "emptyChestLootTable": "",
+      "lootTablesOverrideMap": {}
+    },
+    "dungeons_arise:heavenly_conqueror": {
+      "replacementPreset": "overworld-common",
+      "emptyChestLootTable": "",
+      "lootTablesOverrideMap": {}
+    },
+    "dungeons_arise:heavenly_rider": {
+      "replacementPreset": "overworld-common",
+      "emptyChestLootTable": "",
+      "lootTablesOverrideMap": {}
+    },
+    "dungeons_arise:illager_campsite": {
+      "replacementPreset": "overworld-common",
+      "emptyChestLootTable": "",
+      "lootTablesOverrideMap": {}
+    },
+    "dungeons_arise:illager_corsair": {
+      "replacementPreset": "overworld-common",
+      "emptyChestLootTable": "",
+      "lootTablesOverrideMap": {}
+    },
+    "dungeons_arise:illager_fort": {
+      "replacementPreset": "overworld-common",
+      "emptyChestLootTable": "",
+      "lootTablesOverrideMap": {}
+    },
+    "dungeons_arise:illager_galley": {
+      "replacementPreset": "overworld-common",
+      "emptyChestLootTable": "",
+      "lootTablesOverrideMap": {}
+    },
+    "dungeons_arise:illager_windmill": {
+      "replacementPreset": "overworld-common",
+      "emptyChestLootTable": "",
+      "lootTablesOverrideMap": {}
+    },
+    "dungeons_arise:infested_temple": {
+      "replacementPreset": "overworld-common",
+      "emptyChestLootTable": "",
+      "lootTablesOverrideMap": {}
+    },
+    "dungeons_arise:jungle_tree_house": {
+      "replacementPreset": "overworld-common",
+      "emptyChestLootTable": "",
+      "lootTablesOverrideMap": {}
+    },
+    "dungeons_arise:keep_kayra": {
+      "replacementPreset": "overworld-common",
+      "emptyChestLootTable": "",
+      "lootTablesOverrideMap": {}
+    },
+    "dungeons_arise:lighthouse": {
+      "replacementPreset": "overworld-common",
+      "emptyChestLootTable": "",
+      "lootTablesOverrideMap": {}
+    },
+    "dungeons_arise:mechanical_nest": {
+      "replacementPreset": "overworld-common",
+      "emptyChestLootTable": "",
+      "lootTablesOverrideMap": {}
+    },
+    "dungeons_arise:merchant_campsite": {
+      "replacementPreset": "overworld-common",
+      "emptyChestLootTable": "",
+      "lootTablesOverrideMap": {}
+    },
+    "dungeons_arise:mining_system": {
+      "replacementPreset": "overworld-common",
+      "emptyChestLootTable": "",
+      "lootTablesOverrideMap": {}
+    },
+    "dungeons_arise:monastery": {
+      "replacementPreset": "overworld-common",
+      "emptyChestLootTable": "",
+      "lootTablesOverrideMap": {}
+    },
+    "dungeons_arise:mushroom_house": {
+      "replacementPreset": "overworld-common",
+      "emptyChestLootTable": "",
+      "lootTablesOverrideMap": {}
+    },
+    "dungeons_arise:mushroom_mines": {
+      "replacementPreset": "overworld-common",
+      "emptyChestLootTable": "",
+      "lootTablesOverrideMap": {}
+    },
+    "dungeons_arise:mushroom_village": {
+      "replacementPreset": "overworld-common",
+      "emptyChestLootTable": "",
+      "lootTablesOverrideMap": {}
+    },
+    "dungeons_arise:plague_asylum": {
+      "replacementPreset": "overworld-common",
+      "emptyChestLootTable": "",
+      "lootTablesOverrideMap": {}
+    },
+    "dungeons_arise:scorched_mines": {
+      "replacementPreset": "overworld-common",
+      "emptyChestLootTable": "",
+      "lootTablesOverrideMap": {}
+    },
+    "dungeons_arise:shiraz_palace": {
+      "replacementPreset": "overworld-common",
+      "emptyChestLootTable": "",
+      "lootTablesOverrideMap": {}
+    },
+    "dungeons_arise:small_blimp": {
+      "replacementPreset": "overworld-common",
+      "emptyChestLootTable": "",
+      "lootTablesOverrideMap": {}
+    },
+    "dungeons_arise:small_prairie_house": {
+      "replacementPreset": "overworld-common",
+      "emptyChestLootTable": "",
+      "lootTablesOverrideMap": {}
+    },
+    "dungeons_arise:thornborn_towers": {
+      "replacementPreset": "overworld-common",
+      "emptyChestLootTable": "",
+      "lootTablesOverrideMap": {}
+    },
+    "dungeons_arise:typhon": {
+      "replacementPreset": "overworld-common",
+      "emptyChestLootTable": "",
+      "lootTablesOverrideMap": {}
+    },
+    "dungeons_arise:undead_pirate_ship": {
+      "replacementPreset": "overworld-common",
+      "emptyChestLootTable": "",
+      "lootTablesOverrideMap": {}
+    },
+    "dungeons_arise:wishing_well": {
+      "replacementPreset": "overworld-common",
+      "emptyChestLootTable": "",
+      "lootTablesOverrideMap": {}
+    },
+    "dungeons_arise_seven_seas:corsair_corvette": {
+      "replacementPreset": "overworld-common",
+      "emptyChestLootTable": "",
+      "lootTablesOverrideMap": {}
+    },
+    "dungeons_arise_seven_seas:pirate_junk": {
+      "replacementPreset": "overworld-common",
+      "emptyChestLootTable": "",
+      "lootTablesOverrideMap": {}
+    },
+    "dungeons_arise_seven_seas:small_yacht": {
+      "replacementPreset": "overworld-common",
+      "emptyChestLootTable": "",
+      "lootTablesOverrideMap": {}
+    },
+    "dungeons_arise_seven_seas:unicorn_galleon": {
+      "replacementPreset": "overworld-common",
+      "emptyChestLootTable": "",
+      "lootTablesOverrideMap": {}
+    },
+    "dungeons_arise_seven_seas:victory_frigate": {
+      "replacementPreset": "overworld-common",
+      "emptyChestLootTable": "",
+      "lootTablesOverrideMap": {}
+    },
+    "endergetic:eetle_nest": {
+      "replacementPreset": "overworld-common",
+      "emptyChestLootTable": "",
+      "lootTablesOverrideMap": {}
+    },
+    "minecraft:ancient_city": {
+      "replacementPreset": "overworld-common",
+      "emptyChestLootTable": "",
+      "lootTablesOverrideMap": {}
+    },
+    "minecraft:bastion_remnant": {
+      "replacementPreset": "overworld-common",
+      "emptyChestLootTable": "",
+      "lootTablesOverrideMap": {}
+    },
+    "minecraft:buried_treasure": {
+      "replacementPreset": "overworld-common",
+      "emptyChestLootTable": "",
+      "lootTablesOverrideMap": {}
+    },
+    "minecraft:desert_pyramid": {
+      "replacementPreset": "overworld-common",
+      "emptyChestLootTable": "",
+      "lootTablesOverrideMap": {}
+    },
+    "minecraft:end_city": {
+      "replacementPreset": "overworld-common",
+      "emptyChestLootTable": "",
+      "lootTablesOverrideMap": {}
+    },
+    "minecraft:fortress": {
+      "replacementPreset": "overworld-common",
+      "emptyChestLootTable": "",
+      "lootTablesOverrideMap": {}
+    },
+    "minecraft:igloo": {
+      "replacementPreset": "overworld-common",
+      "emptyChestLootTable": "",
+      "lootTablesOverrideMap": {}
+    },
+    "minecraft:jungle_pyramid": {
+      "replacementPreset": "overworld-common",
+      "emptyChestLootTable": "",
+      "lootTablesOverrideMap": {}
+    },
+    "minecraft:mansion": {
+      "replacementPreset": "overworld-common",
+      "emptyChestLootTable": "",
+      "lootTablesOverrideMap": {}
+    },
+    "minecraft:mineshaft": {
+      "replacementPreset": "overworld-common",
+      "emptyChestLootTable": "",
+      "lootTablesOverrideMap": {}
+    },
+    "minecraft:mineshaft_mesa": {
+      "replacementPreset": "overworld-common",
+      "emptyChestLootTable": "",
+      "lootTablesOverrideMap": {}
+    },
+    "minecraft:monument": {
+      "replacementPreset": "overworld-common",
+      "emptyChestLootTable": "",
+      "lootTablesOverrideMap": {}
+    },
+    "minecraft:nether_fossil": {
+      "replacementPreset": "overworld-common",
+      "emptyChestLootTable": "",
+      "lootTablesOverrideMap": {}
+    },
+    "minecraft:ocean_ruin_cold": {
+      "replacementPreset": "overworld-common",
+      "emptyChestLootTable": "",
+      "lootTablesOverrideMap": {}
+    },
+    "minecraft:ocean_ruin_warm": {
+      "replacementPreset": "overworld-common",
+      "emptyChestLootTable": "",
+      "lootTablesOverrideMap": {}
+    },
+    "minecraft:pillager_outpost": {
+      "replacementPreset": "overworld-common",
+      "emptyChestLootTable": "",
+      "lootTablesOverrideMap": {}
+    },
+    "minecraft:ruined_portal": {
+      "replacementPreset": "overworld-common",
+      "emptyChestLootTable": "",
+      "lootTablesOverrideMap": {}
+    },
+    "minecraft:ruined_portal_desert": {
+      "replacementPreset": "overworld-common",
+      "emptyChestLootTable": "",
+      "lootTablesOverrideMap": {}
+    },
+    "minecraft:ruined_portal_jungle": {
+      "replacementPreset": "overworld-common",
+      "emptyChestLootTable": "",
+      "lootTablesOverrideMap": {}
+    },
+    "minecraft:ruined_portal_mountain": {
+      "replacementPreset": "overworld-common",
+      "emptyChestLootTable": "",
+      "lootTablesOverrideMap": {}
+    },
+    "minecraft:ruined_portal_nether": {
+      "replacementPreset": "overworld-common",
+      "emptyChestLootTable": "",
+      "lootTablesOverrideMap": {}
+    },
+    "minecraft:ruined_portal_ocean": {
+      "replacementPreset": "overworld-common",
+      "emptyChestLootTable": "",
+      "lootTablesOverrideMap": {}
+    },
+    "minecraft:ruined_portal_swamp": {
+      "replacementPreset": "overworld-common",
+      "emptyChestLootTable": "",
+      "lootTablesOverrideMap": {}
+    },
+    "minecraft:shipwreck": {
+      "replacementPreset": "overworld-common",
+      "emptyChestLootTable": "",
+      "lootTablesOverrideMap": {}
+    },
+    "minecraft:shipwreck_beached": {
+      "replacementPreset": "overworld-common",
+      "emptyChestLootTable": "",
+      "lootTablesOverrideMap": {}
+    },
+    "minecraft:stronghold": {
+      "replacementPreset": "overworld-common",
+      "emptyChestLootTable": "",
+      "lootTablesOverrideMap": {}
+    },
+    "minecraft:swamp_hut": {
+      "replacementPreset": "overworld-common",
+      "emptyChestLootTable": "",
+      "lootTablesOverrideMap": {}
+    },
+    "minecraft:trail_ruins": {
+      "replacementPreset": "overworld-common",
+      "emptyChestLootTable": "",
+      "lootTablesOverrideMap": {}
+    },
+    "minecraft:village_desert": {
+      "replacementPreset": "overworld-common",
+      "emptyChestLootTable": "",
+      "lootTablesOverrideMap": {}
+    },
+    "minecraft:village_plains": {
+      "replacementPreset": "overworld-common",
+      "emptyChestLootTable": "",
+      "lootTablesOverrideMap": {}
+    },
+    "minecraft:village_savanna": {
+      "replacementPreset": "overworld-common",
+      "emptyChestLootTable": "",
+      "lootTablesOverrideMap": {}
+    },
+    "minecraft:village_snowy": {
+      "replacementPreset": "overworld-common",
+      "emptyChestLootTable": "",
+      "lootTablesOverrideMap": {}
+    },
+    "minecraft:village_taiga": {
+      "replacementPreset": "overworld-common",
+      "emptyChestLootTable": "",
+      "lootTablesOverrideMap": {}
+    },
+    "supplementaries:way_sign": {
+      "replacementPreset": "overworld-common",
+      "emptyChestLootTable": "",
+      "lootTablesOverrideMap": {}
+    },
+    "tfc_ruins:ruin_beach": {
+      "replacementPreset": "overworld-common",
+      "emptyChestLootTable": "",
+      "lootTablesOverrideMap": {}
+    },
+    "tfc_ruins:ruin_rich": {
+      "replacementPreset": "overworld-common",
+      "emptyChestLootTable": "",
+      "lootTablesOverrideMap": {}
+    },
+    "tfc_ruins:ruin_small": {
+      "replacementPreset": "overworld-common",
+      "emptyChestLootTable": "",
+      "lootTablesOverrideMap": {}
+    },
+    "tfc_trees:acacia_giant_tree": {
+      "replacementPreset": "overworld-common",
+      "emptyChestLootTable": "",
+      "lootTablesOverrideMap": {}
+    },
+    "tfc_trees:ash_giant_tree": {
+      "replacementPreset": "overworld-common",
+      "emptyChestLootTable": "",
+      "lootTablesOverrideMap": {}
+    },
+    "tfc_trees:hickory_giant_tree": {
+      "replacementPreset": "overworld-common",
+      "emptyChestLootTable": "",
+      "lootTablesOverrideMap": {}
+    },
+    "tfc_trees:kapok_giant_tree": {
+      "replacementPreset": "overworld-common",
+      "emptyChestLootTable": "",
+      "lootTablesOverrideMap": {}
+    },
+    "tfc_trees:oak_giant_tree": {
+      "replacementPreset": "overworld-common",
+      "emptyChestLootTable": "",
+      "lootTablesOverrideMap": {}
+    },
+    "tfc_trees:plum_giant_tree": {
+      "replacementPreset": "overworld-common",
+      "emptyChestLootTable": "",
+      "lootTablesOverrideMap": {}
+    },
+    "tombstone:abandoned_grave_land": {
+      "replacementPreset": "overworld-common",
+      "emptyChestLootTable": "",
+      "lootTablesOverrideMap": {}
+    },
+    "tombstone:abandoned_grave_ocean": {
+      "replacementPreset": "overworld-common",
+      "emptyChestLootTable": "",
+      "lootTablesOverrideMap": {}
+    }
+  }
+}

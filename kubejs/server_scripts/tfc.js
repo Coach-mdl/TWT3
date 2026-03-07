@@ -38,14 +38,6 @@ const TFCRecipes = (event) => {
     milkconversion('firmalife:yak_milk')
     milkconversion('firmalife:goat_milk')
 
-    //Vintage Hammering
-    event.recipes.vintage.hammering(
-        'tfc:refined_iron_bloom', 'tfc:raw_iron_bloom'
-    ).hammerBlows(3).anvilBlock('minecraft:anvil').id('twt:hammering/bloom_to_refined')
-    event.recipes.vintage.hammering(
-        'tfc:metal/ingot/wrought_iron', 'tfc:refined_iron_bloom'
-    ).hammerBlows(3).anvilBlock('minecraft:anvil').id('twt:hammering/refined_to_ingot')
-
     //WoodenCog Heated Pressing
     function missingpressrecipes(input, min, output) {
         event.custom({

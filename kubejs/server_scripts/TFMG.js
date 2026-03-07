@@ -300,6 +300,23 @@ const TFMGRecipes = (event) => {
     .heated()
     .id('twt:vat_machine_recipe/aluminum')
 
+    event.recipes.tfmg.vat_machine_recipe(
+        [
+            'tfc:metal/ingot/cast_iron',
+            'minecraft:charcoal',
+            'minecraft:charcoal'
+        ],
+        [
+            Item.of('tfc:raw_iron_bloom'),
+            Item.of('tfc:raw_iron_bloom').withChance(0.4),
+            Fluid.of('tfmg:molten_slag', 100),
+            Fluid.of('tfc:metal/pig_iron')
+        ]
+    ).allowedVatTypes('tfmg:firebrick_lined_vat')
+    .machines('tfmg:electrode', 'tfmg:electrode', 'tfmg:electrode')
+    .processingTime(500)
+    .id('twt:vat_machine_recipe/blooming')
+
     //Sequenced Assembly (I hate these)
     event.recipes.create.sequenced_assembly(
         [

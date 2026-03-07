@@ -1,0 +1,1748 @@
+{
+  "directReplacements": [
+    {
+      "original": "minecraft:iron_block",
+      "replacement": "tfc:metal/block/wrought_iron"
+    },
+    {
+      "original": "minecraft:gold_block",
+      "replacement": "tfc:metal/block/gold"
+    },
+    {
+      "original": "minecraft:cake",
+      "replacement": "tfc:cake"
+    },
+    {
+      "original": "minecraft:pumpkin",
+      "replacement": "tfc:pumpkin"
+    },
+    {
+      "original": "minecraft:pumpkin_stem",
+      "replacement": "tfc:crop/pumpkin"
+    },
+    {
+      "original": "minecraft:melon",
+      "replacement": "tfc:melon"
+    },
+    {
+      "original": "minecraft:melon_stem",
+      "replacement": "tfc:crop/melon"
+    },
+    {
+      "original": "minecraft:hay_block",
+      "replacement": "tfc:thatch"
+    },
+    {
+      "original": "minecraft:dandelion",
+      "replacement": "tfc:plant/dandelion"
+    },
+    {
+      "original": "minecraft:poppy",
+      "replacement": "tfc:plant/poppy"
+    },
+    {
+      "original": "minecraft:blue_orchid",
+      "replacement": "tfc:plant/blue_orchid"
+    },
+    {
+      "original": "minecraft:allium",
+      "replacement": "tfc:plant/allium"
+    },
+    {
+      "original": "minecraft:azure_bluet",
+      "replacement": "tfc:plant/houstonia"
+    },
+    {
+      "original": "minecraft:red_tulip",
+      "replacement": "tfc:plant/tulip_red"
+    },
+    {
+      "original": "minecraft:orange_tulip",
+      "replacement": "tfc:plant/tulip_orange"
+    },
+    {
+      "original": "minecraft:white_tulip",
+      "replacement": "tfc:plant/tulip_white"
+    },
+    {
+      "original": "minecraft:pink_tulip",
+      "replacement": "tfc:plant/tulip_pink"
+    },
+    {
+      "original": "minecraft:oxeye_daisy",
+      "replacement": "tfc:plant/oxeye_daisy"
+    },
+    {
+      "original": "minecraft:cornflower",
+      "replacement": "tfc:plant/pickerelweed"
+    },
+    {
+      "original": "minecraft:lily_of_the_valley",
+      "replacement": "tfc:plant/lily_of_the_valley"
+    },
+    {
+      "original": "minecraft:pink_petals",
+      "replacement": "tfc:plant/maiden_pink"
+    },
+    {
+      "original": "minecraft:sunflower",
+      "replacement": "tfc:plant/calendula"
+    },
+    {
+      "original": "minecraft:lilac",
+      "replacement": "tfc:plant/lilac"
+    },
+    {
+      "original": "minecraft:rose_bush",
+      "replacement": "tfc:plant/rose"
+    },
+    {
+      "original": "minecraft:peony",
+      "replacement": "tfc:plant/pulsatilla"
+    },
+    {
+      "original": "minecraft:grass",
+      "replacement": "tfc:plant/bromegrass"
+    },
+    {
+      "original": "minecraft:fern",
+      "replacement": "tfc:plant/lady_fern"
+    },
+    {
+      "original": "minecraft:dead_bush",
+      "replacement": "tfc:plant/dead_bush"
+    },
+    {
+      "original": "minecraft:vine",
+      "replacement": "tfc:plant/jungle_vines"
+    },
+    {
+      "original": "minecraft:tall_grass",
+      "replacement": "tfc:plant/tall_fescue_grass"
+    },
+    {
+      "original": "minecraft:large_fern",
+      "replacement": "tfc:plant/ostrich_fern"
+    },
+    {
+      "original": "minecraft:seagrass",
+      "replacement": "tfc:plant/turtle_grass"
+    },
+    {
+      "original": "minecraft:sea_pickle",
+      "replacement": "tfc:sea_pickle"
+    },
+    {
+      "original": "minecraft:kelp",
+      "replacement": "tfc:plant/leafy_kelp"
+    },
+    {
+      "original": "minecraft:granite",
+      "replacement": "tfc:rock/hardened/granite"
+    },
+    {
+      "original": "minecraft:granite_stairs",
+      "replacement": "tfc:rock/raw/granite_stairs"
+    },
+    {
+      "original": "minecraft:granite_slab",
+      "replacement": "tfc:rock/raw/granite_slab"
+    },
+    {
+      "original": "minecraft:granite_wall",
+      "replacement": "tfc:rock/raw/granite_wall"
+    },
+    {
+      "original": "minecraft:polished_granite",
+      "replacement": "tfc:rock/smooth/granite"
+    },
+    {
+      "original": "minecraft:polished_granite_stairs",
+      "replacement": "tfc:rock/smooth/granite_stairs"
+    },
+    {
+      "original": "minecraft:polished_granite_slab",
+      "replacement": "tfc:rock/smooth/granite_slab"
+    },
+    {
+      "original": "minecraft:diorite",
+      "replacement": "tfc:rock/hardened/diorite"
+    },
+    {
+      "original": "minecraft:diorite_stairs",
+      "replacement": "tfc:rock/raw/diorite_stairs"
+    },
+    {
+      "original": "minecraft:diorite_slab",
+      "replacement": "tfc:rock/raw/diorite_slab"
+    },
+    {
+      "original": "minecraft:diorite_wall",
+      "replacement": "tfc:rock/raw/diorite_wall"
+    },
+    {
+      "original": "minecraft:polished_diorite",
+      "replacement": "tfc:rock/smooth/diorite"
+    },
+    {
+      "original": "minecraft:polished_diorite_stairs",
+      "replacement": "tfc:rock/smooth/diorite_stairs"
+    },
+    {
+      "original": "minecraft:polished_diorite_slab",
+      "replacement": "tfc:rock/smooth/diorite_slab"
+    },
+    {
+      "original": "minecraft:andesite",
+      "replacement": "tfc:rock/hardened/andesite"
+    },
+    {
+      "original": "minecraft:andesite_stairs",
+      "replacement": "tfc:rock/raw/andesite_stairs"
+    },
+    {
+      "original": "minecraft:andesite_slab",
+      "replacement": "tfc:rock/raw/andesite_slab"
+    },
+    {
+      "original": "minecraft:andesite_wall",
+      "replacement": "tfc:rock/raw/andesite_wall"
+    },
+    {
+      "original": "minecraft:polished_andesite",
+      "replacement": "tfc:rock/smooth/andesite"
+    },
+    {
+      "original": "minecraft:polished_andesite_stairs",
+      "replacement": "tfc:rock/smooth/andesite_stairs"
+    },
+    {
+      "original": "minecraft:polished_andesite_slab",
+      "replacement": "tfc:rock/smooth/andesite_slab"
+    },
+    {
+      "original": "minecraft:deepslate",
+      "replacement": "tfc:rock/hardened/basalt"
+    },
+    {
+      "original": "minecraft:cobbled_deepslate",
+      "replacement": "tfc:rock/cobble/basalt"
+    },
+    {
+      "original": "minecraft:cobbled_deepslate_stairs",
+      "replacement": "tfc:rock/cobble/basalt_stairs"
+    },
+    {
+      "original": "minecraft:cobbled_deepslate_slab",
+      "replacement": "tfc:rock/cobble/basalt_slab"
+    },
+    {
+      "original": "minecraft:cobbled_deepslate_wall",
+      "replacement": "tfc:rock/cobble/basalt_wall"
+    },
+    {
+      "original": "minecraft:polished_deepslate",
+      "replacement": "tfc:rock/smooth/basalt"
+    },
+    {
+      "original": "minecraft:polished_deepslate_stairs",
+      "replacement": "tfc:rock/smooth/basalt_stairs"
+    },
+    {
+      "original": "minecraft:polished_deepslate_slab",
+      "replacement": "tfc:rock/smooth/basalt_slab"
+    },
+    {
+      "original": "minecraft:polished_deepslate_wall",
+      "replacement": "tfc:rock/smooth/basalt_wall"
+    },
+    {
+      "original": "minecraft:deepslate_bricks",
+      "replacement": "tfc:rock/bricks/basalt"
+    },
+    {
+      "original": "minecraft:deepslate_brick_stairs",
+      "replacement": "tfc:rock/bricks/basalt_stairs"
+    },
+    {
+      "original": "minecraft:deepslate_brick_slab",
+      "replacement": "tfc:rock/bricks/basalt_slab"
+    },
+    {
+      "original": "minecraft:deepslate_brick_wall",
+      "replacement": "tfc:rock/bricks/basalt_wall"
+    },
+    {
+      "original": "minecraft:deepslate_tiles",
+      "replacement": "tfc:rock/bricks/basalt"
+    },
+    {
+      "original": "minecraft:deepslate_tile_stairs",
+      "replacement": "tfc:rock/bricks/basalt_stairs"
+    },
+    {
+      "original": "minecraft:deepslate_tile_slab",
+      "replacement": "tfc:rock/bricks/basalt_slab"
+    },
+    {
+      "original": "minecraft:deepslate_tile_wall",
+      "replacement": "tfc:rock/bricks/basalt_wall"
+    },
+    {
+      "original": "minecraft:cracked_deepslate_bricks",
+      "replacement": "tfc:rock/cracked_bricks/basalt"
+    },
+    {
+      "original": "minecraft:cracked_deepslate_tiles",
+      "replacement": "tfc:rock/cracked_bricks/basalt"
+    },
+    {
+      "original": "minecraft:chiseled_deepslate",
+      "replacement": "tfc:rock/chiseled/basalt"
+    },
+    {
+      "original": "minecraft:raw_iron_block",
+      "replacement": "tfc:metal/block/wrought_iron"
+    },
+    {
+      "original": "minecraft:raw_copper_block",
+      "replacement": "minecraft:copper_block"
+    },
+    {
+      "original": "minecraft:raw_gold_block",
+      "replacement": "tfc:metal/block/gold"
+    },
+    {
+      "original": "minecraft:packed_mud",
+      "replacement": "tfc:smooth_mud_bricks"
+    },
+    {
+      "original": "minecraft:mud_bricks",
+      "replacement": "tfc:mud_bricks/sandy_loam"
+    },
+    {
+      "original": "minecraft:mud_brick_stairs",
+      "replacement": "tfc:mud_bricks/sandy_loam_stairs"
+    },
+    {
+      "original": "minecraft:mud_brick_slab",
+      "replacement": "tfc:mud_bricks/sandy_loam_slab"
+    },
+    {
+      "original": "minecraft:mud_brick_wall",
+      "replacement": "tfc:mud_bricks/sandy_loam_wall"
+    },
+    {
+      "original": "minecraft:sugar_cane",
+      "replacement": "tfc:wild_crop/sugarcane"
+    },
+    {
+      "original": "minecraft:copper_block",
+      "replacement": "tfc:metal/block/copper"
+    }
+  ],
+  "randomReplacements": [
+    {
+      "original": "minecraft:chain",
+      "replacements": [
+        "tfc:metal/chain/copper",
+        "tfc:metal/chain/bismuth_bronze",
+        "tfc:metal/chain/black_bronze",
+        "tfc:metal/chain/bronze",
+        "tfc:metal/chain/wrought_iron"
+      ]
+    },
+    {
+      "original": "minecraft:iron_bars",
+      "replacements": [
+        "tfc:metal/bars/copper",
+        "tfc:metal/bars/bismuth_bronze",
+        "tfc:metal/bars/black_bronze",
+        "tfc:metal/bars/bronze",
+        "tfc:metal/bars/wrought_iron"
+      ]
+    },
+    {
+      "original": "minecraft:iron_trapdoor",
+      "replacements": [
+        "tfc:metal/trapdoor/copper",
+        "tfc:metal/trapdoor/bismuth_bronze",
+        "tfc:metal/trapdoor/black_bronze",
+        "tfc:metal/trapdoor/bronze",
+        "tfc:metal/trapdoor/wrought_iron"
+      ]
+    },
+    {
+      "original": "minecraft:anvil",
+      "perBlock": true,
+      "replacements": [
+        "tfc:metal/anvil/copper",
+        "tfc:metal/anvil/bismuth_bronze",
+        "tfc:metal/anvil/black_bronze",
+        "tfc:metal/anvil/bronze"
+      ]
+    },
+    {
+      "original": "minecraft:chipped_anvil",
+      "perBlock": true,
+      "replacements": [
+        "tfc:metal/anvil/copper",
+        "tfc:metal/anvil/bismuth_bronze",
+        "tfc:metal/anvil/black_bronze",
+        "tfc:metal/anvil/bronze"
+      ]
+    },
+    {
+      "original": "minecraft:damaged_anvil",
+      "perBlock": true,
+      "replacements": [
+        "tfc:metal/anvil/copper",
+        "tfc:metal/anvil/bismuth_bronze",
+        "tfc:metal/anvil/black_bronze",
+        "tfc:metal/anvil/bronze"
+      ]
+    },
+    {
+      "original": "minecraft:wheat",
+      "perBlock": true,
+      "replacements": [
+        "tfc:crop/barley",
+        "tfc:crop/oat",
+        "tfc:crop/rye",
+        "tfc:crop/maize",
+        "tfc:crop/wheat",
+        "tfc:crop/rice"
+      ]
+    },
+    {
+      "original": "minecraft:beetroots",
+      "perBlock": true,
+      "replacements": [
+        "tfc:crop/beet",
+        "tfc:crop/cabbage",
+        "tfc:crop/green_bean",
+        "tfc:crop/soybean",
+        "tfc:crop/jute",
+        "tfc:crop/papyrus"
+      ]
+    },
+    {
+      "original": "minecraft:potatoes",
+      "perBlock": true,
+      "replacements": [
+        "tfc:crop/potato",
+        "tfc:crop/onion",
+        "tfc:crop/garlic",
+        "tfc:crop/pumpkin",
+        "tfc:crop/melon",
+        "tfc:crop/squash",
+        "tfc:crop/sugarcane"
+      ]
+    },
+    {
+      "original": "minecraft:carrots",
+      "perBlock": true,
+      "replacements": [
+        "tfc:crop/carrot",
+        "tfc:crop/tomato",
+        "tfc:crop/yellow_bell_pepper",
+        "tfc:crop/red_bell_pepper"
+      ]
+    },
+    {
+      "original": "minecraft:magma_block",
+      "perBlock": true,
+      "replacements": [
+        "tfc:rock/magma/granite",
+        "tfc:rock/magma/diorite",
+        "tfc:rock/magma/gabbro",
+        "tfc:rock/magma/rhyolite",
+        "tfc:rock/magma/basalt",
+        "tfc:rock/magma/andesite",
+        "tfc:rock/magma/dacite"
+      ]
+    }
+  ],
+  "tfcWorldReplacements": [
+    {
+      "original": "minecraft:acacia_button",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:acacia_door",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:acacia_fence",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:acacia_fence_gate",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:acacia_hanging_sign",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:acacia_leaves",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:acacia_log",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:acacia_planks",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:acacia_pressure_plate",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:acacia_sapling",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:acacia_sign",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:acacia_slab",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:acacia_stairs",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:acacia_trapdoor",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:acacia_wall_hanging_sign",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:acacia_wall_sign",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:acacia_wood",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:bamboo",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:bamboo_block",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:bamboo_button",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:bamboo_door",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:bamboo_fence",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:bamboo_fence_gate",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:bamboo_hanging_sign",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:bamboo_mosaic",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:bamboo_mosaic_slab",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:bamboo_mosaic_stairs",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:bamboo_planks",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:bamboo_pressure_plate",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:bamboo_sapling",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:bamboo_sign",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:bamboo_slab",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:bamboo_stairs",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:bamboo_trapdoor",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:bamboo_wall_hanging_sign",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:bamboo_wall_sign",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:birch_button",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:birch_door",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:birch_fence",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:birch_fence_gate",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:birch_hanging_sign",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:birch_leaves",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:birch_log",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:birch_planks",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:birch_pressure_plate",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:birch_sapling",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:birch_sign",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:birch_slab",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:birch_stairs",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:birch_trapdoor",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:birch_wall_hanging_sign",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:birch_wall_sign",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:birch_wood",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:bookshelf",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:brick_slab",
+      "type": "BRICK"
+    },
+    {
+      "original": "minecraft:brick_stairs",
+      "type": "BRICK"
+    },
+    {
+      "original": "minecraft:brick_wall",
+      "type": "BRICK"
+    },
+    {
+      "original": "minecraft:bricks",
+      "type": "BRICK"
+    },
+    {
+      "original": "minecraft:cherry_button",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:cherry_door",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:cherry_fence",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:cherry_fence_gate",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:cherry_hanging_sign",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:cherry_leaves",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:cherry_log",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:cherry_planks",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:cherry_pressure_plate",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:cherry_sapling",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:cherry_sign",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:cherry_slab",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:cherry_stairs",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:cherry_trapdoor",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:cherry_wall_hanging_sign",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:cherry_wall_sign",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:cherry_wood",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:chest",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:chiseled_red_sandstone",
+      "type": "SAND"
+    },
+    {
+      "original": "minecraft:chiseled_sandstone",
+      "type": "SAND"
+    },
+    {
+      "original": "minecraft:chiseled_stone_bricks",
+      "type": "BRICK"
+    },
+    {
+      "original": "minecraft:coal_ore",
+      "type": "ORE"
+    },
+    {
+      "original": "minecraft:coarse_dirt",
+      "type": "SOIL"
+    },
+    {
+      "original": "minecraft:cobblestone",
+      "type": "STONE"
+    },
+    {
+      "original": "minecraft:cobblestone_slab",
+      "type": "STONE"
+    },
+    {
+      "original": "minecraft:cobblestone_stairs",
+      "type": "STONE"
+    },
+    {
+      "original": "minecraft:cobblestone_wall",
+      "type": "STONE"
+    },
+    {
+      "original": "minecraft:copper_ore",
+      "type": "ORE"
+    },
+    {
+      "original": "minecraft:cracked_deepslate_bricks",
+      "type": "BRICK"
+    },
+    {
+      "original": "minecraft:cracked_stone_bricks",
+      "type": "BRICK"
+    },
+    {
+      "original": "minecraft:crafting_table",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:crimson_button",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:crimson_door",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:crimson_fence",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:crimson_fence_gate",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:crimson_fungus",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:crimson_hanging_sign",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:crimson_hyphae",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:crimson_nylium",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:crimson_planks",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:crimson_pressure_plate",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:crimson_roots",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:crimson_sign",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:crimson_slab",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:crimson_stairs",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:crimson_stem",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:crimson_trapdoor",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:crimson_wall_hanging_sign",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:crimson_wall_sign",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:cut_red_sandstone",
+      "type": "SAND"
+    },
+    {
+      "original": "minecraft:cut_red_sandstone_slab",
+      "type": "SAND"
+    },
+    {
+      "original": "minecraft:cut_sandstone",
+      "type": "SAND"
+    },
+    {
+      "original": "minecraft:cut_sandstone_slab",
+      "type": "SAND"
+    },
+    {
+      "original": "minecraft:dark_oak_button",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:dark_oak_door",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:dark_oak_fence",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:dark_oak_fence_gate",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:dark_oak_hanging_sign",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:dark_oak_leaves",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:dark_oak_log",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:dark_oak_planks",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:dark_oak_pressure_plate",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:dark_oak_sapling",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:dark_oak_sign",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:dark_oak_slab",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:dark_oak_stairs",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:dark_oak_trapdoor",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:dark_oak_wall_hanging_sign",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:dark_oak_wall_sign",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:dark_oak_wood",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:deepslate_brick_slab",
+      "type": "BRICK"
+    },
+    {
+      "original": "minecraft:deepslate_brick_stairs",
+      "type": "BRICK"
+    },
+    {
+      "original": "minecraft:deepslate_brick_wall",
+      "type": "BRICK"
+    },
+    {
+      "original": "minecraft:deepslate_bricks",
+      "type": "BRICK"
+    },
+    {
+      "original": "minecraft:deepslate_coal_ore",
+      "type": "ORE"
+    },
+    {
+      "original": "minecraft:deepslate_copper_ore",
+      "type": "ORE"
+    },
+    {
+      "original": "minecraft:deepslate_diamond_ore",
+      "type": "ORE"
+    },
+    {
+      "original": "minecraft:deepslate_emerald_ore",
+      "type": "ORE"
+    },
+    {
+      "original": "minecraft:deepslate_gold_ore",
+      "type": "ORE"
+    },
+    {
+      "original": "minecraft:deepslate_iron_ore",
+      "type": "ORE"
+    },
+    {
+      "original": "minecraft:deepslate_lapis_ore",
+      "type": "ORE"
+    },
+    {
+      "original": "minecraft:deepslate_redstone_ore",
+      "type": "ORE"
+    },
+    {
+      "original": "minecraft:diamond_ore",
+      "type": "ORE"
+    },
+    {
+      "original": "minecraft:dirt",
+      "type": "SOIL"
+    },
+    {
+      "original": "minecraft:dirt_path",
+      "type": "SOIL"
+    },
+    {
+      "original": "minecraft:emerald_ore",
+      "type": "ORE"
+    },
+    {
+      "original": "minecraft:farmland",
+      "type": "SOIL"
+    },
+    {
+      "original": "minecraft:gold_ore",
+      "type": "ORE"
+    },
+    {
+      "original": "minecraft:grass_block",
+      "type": "SOIL"
+    },
+    {
+      "original": "minecraft:gravel",
+      "type": "SAND"
+    },
+    {
+      "original": "minecraft:iron_ore",
+      "type": "ORE"
+    },
+    {
+      "original": "minecraft:jungle_button",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:jungle_door",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:jungle_fence",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:jungle_fence_gate",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:jungle_hanging_sign",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:jungle_leaves",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:jungle_log",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:jungle_planks",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:jungle_pressure_plate",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:jungle_sapling",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:jungle_sign",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:jungle_slab",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:jungle_stairs",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:jungle_trapdoor",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:jungle_wall_hanging_sign",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:jungle_wall_sign",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:jungle_wood",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:lapis_ore",
+      "type": "ORE"
+    },
+    {
+      "original": "minecraft:mangrove_button",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:mangrove_door",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:mangrove_fence",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:mangrove_fence_gate",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:mangrove_hanging_sign",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:mangrove_leaves",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:mangrove_log",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:mangrove_planks",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:mangrove_pressure_plate",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:mangrove_propagule",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:mangrove_roots",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:mangrove_sign",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:mangrove_slab",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:mangrove_stairs",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:mangrove_trapdoor",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:mangrove_wall_hanging_sign",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:mangrove_wall_sign",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:mangrove_wood",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:mossy_cobblestone",
+      "type": "STONE"
+    },
+    {
+      "original": "minecraft:mossy_cobblestone_slab",
+      "type": "STONE"
+    },
+    {
+      "original": "minecraft:mossy_cobblestone_stairs",
+      "type": "STONE"
+    },
+    {
+      "original": "minecraft:mossy_cobblestone_wall",
+      "type": "STONE"
+    },
+    {
+      "original": "minecraft:mossy_stone_brick_slab",
+      "type": "BRICK"
+    },
+    {
+      "original": "minecraft:mossy_stone_brick_stairs",
+      "type": "BRICK"
+    },
+    {
+      "original": "minecraft:mossy_stone_brick_wall",
+      "type": "BRICK"
+    },
+    {
+      "original": "minecraft:mossy_stone_bricks",
+      "type": "BRICK"
+    },
+    {
+      "original": "minecraft:mud",
+      "type": "SOIL"
+    },
+    {
+      "original": "minecraft:mud_brick_slab",
+      "type": "BRICK"
+    },
+    {
+      "original": "minecraft:mud_brick_stairs",
+      "type": "BRICK"
+    },
+    {
+      "original": "minecraft:mud_brick_wall",
+      "type": "BRICK"
+    },
+    {
+      "original": "minecraft:mud_bricks",
+      "type": "BRICK"
+    },
+    {
+      "original": "minecraft:muddy_mangrove_roots",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:oak_button",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:oak_door",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:oak_fence",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:oak_fence_gate",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:oak_hanging_sign",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:oak_leaves",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:oak_log",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:oak_planks",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:oak_pressure_plate",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:oak_sapling",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:oak_sign",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:oak_slab",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:oak_stairs",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:oak_trapdoor",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:oak_wall_hanging_sign",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:oak_wall_sign",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:oak_wood",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:petrified_oak_slab",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:podzol",
+      "type": "SOIL"
+    },
+    {
+      "original": "minecraft:potted_acacia_sapling",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:potted_bamboo",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:potted_birch_sapling",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:potted_cherry_sapling",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:potted_crimson_fungus",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:potted_crimson_roots",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:potted_dark_oak_sapling",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:potted_jungle_sapling",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:potted_mangrove_propagule",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:potted_oak_sapling",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:potted_spruce_sapling",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:potted_warped_fungus",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:potted_warped_roots",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:quartz_bricks",
+      "type": "BRICK"
+    },
+    {
+      "original": "minecraft:red_sand",
+      "type": "SAND"
+    },
+    {
+      "original": "minecraft:red_sandstone",
+      "type": "SAND"
+    },
+    {
+      "original": "minecraft:red_sandstone_slab",
+      "type": "SAND"
+    },
+    {
+      "original": "minecraft:red_sandstone_stairs",
+      "type": "SAND"
+    },
+    {
+      "original": "minecraft:red_sandstone_wall",
+      "type": "SAND"
+    },
+    {
+      "original": "minecraft:redstone_ore",
+      "type": "ORE"
+    },
+    {
+      "original": "minecraft:rooted_dirt",
+      "type": "SOIL"
+    },
+    {
+      "original": "minecraft:sand",
+      "type": "SAND"
+    },
+    {
+      "original": "minecraft:sandstone",
+      "type": "SAND"
+    },
+    {
+      "original": "minecraft:sandstone_slab",
+      "type": "SAND"
+    },
+    {
+      "original": "minecraft:sandstone_stairs",
+      "type": "SAND"
+    },
+    {
+      "original": "minecraft:sandstone_wall",
+      "type": "SAND"
+    },
+    {
+      "original": "minecraft:smooth_red_sandstone",
+      "type": "SAND"
+    },
+    {
+      "original": "minecraft:smooth_red_sandstone_slab",
+      "type": "SAND"
+    },
+    {
+      "original": "minecraft:smooth_red_sandstone_stairs",
+      "type": "SAND"
+    },
+    {
+      "original": "minecraft:smooth_sandstone",
+      "type": "SAND"
+    },
+    {
+      "original": "minecraft:smooth_sandstone_slab",
+      "type": "SAND"
+    },
+    {
+      "original": "minecraft:smooth_sandstone_stairs",
+      "type": "SAND"
+    },
+    {
+      "original": "minecraft:smooth_stone",
+      "type": "STONE"
+    },
+    {
+      "original": "minecraft:smooth_stone_slab",
+      "type": "STONE"
+    },
+    {
+      "original": "minecraft:spore_blossom",
+      "type": "ORE"
+    },
+    {
+      "original": "minecraft:spruce_button",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:spruce_door",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:spruce_fence",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:spruce_fence_gate",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:spruce_hanging_sign",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:spruce_leaves",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:spruce_log",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:spruce_planks",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:spruce_pressure_plate",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:spruce_sapling",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:spruce_sign",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:spruce_slab",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:spruce_stairs",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:spruce_trapdoor",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:spruce_wall_hanging_sign",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:spruce_wall_sign",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:spruce_wood",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:stone",
+      "type": "STONE"
+    },
+    {
+      "original": "minecraft:stone_brick_slab",
+      "type": "BRICK"
+    },
+    {
+      "original": "minecraft:stone_brick_stairs",
+      "type": "BRICK"
+    },
+    {
+      "original": "minecraft:stone_brick_wall",
+      "type": "BRICK"
+    },
+    {
+      "original": "minecraft:stone_bricks",
+      "type": "BRICK"
+    },
+    {
+      "original": "minecraft:stone_button",
+      "type": "STONE"
+    },
+    {
+      "original": "minecraft:stone_pressure_plate",
+      "type": "STONE"
+    },
+    {
+      "original": "minecraft:stone_slab",
+      "type": "STONE"
+    },
+    {
+      "original": "minecraft:stone_stairs",
+      "type": "STONE"
+    },
+    {
+      "original": "minecraft:stripped_acacia_log",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:stripped_acacia_wood",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:stripped_bamboo_block",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:stripped_birch_log",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:stripped_birch_wood",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:stripped_cherry_log",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:stripped_cherry_wood",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:stripped_crimson_hyphae",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:stripped_crimson_stem",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:stripped_dark_oak_log",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:stripped_dark_oak_wood",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:stripped_jungle_log",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:stripped_jungle_wood",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:stripped_mangrove_log",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:stripped_mangrove_wood",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:stripped_oak_log",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:stripped_oak_wood",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:stripped_spruce_log",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:stripped_spruce_wood",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:stripped_warped_hyphae",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:stripped_warped_stem",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:trapped_chest",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:warped_button",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:warped_door",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:warped_fence",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:warped_fence_gate",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:warped_fungus",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:warped_hanging_sign",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:warped_hyphae",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:warped_nylium",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:warped_planks",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:warped_pressure_plate",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:warped_roots",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:warped_sign",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:warped_slab",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:warped_stairs",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:warped_stem",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:warped_trapdoor",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:warped_wall_hanging_sign",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:warped_wall_sign",
+      "type": "WOOD"
+    },
+    {
+      "original": "minecraft:warped_wart_block",
+      "type": "WOOD"
+    }
+  ]
+}

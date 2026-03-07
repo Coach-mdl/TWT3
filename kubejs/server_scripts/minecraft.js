@@ -10,6 +10,7 @@ const VanillaRecipes = (event) => {
     event.remove({output: 'minecraft:copper_ingot'})
     event.remove({output: 'minecraft:iron_ingot'})
     event.remove({output: 'minecraft:iron_block'})
+    event.remove({id: 'minecraft:iron_bars'})
 
     //replace
     event.replaceInput(
@@ -82,6 +83,9 @@ const VanillaRecipes = (event) => {
     //shapeless
     event.shapeless(Item.of('minecraft:glass_bottle', 1),
         ['#tfc:glass_bottles'])
+
+    //Stonecutting
+    event.stonecutting(Item.of('minecraft:iron_bars', 8), '#forge:ingots/iron')
 
     //Furnace
     event.smelting('minecraft:charcoal', '#tfc:pit_kiln_logs').xp(0.35)

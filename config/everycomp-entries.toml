@@ -26,6 +26,22 @@
 			white_cedar = true
 			willow = true
 
+		[types.wood_type.aether]
+			skyroot = true
+
+		[types.wood_type.endergetic]
+			poise = true
+
+	[types.leaves_type]
+
+		[types.leaves_type.aether]
+			skyroot = true
+			golden_oak = true
+			crystal = true
+			crystal_fruit = true
+			holiday = true
+			decorated_holiday = true
+
 #Disables specific entries
 [entries]
 
@@ -97,4 +113,41 @@
 			bark_trapdoor = true
 			mystic_trapdoor = true
 			barrel_trapdoor = true
+
+		[entries.wood_type.mcwwindows]
+			louvered_shutter = true
+			plank_pane_window = true
+			plank_four_window = true
+			stripped_log_window2 = true
+			log_parapet = true
+			window2 = true
+			stripped_log_four_window = true
+			stripped_log_window = true
+			plank_window = true
+			plank_window2 = true
+			pane_window = true
+			stripped_pane_window = true
+			four_window = true
+			plank_parapet = true
+			blinds = true
+			window = true
+			shutter = true
+
+		[entries.wood_type.mcwbridges]
+			bridge_pier = true
+			rope_bridge = true
+			log_bridge_middle = true
+			rope_bridge_stair = true
+			log_bridge_stair = true
+			rail_bridge = true
+
+		[entries.wood_type.mcwstairs]
+			terrace_stairs = true
+			compact_stairs = true
+			balcony = true
+			loft_stairs = true
+			railing = true
+			platform = true
+			skyline_stairs = true
+			bulk_stairs = true
 

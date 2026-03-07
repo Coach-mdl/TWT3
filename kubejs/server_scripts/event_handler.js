@@ -33,6 +33,7 @@ ServerEvents.tags('item', event => {
     TFMGTags(event)
     ForgeItemTags(event)
     TFCItemTags(event)
+    AetherItemTags(event)
     JEItags(event)
 })
 
@@ -45,6 +46,7 @@ ServerEvents.tags('fluid', event => {
 })
 
 LootJS.modifiers(event => {
+    AetherLoot(event)
     DFCLoot(event)
 })
 
@@ -57,6 +59,7 @@ TFCEvents.data(event => {
     ImmersiveEngineeringData(event)
     CreateData(event)
     TFMGData(event)
+    AetherData(event)
     DFCData(event)
     IronchestsData(event)
 })
@@ -72,6 +75,7 @@ ServerEvents.recipes(event => {
     MiscRecipes(event)
     FarmersDelightRecipes(event)
     LycheeRecipes(event)
+    AetherRecipes(event)
     WaystonesRecipes(event)
     ToolbeltRecipes(event)
     TombstoneRecipes(event)
