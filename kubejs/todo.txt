@@ -1,14 +1,21 @@
 //TODO
 DUPES:
+Some IE sheet pressing uses a single ingot instead of two. (Cast iron, Steel)
 
 CHANGES:
-- Give simple radio consistency. Change recipes so players can access the items earlier.
 - Limit parcool. Change default keybinds.
 - Add consistency to Corail Tombstone.
+- Pig iron recipe for IE Arc Furnace.
+- Multiblock Electric Heater.
+- Offline food storage container.
+- Freezer block that cools items inside.
+- Center all power around Power Grid.
+- Blacklist most Power Grid blocks on ships.
+- V-Steel Anvil for endgame stuff.
 
 CREATE:
 - Remove duplicate recipes.
-- Create recipes for glassworking products.
+- Create recipes for glassworking products. (Fix inputs)
 - Add consistency between Create and Woodencog recipes.
 - Most addon ores do not have a woodencog mixing recipe.
 

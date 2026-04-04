@@ -141,11 +141,11 @@ const AetherData = (event) => {
 }
 
 const AetherLoot = (event) => {
-/*
-    event.addBlockLootModifier("aether:sheepuff")
+
+    event.addEntityLootModifier("aether:sheepuff")
     .replaceLoot('minecraft:mutton', 'tfc:food/mutton')
     .replaceLoot('minecraft:white_wool', 'tfc:medium_sheepskin_hide')
-    */
+    
 }
 
 const AetherItemTags = (event) => {

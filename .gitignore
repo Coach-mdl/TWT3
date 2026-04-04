@@ -181,9 +181,17 @@ config/spark/config.json
 config/mods_optimizer/mods-database-override.json
 config/aether/sun_altar_whitelist.json
 config/valkyrienskies/clockwork/client.toml
+tfc_structures_datapacks/
 
 config/animal_pen_config.json
 config/blueprint-client.toml
 config/inventorysorter-client.toml
 config/rehooked-client.toml
 config/powergrid-client.toml
+config/sodiumextras-client.toml
+config/soundofrain-client.toml
+config/rainshield-client.toml
+config/artifacts/client.json5
+config/create_jetpack-client.toml
+config/fluxnetworks-client.toml
+config/particlerain/config.json

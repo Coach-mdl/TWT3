@@ -13,76 +13,207 @@
 //Code for mods that are compats of another mod should be stored within the main mods files. IE, IE TFC Compat
 // recipes should go in IE's recipe files or WoodenCog Recipes should go in Create's recipe file.
 
-const $nuggetcompat = ['immersiveengineering:nugget_lead', 'immersiveengineering:nugget_silver', 'antiquelegacy:copper_nugget', 'immersiveengineering:nugget_nickel', 'antiquelegacy:bronze_nugget', 'minecraft:iron_nugget', 'knightsofterrafirma:black_bronze_nugget', 'knightsofterrafirma:bismuth_bronze_nugget', 'magistuarmory:steel_nugget', 'immersiveengineering:nugget_uranium', 'antiquelegacy:tin_nugget', 'immersiveengineering:nugget_electrum', 'immersiveengineering:nugget_constantan', 'minecraft:gold_nugget', 'immersiveengineering:nugget_copper', 'immersiveengineering:nugget_aluminum']
-const $ores = ['native_copper', 'native_gold', 'hematite', 'native_silver', 'cassiterite', 'bismuthinite', 'garnierite', 'malachite', 'magnetite', 'limonite', 'sphalerite', 'tetrahedrite']
-const $metals = ['bismuth', 'bismuth_bronze', 'black_bronze', 'bronze', 'brass', 'copper', 'gold', 'nickel', 'rose_gold', 'silver', 'tin', 'zinc', 'sterling_silver', 'wrought_iron', 'cast_iron', 'steel', 'black_steel', 'blue_steel', 'red_steel', 'aluminum', 'alumina', 'lead', 'pewter', 'platinum']
-const $tfcMetals = ['bismuth', 'bismuth_bronze', 'black_bronze', 'bronze', 'brass', 'copper', 'gold', 'nickel', 'rose_gold', 'silver', 'tin', 'zinc', 'sterling_silver', 'wrought_iron', 'cast_iron', 'steel', 'black_steel', 'blue_steel', 'red_steel']
-const $IEMetals = ['aluminum', 'lead', 'uranium', 'constantan', 'electrum']
-const $AllOres = ['chromite', 'native_copper', 'native_gold', 'hematite', 'native_silver', 'cassiterite', 'bismuthinite', 'garnierite', 'malachite', 'magnetite', 'limonite', 'sphalerite', 'tetrahedrite', 'bauxite', 'galena', 'native_aluminum', 'native_platinum', 'uraninite']
-const $dfcOres = ['native_platinum', 'native_aluminum', 'bauxite', 'galena']
-const $IEores = ['bauxite', 'galena', 'uraninite']
-const $woods = ['acacia', 'ash', 'aspen', 'birch', 'blackwood', 'chestnut', 'douglas_fir', 'hickory', 'kapok', 'mangrove', 'maple', 'oak', 'palm', 'pine', 'rosewood', 'sequoia', 'spruce', 'sycamore', 'white_cedar', 'willow']
-const $tfmgExistingIngots = ['steel', 'cast_iron', 'aluminum', 'lead', 'nickel', 'constantan']
+const $nuggetcompat = [
+  "immersiveengineering:nugget_lead",
+  "immersiveengineering:nugget_silver",
+  "antiquelegacy:copper_nugget",
+  "immersiveengineering:nugget_nickel",
+  "antiquelegacy:bronze_nugget",
+  "minecraft:iron_nugget",
+  "knightsofterrafirma:black_bronze_nugget",
+  "knightsofterrafirma:bismuth_bronze_nugget",
+  "magistuarmory:steel_nugget",
+  "immersiveengineering:nugget_uranium",
+  "antiquelegacy:tin_nugget",
+  "immersiveengineering:nugget_electrum",
+  "immersiveengineering:nugget_constantan",
+  "minecraft:gold_nugget",
+  "immersiveengineering:nugget_copper",
+  "immersiveengineering:nugget_aluminum",
+];
+const $ores = [
+  "native_copper",
+  "native_gold",
+  "hematite",
+  "native_silver",
+  "cassiterite",
+  "bismuthinite",
+  "garnierite",
+  "malachite",
+  "magnetite",
+  "limonite",
+  "sphalerite",
+  "tetrahedrite",
+];
+const $metals = [
+  "bismuth",
+  "bismuth_bronze",
+  "black_bronze",
+  "bronze",
+  "brass",
+  "copper",
+  "gold",
+  "nickel",
+  "rose_gold",
+  "silver",
+  "tin",
+  "zinc",
+  "sterling_silver",
+  "wrought_iron",
+  "cast_iron",
+  "steel",
+  "black_steel",
+  "blue_steel",
+  "red_steel",
+  "aluminum",
+  "alumina",
+  "lead",
+  "pewter",
+  "platinum",
+];
+const $tfcMetals = [
+  "bismuth",
+  "bismuth_bronze",
+  "black_bronze",
+  "bronze",
+  "brass",
+  "copper",
+  "gold",
+  "nickel",
+  "rose_gold",
+  "silver",
+  "tin",
+  "zinc",
+  "sterling_silver",
+  "wrought_iron",
+  "cast_iron",
+  "steel",
+  "black_steel",
+  "blue_steel",
+  "red_steel",
+];
+const $IEMetals = ["aluminum", "lead", "uranium", "constantan", "electrum"];
+const $AllOres = [
+  "chromite",
+  "native_copper",
+  "native_gold",
+  "hematite",
+  "native_silver",
+  "cassiterite",
+  "bismuthinite",
+  "garnierite",
+  "malachite",
+  "magnetite",
+  "limonite",
+  "sphalerite",
+  "tetrahedrite",
+  "bauxite",
+  "galena",
+  "native_aluminum",
+  "native_platinum",
+  "uraninite",
+];
+const $dfcOres = ["native_platinum", "native_aluminum", "bauxite", "galena"];
+const $IEores = ["bauxite", "galena", "uraninite"];
+const $woods = [
+  "acacia",
+  "ash",
+  "aspen",
+  "birch",
+  "blackwood",
+  "chestnut",
+  "douglas_fir",
+  "hickory",
+  "kapok",
+  "mangrove",
+  "maple",
+  "oak",
+  "palm",
+  "pine",
+  "rosewood",
+  "sequoia",
+  "spruce",
+  "sycamore",
+  "white_cedar",
+  "willow",
+];
+const $tfmgExistingIngots = [
+  "steel",
+  "cast_iron",
+  "aluminum",
+  "lead",
+  "nickel",
+  "constantan",
+];
 
 //Tags should always load before anything that uses them.
-ServerEvents.tags('item', event => {
-    ErrorSilencerItemTags(event)
-    TWTItemTags(event)
-    VanillaItemTags(event)
-    CreateItemTags(event)
-    TFMGTags(event)
-    ForgeItemTags(event)
-    TFCItemTags(event)
-    AetherItemTags(event)
-    JEItags(event)
-})
+ServerEvents.tags("item", (event) => {
+  ErrorSilencerItemTags(event);
+  TWTItemTags(event);
+  VanillaItemTags(event);
+  CreateItemTags(event);
+  TFMGTags(event);
+  ForgeItemTags(event);
+  TFCItemTags(event);
+  AetherItemTags(event);
+  JEItags(event);
+});
 
-ServerEvents.tags('block', event => {
-    ErrorSilencerBlockTags(event)
-})
+ServerEvents.tags("block", (event) => {
+  ErrorSilencerBlockTags(event);
+  MiscBlockTags(event);
+});
 
-ServerEvents.tags('fluid', event => {
-    ImmersiveengineeringFluidTags(event)
-})
+ServerEvents.tags("fluid", (event) => {
+  ImmersiveengineeringFluidTags(event);
+});
 
-LootJS.modifiers(event => {
-    AetherLoot(event)
-    DFCLoot(event)
-})
+MoreJSEvents.structureAfterPlace((event) => {
+  worldgen(event);
+});
+
+LootJS.modifiers((event) => {
+  AetherLoot(event);
+  DFCLoot(event);
+});
 
 //TFC Data should load before recipes as some TFC recipes depend on them.
-TFCEvents.data(event => {
-    ErrorSilencerData(event)
-    TWTData(event)
-    VanillaData(event)
-    TFCData(event)
-    ImmersiveEngineeringData(event)
-    CreateData(event)
-    TFMGData(event)
-    AetherData(event)
-    DFCData(event)
-    IronchestsData(event)
-})
+TFCEvents.data((event) => {
+  ErrorSilencerData(event);
+  TWTData(event);
+  VanillaData(event);
+  TFCData(event);
+  ImmersiveEngineeringData(event);
+  CreateData(event);
+  TFMGData(event);
+  AetherData(event);
+  DFCData(event);
+  IronchestsData(event);
+});
 
-ServerEvents.recipes(event => {
-    TWTRecipes(event)
-    VanillaRecipes(event)
-    TFCRecipes(event)
-    ImmersiveEngineeringRecipes(event)
-    CreateRecipes(event)
-    TFMGRecipes(event)
-    CreateadditionRecipes(event)
-    MiscRecipes(event)
-    FarmersDelightRecipes(event)
-    LycheeRecipes(event)
-    AetherRecipes(event)
-    WaystonesRecipes(event)
-    ToolbeltRecipes(event)
-    TombstoneRecipes(event)
-    HandcraftedRecipes(event)
-    DFCRecipes(event)
-    MagistuArmoryRecipes(event)
-    ParcoolRecipes(event)
-    IronchestRecipes(event)
-    MusketModRecipes(event)
-})
+ServerEvents.recipes((event) => {
+  TWTRecipes(event);
+  VanillaRecipes(event);
+  TFCRecipes(event);
+  ImmersiveEngineeringRecipes(event);
+  CreateRecipes(event);
+  TFMGRecipes(event);
+  CreateadditionRecipes(event);
+  MiscRecipes(event);
+  FarmersDelightRecipes(event);
+  LycheeRecipes(event);
+  AetherRecipes(event);
+  WaystonesRecipes(event);
+  ToolbeltRecipes(event);
+  TombstoneRecipes(event);
+  HandcraftedRecipes(event);
+  DFCRecipes(event);
+  MagistuArmoryRecipes(event);
+  ParcoolRecipes(event);
+  IronchestRecipes(event);
+  MusketModRecipes(event);
+});
+
+ServerEvents.commandRegistry((event) => {
+  TWTCommands(event);
+});

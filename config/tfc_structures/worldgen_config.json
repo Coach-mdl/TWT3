@@ -3,38 +3,97 @@
     {
       "id": "tfc_structures:all_tfc_biomes",
       "biomes": [
-        "tfc:highlands",
-        "tfc:salt_marsh",
-        "tfc:volcanic_mountain_lake",
-        "tfc:deep_ocean_trench",
-        "tfc:volcanic_oceanic_mountain_lake",
-        "tfc:shore",
-        "tfc:oceanic_mountains",
-        "tfc:inverted_badlands",
-        "tfc:plains",
-        "tfc:volcanic_mountains",
+        "tfc:badlands",
         "tfc:lake",
-        "tfc:mountain_lake",
-        "tfc:low_canyons",
-        "tfc:rolling_hills",
-        "tfc:mountains",
-        "tfc:plateau_lake",
-        "tfc:hills",
-        "tfc:oceanic_mountain_lake",
-        "tfc:river",
-        "tfc:canyons",
+        "tfc:lowlands",
         "tfc:ocean",
-        "tfc:volcanic_oceanic_mountains",
-        "tfc:tidal_flats",
+        "tfc:canyons",
+        "tfc:mountains",
+        "tfc:river",
+        "tfc:oceanic_mountain_lake",
+        "tfc:ocean_reef",
+        "tfc:volcanic_mountains",
+        "tfc:volcanic_mountain_lake",
         "tfc:old_mountains",
+        "tfc:highlands",
+        "tfc:tidal_flats",
+        "tfc:old_mountain_lake",
+        "tfc:rolling_hills",
+        "tfc:plateau_lake",
+        "tfc:low_canyons",
+        "tfc:deep_ocean_trench",
+        "tfc:inverted_badlands",
+        "tfc:volcanic_oceanic_mountains",
+        "tfc:volcanic_oceanic_mountain_lake",
+        "tfc:hills",
+        "tfc:oceanic_mountains",
+        "tfc:plateau",
+        "tfc:deep_ocean",
+        "tfc:shore",
+        "tfc:plains",
+        "tfc:salt_marsh",
+        "tfc:mountain_lake"
+      ],
+      "structures": [
+        "dungeons_arise:plague_asylum",
+        "betterdungeons:skeleton_dungeon",
+        "betterdungeons:small_dungeon",
+        "bettermineshafts:mineshaft_dripstone",
+        "bettermineshafts:mineshaft_jungle",
+        "bettermineshafts:mineshaft_lush",
+        "bettermineshafts:mineshaft_mushroom",
+        "bettermineshafts:mineshaft_oak",
+        "bettermineshafts:mineshaft_overgrown",
+        "bettermineshafts:mineshaft_spruce",
+        "dungeons_arise:heavenly_challenger",
+        "dungeons_arise:heavenly_conqueror",
+        "dungeons_arise:heavenly_rider"
+      ]
+    },
+    {
+      "id": "tfc_structures:on_land",
+      "biomes": [
         "tfc:badlands",
         "tfc:lowlands",
-        "tfc:ocean_reef",
-        "tfc:old_mountain_lake",
-        "tfc:deep_ocean",
-        "tfc:plateau"
+        "tfc:canyons",
+        "tfc:mountains",
+        "tfc:oceanic_mountain_lake",
+        "tfc:volcanic_mountains",
+        "tfc:old_mountains",
+        "tfc:highlands",
+        "tfc:rolling_hills",
+        "tfc:plateau_lake",
+        "tfc:low_canyons",
+        "tfc:inverted_badlands",
+        "tfc:volcanic_oceanic_mountains",
+        "tfc:hills",
+        "tfc:oceanic_mountains",
+        "tfc:plateau",
+        "tfc:shore",
+        "tfc:plains",
+        "tfc:salt_marsh"
       ],
-      "structures": []
+      "structures": [
+        "tombstone:abandoned_grave_land",
+        "betterdungeons:spider_dungeon",
+        "betterdungeons:zombie_dungeon",
+        "dungeons_arise:scorched_mines",
+        "dungeons_arise:foundry",
+        "dungeons_arise:mining_system",
+        "dungeons_arise:illager_campsite",
+        "dungeons_arise:illager_fort",
+        "dungeons_arise:infested_temple",
+        "dungeons_arise:abandoned_temple",
+        "dungeons_arise:aviary",
+        "dungeons_arise:bandit_towers",
+        "dungeons_arise:bandit_village",
+        "dungeons_arise:bathhouse",
+        "dungeons_arise:keep_kayra",
+        "dungeons_arise:mechanical_nest",
+        "dungeons_arise:shiraz_palace",
+        "dungeons_arise:thornborn_towers",
+        "dungeons_arise:wishing_well"
+      ]
     },
     {
       "id": "tfc_structures:is_beach",
@@ -42,7 +101,20 @@
         "tfc:tidal_flats",
         "tfc:shore"
       ],
-      "structures": []
+      "structures": [
+        "dungeons_arise:fishing_hut",
+        "dungeons_arise:lighthouse",
+        "alekiships:unfinished_rowboat_birch",
+        "alekiships:unfinished_rowboat_cherry",
+        "alekiships:unfinished_rowboat_dark_oak",
+        "alekiships:unfinished_rowboat_oak",
+        "alekiships:unfinished_rowboat_spruce",
+        "alekiships:unfinished_sloop_birch",
+        "alekiships:unfinished_sloop_cherry",
+        "alekiships:unfinished_sloop_dark_oak",
+        "alekiships:unfinished_sloop_oak",
+        "alekiships:unfinished_sloop_spruce"
+      ]
     },
     {
       "id": "tfc_structures:is_oceanic_mountain_lake",
@@ -76,7 +148,9 @@
         "#tfc_structures:is_mountain_lake",
         "#tfc_structures:is_oceanic_mountain_lake"
       ],
-      "structures": []
+      "structures": [
+        "dungeons_arise:fishing_hut"
+      ]
     },
     {
       "id": "tfc_structures:is_river",
@@ -98,7 +172,10 @@
         "tfc:badlands",
         "tfc:inverted_badlands"
       ],
-      "structures": []
+      "structures": [
+        "bettermineshafts:mineshaft_red_desert",
+        "bettermineshafts:mineshaft_mesa"
+      ]
     },
     {
       "id": "tfc_structures:is_hill",
@@ -114,7 +191,9 @@
         "tfc:low_canyons",
         "tfc:canyons"
       ],
-      "structures": []
+      "structures": [
+        "bettermineshafts:mineshaft_desert"
+      ]
     },
     {
       "id": "tfc_structures:is_common_mountains",
@@ -162,7 +241,11 @@
         "#tfc_structures:is_deep_ocean",
         "#tfc_structures:is_common_ocean"
       ],
-      "structures": []
+      "structures": [
+        "tombstone:abandoned_grave_ocean",
+        "dungeons_arise:typhon",
+        "dungeons_arise:ceryneian_hind"
+      ]
     },
     {
       "id": "tfc_structures:is_swamp",
@@ -170,7 +253,9 @@
         "tfc:lowlands",
         "tfc:salt_marsh"
       ],
-      "structures": []
+      "structures": [
+        "ribbits:ribbit_village"
+      ]
     },
     {
       "id": "tfc_structures:is_plains",
@@ -178,7 +263,9 @@
         "tfc:plains",
         "tfc:plateau"
       ],
-      "structures": []
+      "structures": [
+        "dungeons_arise:coliseum"
+      ]
     },
     {
       "id": "tfc_structures:buried_treasure",
@@ -238,7 +325,7 @@
         "#tfc_structures:is_any_mountains"
       ],
       "structures": [
-        "minecraft:stronghold"
+        "betterstrongholds:stronghold"
       ]
     },
     {
@@ -249,7 +336,8 @@
         "#tfc_structures:is_beach"
       ],
       "structures": [
-        "minecraft:swamp_hut"
+        "betterwitchhuts:witch_circle",
+        "betterwitchhuts:witch_hut"
       ]
     },
     {
@@ -283,7 +371,7 @@
         "#tfc_structures:is_highlands"
       ],
       "structures": [
-        "minecraft:jungle_pyramid"
+        "betterjungletemples:jungle_temple"
       ]
     },
     {
@@ -310,7 +398,8 @@
         "#tfc_structures:is_deep_ocean"
       ],
       "structures": [
-        "minecraft:monument"
+        "minecraft:monument",
+        "betteroceanmonuments:ocean_monument"
       ]
     },
     {
@@ -385,111 +474,46 @@
         "#tfc_structures:is_hill",
         "#tfc_structures:is_plains"
       ],
-      "structures": [
-        "minecraft:village_desert",
-        "minecraft:village_plains",
-        "minecraft:village_savanna",
-        "minecraft:village_taiga"
-      ]
+      "structures": []
     }
   ],
   "disabledStructures": [
     "minecraft:mineshaft_mesa",
     "minecraft:igloo",
-    "minecraft:village_snowy"
+    "minecraft:village_snowy",
+    "minecraft:village_desert",
+    "minecraft:village_plains",
+    "minecraft:village_savanna",
+    "minecraft:village_taiga"
   ],
   "defaultWorldgenStructures": [
-    "aether:bronze_dungeon",
-    "aether:gold_dungeon",
-    "aether:large_aercloud",
-    "aether:silver_dungeon",
-    "alekiships:unfinished_rowboat_birch",
-    "alekiships:unfinished_rowboat_cherry",
-    "alekiships:unfinished_rowboat_dark_oak",
-    "alekiships:unfinished_rowboat_oak",
-    "alekiships:unfinished_rowboat_spruce",
-    "alekiships:unfinished_sloop_birch",
-    "alekiships:unfinished_sloop_cherry",
-    "alekiships:unfinished_sloop_dark_oak",
-    "alekiships:unfinished_sloop_oak",
-    "alekiships:unfinished_sloop_spruce",
-    "betterdeserttemples:desert_temple",
+    "betterdungeons:small_nether_dungeon",
+    "betterfortresses:fortress",
     "bettermineshafts:mineshaft_acacia",
-    "bettermineshafts:mineshaft_desert",
-    "bettermineshafts:mineshaft_dripstone",
     "bettermineshafts:mineshaft_ice",
-    "bettermineshafts:mineshaft_jungle",
-    "bettermineshafts:mineshaft_lush",
-    "bettermineshafts:mineshaft_mesa",
-    "bettermineshafts:mineshaft_mushroom",
-    "bettermineshafts:mineshaft_oak",
-    "bettermineshafts:mineshaft_overgrown",
-    "bettermineshafts:mineshaft_red_desert",
-    "bettermineshafts:mineshaft_spruce",
     "bettermineshafts:mineshaft_spruce_snowy",
-    "betterstrongholds:stronghold",
-    "dungeons_arise:abandoned_temple",
-    "dungeons_arise:aviary",
-    "dungeons_arise:bandit_towers",
-    "dungeons_arise:bandit_village",
-    "dungeons_arise:bathhouse",
-    "dungeons_arise:ceryneian_hind",
-    "dungeons_arise:coliseum",
-    "dungeons_arise:fishing_hut",
-    "dungeons_arise:foundry",
     "dungeons_arise:giant_mushroom",
     "dungeons_arise:greenwood_pub",
-    "dungeons_arise:heavenly_challenger",
-    "dungeons_arise:heavenly_conqueror",
-    "dungeons_arise:heavenly_rider",
-    "dungeons_arise:illager_campsite",
     "dungeons_arise:illager_corsair",
-    "dungeons_arise:illager_fort",
     "dungeons_arise:illager_galley",
     "dungeons_arise:illager_windmill",
-    "dungeons_arise:infested_temple",
     "dungeons_arise:jungle_tree_house",
-    "dungeons_arise:keep_kayra",
-    "dungeons_arise:lighthouse",
-    "dungeons_arise:mechanical_nest",
     "dungeons_arise:merchant_campsite",
-    "dungeons_arise:mining_system",
     "dungeons_arise:monastery",
     "dungeons_arise:mushroom_house",
     "dungeons_arise:mushroom_mines",
     "dungeons_arise:mushroom_village",
-    "dungeons_arise:plague_asylum",
-    "dungeons_arise:scorched_mines",
-    "dungeons_arise:shiraz_palace",
     "dungeons_arise:small_blimp",
     "dungeons_arise:small_prairie_house",
-    "dungeons_arise:thornborn_towers",
-    "dungeons_arise:typhon",
     "dungeons_arise:undead_pirate_ship",
-    "dungeons_arise:wishing_well",
-    "dungeons_arise_seven_seas:corsair_corvette",
-    "dungeons_arise_seven_seas:pirate_junk",
-    "dungeons_arise_seven_seas:small_yacht",
-    "dungeons_arise_seven_seas:unicorn_galleon",
-    "dungeons_arise_seven_seas:victory_frigate",
-    "endergetic:eetle_nest",
     "minecraft:ancient_city",
     "minecraft:bastion_remnant",
     "minecraft:end_city",
     "minecraft:fortress",
+    "minecraft:jungle_pyramid",
     "minecraft:nether_fossil",
     "minecraft:ruined_portal_nether",
-    "supplementaries:way_sign",
-    "tfc_ruins:ruin_beach",
-    "tfc_ruins:ruin_rich",
-    "tfc_ruins:ruin_small",
-    "tfc_trees:acacia_giant_tree",
-    "tfc_trees:ash_giant_tree",
-    "tfc_trees:hickory_giant_tree",
-    "tfc_trees:kapok_giant_tree",
-    "tfc_trees:oak_giant_tree",
-    "tfc_trees:plum_giant_tree",
-    "tombstone:abandoned_grave_land",
-    "tombstone:abandoned_grave_ocean"
+    "minecraft:stronghold",
+    "minecraft:swamp_hut"
   ]
 }

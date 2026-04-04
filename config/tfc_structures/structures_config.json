@@ -1,76 +1,41 @@
 {
   "structures": {
-    "aether:bronze_dungeon": {
-      "replacementPreset": "overworld-common",
-      "emptyChestLootTable": "",
-      "lootTablesOverrideMap": {}
-    },
-    "aether:gold_dungeon": {
-      "replacementPreset": "overworld-common",
-      "emptyChestLootTable": "",
-      "lootTablesOverrideMap": {}
-    },
-    "aether:large_aercloud": {
-      "replacementPreset": "overworld-common",
-      "emptyChestLootTable": "",
-      "lootTablesOverrideMap": {}
-    },
-    "aether:silver_dungeon": {
-      "replacementPreset": "overworld-common",
-      "emptyChestLootTable": "",
-      "lootTablesOverrideMap": {}
-    },
-    "alekiships:unfinished_rowboat_birch": {
-      "replacementPreset": "overworld-common",
-      "emptyChestLootTable": "",
-      "lootTablesOverrideMap": {}
-    },
-    "alekiships:unfinished_rowboat_cherry": {
-      "replacementPreset": "overworld-common",
-      "emptyChestLootTable": "",
-      "lootTablesOverrideMap": {}
-    },
-    "alekiships:unfinished_rowboat_dark_oak": {
-      "replacementPreset": "overworld-common",
-      "emptyChestLootTable": "",
-      "lootTablesOverrideMap": {}
-    },
-    "alekiships:unfinished_rowboat_oak": {
-      "replacementPreset": "overworld-common",
-      "emptyChestLootTable": "",
-      "lootTablesOverrideMap": {}
-    },
-    "alekiships:unfinished_rowboat_spruce": {
-      "replacementPreset": "overworld-common",
-      "emptyChestLootTable": "",
-      "lootTablesOverrideMap": {}
-    },
-    "alekiships:unfinished_sloop_birch": {
-      "replacementPreset": "overworld-common",
-      "emptyChestLootTable": "",
-      "lootTablesOverrideMap": {}
-    },
-    "alekiships:unfinished_sloop_cherry": {
-      "replacementPreset": "overworld-common",
-      "emptyChestLootTable": "",
-      "lootTablesOverrideMap": {}
-    },
-    "alekiships:unfinished_sloop_dark_oak": {
-      "replacementPreset": "overworld-common",
-      "emptyChestLootTable": "",
-      "lootTablesOverrideMap": {}
-    },
-    "alekiships:unfinished_sloop_oak": {
-      "replacementPreset": "overworld-common",
-      "emptyChestLootTable": "",
-      "lootTablesOverrideMap": {}
-    },
-    "alekiships:unfinished_sloop_spruce": {
-      "replacementPreset": "overworld-common",
-      "emptyChestLootTable": "",
-      "lootTablesOverrideMap": {}
-    },
     "betterdeserttemples:desert_temple": {
+      "replacementPreset": "overworld-common",
+      "emptyChestLootTable": "",
+      "lootTablesOverrideMap": {}
+    },
+    "betterdungeons:skeleton_dungeon": {
+      "replacementPreset": "overworld-common",
+      "emptyChestLootTable": "",
+      "lootTablesOverrideMap": {}
+    },
+    "betterdungeons:small_dungeon": {
+      "replacementPreset": "overworld-common",
+      "emptyChestLootTable": "",
+      "lootTablesOverrideMap": {}
+    },
+    "betterdungeons:small_nether_dungeon": {
+      "replacementPreset": "overworld-common",
+      "emptyChestLootTable": "",
+      "lootTablesOverrideMap": {}
+    },
+    "betterdungeons:spider_dungeon": {
+      "replacementPreset": "overworld-common",
+      "emptyChestLootTable": "",
+      "lootTablesOverrideMap": {}
+    },
+    "betterdungeons:zombie_dungeon": {
+      "replacementPreset": "overworld-common",
+      "emptyChestLootTable": "",
+      "lootTablesOverrideMap": {}
+    },
+    "betterfortresses:fortress": {
+      "replacementPreset": "overworld-common",
+      "emptyChestLootTable": "",
+      "lootTablesOverrideMap": {}
+    },
+    "betterjungletemples:jungle_temple": {
       "replacementPreset": "overworld-common",
       "emptyChestLootTable": "",
       "lootTablesOverrideMap": {}
@@ -140,7 +105,27 @@
       "emptyChestLootTable": "",
       "lootTablesOverrideMap": {}
     },
+    "betteroceanmonuments:ocean_monument": {
+      "replacementPreset": "overworld-common",
+      "emptyChestLootTable": "",
+      "lootTablesOverrideMap": {}
+    },
     "betterstrongholds:stronghold": {
+      "replacementPreset": "overworld-common",
+      "emptyChestLootTable": "",
+      "lootTablesOverrideMap": {}
+    },
+    "betterwitchhuts:witch_circle": {
+      "replacementPreset": "overworld-common",
+      "emptyChestLootTable": "",
+      "lootTablesOverrideMap": {}
+    },
+    "betterwitchhuts:witch_hut": {
+      "replacementPreset": "overworld-common",
+      "emptyChestLootTable": "",
+      "lootTablesOverrideMap": {}
+    },
+    "butchery:vindicator_butchers_house": {
       "replacementPreset": "overworld-common",
       "emptyChestLootTable": "",
       "lootTablesOverrideMap": {}
@@ -340,36 +325,6 @@
       "emptyChestLootTable": "",
       "lootTablesOverrideMap": {}
     },
-    "dungeons_arise_seven_seas:corsair_corvette": {
-      "replacementPreset": "overworld-common",
-      "emptyChestLootTable": "",
-      "lootTablesOverrideMap": {}
-    },
-    "dungeons_arise_seven_seas:pirate_junk": {
-      "replacementPreset": "overworld-common",
-      "emptyChestLootTable": "",
-      "lootTablesOverrideMap": {}
-    },
-    "dungeons_arise_seven_seas:small_yacht": {
-      "replacementPreset": "overworld-common",
-      "emptyChestLootTable": "",
-      "lootTablesOverrideMap": {}
-    },
-    "dungeons_arise_seven_seas:unicorn_galleon": {
-      "replacementPreset": "overworld-common",
-      "emptyChestLootTable": "",
-      "lootTablesOverrideMap": {}
-    },
-    "dungeons_arise_seven_seas:victory_frigate": {
-      "replacementPreset": "overworld-common",
-      "emptyChestLootTable": "",
-      "lootTablesOverrideMap": {}
-    },
-    "endergetic:eetle_nest": {
-      "replacementPreset": "overworld-common",
-      "emptyChestLootTable": "",
-      "lootTablesOverrideMap": {}
-    },
     "minecraft:ancient_city": {
       "replacementPreset": "overworld-common",
       "emptyChestLootTable": "",
@@ -531,56 +486,6 @@
       "lootTablesOverrideMap": {}
     },
     "minecraft:village_taiga": {
-      "replacementPreset": "overworld-common",
-      "emptyChestLootTable": "",
-      "lootTablesOverrideMap": {}
-    },
-    "supplementaries:way_sign": {
-      "replacementPreset": "overworld-common",
-      "emptyChestLootTable": "",
-      "lootTablesOverrideMap": {}
-    },
-    "tfc_ruins:ruin_beach": {
-      "replacementPreset": "overworld-common",
-      "emptyChestLootTable": "",
-      "lootTablesOverrideMap": {}
-    },
-    "tfc_ruins:ruin_rich": {
-      "replacementPreset": "overworld-common",
-      "emptyChestLootTable": "",
-      "lootTablesOverrideMap": {}
-    },
-    "tfc_ruins:ruin_small": {
-      "replacementPreset": "overworld-common",
-      "emptyChestLootTable": "",
-      "lootTablesOverrideMap": {}
-    },
-    "tfc_trees:acacia_giant_tree": {
-      "replacementPreset": "overworld-common",
-      "emptyChestLootTable": "",
-      "lootTablesOverrideMap": {}
-    },
-    "tfc_trees:ash_giant_tree": {
-      "replacementPreset": "overworld-common",
-      "emptyChestLootTable": "",
-      "lootTablesOverrideMap": {}
-    },
-    "tfc_trees:hickory_giant_tree": {
-      "replacementPreset": "overworld-common",
-      "emptyChestLootTable": "",
-      "lootTablesOverrideMap": {}
-    },
-    "tfc_trees:kapok_giant_tree": {
-      "replacementPreset": "overworld-common",
-      "emptyChestLootTable": "",
-      "lootTablesOverrideMap": {}
-    },
-    "tfc_trees:oak_giant_tree": {
-      "replacementPreset": "overworld-common",
-      "emptyChestLootTable": "",
-      "lootTablesOverrideMap": {}
-    },
-    "tfc_trees:plum_giant_tree": {
       "replacementPreset": "overworld-common",
       "emptyChestLootTable": "",
       "lootTablesOverrideMap": {}

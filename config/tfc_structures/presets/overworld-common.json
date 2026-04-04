@@ -226,7 +226,7 @@
     },
     {
       "original": "minecraft:cobbled_deepslate",
-      "replacement": "tfc:rock/cobble/basalt"
+      "replacement": "tfc:rock/brick/basalt"
     },
     {
       "original": "minecraft:cobbled_deepslate_stairs",
@@ -339,7 +339,21 @@
     {
       "original": "minecraft:copper_block",
       "replacement": "tfc:metal/block/copper"
+    },
+    {
+      "original": "minecraft:furnace",
+      "replacement": "create:empty_blaze_burner"
+    },
+    {
+      "original": "minecraft:blast_furnace",
+      "replacement": "create:blaze_burner"
+    },
+    {
+      "original": "minecraft:smoker",
+      "replacement": "create:empty_blaze_burner"
     }
+	
+			
   ],
   "randomReplacements": [
     {
@@ -464,6 +478,14 @@
     }
   ],
   "tfcWorldReplacements": [
+    {
+      "original": "minecraft:cobblestone",
+      "type": "BRICK"
+    },
+    {
+      "original": "minecraft:mossy_cobblestone",
+      "type": "BRICK"
+    },
     {
       "original": "minecraft:acacia_button",
       "type": "WOOD"
@@ -787,10 +809,6 @@
     {
       "original": "minecraft:coarse_dirt",
       "type": "SOIL"
-    },
-    {
-      "original": "minecraft:cobblestone",
-      "type": "STONE"
     },
     {
       "original": "minecraft:cobblestone_slab",
@@ -1203,10 +1221,6 @@
     {
       "original": "minecraft:mangrove_wood",
       "type": "WOOD"
-    },
-    {
-      "original": "minecraft:mossy_cobblestone",
-      "type": "STONE"
     },
     {
       "original": "minecraft:mossy_cobblestone_slab",

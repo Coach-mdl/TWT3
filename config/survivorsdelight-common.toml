@@ -26,4 +26,6 @@
 	#Chance (0~1) that the spawned mushroom is a brown mushroom. (Otherwise red mushroom)
 	#Range: 0.0 ~ 1.0
 	richSoilRandomMushroomBrownChance = 0.1
+	#If set true, feast servings give nutrients divided by its total serving count. (Experimental)
+	rebalancingFeast = false
 

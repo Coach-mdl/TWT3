@@ -3,77 +3,74 @@
 //This script is for miscellanious mods that only need a single tweak.
 
 const MiscRecipes = (event) => {
+  //CeiRecipes
+  event.remove({ id: "create_enchantment_industry:mixing/hyper_experience" });
+  event.recipes.create.mixing(
+    Fluid.of("create_enchantment_industry:hyper_experience", 10),
+    [
+      "minecraft:glow_ink_sac",
+      "#forge:gems/lapis",
+      Fluid.of("create_enchantment_industry:experience", 100),
+    ],
+  );
 
-    //CeiRecipes
-    event.remove({ id: 'create_enchantment_industry:mixing/hyper_experience' })
-    event.recipes.create.mixing(
-        Fluid.of('create_enchantment_industry:hyper_experience', 10),
-        ['minecraft:glow_ink_sac', '#forge:gems/lapis', Fluid.of('create_enchantment_industry:experience', 100)]
-    )
+  //BSARecipes
+  event.remove({ id: "bsa:crafting/ceramic/unfired_decorated_pot" });
 
-    //BSARecipes
-    event.remove({ id: 'bsa:crafting/ceramic/unfired_decorated_pot' })
+  //SNSRecipes
+  event.recipes.kubejs.shapeless("sns:leather_strip", [
+    "magistuarmory:leather_strip",
+  ]);
 
-    //SNSRecipes
-    event.recipes.kubejs.shapeless('sns:leather_strip', ['magistuarmory:leather_strip'])
+  //AlekishipsRecipes
+  event.remove({ id: "alekiships:crafting/cannon" });
+  event.remove({ id: "alekiships:crafting/anchor" });
 
-    //AlekishipsRecipes
-    event.remove({ id: 'alekiships:crafting/cannon' })
-    event.remove({ id: 'alekiships:crafting/anchor' })
+  //AntiqueLegacyRecipes
+  event.recipes.kubejs.shapeless("antiquelegacy:fur_cloak_decoration", [
+    "tfc:large_raw_hide",
+    "#forge:string",
+  ]);
 
-    //AntiqueLegacyRecipes
-    event.recipes.kubejs.shapeless('antiquelegacy:fur_cloak_decoration', ['tfc:large_raw_hide', '#forge:string'])
+  //BeneathRecipes
+  event.recipes.create
+    .milling("minecraft:slime_ball", "beneath:raw_slime")
+    .processingTime(200)
+    .id("twt:milling/slime");
 
-    //BeneathRecipes
-    event.recipes.create.milling(
-        'minecraft:slime_ball',
-        'beneath:raw_slime'
-    ).processingTime(200).id('twt:milling/slime')
+  //TerrificTrashCanRecipes
+  event.replaceInput(
+    { mod: "terrific_trash_cans" },
+    "minecraft:iron_ingot",
+    "tfc:metal/ingot/wrought_iron",
+  );
+  event.replaceInput(
+    { mod: "terrific_trash_cans" },
+    "minecraft:cobblestone",
+    "#forge:cobblestone",
+  );
+  event.replaceInput(
+    { mod: "terrific_trash_cans" },
+    "minecraft:bucket",
+    "#tfc:buckets",
+  );
 
-    //TerrificTrashCanRecipes
-    event.replaceInput(
-        { mod: 'terrific_trash_cans' },
-        'minecraft:iron_ingot',
-        'tfc:metal/ingot/wrought_iron'
-    )
-    event.replaceInput(
-        { mod: 'terrific_trash_cans' },
-        'minecraft:cobblestone',
-        '#forge:cobblestone'
-    )
-    event.replaceInput(
-        { mod: 'terrific_trash_cans' },
-        'minecraft:bucket',
-        '#tfc:buckets'
-    )
+  //CreatePhotomovementRecipes
+  event.replaceInput(
+    { mod: "createphotomovement" },
+    Item.of("minecraft:polished_deepslate_slab"),
+    Item.of("tfc:rock/smooth/basalt_slab"),
+  );
+  event.replaceInput(
+    { mod: "createphotomovement" },
+    Item.of("minecraft:polished_blackstone_slab"),
+    Item.of("tfc:rock/smooth/basalt_slab"),
+  );
+};
 
-    //CreatePhotomovementRecipes
-    event.replaceInput(
-        { mod: 'createphotomovement' },
-        Item.of('minecraft:polished_deepslate_slab'),
-        Item.of('tfc:rock/smooth/basalt_slab')
-    )
-    event.replaceInput(
-        { mod: 'createphotomovement' },
-        Item.of('minecraft:polished_blackstone_slab'),
-        Item.of('tfc:rock/smooth/basalt_slab')
-    )
-
-    //VS_Clockwork
-    event.replaceInput(
-        { id: 'vs_clockwork:crafting/pneumatics/coal_burner' },
-        'minecraft:furnace',
-        Item.of('tfc:blast_furnace')
-    )
-    event.replaceInput(
-        { input: 'create:brass_ingot' },
-        'create:brass_ingot',
-        '#forge:ingots/brass'
-    )
-    event.recipes.create.crushing(
-        ['vs_clockwork:wanderlite_crystal', Item.of('vs_clockwork:wanderlite_crystal', 2).withChance(0.4)],
-        'aether:enchanted_gravitite')
-        .processingTime(500).id('twt:crushing/gravitite'
-        )
-
-}
+const MiscBlockTags = (event) => {
+  event.remove("tfc:can_collapse", [
+    "minecraft:nether_bricks",
+    "minecraft:red_nether_bricks",
+  ]);
+};
