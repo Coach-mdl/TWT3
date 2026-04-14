@@ -195,3 +195,15 @@ config/artifacts/client.json5
 config/create_jetpack-client.toml
 config/fluxnetworks-client.toml
 config/particlerain/config.json
+keybind_bundles.json
+config/CustomNpcs.cfg
+config/betterfortresses/README.txt
+config/betterfortresses/forge-1_20/README.txt
+config/createdieselgenerators-client.toml
+config/ebwizardry.json
+config/extremereactors/client.toml
+config/scguns-client.toml
+config/tfcsbu-common.toml
+config/valkyrienskies/valkyrienskies-client.toml
+config/vintageimprovements-client.toml
+config/sophisticatedcore-client.toml

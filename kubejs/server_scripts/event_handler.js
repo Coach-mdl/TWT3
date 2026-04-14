@@ -92,7 +92,6 @@ const $tfcMetals = [
   "blue_steel",
   "red_steel",
 ];
-const $IEMetals = ["aluminum", "lead", "uranium", "constantan", "electrum"];
 const $AllOres = [
   "chromite",
   "native_copper",
@@ -114,7 +113,6 @@ const $AllOres = [
   "uraninite",
 ];
 const $dfcOres = ["native_platinum", "native_aluminum", "bauxite", "galena"];
-const $IEores = ["bauxite", "galena", "uraninite"];
 const $woods = [
   "acacia",
   "ash",
@@ -137,14 +135,6 @@ const $woods = [
   "white_cedar",
   "willow",
 ];
-const $tfmgExistingIngots = [
-  "steel",
-  "cast_iron",
-  "aluminum",
-  "lead",
-  "nickel",
-  "constantan",
-];
 
 //Tags should always load before anything that uses them.
 ServerEvents.tags("item", (event) => {
@@ -152,7 +142,6 @@ ServerEvents.tags("item", (event) => {
   TWTItemTags(event);
   VanillaItemTags(event);
   CreateItemTags(event);
-  TFMGTags(event);
   ForgeItemTags(event);
   TFCItemTags(event);
   AetherItemTags(event);
@@ -164,9 +153,7 @@ ServerEvents.tags("block", (event) => {
   MiscBlockTags(event);
 });
 
-ServerEvents.tags("fluid", (event) => {
-  ImmersiveengineeringFluidTags(event);
-});
+ServerEvents.tags("fluid", (event) => {});
 
 MoreJSEvents.structureAfterPlace((event) => {
   worldgen(event);
@@ -174,7 +161,6 @@ MoreJSEvents.structureAfterPlace((event) => {
 
 LootJS.modifiers((event) => {
   AetherLoot(event);
-  DFCLoot(event);
 });
 
 //TFC Data should load before recipes as some TFC recipes depend on them.
@@ -183,11 +169,8 @@ TFCEvents.data((event) => {
   TWTData(event);
   VanillaData(event);
   TFCData(event);
-  ImmersiveEngineeringData(event);
   CreateData(event);
-  TFMGData(event);
   AetherData(event);
-  DFCData(event);
   IronchestsData(event);
 });
 
@@ -195,23 +178,15 @@ ServerEvents.recipes((event) => {
   TWTRecipes(event);
   VanillaRecipes(event);
   TFCRecipes(event);
-  ImmersiveEngineeringRecipes(event);
   CreateRecipes(event);
-  TFMGRecipes(event);
-  CreateadditionRecipes(event);
   MiscRecipes(event);
   FarmersDelightRecipes(event);
   LycheeRecipes(event);
   AetherRecipes(event);
   WaystonesRecipes(event);
-  ToolbeltRecipes(event);
-  TombstoneRecipes(event);
   HandcraftedRecipes(event);
-  DFCRecipes(event);
   MagistuArmoryRecipes(event);
-  ParcoolRecipes(event);
   IronchestRecipes(event);
-  MusketModRecipes(event);
 });
 
 ServerEvents.commandRegistry((event) => {

@@ -3,25 +3,6 @@
 //This script is for miscellanious mods that only need a single tweak.
 
 const MiscRecipes = (event) => {
-  //CeiRecipes
-  event.remove({ id: "create_enchantment_industry:mixing/hyper_experience" });
-  event.recipes.create.mixing(
-    Fluid.of("create_enchantment_industry:hyper_experience", 10),
-    [
-      "minecraft:glow_ink_sac",
-      "#forge:gems/lapis",
-      Fluid.of("create_enchantment_industry:experience", 100),
-    ],
-  );
-
-  //BSARecipes
-  event.remove({ id: "bsa:crafting/ceramic/unfired_decorated_pot" });
-
-  //SNSRecipes
-  event.recipes.kubejs.shapeless("sns:leather_strip", [
-    "magistuarmory:leather_strip",
-  ]);
-
   //AlekishipsRecipes
   event.remove({ id: "alekiships:crafting/cannon" });
   event.remove({ id: "alekiships:crafting/anchor" });
@@ -33,6 +14,9 @@ const MiscRecipes = (event) => {
   ]);
 
   //BeneathRecipes
+  event.remove({ id: "beneath:collapse/nether_bricks" });
+  event.remove({ id: "beneath:collapse/nether_brick_decor" });
+
   event.recipes.create
     .milling("minecraft:slime_ball", "beneath:raw_slime")
     .processingTime(200)
@@ -68,9 +52,11 @@ const MiscRecipes = (event) => {
   );
 };
 
+//If a tag doesn't want to be removed, check the JSON file for the tag. If it was added to a tag through another tag, that tag will have to go.
+// Ensure you have also removed the collapse recipe when removing blocks from the collapse tags.
 const MiscBlockTags = (event) => {
-  event.remove("tfc:can_collapse", [
-    "minecraft:nether_bricks",
-    "minecraft:red_nether_bricks",
-  ]);
+  //BeneathBlockTags
+  event.remove("tfc:can_collapse", "#beneath:nether_bricks");
+  event.remove("tfc:can_trigger_collapse", "#beneath:nether_bricks");
+  event.remove("tfc:can_start_collapse", "#beneath:nether_bricks");
 };

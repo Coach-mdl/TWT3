@@ -487,6 +487,14 @@
     "minecraft:village_taiga"
   ],
   "defaultWorldgenStructures": [
+    "aether:bronze_dungeon",
+    "aether:gold_dungeon",
+    "aether:large_aercloud",
+    "aether:silver_dungeon",
+    "apotheosis:tower_leaf",
+    "apotheosis:tower_main",
+    "apotheosis:tower_sand",
+    "apotheosis:tower_spruce",
     "betterdungeons:small_nether_dungeon",
     "betterfortresses:fortress",
     "bettermineshafts:mineshaft_acacia",
@@ -506,6 +514,7 @@
     "dungeons_arise:small_blimp",
     "dungeons_arise:small_prairie_house",
     "dungeons_arise:undead_pirate_ship",
+    "endergetic:eetle_nest",
     "minecraft:ancient_city",
     "minecraft:bastion_remnant",
     "minecraft:end_city",
@@ -514,6 +523,16 @@
     "minecraft:nether_fossil",
     "minecraft:ruined_portal_nether",
     "minecraft:stronghold",
-    "minecraft:swamp_hut"
+    "minecraft:swamp_hut",
+    "scguns:asgharian_citadel",
+    "scguns:asgharian_tower",
+    "scguns:cog_chambers",
+    "scguns:osgood_lab",
+    "scguns:osgood_lab_outpost",
+    "scguns:trench",
+    "supplementaries:way_sign",
+    "tfc_ruins:ruin_beach",
+    "tfc_ruins:ruin_rich",
+    "tfc_ruins:ruin_small"
   ]
 }
