@@ -1,0 +1,29 @@
+[
+  {
+    "match": [
+      "minecraft:netherite_axe",
+      "TAG:minecraft:tools"
+    ],
+    "theme": "blue"
+  },
+  {
+    "match": [
+      "minecraft:emerald"
+    ],
+    "theme": "red"
+  },
+  {
+    "match": [
+      "TAG:forge:ores"
+    ],
+    "theme": "purple"
+  },
+  {
+    "match": [
+      "minecraft:diamond",
+      "create:wand_of_symmetry",
+      "create:extendo_grip"
+    ],
+    "theme": "orange"
+  }
+]

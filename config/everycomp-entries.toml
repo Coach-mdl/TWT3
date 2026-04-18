@@ -74,3 +74,6 @@
 			window = true
 			window_pane = true
 
+		[entries.wood_type.backpacked]
+			backpack_shelf = true
+

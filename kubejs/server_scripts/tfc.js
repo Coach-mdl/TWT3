@@ -28,69 +28,82 @@ const TFCRecipes = (event) => {
   milkconversion("firmalife:yak_milk");
   milkconversion("firmalife:goat_milk");
 
+  //Why did I never think of combining forEach's like this?
+  $grains.forEach((grain) => {
+    event.recipes.create
+      .milling(Item.of(`tfc:food/${grain}_flour`, 2), `tfc:food/${grain}_grain`)
+      .id(`twt:milling/${grain}_flour`);
+
+    event.recipes.create
+      .splashing(Item.of(`tfc:food/${grain}_dough`, 2), `tfc:food/${grain}_flour`)
+      .id(`twt:splashing/${grain}_flatbread_dough`);
+
+    event.recipes.create
+      .mixing(`firmalife:food/${grain}_dough`, [
+        `tfc:food/${grain}_flour`,
+        "#tfc:sweetener",
+        Fluid.of("firmalife:yeast_starter", 250),
+      ])
+      .id(`twt:mixing/${grain}_dough`);
+  });
+
+  //Create crushing
+  //This is just a forEach.
+  for (const ore of $ores) {
+    event.recipes.create
+      .crushing(Item.of(`tfc:powder/` + ore, 4), `tfc:ore/small_` + ore)
+      .id(`twt:crushing/small_` + ore);
+    event.recipes.create
+      .crushing(Item.of(`tfc:powder/` + ore, 6), `tfc:ore/poor_` + ore)
+      .id(`twt:crushing/poor_` + ore);
+    event.recipes.create
+      .crushing(Item.of(`tfc:powder/` + ore, 10), `tfc:ore/normal_` + ore)
+      .id(`twt:crushing/normal_` + ore);
+    event.recipes.create
+      .crushing(Item.of(`tfc:powder/` + ore, 14), `tfc:ore/rich_` + ore)
+      .id(`twt:crushing/rich_` + ore);
+  }
+
   //Create sequenced_assembly
   event.recipes.create
     .sequenced_assembly("tfc:empty_jar_with_lid", "tfc:empty_jar", [
-      event.recipes.create.deploying("tfc:empty_jar", [
-        "tfc:empty_jar",
-        "firmalife:beeswax",
-      ]),
-      event.recipes.create.deploying("tfc:empty_jar", [
-        "tfc:empty_jar",
-        "farmersdelight:canvas",
-      ]),
-      event.recipes.create.deploying("tfc:empty_jar", [
-        "tfc:empty_jar",
-        "#forge:string",
-      ]),
+      event.recipes.create.deploying("tfc:empty_jar", ["tfc:empty_jar", "firmalife:beeswax"]),
+      event.recipes.create.deploying("tfc:empty_jar", ["tfc:empty_jar", "farmersdelight:canvas"]),
+      event.recipes.create.deploying("tfc:empty_jar", ["tfc:empty_jar", "#forge:string"]),
     ])
     .loops(1)
     .transitionalItem("tfc:empty_jar")
     .id("twt:sequenced_assembly/empty_jar_with_lid");
 
   event.recipes.create
-    .sequenced_assembly(
-      [Item.of("tfc:empty_jar")],
-      "#tfc:glass_batches_tier_2",
-      [
-        event.recipes.create
-          .deploying("tfc:empty_jar", ["tfc:empty_jar", "tfc:empty_jar"])
-          .keepHeldItem(),
-        event.recipes.create
-          .deploying("tfc:empty_jar", ["tfc:empty_jar", "tfc:blowpipe"])
-          .keepHeldItem(),
-        event.recipes.create
-          .deploying("tfc:empty_jar", ["tfc:empty_jar", "tfc:jacks"])
-          .keepHeldItem(),
-        event.recipes.create
-          .deploying("tfc:empty_jar", ["tfc:empty_jar", "tfc:wool_cloth"])
-          .keepHeldItem(),
-        event.recipes.create
-          .deploying("tfc:empty_jar", ["tfc:empty_jar", "tfc:gem_saw"])
-          .keepHeldItem(),
-      ],
-    )
+    .sequenced_assembly([Item.of("tfc:empty_jar")], "#tfc:glass_batches_tier_2", [
+      event.recipes.create
+        .deploying("tfc:empty_jar", ["tfc:empty_jar", "tfc:empty_jar"])
+        .keepHeldItem(),
+      event.recipes.create
+        .deploying("tfc:empty_jar", ["tfc:empty_jar", "tfc:blowpipe"])
+        .keepHeldItem(),
+      event.recipes.create
+        .deploying("tfc:empty_jar", ["tfc:empty_jar", "tfc:jacks"])
+        .keepHeldItem(),
+      event.recipes.create
+        .deploying("tfc:empty_jar", ["tfc:empty_jar", "tfc:wool_cloth"])
+        .keepHeldItem(),
+      event.recipes.create
+        .deploying("tfc:empty_jar", ["tfc:empty_jar", "tfc:gem_saw"])
+        .keepHeldItem(),
+    ])
     .transitionalItem("tfc:empty_jar")
     .loops(1)
     .id("twt:sequenced_assembly/empty_jar");
 
   event.recipes.create
     .sequenced_assembly([Item.of("tfc:lens")], "tfc:silica_glass_batch", [
-      event.recipes.create
-        .deploying("tfc:lens", ["tfc:lens", "tfc:lens"])
-        .keepHeldItem(),
-      event.recipes.create
-        .deploying("tfc:lens", ["tfc:lens", "tfc:blowpipe"])
-        .keepHeldItem(),
-      event.recipes.create
-        .deploying("tfc:lens", ["tfc:lens", "tfc:blowpipe"])
-        .keepHeldItem(),
-      event.recipes.create
-        .deploying("tfc:lens", ["tfc:lens", "tfc:wool_cloth"])
-        .keepHeldItem(),
-      event.recipes.create
-        .deploying("tfc:lens", ["tfc:lens", "tfc:gem_saw"])
-        .keepHeldItem(),
+      event.recipes.create.deploying("tfc:lens", ["tfc:lens", "tfc:lens"]).keepHeldItem(),
+      event.recipes.create.deploying("tfc:lens", ["tfc:lens", "tfc:blowpipe"]).keepHeldItem(),
+      event.recipes.create.deploying("tfc:lens", ["tfc:lens", "tfc:blowpipe"]).keepHeldItem(),
+      event.recipes.create.deploying("tfc:lens", ["tfc:lens", "tfc:wool_cloth"]).keepHeldItem(),
+      event.recipes.create.deploying("tfc:lens", ["tfc:lens", "tfc:gem_saw"]).keepHeldItem(),
     ])
     .transitionalItem("tfc:lens")
     .loops(1)

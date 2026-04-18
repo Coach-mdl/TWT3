@@ -207,3 +207,5 @@ config/tfcsbu-common.toml
 config/valkyrienskies/valkyrienskies-client.toml
 config/vintageimprovements-client.toml
 config/sophisticatedcore-client.toml
+.zed/settings.json
+config/backpacked.client.toml

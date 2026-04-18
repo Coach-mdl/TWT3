@@ -1,0 +1,7 @@
+
+[Setting]
+	#Enabled menu.
+	whitelist = ["class net.minecraft.world.inventory.ChestMenu", "class net.minecraft.client.gui.screens.inventory.CreativeModeInventoryScreen$ItemPickerMenu", "class com.mrcrayfish.backpacked.inventory.container.BackpackContainerMenu", "class tech.thatgravyboat.ironchests.common.blocks.GenericChestMenu", "class net.dries007.tfc.common.container.RestrictedChestContainer"]
+	#Whether inventory will be effort.
+	enableInventory = true
+

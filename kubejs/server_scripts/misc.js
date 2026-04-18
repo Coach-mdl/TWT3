@@ -28,16 +28,8 @@ const MiscRecipes = (event) => {
     "minecraft:iron_ingot",
     "tfc:metal/ingot/wrought_iron",
   );
-  event.replaceInput(
-    { mod: "terrific_trash_cans" },
-    "minecraft:cobblestone",
-    "#forge:cobblestone",
-  );
-  event.replaceInput(
-    { mod: "terrific_trash_cans" },
-    "minecraft:bucket",
-    "#tfc:buckets",
-  );
+  event.replaceInput({ mod: "terrific_trash_cans" }, "minecraft:cobblestone", "#forge:cobblestone");
+  event.replaceInput({ mod: "terrific_trash_cans" }, "minecraft:bucket", "#tfc:buckets");
 
   //CreatePhotomovementRecipes
   event.replaceInput(
@@ -49,6 +41,36 @@ const MiscRecipes = (event) => {
     { mod: "createphotomovement" },
     Item.of("minecraft:polished_blackstone_slab"),
     Item.of("tfc:rock/smooth/basalt_slab"),
+  );
+  event.replaceInput(
+    { id: "createphotomovement:crafting/adv_solar_generator" },
+    "create:shaft",
+    "tfc:metal/rod/steel",
+  );
+  event.replaceInput(
+    { id: "createphotomovement:crafting/adv_solar_generator" },
+    "minecraft:redstone",
+    "create:electron_tube",
+  );
+  event.replaceInput({ mod: "createphotomovement" }, "#minecraft:wool", "#tfc:high_quality_cloth");
+
+  //Create Connected
+  event.replaceInput(
+    { id: "create_connected:crafting/kinetics/sequenced_pulse_generator" },
+    "create_connected:control_chip",
+    "create:cardboard",
+  );
+  event.replaceInput(
+    { id: "create_connected:crafting/kinetics/kinetic_battery" },
+    "#railways:internal/plates/iron_plates",
+    "#forge:plates/steel",
+  );
+
+  //Railways
+  event.replaceInput(
+    { id: "railways:crafting/paint_brush" },
+    "minecraft:iron_ingot",
+    "tfc:metal/rod/copper",
   );
 };
 

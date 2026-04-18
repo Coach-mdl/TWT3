@@ -14,22 +14,14 @@
 // recipes should go in IE's recipe files or WoodenCog Recipes should go in Create's recipe file.
 
 const $nuggetcompat = [
-  "immersiveengineering:nugget_lead",
-  "immersiveengineering:nugget_silver",
-  "antiquelegacy:copper_nugget",
-  "immersiveengineering:nugget_nickel",
   "antiquelegacy:bronze_nugget",
   "minecraft:iron_nugget",
   "knightsofterrafirma:black_bronze_nugget",
   "knightsofterrafirma:bismuth_bronze_nugget",
   "magistuarmory:steel_nugget",
-  "immersiveengineering:nugget_uranium",
   "antiquelegacy:tin_nugget",
-  "immersiveengineering:nugget_electrum",
-  "immersiveengineering:nugget_constantan",
   "minecraft:gold_nugget",
-  "immersiveengineering:nugget_copper",
-  "immersiveengineering:nugget_aluminum",
+  "create:copper_nugget",
 ];
 const $ores = [
   "native_copper",
@@ -65,11 +57,6 @@ const $metals = [
   "black_steel",
   "blue_steel",
   "red_steel",
-  "aluminum",
-  "alumina",
-  "lead",
-  "pewter",
-  "platinum",
 ];
 const $tfcMetals = [
   "bismuth",
@@ -106,13 +93,7 @@ const $AllOres = [
   "limonite",
   "sphalerite",
   "tetrahedrite",
-  "bauxite",
-  "galena",
-  "native_aluminum",
-  "native_platinum",
-  "uraninite",
 ];
-const $dfcOres = ["native_platinum", "native_aluminum", "bauxite", "galena"];
 const $woods = [
   "acacia",
   "ash",
@@ -136,6 +117,8 @@ const $woods = [
   "willow",
 ];
 
+const $grains = ["barley", "maize", "oat", "rye", "rice", "wheat"];
+
 //Tags should always load before anything that uses them.
 ServerEvents.tags("item", (event) => {
   ErrorSilencerItemTags(event);
@@ -144,6 +127,7 @@ ServerEvents.tags("item", (event) => {
   CreateItemTags(event);
   ForgeItemTags(event);
   TFCItemTags(event);
+  ScgunsItemTags(event);
   AetherItemTags(event);
   JEItags(event);
 });
@@ -170,6 +154,7 @@ TFCEvents.data((event) => {
   VanillaData(event);
   TFCData(event);
   CreateData(event);
+  ScgunsData(event);
   AetherData(event);
   IronchestsData(event);
 });
@@ -179,6 +164,10 @@ ServerEvents.recipes((event) => {
   VanillaRecipes(event);
   TFCRecipes(event);
   CreateRecipes(event);
+  Createdieselgenerators(event);
+  VintageimprovementsRecipes(event);
+  PowergridRecipes(event);
+  ScgunsRecipes(event);
   MiscRecipes(event);
   FarmersDelightRecipes(event);
   LycheeRecipes(event);

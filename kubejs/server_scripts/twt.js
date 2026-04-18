@@ -9,10 +9,14 @@ const TWTRecipes = (event) => {
   //removal
   $nuggetcompat.forEach((nugget) => {
     event.remove({ not: { type: "tfc:anvil" }, output: `${nugget}` });
-    event.remove({ id: "exposure:lightroom" });
+  });
+  event.remove({ id: "exposure:lightroom" });
+  event.remove({ output: /^.*:crushed_raw_.*$/, type: "create:crushing" });
+  event.remove({
+    id: "create:splashing/runtime_generated/compat/supplementaries/sugar_cube_to_water",
   });
 
-  //Replace
+  //Replace input
   event.replaceInput({ input: "minecraft:campfire" }, "minecraft:campfire", "minecraft:charcoal");
   event.replaceInput({ input: "minecraft:smooth_stone" }, "minecraft:smooth_stone", "#forge:stone");
   event.replaceInput(
@@ -27,6 +31,13 @@ const TWTRecipes = (event) => {
     "tfc:metal/sheet/wrought_iron",
   );
   event.replaceInput({ input: "minecraft:barrel" }, "minecraft:barrel", "#tfc:barrels");
+
+  //replace output
+  event.replaceOutput(
+    { output: "minecraft:amethyst_shard" },
+    "minecraft:amethyst_shard",
+    "tfc:gem/amethyst",
+  );
 
   //Shapeless
   $ores.forEach((ore) => {
@@ -61,6 +72,7 @@ const TWTRecipes = (event) => {
   blockCrafting("tfc:metal/sheet/copper", "minecraft:copper_block");
   blockCrafting("tfc:metal/sheet/zinc", "create:zinc_block");
   blockCrafting("tfc:metal/sheet/brass", "create:brass_block");
+  blockCrafting("tfc:metal/sheet/gold", "minecraft:gold_block");
 
   //TFC Heating
   function oredustsmelting(input, temperature, output) {
@@ -114,7 +126,6 @@ const TWTRecipes = (event) => {
     woodsawing(`tfc:wood/lumber/${wood}`, `tfc:wood/planks/${wood}`, 4);
     woodsawing(`tfc:wood/lumber/${wood}`, `tfc:wood/planks/${wood}_stairs`, 3);
     woodsawing(`tfc:wood/lumber/${wood}`, `tfc:wood/planks/${wood}_slab`, 2);
-    woodsawing(`tfc:wood/lumber/${wood}`, `dfc:wood/panel/${wood}`, 4);
     woodsawing(`tfc:wood/lumber/${wood}`, `firmaciv:wood/${wood}_roofing`, 2);
   });
   woodsawing(`beneath:wood/stripped_log/crimson`, `beneath:wood/log/crimson`, 1);
@@ -192,6 +203,9 @@ const TWTItemTags = (event) => {
     "tfc:coral/fire_coral",
     "tfc:coral/horn_coral",
   ]);
+
+  //Move Later
+  event.add("survivorsdelight:food_model_coating", "forge:slimeballs");
 };
 
 const TWTCommands = (event) => {

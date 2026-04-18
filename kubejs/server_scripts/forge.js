@@ -3,6 +3,7 @@
 const ForgeItemTags = (event) => {
   event.add("forge:gems/amethyst", "tfc:gem/amethyst");
   event.add("forge:rods/gold", "tfc:plant/goldenrod");
+
   event.add("forge:tools/fishing_rods", [
     "tfc:metal/fishing_rod/copper",
     "tfc:metal/fishing_rod/bronze",
@@ -14,4 +15,7 @@ const ForgeItemTags = (event) => {
     "tfc:metal/fishing_rod/blue_steel",
     "tfc:metal/fishing_rod/red_steel",
   ]);
+
+  event.add("forge:slimeballs", ["tfc:glue"]);
+  event.add("forge:dusts/sulfur", "tfc:powder/sulfur");
 };

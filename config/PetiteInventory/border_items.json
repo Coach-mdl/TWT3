@@ -1,0 +1,42 @@
+[
+  {
+    "match": [
+      "create:wand_of_symmetry",
+      "minecraft:tools",
+      "create:extendo_grip"
+    ],
+    "result": "1*2"
+  },
+  {
+    "match": [
+      "minecraft:slabs"
+    ],
+    "result": "2*1"
+  },
+  {
+    "match": [
+      "forge:stone",
+      "forge:ores",
+      "minecraft:logs"
+    ],
+    "result": "2*2"
+  },
+  {
+    "match": [
+      "minecraft:bed"
+    ],
+    "result": "3*2"
+  },
+  {
+    "match": [
+      "minecraft:doors"
+    ],
+    "result": "2*3"
+  },
+  {
+    "match": [
+      "minecraft:netherite_axe"
+    ],
+    "result": "2*4"
+  }
+]
