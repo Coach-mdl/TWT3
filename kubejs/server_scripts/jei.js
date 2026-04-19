@@ -24,9 +24,16 @@ const JEItags = (event) => {
     "epic_knights_ores_and_alloys:tin_nugget",
     "epic_knights_ores_and_alloys:silver_nugget",
     "epic_knights_ores_and_alloys:steel_nugget",
-    "vintageimprovements:sulfur_chunk",
-    "vintageimprovements:sulfur",
     "scguns:sulfur_dust",
     /^create_connected:copycat_.*/,
+    "vintageimprovements:copper_sulfate",
+    /^vintageimprovements:sulfur_.*$/,
+    "vintageimprovements:sulfuric_acid",
+    /^vintageimprovements:vanadium_.*/,
+    /^vintageimprovements:(?!iron|steel).*_spring$/,
+    /^vintageimprovements:small_.*_spring$/,
+    /^vintageimprovements:.*_rod$/,
+    /^vintageimprovements:.*_wire$/,
+    /^vintageimprovements:.*_sheet$/,
   ]);
 };

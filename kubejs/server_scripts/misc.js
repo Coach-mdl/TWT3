@@ -72,6 +72,16 @@ const MiscRecipes = (event) => {
     "minecraft:iron_ingot",
     "tfc:metal/rod/copper",
   );
+  event.replaceInput(
+    { input: "minecraft:iron_ingot" },
+    "minecraft:iron_ingot",
+    "#forge:ingots/wrought_iron",
+  );
+};
+
+const MiscData = (event) => {
+  //powergrid
+  event.itemHeat("powergrid:zinc_sheet", 2.257, 252.0, 336.0);
 };
 
 //If a tag doesn't want to be removed, check the JSON file for the tag. If it was added to a tag through another tag, that tag will have to go.
@@ -81,4 +91,6 @@ const MiscBlockTags = (event) => {
   event.remove("tfc:can_collapse", "#beneath:nether_bricks");
   event.remove("tfc:can_trigger_collapse", "#beneath:nether_bricks");
   event.remove("tfc:can_start_collapse", "#beneath:nether_bricks");
+
+  event.add("yo_hooks:iron_repairable", "tfc:metal/wrought_iron");
 };

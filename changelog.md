@@ -10,6 +10,7 @@ MAJOR CHANGES:
 - Many brass age create parts have been moved to steel. Not all, but some.
 - A whole host of items are now acceptable TFC fuels.
 - Some recipes have more expensive variants that returns more of its output.
+- Create: Power grid takes the spotlight as the new energy mod, featuring realistic power. Unlocked at black steel.
 
 MINOR CHANGES:
 

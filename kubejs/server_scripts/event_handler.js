@@ -125,6 +125,7 @@ ServerEvents.tags("item", (event) => {
   TWTItemTags(event);
   VanillaItemTags(event);
   CreateItemTags(event);
+  VintageimprovementsItemTags(event);
   ForgeItemTags(event);
   TFCItemTags(event);
   ScgunsItemTags(event);
@@ -155,6 +156,7 @@ TFCEvents.data((event) => {
   TFCData(event);
   CreateData(event);
   ScgunsData(event);
+  MiscData(event);
   AetherData(event);
   IronchestsData(event);
 });
