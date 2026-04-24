@@ -13,7 +13,7 @@ const VanillaRecipes = (event) => {
   event.remove({ id: "minecraft:glowstone" });
   event.remove({ id: "minecraft:sandstone" });
   event.remove({ id: "minecraft:charcoal" });
-  event.remove({ id: "minecraft:glass"})
+  event.remove({ id: "minecraft:glass" });
 
   //replace input
   event.replaceInput({ id: "minecraft:grindstone" }, "minecraft:stone_slab", "tfc:handstone");
@@ -28,16 +28,8 @@ const VanillaRecipes = (event) => {
     "#forge:plates/iron",
   );
   event.replaceInput({ id: "minecraft:stonecutter" }, "minecraft:stone", "#forge:stone");
-  event.replaceInput(
-    { id: "minecraft:stonecutter" },
-    "minecraft:iron_ingot",
-    "#forge:ingots/wrought_iron",
-  );
-  event.replaceInput(
-    { id: "minecraft:golden_carrot" },
-    "minecraft:carrot",
-    "#forge:vegetables/carrot",
-  );
+  event.replaceInput({ id: "minecraft:stonecutter" }, "minecraft:iron_ingot", "#forge:ingots/wrought_iron");
+  event.replaceInput({ id: "minecraft:golden_carrot" }, "minecraft:carrot", "#forge:vegetables/carrot");
   event.replaceInput(
     { id: "minecraft:warped_fungus_on_a_stick" },
     "minecraft:fishing_rod",
@@ -72,31 +64,17 @@ const VanillaRecipes = (event) => {
   event.smelting("minecraft:blue_stained_glass", "tfc:volcanic_glass_batch").xp(0.35);
 
   //TFC Welding
-  event.recipes.tfc.welding(
-    "minecraft:anvil",
-    "minecraft:chipped_anvil",
-    "tfc:metal/ingot/cast_iron",
-  );
+  event.recipes.tfc.welding("minecraft:anvil", "minecraft:chipped_anvil", "tfc:metal/ingot/cast_iron");
   event.recipes.tfc.welding(
     "minecraft:chipped_anvil",
     "minecraft:damaged_anvil",
     "tfc:metal/ingot/cast_iron",
   );
-  event.recipes.tfc.welding(
-    "minecraft:anvil",
-    "minecraft:damaged_anvil",
-    "tfc:metal/double_ingot/cast_iron",
-  );
-  event.recipes.tfc.welding(
-    "minecraft:bucket",
-    "tfc:metal/bucket/blue_steel",
-    "tfc:metal/bucket/red_steel",
-  );
+  event.recipes.tfc.welding("minecraft:anvil", "minecraft:damaged_anvil", "tfc:metal/double_ingot/cast_iron");
+  event.recipes.tfc.welding("minecraft:bucket", "tfc:metal/bucket/blue_steel", "tfc:metal/bucket/red_steel");
 
   //TFC Heating
-  event.recipes.tfc
-    .heating("minecraft:anvil", 1535)
-    .resultFluid(Fluid.of("tfc:metal/cast_iron", 1000));
+  event.recipes.tfc.heating("minecraft:anvil", 1535).resultFluid(Fluid.of("tfc:metal/cast_iron", 1000));
   event.recipes.tfc
     .heating("minecraft:chipped_anvil", 1535)
     .resultFluid(Fluid.of("tfc:metal/cast_iron", 900));
@@ -105,28 +83,32 @@ const VanillaRecipes = (event) => {
     .resultFluid(Fluid.of("tfc:metal/cast_iron", 800));
 
   //Create Compacting
-  function panecompacting(output, input) {
-    event.custom({
-      type: "create:compacting",
-      heatRequirement: "heated",
-      ingredients: [
-        {
-          item: input,
-        },
-      ],
-      results: [
-        {
-          count: 16,
-          item: output,
-        },
-      ],
-    });
+  function panecompacting(output, input, id) {
+    event.recipes.create
+      .compacting(Item.of(output, 16), input)
+      .heated()
+      .id("twt:compacting/" + id + "glass_pane");
   }
 
-  panecompacting("minecraft:glass_pane", "tfc:silica_glass_batch");
-  panecompacting("minecraft:orange_stained_glass_pane", "tfc:hematitic_glass_batch");
-  panecompacting("minecraft:green_stained_glass_pane", "tfc:olivine_glass_batch");
-  panecompacting("minecraft:blue_stained_glass_pane", "tfc:volcanic_glass_batch");
+  panecompacting("minecraft:glass_pane", "tfc:silica_glass_batch", "");
+  panecompacting("minecraft:orange_stained_glass_pane", "tfc:hematitic_glass_batch", "orange_stained_");
+  panecompacting("minecraft:green_stained_glass_pane", "tfc:olivine_glass_batch", "green_stained_");
+  panecompacting("minecraft:blue_stained_glass_pane", "tfc:volcanic_glass_batch", "blue_stained_");
+
+  //laser_cutting
+  event.recipes.vintageimprovements
+    .laser_cutting(Item.of("minecraft:glass_pane", 16), "minecraft:glass")
+    .energyCost(2000)
+    .maxChargeRate(50)
+    .id("twt:laser_cutting/glass_pane");
+
+  $dyes.forEach((dye) => {
+    event.recipes.vintageimprovements
+      .laser_cutting(Item.of(`minecraft:${dye}_stained_glass_pane`, 16), `minecraft:${dye}_stained_glass`)
+      .energyCost(2000)
+      .maxChargeRate(50)
+      .id(`twt:laser_cutting/${dye}_glass_pane`);
+  });
 };
 
 const VanillaData = (event) => {

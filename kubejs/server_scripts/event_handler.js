@@ -37,27 +37,6 @@ const $ores = [
   "sphalerite",
   "tetrahedrite",
 ];
-const $metals = [
-  "bismuth",
-  "bismuth_bronze",
-  "black_bronze",
-  "bronze",
-  "brass",
-  "copper",
-  "gold",
-  "nickel",
-  "rose_gold",
-  "silver",
-  "tin",
-  "zinc",
-  "sterling_silver",
-  "wrought_iron",
-  "cast_iron",
-  "steel",
-  "black_steel",
-  "blue_steel",
-  "red_steel",
-];
 const $tfcMetals = [
   "bismuth",
   "bismuth_bronze",
@@ -78,21 +57,6 @@ const $tfcMetals = [
   "black_steel",
   "blue_steel",
   "red_steel",
-];
-const $AllOres = [
-  "chromite",
-  "native_copper",
-  "native_gold",
-  "hematite",
-  "native_silver",
-  "cassiterite",
-  "bismuthinite",
-  "garnierite",
-  "malachite",
-  "magnetite",
-  "limonite",
-  "sphalerite",
-  "tetrahedrite",
 ];
 const $woods = [
   "acacia",
@@ -115,8 +79,72 @@ const $woods = [
   "sycamore",
   "white_cedar",
   "willow",
+  //beneath
+  "crimson",
+  "warped",
 ];
-
+const $rock = [
+  "granite",
+  "diorite",
+  "gabbro",
+  "shale",
+  "claystone",
+  "limestone",
+  "conglomerate",
+  "dolomite",
+  "chert",
+  "chalk",
+  "rhyolite",
+  "basalt",
+  "andesite",
+  "dacite",
+  "quartzite",
+  "slate",
+  "phyllite",
+  "schist",
+  "gneiss",
+  "marble",
+];
+const $gems = [
+  "amethyst",
+  "diamond",
+  "emerald",
+  "lapis_lazuli",
+  "opal",
+  "pyrite",
+  "ruby",
+  "sapphire",
+  "topaz",
+];
+const $toolmetals = [
+  "copper",
+  "bismuth_bronze",
+  "bronze",
+  "black_bronze",
+  "wrought_iron",
+  "steel",
+  "black_steel",
+  "blue_steel",
+  "red_steel",
+];
+const $dyes = [
+  "white",
+  "light_gray",
+  "gray",
+  "black",
+  "brown",
+  "red",
+  "orange",
+  "yellow",
+  "lime",
+  "green",
+  "cyan",
+  "light_blue",
+  "blue",
+  "purple",
+  "magenta",
+  "pink",
+];
 const $grains = ["barley", "maize", "oat", "rye", "rice", "wheat"];
 
 //Tags should always load before anything that uses them.

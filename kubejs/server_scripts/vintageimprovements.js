@@ -12,7 +12,7 @@ const VintageimprovementsRecipes = (event) => {
   event.remove({ id: /^vintageimprovements:coiling\/.*_rod$/ });
   event.remove({ id: /^vintageimprovements:coiling\/.*_wire$/ });
   event.remove({ id: /^vintageimprovements:coiling\/.*_plate$/ });
-  event.remove({ id: /^vintageimprovements:coiling\/(?!iron).*_ingot$/ });
+  event.remove({ id: /^vintageimprovements:coiling\/.*_ingot$/ });
   event.remove({ id: "vintageimprovements:curving/iron_sheet" });
   event.remove({ id: "vintageimprovements:pressurizing/copper_sulfate" });
   event.remove({ id: "vintageimprovements:coiling/iron_plate" });
@@ -22,6 +22,7 @@ const VintageimprovementsRecipes = (event) => {
   event.remove({ output: "vintageimprovements:vanadium_nugget" });
 
   event.remove({ type: "vintageimprovements:pressurizing", mod: "vintageimprovements" });
+  event.remove({ mod: "vintageimprovements", type: "vintageimprovements:laser_cutting" });
 
   //Replace Input
   event.replaceInput({ id: "vintageimprovements:craft/grinder_belt" }, "#create:sandpaper", "tfc:sandpaper");
@@ -52,24 +53,45 @@ const VintageimprovementsRecipes = (event) => {
     })
     .id("twt:shaped/spring_coiling_machine");
 
+  //TFC heating
+  event.recipes.tfc
+    .heating("vintageimprovements:iron_spring", 1535)
+    .resultFluid(Fluid.of("tfc:metal/cast_iron", 50))
+    .id("twt:heating/iron_spring");
+  event.recipes.tfc
+    .heating("vintageimprovements:steel_spring", 1540)
+    .resultFluid(Fluid.of("tfc:metal/steel", 50))
+    .id("twt:heating/steel_spring");
+
   //coiling
-  event
-    .custom({
-      type: "vintageimprovements:coiling",
-      ingredients: [
-        {
-          item: "tfc:metal/ingot/steel",
-        },
-      ],
-      results: [
-        {
-          item: "vintageimprovements:steel_spring",
-          count: 2,
-        },
-      ],
-      processingTime: 200,
-    })
+  event.recipes.vintageimprovements
+    .coiling(Item.of("vintageimprovements:steel_spring"), "tfc:metal/rod/steel")
+    .processingTime(200)
+    .springColor("5b6e72")
     .id("twt:coiling/steel_spring");
+  event.recipes.vintageimprovements
+    .coiling(Item.of("vintageimprovements:iron_spring"), "tfc:metal/rod/wrought_iron")
+    .processingTime(200)
+    .springColor("9e9e9e")
+    .id("twt:coiling/iron_spring");
+
+  //polishing
+  $gems.forEach((gem) => {
+    event.recipes.vintageimprovements
+      .polishing([`tfc:gem/${gem}`, Item.of(`tfc:powder/${gem}`, 2).withChance(0.5)], `tfc:ore/${gem}`)
+      .processingTime(150)
+      .speedLimits(2)
+      .id(`twt:polishing/${gem}`);
+  });
+  $rock.forEach((rock) => {
+    event.recipes.vintageimprovements
+      .polishing(
+        [`tfc:rock/smooth/${rock}`, Item.of(`tfc:rock/loose/${rock}`, 2).withChance(0.3)],
+        `tfc:rock/raw/${rock}`,
+      )
+      .processingTime(200)
+      .id(`twt:polishing/${rock}`);
+  });
 
   //hammering
   function Hammer(output, input, anvilBlock, id) {

@@ -29,6 +29,7 @@ const CreateRecipes = (event) => {
   event.remove({ id: "create:crafting/materials/zinc_block_from_compacting" });
   event.remove({ id: "create:item_application/brass_casing_from_wood_using_deployer" });
   event.remove({ id: "create:item_application/brass_casing_from_wood" });
+  event.remove({ id: /^create:crafting\/kinetics\/fluid_pipe.*$/ });
 
   event.remove({ id: /^create:crushing\/.*_horse_armor$/ });
   event.remove({ id: /^create:crushing\/.*_ore$/ });
@@ -70,6 +71,7 @@ const CreateRecipes = (event) => {
   event.remove({ id: "create:milling/cactus" });
   event.remove({ id: "create:milling/lilac" });
   event.remove({ id: "create:milling/pink_petals" });
+  event.remove({ id: "create:milling/gravel" });
 
   event.remove({ id: "create:haunting/soul_torch" });
 
@@ -109,33 +111,17 @@ const CreateRecipes = (event) => {
     "minecraft:andesite",
     "tfc:rock/raw/andesite",
   );
-  event.replaceInput(
-    { id: "create:crafting/kinetics/water_wheel" },
-    "#minecraft:planks",
-    "#tfc:lumber",
-  );
+  event.replaceInput({ id: "create:crafting/kinetics/water_wheel" }, "#minecraft:planks", "#tfc:lumber");
   event.replaceInput(
     { id: "create:crafting/kinetics/large_water_wheel" },
     "#minecraft:planks",
     "#tfc:lumber",
   );
-  event.replaceInput(
-    { id: "create:crafting/kinetics/hand_crank" },
-    "#minecraft:planks",
-    "#tfc:lumber",
-  );
-  event.replaceInput(
-    { id: "create:crafting/kinetics/nozzle" },
-    "#minecraft:wool",
-    "#tfc:high_quality_cloth",
-  );
+  event.replaceInput({ id: "create:crafting/kinetics/hand_crank" }, "#minecraft:planks", "#tfc:lumber");
+  event.replaceInput({ id: "create:crafting/kinetics/nozzle" }, "#minecraft:wool", "#tfc:high_quality_cloth");
   event.replaceInput({ mod: "create" }, "minecraft:iron_ingot", "#forge:ingots/wrought_iron");
   event.replaceInput({ input: "create:iron_sheet" }, "create:iron_sheet", "#forge:plates/iron");
-  event.replaceInput(
-    { input: "minecraft:iron_bars" },
-    "minecraft:iron_bars",
-    "tfc:metal/bars/wrought_iron",
-  );
+  event.replaceInput({ input: "minecraft:iron_bars" }, "minecraft:iron_bars", "tfc:metal/bars/wrought_iron");
   event.replaceInput(
     { id: "create:crafting/logistics/redstone_contact" },
     "minecraft:cobblestone",
@@ -162,11 +148,7 @@ const CreateRecipes = (event) => {
     "#forge:plates/iron",
     "#forge:plates/steel",
   );
-  event.replaceInput(
-    { id: /^create:crafting\/kinetics\/.*filter$/ },
-    "#minecraft:wool",
-    "minecraft:paper",
-  );
+  event.replaceInput({ id: /^create:crafting\/kinetics\/.*filter$/ }, "#minecraft:wool", "minecraft:paper");
   event.replaceInput(
     { id: "create:crafting/kinetics/weighted_ejector" },
     "create:golden_sheet",
@@ -187,22 +169,10 @@ const CreateRecipes = (event) => {
     "tfc:food/dried_kelp",
     "minecraft:leather",
   );
-  event.replaceInput(
-    { id: "create:milling/lapis_lazuli" },
-    "minecraft:lapis_lazuli",
-    "tfc:gem/lapis_lazuli",
-  );
+  event.replaceInput({ id: "create:milling/lapis_lazuli" }, "minecraft:lapis_lazuli", "tfc:gem/lapis_lazuli");
   event.replaceInput({ id: "create:milling/gravel" }, "minecraft:gravel", "#forge:gravel");
-  event.replaceInput(
-    { id: "create:crafting/kinetics/cogwheel" },
-    "#minecraft:planks",
-    "#tfc:lumber",
-  );
-  event.replaceInput(
-    { id: "create:crafting/kinetics/large_cogwheel" },
-    "#minecraft:planks",
-    "#tfc:lumber",
-  );
+  event.replaceInput({ id: "create:crafting/kinetics/cogwheel" }, "#minecraft:planks", "#tfc:lumber");
+  event.replaceInput({ id: "create:crafting/kinetics/large_cogwheel" }, "#minecraft:planks", "#tfc:lumber");
   event.replaceInput(
     { id: "petrolsparts:cutting/coaxial_gear_from_wood" },
     "#minecraft:planks",
@@ -220,11 +190,7 @@ const CreateRecipes = (event) => {
   //replace output
   event.replaceOutput({ id: "create:crushing/wool" }, "minecraft:string", "tfc:wool_cloth");
   event.replaceOutput({ id: "create:milling/wool" }, "minecraft:string", "tfc:wool_cloth");
-  event.replaceOutput(
-    { output: "create:iron_sheet" },
-    "create:iron_sheet",
-    "antiquelegacy:iron_plate",
-  );
+  event.replaceOutput({ output: "create:iron_sheet" }, "create:iron_sheet", "antiquelegacy:iron_plate");
   event.replaceOutput({ mod: "create" }, "create:zinc_ingot", "tfc:metal/ingot/zinc");
   event.replaceOutput({ mod: "create" }, "create:brass_ingot", "tfc:metal/ingot/brass");
 
@@ -333,23 +299,23 @@ const CreateRecipes = (event) => {
       "punch_any",
     ])
     .tier(1)
-    .apply_forging_bonus(false);
+    .apply_forging_bonus(false)
+    .id("twt:anvil/copper_sheet");
   event.recipes.tfc
-    .anvil(Item.of("create:golden_sheet", 2), "tfc:metal/sheet/gold", [
-      "punch_any",
-      "punch_any",
-      "punch_any",
-    ])
+    .anvil(Item.of("create:golden_sheet", 2), "tfc:metal/sheet/gold", ["punch_any", "punch_any", "punch_any"])
     .tier(1)
-    .apply_forging_bonus(false);
+    .apply_forging_bonus(false)
+    .id("twt:anvil/golden_sheet");
   event.recipes.tfc
-    .anvil(Item.of("create:brass_sheet", 2), "tfc:metal/sheet/brass", [
-      "punch_any",
-      "punch_any",
-      "punch_any",
-    ])
+    .anvil(Item.of("create:brass_sheet", 2), "tfc:metal/sheet/brass", ["punch_any", "punch_any", "punch_any"])
     .tier(2)
-    .apply_forging_bonus(false);
+    .apply_forging_bonus(false)
+    .id("twt:anvil/brass_sheet");
+  event.recipes.tfc
+    .anvil(Item.of("create:fluid_pipe", 2), "tfc:metal/sheet/copper", ["bend_any", "bend_any", "bend_any"])
+    .tier(1)
+    .apply_forging_bonus(false)
+    .id("twt:anvil/fluid_pipe");
 
   //Create Mixing
   event.recipes.create
@@ -404,6 +370,10 @@ const CreateRecipes = (event) => {
       ]),
       event.recipes.create.deploying("create:incomplete_precision_mechanism", [
         "create:incomplete_precision_mechanism",
+        "tfc:brass_mechanisms",
+      ]),
+      event.recipes.create.deploying("create:incomplete_precision_mechanism", [
+        "create:incomplete_precision_mechanism",
         "magistuarmory:steel_nugget",
       ]),
       event.recipes.create.pressing(
@@ -420,14 +390,8 @@ const CreateRecipes = (event) => {
         "create:unprocessed_obsidian_sheet",
         Fluid.of("minecraft:lava", 500),
       ]),
-      event.recipes.create.pressing(
-        "create:unprocessed_obsidian_sheet",
-        "create:unprocessed_obsidian_sheet",
-      ),
-      event.recipes.create.cutting(
-        "create:unprocessed_obsidian_sheet",
-        "create:unprocessed_obsidian_sheet",
-      ),
+      event.recipes.create.pressing("create:unprocessed_obsidian_sheet", "create:unprocessed_obsidian_sheet"),
+      event.recipes.create.cutting("create:unprocessed_obsidian_sheet", "create:unprocessed_obsidian_sheet"),
     ])
     .transitionalItem("create:unprocessed_obsidian_sheet")
     .loops(1)
@@ -438,14 +402,8 @@ const CreateRecipes = (event) => {
         "create:unprocessed_obsidian_sheet",
         Fluid.of("minecraft:lava", 500),
       ]),
-      event.recipes.create.pressing(
-        "create:unprocessed_obsidian_sheet",
-        "create:unprocessed_obsidian_sheet",
-      ),
-      event.recipes.create.cutting(
-        "create:unprocessed_obsidian_sheet",
-        "create:unprocessed_obsidian_sheet",
-      ),
+      event.recipes.create.pressing("create:unprocessed_obsidian_sheet", "create:unprocessed_obsidian_sheet"),
+      event.recipes.create.cutting("create:unprocessed_obsidian_sheet", "create:unprocessed_obsidian_sheet"),
     ])
     .transitionalItem("create:unprocessed_obsidian_sheet")
     .loops(1)
@@ -457,6 +415,10 @@ const CreateRecipes = (event) => {
     .resultFluid(Fluid.of("tfc:metal/copper", 100))
     .id("twt:heating/copper_sheet");
   event.recipes.tfc
+    .heating("create:fluid_pipe", 1080)
+    .resultFluid(Fluid.of("tfc:metal/copper", 100))
+    .id("twt:heating/fluid_pipe");
+  event.recipes.tfc
     .heating("create:brass_sheet", 930)
     .resultFluid(Fluid.of("tfc:metal/brass", 100))
     .id("twt:heating/brass_sheet");
@@ -467,44 +429,32 @@ const CreateRecipes = (event) => {
 
   //TFC welding
   event.recipes.tfc
-    .welding(
-      "create:netherite_backtank",
-      "create:copper_backtank",
-      "tfc:metal/chestplate/red_steel",
-    )
+    .welding("create:netherite_backtank", "create:copper_backtank", "tfc:metal/chestplate/red_steel")
     .id("twt:welding/netherite_backtank");
   event.recipes.tfc
-    .welding(
-      "create:netherite_diving_boots",
-      "create:copper_diving_boots",
-      "tfc:metal/boots/red_steel",
-    )
+    .welding("create:netherite_diving_boots", "create:copper_diving_boots", "tfc:metal/boots/red_steel")
     .id("twt:welding/netherite_diving_boots");
   event.recipes.tfc
-    .welding(
-      "create:netherite_diving_helmet",
-      "create:copper_diving_helmet",
-      "tfc:metal/helmet/red_steel",
-    )
+    .welding("create:netherite_diving_helmet", "create:copper_diving_helmet", "tfc:metal/helmet/red_steel")
     .id("twt:welding/netherite_diving_helmet");
   event.recipes.tfc
-    .welding(
-      "minecraft:netherite_leggings",
-      "tfc:metal/greaves/copper",
-      "tfc:metal/greaves/red_steel",
-    )
+    .welding("minecraft:netherite_leggings", "tfc:metal/greaves/copper", "tfc:metal/greaves/red_steel")
     .id("twt:welding/netherite_leggings");
 
   //TFC Knapping
   event.recipes.tfc
-    .knapping(Item.of("create:belt_connector"), "tfc:leather", [
-      "xxxxx",
-      "xxxxx",
-      "x   x",
-      "xxxxx",
-      "xxxxx",
-    ])
+    .knapping(Item.of("create:belt_connector"), "tfc:leather", ["xxxxx", "xxxxx", "x   x", "xxxxx", "xxxxx"])
     .id("twt:knapping/belt_connector_from_leather");
+
+  //lathe
+  event.recipes.vintageimprovements
+    .turning(Item.of("create:fluid_pipe", 4), "tfc:metal/double_ingot/copper")
+    .processingTime(200)
+    .id("twt:turning/fluid_pipe_2x");
+  event.recipes.vintageimprovements
+    .turning(Item.of("create:fluid_pipe", 8), "minecraft:copper_block")
+    .processingTime(600)
+    .id("twt:turning/fluid_pipe_8x");
 };
 
 const CreateData = (event) => {
@@ -516,6 +466,8 @@ const CreateData = (event) => {
   event.itemHeat("create:copper_sheet", 2.257, 648.0, 864.0);
   event.itemHeat("create:brass_sheet", 2.257, 558.0, 744.0);
   event.itemHeat("create:golden_sheet", 2.257, 636.0, 848.0);
+
+  event.itemHeat("create:fluid_pipe", 2.857, 648.0, 864.0);
 
   //TFC Fuels
   event.fuel("create:cinder_flour", 400, 6200, 0.05);
@@ -539,4 +491,5 @@ const CreateData = (event) => {
 
 const CreateItemTags = (event) => {
   event.add("create:sleepers", "#forge:smooth_stone_slab");
+  event.add("create:sandpaper", "tfc:sandpaper");
 };

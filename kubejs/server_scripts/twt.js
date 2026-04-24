@@ -15,15 +15,14 @@ const TWTRecipes = (event) => {
   event.remove({
     id: "create:splashing/runtime_generated/compat/supplementaries/sugar_cube_to_water",
   });
+  event.remove({ id: /^everycomp:fd\/cutting\/tfc\/.*/ });
+  //move later
+  event.remove({ id: "farmersdelight:cutting/gravel" });
 
   //Replace input
   event.replaceInput({ input: "minecraft:campfire" }, "minecraft:campfire", "minecraft:charcoal");
   event.replaceInput({ input: "minecraft:smooth_stone" }, "minecraft:smooth_stone", "#forge:stone");
-  event.replaceInput(
-    { input: "minecraft:dried_kelp" },
-    "minecraft:dried_kelp",
-    "tfc:food/dried_kelp",
-  );
+  event.replaceInput({ input: "minecraft:dried_kelp" }, "minecraft:dried_kelp", "tfc:food/dried_kelp");
   event.replaceInput({ input: "minecraft:chest" }, "minecraft:chest", "#forge:chests");
   event.replaceInput(
     { id: "man_of_many_planes:scarlet_biplane" },
@@ -33,11 +32,7 @@ const TWTRecipes = (event) => {
   event.replaceInput({ input: "minecraft:barrel" }, "minecraft:barrel", "#tfc:barrels");
 
   //replace output
-  event.replaceOutput(
-    { output: "minecraft:amethyst_shard" },
-    "minecraft:amethyst_shard",
-    "tfc:gem/amethyst",
-  );
+  event.replaceOutput({ output: "minecraft:amethyst_shard" }, "minecraft:amethyst_shard", "tfc:gem/amethyst");
 
   //Shapeless
   $ores.forEach((ore) => {
@@ -112,68 +107,97 @@ const TWTRecipes = (event) => {
   nuggetsmithing("tfc:metal/ingot/zinc", "20x create:zinc_nugget");
   nuggetsmithing("tfc:metal/ingot/brass", "20x create:brass_nugget");
 
-  //Create Cutting
-  function woodsawing(output, input, amount) {
-    event.recipes.create.cutting(
-      [Item.of(output, amount), Item.of("createdieselgenerators:wood_chip", 1).withChance(0.7)],
-      [Item.of(input)],
-    );
-  }
+  //Create Cutting, Holy Overengineering
+  const getNamespace = (wood) => (wood === "crimson" || wood === "warped" ? "beneath" : "tfc");
+
+  const WOOD_DATA = {
+    stripped_log: { path: (w) => `stripped_log/${w}`, amounts: [8, 1, 4, 400] },
+    planks: { path: (w) => `planks/${w}`, amounts: [4, 0.7, 3, 200] },
+    stairs: { path: (w) => `planks/${w}_stairs`, amounts: [3, 0.5, 2, 100] },
+    slab: { path: (w) => `planks/${w}_slab`, amounts: [2, 0.3, 1, 50] },
+  };
+  Object.entries(WOOD_DATA).forEach(([type, data]) => {
+    let amounts = data.amounts;
+    let lumberAmount = amounts[0];
+    let chipChance = amounts[1];
+    let chipAmount = amounts[2];
+    let time = amounts[3];
+
+    $woods.forEach((wood) => {
+      let namespace = getNamespace(wood);
+      let inputPath = `${namespace}:wood/${data.path(wood)}`;
+
+      event.recipes.create
+        .cutting(
+          [
+            Item.of(`${namespace}:wood/lumber/${wood}`, lumberAmount),
+            Item.of("createdieselgenerators:wood_chip", chipAmount).withChance(chipChance),
+          ],
+          inputPath,
+        )
+        .processingTime(time)
+        .id(`twt:cutting/${wood}_lumber_from_${wood}_${type}`);
+    });
+  });
 
   $woods.forEach((wood) => {
-    woodsawing(`tfc:wood/stripped_log/${wood}`, `tfc:wood/log/${wood}`, 1);
-    woodsawing(`tfc:wood/lumber/${wood}`, `tfc:wood/stripped_log/${wood}`, 8);
-    woodsawing(`tfc:wood/lumber/${wood}`, `tfc:wood/planks/${wood}`, 4);
-    woodsawing(`tfc:wood/lumber/${wood}`, `tfc:wood/planks/${wood}_stairs`, 3);
-    woodsawing(`tfc:wood/lumber/${wood}`, `tfc:wood/planks/${wood}_slab`, 2);
-    woodsawing(`tfc:wood/lumber/${wood}`, `firmaciv:wood/${wood}_roofing`, 2);
-  });
-  woodsawing(`beneath:wood/stripped_log/crimson`, `beneath:wood/log/crimson`, 1);
-  woodsawing(`beneath:wood/lumber/crimson`, `beneath:wood/stripped_log/crimson`, 8);
-  woodsawing(`beneath:wood/lumber/crimson`, `beneath:wood/planks/crimson`, 4);
-  woodsawing(`beneath:wood/lumber/crimson`, `beneath:wood/planks/crimson_stairs`, 3);
-  woodsawing(`beneath:wood/lumber/crimson`, `beneath:wood/planks/crimson_slab`, 2);
-  woodsawing(`beneath:wood/stripped_log/warped`, `beneath:wood/log/warped`, 1);
-  woodsawing(`beneath:wood/lumber/warped`, `beneath:wood/stripped_log/warped`, 8);
-  woodsawing(`beneath:wood/lumber/warped`, `beneath:wood/planks/warped`, 4);
-  woodsawing(`beneath:wood/lumber/warped`, `beneath:wood/planks/warped_stairs`, 3);
-  woodsawing(`beneath:wood/lumber/warped`, `beneath:wood/planks/warped_slab`, 2);
-
-  //Create Deploying
-  function nuggetdeploying(input, output) {
     event.recipes.create
-      .deploying([Item.of(output, 20)], [Item.of(input), "#tfc:chisels"])
-      .keepHeldItem();
-  }
+      .cutting(
+        [
+          getNamespace(wood) + `:wood/stripped_log/${wood}`,
+          "farmersdelight:tree_bark",
+          Item.of("farmersdelight:tree_bark").withChance(0.5),
+        ],
+        getNamespace(wood) + `:wood/log/${wood}`,
+      )
+      .processingTime(600)
+      .id(`twt:cutting/stripped_${wood}_from_${wood}_log`);
+  });
+  //Create Deploying
+  const NUGGET_DATA = {
+    gold: { ingotNS: "tfc", ingotPrefix: "", nuggetNS: "minecraft" },
+    copper: { ingotNS: "tfc", ingotPrefix: "", nuggetNS: "create" },
+    tin: { ingotNS: "tfc", ingotPrefix: "", nuggetNS: "antiquelegacy" },
+    zinc: { ingotNS: "tfc", ingotPrefix: "", nuggetNS: "create" },
+    brass: { ingotNS: "tfc", ingotPrefix: "", nuggetNS: "create" },
+    iron: { ingotNS: "tfc", ingotPrefix: "wrought_", nuggetNS: "minecraft" },
+    steel: { ingotNS: "tfc", ingotPrefix: "", nuggetNS: "magistuarmory" },
+    black_bronze: { ingotNS: "tfc", ingotPrefix: "", nuggetNS: "knightsofterrafirma" },
+    bismuth_bronze: { ingotNS: "tfc", ingotPrefix: "", nuggetNS: "knightsofterrafirma" },
+    bronze: { ingotNS: "tfc", ingotPrefix: "", nuggetNS: "antiquelegacy" },
+  };
 
-  nuggetdeploying("tfc:metal/ingot/gold", "minecraft:gold_nugget");
-  nuggetdeploying("tfc:metal/ingot/copper", "create:copper_nugget");
-  nuggetdeploying("tfc:metal/ingot/tin", "antiquelegacy:tin_nugget");
-  nuggetdeploying("tfc:metal/ingot/zinc", "create:zinc_nugget");
-  nuggetdeploying("tfc:metal/ingot/brass", "create:brass_nugget");
-  nuggetdeploying("tfc:metal/ingot/wrought_iron", "minecraft:iron_nugget");
-  nuggetdeploying("tfc:metal/ingot/steel", "magistuarmory:steel_nugget");
-  nuggetdeploying("tfc:metal/ingot/black_bronze", "knightsofterrafirma:black_bronze_nugget");
-  nuggetdeploying("tfc:metal/ingot/bismuth_bronze", "knightsofterrafirma:bismuth_bronze_nugget");
-  nuggetdeploying("tfc:metal/ingot/bronze", "antiquelegacy:bronze_nugget");
+  Object.entries(NUGGET_DATA).forEach(([metal, data]) => {
+    let ingot = `${data.ingotNS}:metal/ingot/${data.ingotPrefix}${metal}`;
+    let nugget = `${data.nuggetNS}:${metal}_nugget`;
+
+    event.recipes.create
+      .deploying(Item.of(nugget, 20), [ingot, "#tfc:chisels"])
+      .keepHeldItem()
+      .id(`twt:deploying/${metal}_nugget`);
+  });
 
   //Create Mixing
-  function powdermelting(input, output) {
-    event.recipes.create.mixing([Fluid.of(output, 5)], [Item.of(input)]);
-  }
+  const ORE_POWDER_DATA = {
+    native_copper: { fluid: "copper" },
+    tetrahedrite: { fluid: "copper" },
+    malachite: { fluid: "copper" },
+    native_gold: { fluid: "gold" },
+    native_silver: { fluid: "silver" },
+    hematite: { fluid: "cast_iron" },
+    magnetite: { fluid: "cast_iron" },
+    limonite: { fluid: "cast_iron" },
+    cassiterite: { fluid: "tin" },
+    garnierite: { fluid: "nickel" },
+    sphalerite: { fluid: "zinc" },
+    bismuthinite: { fluid: "bismuth" },
+  };
+  Object.entries(ORE_POWDER_DATA).forEach(([ore, data]) => {
+    let powder = `tfc:powder/${ore}`;
+    let metal = `tfc:metal/${data.fluid}`;
 
-  powdermelting("tfc:powder/native_copper", "tfc:metal/copper");
-  powdermelting("tfc:powder/native_gold", "tfc:metal/gold");
-  powdermelting("tfc:powder/hematite", "tfc:metal/cast_iron");
-  powdermelting("tfc:powder/native_silver", "tfc:metal/silver");
-  powdermelting("tfc:powder/cassiterite", "tfc:metal/tin");
-  powdermelting("tfc:powder/bismuthinite", "tfc:metal/bismuth");
-  powdermelting("tfc:powder/garnierite", "tfc:metal/nickel");
-  powdermelting("tfc:powder/malachite", "tfc:metal/copper");
-  powdermelting("tfc:powder/magnetite", "tfc:metal/cast_iron");
-  powdermelting("tfc:powder/limonite", "tfc:metal/cast_iron");
-  powdermelting("tfc:powder/sphalerite", "tfc:metal/zinc");
-  powdermelting("tfc:powder/tetrahedrite", "tfc:metal/copper");
+    event.recipes.create.mixing([Fluid.of(metal, 5)], [Item.of(powder)]).id(`twt:mixing/${ore}`);
+  });
 };
 
 const TWTData = (event) => {

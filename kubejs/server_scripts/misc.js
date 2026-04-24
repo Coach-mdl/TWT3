@@ -23,11 +23,7 @@ const MiscRecipes = (event) => {
     .id("twt:milling/slime");
 
   //TerrificTrashCanRecipes
-  event.replaceInput(
-    { mod: "terrific_trash_cans" },
-    "minecraft:iron_ingot",
-    "tfc:metal/ingot/wrought_iron",
-  );
+  event.replaceInput({ mod: "terrific_trash_cans" }, "minecraft:iron_ingot", "tfc:metal/ingot/wrought_iron");
   event.replaceInput({ mod: "terrific_trash_cans" }, "minecraft:cobblestone", "#forge:cobblestone");
   event.replaceInput({ mod: "terrific_trash_cans" }, "minecraft:bucket", "#tfc:buckets");
 
@@ -67,21 +63,17 @@ const MiscRecipes = (event) => {
   );
 
   //Railways
-  event.replaceInput(
-    { id: "railways:crafting/paint_brush" },
-    "minecraft:iron_ingot",
-    "tfc:metal/rod/copper",
-  );
-  event.replaceInput(
-    { input: "minecraft:iron_ingot" },
-    "minecraft:iron_ingot",
-    "#forge:ingots/wrought_iron",
-  );
+  event.replaceInput({ id: "railways:crafting/paint_brush" }, "minecraft:iron_ingot", "tfc:metal/rod/copper");
+  event.replaceInput({ input: "minecraft:iron_ingot" }, "minecraft:iron_ingot", "#forge:ingots/wrought_iron");
 };
 
 const MiscData = (event) => {
   //powergrid
   event.itemHeat("powergrid:zinc_sheet", 2.257, 252.0, 336.0);
+
+  //Vintage
+  event.itemHeat("vintageimprovements:iron_spring", 1.429, 921.0, 1228.0);
+  event.itemHeat("vintageimprovements:steel_spring", 1.429, 924.0, 1232.0);
 };
 
 //If a tag doesn't want to be removed, check the JSON file for the tag. If it was added to a tag through another tag, that tag will have to go.

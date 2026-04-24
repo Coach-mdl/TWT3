@@ -209,3 +209,4 @@ config/vintageimprovements-client.toml
 config/sophisticatedcore-client.toml
 .zed/settings.json
 config/backpacked.client.toml
+data/create_repairDefaultResourcePacks.dat

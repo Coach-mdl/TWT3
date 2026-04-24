@@ -15,6 +15,11 @@ MAJOR CHANGES:
 MINOR CHANGES:
 
 - Updated Forge to latest.
+- Fluid pipes can now be recycled and are now forged with a sheet. Lathe recipes are also available.
+- Ore deposits can be vibrated using a vibrator.
+- Actually quite a few items can be recycled. Keep an eye out!
+- A bunch of stone slabs have been added to the "create:sleepers" tag.
+- TFC steel pipe can also be recycled because for some reason they couldn't
 - TNT now uses TFC sand.
 - Create chocolate now has food data.
 - Added a plethora of structures to explore (which are filled with artifacts and blueprints)
@@ -25,9 +30,18 @@ MINOR CHANGES:
 - Metal blocks are now crafted with four sheets and a smooth stone block. (Provided it has a tfc sheet)
 - Recipes that use plank blocks have been switched to use lumber where applicable.
 - Create filters now use paper instead of wool.
-- Create sheets now melt into their respective metals and can be forged at an anvil.
+- Create sheets now melt into their respective metals and can be forged at an anvil using a tfc sheet.
 - Building tools such as the wand of symmetry and extendo grip are now cheaper and can be obtained earlier (Literally copper age)
 - Epic knights woolen fabric recipe now outputs 4 woolen fabric.
+
+UNDER THE HOOD:
+
+- Script loading is now handled by an event handler script.
+- Many files have been changed to correspond to a specific mod, with the exlusion of twt and misc.
+- A number of unused configs were removed from the pack.
+- Some existing code has been rewritten.
+- A number of duplicate and useless recipes have been removed.
+- Many unobtainable items have been hidden in JEI using the "jei:hidden" tag0.
 
 REMOVED:
 
@@ -44,12 +58,12 @@ REMOVED:
 - Advanced TFC Tech (Client-Side)
 - Sacks 'n' Such
 - Macaws everything
-- Corail
-- WoodenCog (?)
+- Corail Tombstone
+- WoodenCog
 - Toolbelt
 - Parcool
 - I <3 TFC (Client-Side)
-- TFC IE + IE
+- Immersive Engineering
 - TFC Barrels
 - TFC Textile
 - Better Stone Age
@@ -64,10 +78,9 @@ REMOVED:
 - I See My Armored Hand (Client-Side)
 - JEI Multiblocks (Client-Side)
 - JEI Professions (Client-Side)
-- KJS IE compat
 - Pick Up Notifier (Client-Side)
 - TFC Scraping Knives
-- TFMG + KJS compat
+- Create: The Factory Must Grow (TFMG)
 - Create: Enchantment Industry
 
 ADDED:
@@ -75,7 +88,7 @@ ADDED:
 
 - Create: Diesel Generators
 - Simple Shops
-- TFC Create Handshake (?)
+- TFC Create Handshake
 - Torque Link Create to TFC
 - TFC MultiForge
 - Create Ore Excavation and compat
@@ -104,14 +117,12 @@ ADDED:
 - Observable (Client-Side)
 - Terrific Trash Cans
 - Create Photomovement
-- PonderJS
 - EntityJS
 - Keybind Bundles
 - A Secret Something...(You'll find it immediately)
 - Neruina
 - Create: Power Grid (New Main Power Mod)
 - Create Connected
-- Inventory Sorter
 - Dynamic TFC Structures
 - Yung's Better EVERYTHING (except desert temples which liked to spawn inside other structures)
 - When Dungeons Arise

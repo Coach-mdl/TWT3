@@ -1,6 +1,12 @@
 [
   {
     "match": [
+      "TAG:forge:ores"
+    ],
+    "theme": "purple"
+  },
+  {
+    "match": [
       "minecraft:netherite_axe",
       "TAG:minecraft:tools"
     ],
@@ -14,16 +20,16 @@
   },
   {
     "match": [
-      "TAG:forge:ores"
-    ],
-    "theme": "purple"
-  },
-  {
-    "match": [
       "minecraft:diamond",
       "create:wand_of_symmetry",
       "create:extendo_grip"
     ],
     "theme": "orange"
+  },
+  {
+    "match": [
+      "twt:mystique"
+    ],
+    "theme": "pink"
   }
 ]
