@@ -116,10 +116,13 @@ const VanillaData = (event) => {
   event.itemHeat("minecraft:anvil", 3.057, null, 1128);
   event.itemHeat("minecraft:chipped_anvil", 3.057, null, 1128);
   event.itemHeat("minecraft:damaged_anvil", 3.057, null, 1128);
-  event.itemHeat("minecraft:bricks", 2.0, null, null);
 
+  //fuel
   event.fuel("minecraft:blaze_rod", 1825, 1100, 0.95);
   event.fuel("minecraft:blaze_powder", 1900, 550, null);
+
+  //size
+  event.itemSize(/^minecraft:.*anvil$/, "huge", "very_heavy");
 };
 
 const VanillaItemTags = (event) => {

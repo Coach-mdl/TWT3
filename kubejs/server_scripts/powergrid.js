@@ -93,8 +93,30 @@ const PowergridRecipes = (event) => {
     "#railways:internal/plates/iron_plates",
     "tfc:metal/double_ingot/wrought_iron",
   );
+  event.replaceInput(
+    { id: "powergrid:sequenced_assembly/unetched_circuit_board" },
+    "create:dough",
+    "#forge:dough",
+  );
 
   //replaceOutput
+
+  //Shapeless
+  event.recipes.kubejs
+    .shapeless("powergrid:wire", ["powergrid:insulated_copper_wire", "powergrid:wire_cutter"])
+    .keepIngredient("powergrid:wire_cutter")
+    .id("twt:shapeless/copper_wire");
+  event.recipes.kubejs
+    .shapeless("powergrid:copper_cord", ["powergrid:string_light_cord", "powergrid:wire_cutter"])
+    .keepIngredient("powergrid:wire_cutter")
+    .id("twt:shapeless/copper_cord");
+  event.recipes.kubejs
+    .shapeless(Item.of("powergrid:insulated_copper_wire", 2), [
+      "powergrid:copper_cord",
+      "powergrid:wire_cutter",
+    ])
+    .keepIngredient("powergrid:wire_cutter")
+    .id("twt:shapeless/insulated_copper_wire");
 
   //Shaped
   event.recipes.kubejs
@@ -160,7 +182,7 @@ const PowergridRecipes = (event) => {
       event.recipes.vintageimprovements
         .laser_cutting("powergrid:incomplete_electrical_gizmo", "powergrid:incomplete_electrical_gizmo")
         .energyCost(200)
-        .maxChargeRate(120),
+        .maxChargeRate(2),
       event.recipes.create.deploying("powergrid:incomplete_electrical_gizmo", [
         "powergrid:incomplete_electrical_gizmo",
         "powergrid:zinc_sheet",
@@ -175,19 +197,21 @@ const PowergridRecipes = (event) => {
     .id("twt:sequenced/electrical_gizmo");
 
   //Magnetization
-  event.custom({
-    type: "powergrid:magnetization",
-    ingredients: [
-      {
-        item: "tfc:metal/ingot/wrought_iron",
-      },
-    ],
-    results: [
-      {
-        item: "powergrid:magnet",
-      },
-    ],
-  });
+  event
+    .custom({
+      type: "powergrid:magnetization",
+      ingredients: [
+        {
+          item: "tfc:metal/ingot/wrought_iron",
+        },
+      ],
+      results: [
+        {
+          item: "powergrid:magnet",
+        },
+      ],
+    })
+    .id("twt:magnetization/magnet");
 
   //coiling
   event.recipes.vintageimprovements
@@ -226,4 +250,16 @@ const PowergridRecipes = (event) => {
     .heating("powergrid:zinc_sheet", 420)
     .resultFluid(Fluid.of("tfc:metal/zinc", 100))
     .id("twt:heating/zinc_sheet");
+  event.recipes.tfc
+    .heating("powergrid:wire", 1080)
+    .resultFluid(Fluid.of("tfc:metal/copper", 50))
+    .id("twt:heating/copper_wire");
+  event.recipes.tfc
+    .heating("powergrid:iron_wire", 1585)
+    .resultFluid(Fluid.of("tfc:metal/cast_iron", 50))
+    .id("twt:heating/iron_wire");
+  event.recipes.tfc
+    .heating("powergrid:golden_wire", 1060)
+    .resultFluid(Fluid.of("tfc:metal/gold", 50))
+    .id("twt:heating/golden_wire");
 };

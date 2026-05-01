@@ -1,15 +1,17 @@
 [
   {
     "match": [
+      "create:extendo_grip",
       "create:wand_of_symmetry",
       "minecraft:tools",
-      "create:extendo_grip"
+      "powergrid:electrobaton"
     ],
     "result": "1*2"
   },
   {
     "match": [
-      "minecraft:slabs"
+      "minecraft:slabs",
+      "powergrid:electrozapper"
     ],
     "result": "2*1"
   },
@@ -23,6 +25,14 @@
   },
   {
     "match": [
+      "create:potato_cannon"
+    ],
+    "result": "3*1"
+  },
+  {
+    "match": [
+      "createdieselgenerators:chemical_sprayer_lighter",
+      "createdieselgenerators:chemical_sprayer",
       "minecraft:bed"
     ],
     "result": "3*2"
@@ -38,5 +48,11 @@
       "minecraft:netherite_axe"
     ],
     "result": "2*4"
+  },
+  {
+    "match": [
+      "createdieselgenerators:chemical_turret"
+    ],
+    "result": "3*3"
   }
 ]

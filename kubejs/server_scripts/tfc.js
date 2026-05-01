@@ -1,5 +1,8 @@
 "use strict";
 
+/**
+ * @param {Internal.RecipesEventJS} event
+ */
 const TFCRecipes = (event) => {
   //replace
 
@@ -201,11 +204,6 @@ const TFCRecipes = (event) => {
       .energyCost(4000)
       .maxChargeRate(50)
       .id(`twt:laser_cutting/${metal}_bars_8x`);
-    event.recipes.vintageimprovements
-      .laser_cutting(Item.of(`tfc:metal/bars/${metal}`, 8), `tfc:metal/double_sheet/${metal}`)
-      .energyCost(8000)
-      .maxChargeRate(50)
-      .id(`twt:laser_cutting/${metal}_bars_16x`);
   });
   $tfcMetals.forEach((metal) => {
     event.recipes.vintageimprovements
@@ -266,7 +264,7 @@ const TFCData = (event) => {
   event.itemHeat("tfc:brass_mechanisms", 1.429, 558.0, 744.0);
 
   $ores.forEach((ore) => {
-    event.itemHeat(`tfc:powder/${ore}`, 0.8, null, null);
+    event.itemHeat(`tfc:powder/${ore}`, 0.4, null, null);
   });
 };
 
@@ -302,5 +300,15 @@ const TFCItemTags = (event) => {
     "tfc:wood/sapling/sycamore",
     "tfc:wood/sapling/white_cedar",
   ]);
-  event.add("tfc:compost_browns_low", "farmersdelight:tree_bark");
+  (event.add("tfc:forge_fuel", [
+    "aether:ambrosium_shard",
+    "aether:ambrosium_block",
+    "create:cardboard",
+    "create:blaze_cake",
+    "minecraft:blaze_powder",
+    "minecraft:blaze_rod",
+    "scguns:vehement_coal",
+  ]),
+    event.add("tfc:firepit_fuel", ["create:cardboard", "minecraft:blaze_powder", "minecraft:blaze_rod"]),
+    event.add("tfc:compost_browns_low", "farmersdelight:tree_bark"));
 };

@@ -1,9 +1,15 @@
 [
   {
     "match": [
-      "TAG:forge:ores"
+      "twt:mystique"
     ],
-    "theme": "purple"
+    "theme": "pink"
+  },
+  {
+    "match": [
+      "minecraft:emerald"
+    ],
+    "theme": "red"
   },
   {
     "match": [
@@ -14,9 +20,9 @@
   },
   {
     "match": [
-      "minecraft:emerald"
+      "TAG:forge:ores"
     ],
-    "theme": "red"
+    "theme": "purple"
   },
   {
     "match": [
@@ -25,11 +31,5 @@
       "create:extendo_grip"
     ],
     "theme": "orange"
-  },
-  {
-    "match": [
-      "twt:mystique"
-    ],
-    "theme": "pink"
   }
 ]

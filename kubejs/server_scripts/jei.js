@@ -35,5 +35,12 @@ const JEItags = (event) => {
     /^vintageimprovements:.*_rod$/,
     /^vintageimprovements:.*_wire$/,
     /^vintageimprovements:.*_sheet$/,
+    "vintageimprovements:vacuum_chamber",
+    /^vintageimprovements:.*_curving_head$/,
+    "vintageimprovements:curving_press",
+    "createdieselgenerators:hammer",
+    "createdieselgenerators:wire_cutters",
   ]);
+
+  event.add("jei:hidden_fluids", [/^vintageimprovements:sulfur_.*$/, "vintageimprovements:sulfuric_acid"]);
 };

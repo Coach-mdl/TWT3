@@ -70,6 +70,9 @@ const MiscRecipes = (event) => {
 const MiscData = (event) => {
   //powergrid
   event.itemHeat("powergrid:zinc_sheet", 2.257, 252.0, 336.0);
+  event.itemHeat("powergrid:wire", 1.429, 648.0, 864.0);
+  event.itemHeat("powergrid:iron_wire", 1.429, 921.0, 1228.0);
+  event.itemHeat("powergrid:golden_wire", 1.429, 636.0, 848.0);
 
   //Vintage
   event.itemHeat("vintageimprovements:iron_spring", 1.429, 921.0, 1228.0);

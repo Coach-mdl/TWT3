@@ -1,11 +1,12 @@
 "use strict";
 
+/**
+ * @param {Internal.RecipesEventJS} event
+ */
 const VintageimprovementsRecipes = (event) => {
   //Removals
   event.remove({ id: "vintageimprovements:crushing/scoria" });
   event.remove({ id: "vintageimprovements:crushing/scoria_recycling" });
-  event.remove({ id: "vintageimprovements:pressurizing/sulfur_dioxide" });
-  event.remove({ id: "vintageimprovements:pressurizing/sulfur_dioxide" });
   event.remove({ id: /^vintageimprovements:pressing\/.*_ingot$/ });
   event.remove({ id: /^vintageimprovements:craft\/.*_rod$/ });
   event.remove({ id: /^vintageimprovements:craft\/.*_wire$/ });
@@ -14,14 +15,18 @@ const VintageimprovementsRecipes = (event) => {
   event.remove({ id: /^vintageimprovements:coiling\/.*_plate$/ });
   event.remove({ id: /^vintageimprovements:coiling\/.*_ingot$/ });
   event.remove({ id: "vintageimprovements:curving/iron_sheet" });
-  event.remove({ id: "vintageimprovements:pressurizing/copper_sulfate" });
   event.remove({ id: "vintageimprovements:coiling/iron_plate" });
   event.remove({ id: "vintageimprovements:craft/spring_coiling_machine" });
   event.remove({ id: "vintageimprovements:hammering/netherite_ingot" });
+  event.remove({ id: "vintageimprovements:craft/vacuum_chamber" });
+  event.remove({ id: /^vintageimprovements:.*_curving_head$/ });
+  event.remove({ id: "vintageimprovements:craft/curving_press" });
 
   event.remove({ output: "vintageimprovements:vanadium_nugget" });
 
   event.remove({ type: "vintageimprovements:pressurizing", mod: "vintageimprovements" });
+  event.remove({ type: "vintageimprovements:curving", mod: "vintageimprovements" });
+  event.remove({ type: "vintageimprovements:vacuumizing", mod: "vintageimprovements" });
   event.remove({ mod: "vintageimprovements", type: "vintageimprovements:laser_cutting" });
 
   //Replace Input
@@ -94,22 +99,82 @@ const VintageimprovementsRecipes = (event) => {
   });
 
   //hammering
-  function Hammer(output, input, anvilBlock, id) {
+  const METAL_HAMMERING = {
+    raw_iron_bloom: {
+      prefix: "tfc:",
+      output: "tfc:refined_iron_bloom",
+      anvilBlock: "tfc:metal/block/wrought_iron_slab",
+    },
+    refined_iron_bloom: {
+      prefix: "tfc:",
+      output: "tfc:metal/ingot/wrought_iron",
+      anvilBlock: "tfc:metal/block/wrought_iron_slab",
+    },
+    pig_iron: {
+      prefix: "tfc:metal/ingot/",
+      output: "tfc:metal/ingot/steel",
+      anvilBlock: "tfc:metal/block/steel_slab",
+    },
+    high_carbon_black_steel: {
+      prefix: "tfc:metal/ingot/",
+      output: "tfc:metal/ingot/black_steel",
+      anvilBlock: "tfc:metal/block/black_steel_slab",
+    },
+    high_carbon_blue_steel: {
+      prefix: "tfc:metal/ingot/",
+      output: "tfc:metal/ingot/blue_steel",
+      anvilBlock: "tfc:metal/block/blue_steel_slab",
+    },
+    high_carbon_red_steel: {
+      prefix: "tfc:metal/ingot/",
+      output: "tfc:metal/ingot/red_steel",
+      anvilBlock: "tfc:metal/block/red_steel_slab",
+    },
+  };
+  Object.entries(METAL_HAMMERING).forEach(([metal, data]) => {
+    let input = `${data.prefix}${metal}`;
+    let output = data.output;
+    let anvil = data.anvilBlock;
+    let recipeId = `twt:hammering/${metal}`;
+
+    event.recipes.vintageimprovements.hammering(output, input).hammerBlows(4).anvilBlock(anvil).id(recipeId);
+  });
+
+  //centrifugation
+  const ALLOYS_TO_METALS = {
+    bronze: { outputs: 2, tin: 1, copper: 8, total: 9 },
+    brass: { outputs: 2, zinc: 1, copper: 8, total: 9 },
+    rose_gold: { outputs: 2, copper: 2, gold: 6, total: 8 },
+    sterling_silver: { outputs: 2, copper: 1, silver: 2, total: 3 },
+    bismuth_bronze: { outputs: 3, bismuth: 1, zinc: 2, copper: 4, total: 7 },
+    black_bronze: { outputs: 3, gold: 1, silver: 1, copper: 2, total: 4 },
+    unknown: { outputs: 6, copper: 1, zinc: 1, bismuth: 1, tin: 1, silver: 1, gold: 1, total: 6 },
+  };
+
+  const metalFluid = (metal, amount) => {
+    return Fluid.of(`tfc:metal/${metal}`, amount);
+  };
+  Object.entries(ALLOYS_TO_METALS).forEach(([alloy, data]) => {
+    let components = Object.entries(data).filter(([key]) => key !== "outputs" && key !== "total");
+
+    if (components.length !== data.outputs) {
+      console.warn(`twt: ${alloy} has ${components.length} components but output declares ${data.outputs}`);
+    }
+
+    let outputs = components.slice(0, data.outputs).map(([metal, amount]) => metalFluid(metal, amount));
+
     event.recipes.vintageimprovements
-      .hammering(output, input)
-      .hammerBlows(4)
-      .anvilBlock("tfc:metal/block/" + anvilBlock + "_slab")
-      .id("twt:hammering/" + id);
-  }
+      .centrifugation(outputs, metalFluid(alloy, data.total))
+      .processingTime(600)
+      .minimalRPM(256)
+      .id(`twt:centrifugation/${alloy}`);
+  });
 
-  let HC = "tfc:metal/ingot/high_carbon_";
-
-  Hammer("tfc:refined_iron_bloom", "tfc:raw_iron_bloom", "wrought_iron", "refined_iron_bloom");
-  Hammer("tfc:metal/ingot/wrought_iron", "tfc:refined_iron_bloom", "wrought_iron", "wrought_iron_ingot");
-  Hammer("tfc:metal/ingot/steel", "tfc:metal/ingot/pig_iron", "steel", "steel_ingot");
-  Hammer("tfc:metal/ingot/black_steel", HC + "black_steel", "black_steel", "black_steel_ingot");
-  Hammer("tfc:metal/ingot/blue_steel", HC + "blue_steel", "blue_steel", "blue_steel_ingot");
-  Hammer("tfc:metal/ingot/red_steel", HC + "red_steel", "red_steel", "red_steel_ingot");
+  event.recipes.vintageimprovements
+    .centrifugation([Fluid.of("tfc:vinegar", 1), Fluid.of("tfc:salt_water", 9)], Fluid.of("tfc:brine", 10))
+    .processingTime(300)
+    .minimalRPM(128)
+    .id("twt:centrifugation/brine");
 };
 
 const VintageimprovementsItemTags = (event) => {

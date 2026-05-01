@@ -30,6 +30,9 @@ const CreateRecipes = (event) => {
   event.remove({ id: "create:item_application/brass_casing_from_wood_using_deployer" });
   event.remove({ id: "create:item_application/brass_casing_from_wood" });
   event.remove({ id: /^create:crafting\/kinetics\/fluid_pipe.*$/ });
+  event.remove({ id: "create:campfire_cooking/bread" });
+  event.remove({ id: "create:smelting/bread" });
+  event.remove({ id: "create:smoking/bread" });
 
   event.remove({ id: /^create:crushing\/.*_horse_armor$/ });
   event.remove({ id: /^create:crushing\/.*_ore$/ });
@@ -203,6 +206,9 @@ const CreateRecipes = (event) => {
       "minecraft:bone_meal",
     ])
     .id("twt:shapeless/tree_fertilizer");
+  event.recipes.kubejs
+    .shapeless(Item.of("create:dough"), ["#tfc:foods/dough", "#tfc:foods/flour"])
+    .id("twt:shapeless/create_dough");
 
   //shaped
   event.recipes.kubejs
@@ -374,7 +380,7 @@ const CreateRecipes = (event) => {
       ]),
       event.recipes.create.deploying("create:incomplete_precision_mechanism", [
         "create:incomplete_precision_mechanism",
-        "magistuarmory:steel_nugget",
+        "magistuarmory:steel_plate",
       ]),
       event.recipes.create.pressing(
         "create:incomplete_precision_mechanism",
@@ -383,7 +389,37 @@ const CreateRecipes = (event) => {
     ])
     .transitionalItem("create:incomplete_precision_mechanism")
     .loops(1)
-    .id("twt:sequenced/precision_mechanism");
+    .id("twt:sequenced/precision_mechanism_1x");
+  event.recipes.create
+    .sequenced_assembly(Item.of("create:precision_mechanism", 4), "tfc:metal/sheet/gold", [
+      event.recipes.create.deploying("create:incomplete_precision_mechanism", [
+        "create:incomplete_precision_mechanism",
+        "powergrid:integrated_circuit",
+      ]),
+      event.recipes.create.deploying("create:incomplete_precision_mechanism", [
+        "create:incomplete_precision_mechanism",
+        "tfc:brass_mechanisms",
+      ]),
+      event.recipes.create.deploying("create:incomplete_precision_mechanism", [
+        "create:incomplete_precision_mechanism",
+        "tfc:brass_mechanisms",
+      ]),
+      event.recipes.vintageimprovements
+        .laser_cutting("create:incomplete_precision_mechanism", "create:incomplete_precision_mechanism")
+        .energyCost(200)
+        .maxChargeRate(2),
+      event.recipes.create.deploying("create:incomplete_precision_mechanism", [
+        "create:incomplete_precision_mechanism",
+        "powergrid:magnet",
+      ]),
+      event.recipes.create.pressing(
+        "create:incomplete_precision_mechanism",
+        "create:incomplete_precision_mechanism",
+      ),
+    ])
+    .transitionalItem("create:incomplete_precision_mechanism")
+    .loops(1)
+    .id("twt:sequenced/precision_mechanism_4x");
   event.recipes.create
     .sequenced_assembly(Item.of("create:sturdy_sheet", 4), "tfc:metal/ingot/steel", [
       event.recipes.create.filling("create:unprocessed_obsidian_sheet", [
@@ -471,7 +507,7 @@ const CreateData = (event) => {
 
   //TFC Fuels
   event.fuel("create:cinder_flour", 400, 6200, 0.05);
-  event.fuel("create:blaze_cake", 1600, 6200, 0.65);
+  event.fuel("create:blaze_cake", 1600, 12400, 0.65);
   event.fuel("create:cardboard", 200, 400, 0.8);
 
   //Nutrition

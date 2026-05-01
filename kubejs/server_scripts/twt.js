@@ -4,7 +4,6 @@
 /**
  * @param {Internal.RecipesEventJS} event
  */
-
 const TWTRecipes = (event) => {
   //removal
   $nuggetcompat.forEach((nugget) => {
@@ -70,42 +69,55 @@ const TWTRecipes = (event) => {
   blockCrafting("tfc:metal/sheet/gold", "minecraft:gold_block");
 
   //TFC Heating
-  function oredustsmelting(input, temperature, output) {
-    event.recipes.tfc.heating(input, temperature).resultFluid(Fluid.of(output, 5));
-  }
+  const DUSTS_AND_NUGGETS = {
+    hematite: { idPrefix: "tfc:powder/", fluid: "cast_iron", MP: 1535, recipeIdAffix: "_powder" },
+    magnetite: { idPrefix: "tfc:powder/", fluid: "cast_iron", MP: 1535, recipeIdAffix: "_powder" },
+    limonite: { idPrefix: "tfc:powder/", fluid: "cast_iron", MP: 1535, recipeIdAffix: "_powder" },
+    sphalerite: { idPrefix: "tfc:powder/", fluid: "zinc", MP: 420, recipeIdAffix: "_powder" },
+    tetrahedrite: { idPrefix: "tfc:powder/", fluid: "copper", MP: 1080, recipeIdAffix: "_powder" },
+    malachite: { idPrefix: "tfc:powder/", fluid: "copper", MP: 1080, recipeIdAffix: "_powder" },
+    native_copper: { idPrefix: "tfc:powder/", fluid: "copper", MP: 1080, recipeIdAffix: "_powder" },
+    cassiterite: { idPrefix: "tfc:powder/", fluid: "tin", MP: 230, recipeIdAffix: "_powder" },
+    bismuthinite: { idPrefix: "tfc:powder/", fluid: "bismuth", MP: 270, recipeIdAffix: "_powder" },
+    garnierite: { idPrefix: "tfc:powder/", fluid: "nickel", MP: 1453, recipeIdAffix: "_powder" },
+    native_gold: { idPrefix: "tfc:powder/", fluid: "gold", MP: 1060, recipeIdAffix: "_powder" },
+    native_silver: { idPrefix: "tfc:powder/", fluid: "silver", MP: 961, recipeIdAffix: "_powder" },
 
-  oredustsmelting("tfc:powder/hematite", 1535, "tfc:metal/cast_iron");
-  oredustsmelting("tfc:powder/magnetite", 1535, "tfc:metal/cast_iron");
-  oredustsmelting("tfc:powder/limonite", 1535, "tfc:metal/cast_iron");
-  oredustsmelting("tfc:powder/sphalerite", 420, "tfc:metal/zinc");
-  oredustsmelting("tfc:powder/tetrahedrite", 1080, "tfc:metal/copper");
-  oredustsmelting("tfc:powder/cassiterite", 230, "tfc:metal/tin");
-  oredustsmelting("tfc:powder/bismuthinite", 270, "tfc:metal/bismuth");
-  oredustsmelting("tfc:powder/garnierite", 1453, "tfc:metal/nickel");
-  oredustsmelting("tfc:powder/malachite", 1080, "tfc:metal/copper");
-  oredustsmelting("tfc:powder/native_copper", 1080, "tfc:metal/copper");
-  oredustsmelting("tfc:powder/native_gold", 1060, "tfc:metal/gold");
-  oredustsmelting("tfc:powder/native_silver", 961, "tfc:metal/silver");
+    gold_nugget: { idPrefix: "minecraft:", fluid: "gold", MP: 1060, recipeIdAffix: "" },
+    copper_nugget: { idPrefix: "create:", fluid: "copper", MP: 1080, recipeIdAffix: "" },
+    tin_nugget: { idPrefix: "antiquelegacy:", fluid: "tin", MP: 230, recipeIdAffix: "" },
+    zinc_nugget: { idPrefix: "create:", fluid: "zinc", MP: 420, recipeIdAffix: "" },
+    brass_nugget: { idPrefix: "create:", fluid: "brass", MP: 930, recipeIdAffix: "" },
+  };
 
-  oredustsmelting("minecraft:gold_nugget", 1060, "tfc:metal/gold");
-  oredustsmelting("create:copper_nugget", 1080, "tfc:metal/copper");
-  oredustsmelting("antiquelegacy:tin_nugget", 230, "tfc:metal/tin");
-  oredustsmelting("create:zinc_nugget", 420, "tfc:metal/zinc");
-  oredustsmelting("create:brass_nugget", 930, "tfc:metal/brass");
+  Object.entries(DUSTS_AND_NUGGETS).forEach(([object, data]) => {
+    let fluid = `tfc:metal/${data.fluid}`;
+    let item = `${data.idPrefix}${object}`;
+    let temperature = data.MP;
+    let recipeId = `twt:heating/${object}${data.recipeIdAffix}`;
+
+    event.recipes.tfc.heating(item, temperature).resultFluid(Fluid.of(fluid, 5)).id(recipeId);
+  });
 
   //TFC Smithing
-  function nuggetsmithing(input, output) {
-    event.recipes.tfc
-      .anvil(Item.of(output, 20), input, ["punch_any", "punch_any", "punch_any"])
-      .tier(1)
-      .apply_forging_bonus(false);
-  }
+  const INGOT_TO_NUGGET = {
+    gold: { ingotNS: "tfc", nuggetNS: "minecraft", tier: 1 },
+    copper: { ingotNS: "tfc", nuggetNS: "create", tier: 1 },
+    tin: { ingotNS: "tfc", nuggetNS: "antiquelegacy", tier: 1 },
+    zinc: { ingotNS: "tfc", nuggetNS: "antiquelegacy", tier: 1 },
+    brass: { ingotNS: "tfc", nuggetNS: "create", tier: 2 },
+  };
+  Object.entries(INGOT_TO_NUGGET).forEach(([metal, data]) => {
+    let ingot = `${data.ingotNS}:metal/ingot/${metal}`;
+    let nugget = `${data.nuggetNS}:${metal}_nugget`;
+    let tier = data.tier;
 
-  nuggetsmithing("tfc:metal/ingot/gold", "20x minecraft:gold_nugget");
-  nuggetsmithing("tfc:metal/ingot/copper", "20x create:copper_nugget");
-  nuggetsmithing("tfc:metal/ingot/tin", "20x antiquelegacy:tin_nugget");
-  nuggetsmithing("tfc:metal/ingot/zinc", "20x create:zinc_nugget");
-  nuggetsmithing("tfc:metal/ingot/brass", "20x create:brass_nugget");
+    event.recipes.tfc
+      .anvil(Item.of(nugget, 20), ingot, ["punch_any", "punch_any", "punch_any"])
+      .tier(tier)
+      .apply_forging_bonus(false)
+      .id(`twt:anvil/${metal}_nugget`);
+  });
 
   //Create Cutting, Holy Overengineering
   const getNamespace = (wood) => (wood === "crimson" || wood === "warped" ? "beneath" : "tfc");
