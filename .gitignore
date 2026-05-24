@@ -218,3 +218,4 @@ exposures/
 **/*client.toml
 **/*client.json
 config/enchdesc.json
+fieldguide_cache/
