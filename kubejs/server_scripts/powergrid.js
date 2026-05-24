@@ -29,23 +29,23 @@ const PowergridRecipes = (event) => {
   event.replaceInput(
     { id: "powergrid:crafting/growth_lamp" },
     "#railways:internal/plates/iron_plates",
-    "magistuarmory:steel_plate",
+    "tfc:metal/sheet/steel",
   );
   event.replaceInput(
     { id: "powergrid:crafting/light_bulb" },
     "#railways:internal/plates/iron_plates",
-    "magistuarmory:steel_plate",
+    "tfc:metal/sheet/steel",
   );
   event.replaceInput(
     { id: "powergrid:crafting/heating_coil" },
     "#railways:internal/plates/iron_plates",
-    "magistuarmory:steel_plate",
+    "tfc:metal/sheet/steel",
   );
   event.replaceInput({ id: "powergrid:crafting/potato_battery" }, "#forge:crops/potato", "tfc:food/potato");
   event.replaceInput(
     { id: "powergrid:mechanical_crafting/generator_induction_rotor" },
     "create:andesite_alloy",
-    "magistuarmory:steel_plate",
+    "tfc:metal/sheet/steel",
   );
   event.replaceInput(
     { id: "powergrid:mechanical_crafting/generator_induction_rotor" },
@@ -76,12 +76,12 @@ const PowergridRecipes = (event) => {
   event.replaceInput(
     { id: "powergrid:mechanical_crafting/electric_motor" },
     "#railways:internal/plates/iron_plates",
-    "magistuarmory:steel_plate",
+    "tfc:metal/sheet/steel",
   );
   event.replaceInput(
     { id: "powergrid:crafting/fuse_holder" },
     "#railways:internal/plates/iron_plates",
-    "magistuarmory:steel_plate",
+    "tfc:metal/sheet/steel",
   );
   event.replaceInput(
     { id: "powergrid:crafting/fuse_holder" },
@@ -143,7 +143,7 @@ const PowergridRecipes = (event) => {
     .id("twt:shaped/constant_speed_motor");
   event.recipes.kubejs
     .shaped(Item.of("powergrid:transformer_core", 4), ["SBS", "SBS", "SBS"], {
-      S: "magistuarmory:steel_plate",
+      S: "tfc:metal/sheet/steel",
       B: "tfc:metal/sheet/black_steel",
     })
     .id("twt:shaped/transformer_core");
@@ -153,7 +153,7 @@ const PowergridRecipes = (event) => {
     .mechanical_crafting("powergrid:basin_heater", ["RRRRR", "NNNNN", "SnHnS", "SnCnS"], {
       R: "powergrid:resistive_coil",
       N: "tfc:metal/ingot/nickel",
-      S: "magistuarmory:steel_plate",
+      S: "tfc:metal/sheet/steel",
       n: "tfc:metal/rod/nickel",
       H: "powergrid:heating_coil",
       C: "powergrid:conductive_casing",

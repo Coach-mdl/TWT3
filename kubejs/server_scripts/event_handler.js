@@ -13,16 +13,6 @@
 //Code for mods that are compats of another mod should be stored within the main mods files. IE, IE TFC Compat
 // recipes should go in IE's recipe files or WoodenCog Recipes should go in Create's recipe file.
 
-const $nuggetcompat = [
-  "antiquelegacy:bronze_nugget",
-  "minecraft:iron_nugget",
-  "knightsofterrafirma:black_bronze_nugget",
-  "knightsofterrafirma:bismuth_bronze_nugget",
-  "magistuarmory:steel_nugget",
-  "antiquelegacy:tin_nugget",
-  "minecraft:gold_nugget",
-  "create:copper_nugget",
-];
 const $ores = [
   "native_copper",
   "native_gold",
@@ -166,7 +156,9 @@ ServerEvents.tags("block", (event) => {
   MiscBlockTags(event);
 });
 
-ServerEvents.tags("fluid", (event) => {});
+ServerEvents.tags("fluid", (event) => {
+  ForgeFluidTags(event);
+});
 
 MoreJSEvents.structureAfterPlace((event) => {
   worldgen(event);
@@ -190,11 +182,12 @@ TFCEvents.data((event) => {
 });
 
 ServerEvents.recipes((event) => {
+  ErrorSilencerRecipes(event);
   TWTRecipes(event);
   VanillaRecipes(event);
   TFCRecipes(event);
   CreateRecipes(event);
-  Createdieselgenerators(event);
+  CDGRecipes(event);
   VintageimprovementsRecipes(event);
   PowergridRecipes(event);
   ScgunsRecipes(event);
@@ -202,9 +195,9 @@ ServerEvents.recipes((event) => {
   FarmersDelightRecipes(event);
   LycheeRecipes(event);
   AetherRecipes(event);
+  YoHooksRecipes(event);
   WaystonesRecipes(event);
   HandcraftedRecipes(event);
-  MagistuArmoryRecipes(event);
   IronchestRecipes(event);
 });
 

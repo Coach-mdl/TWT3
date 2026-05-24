@@ -1,17 +1,11 @@
 "use strict";
 
-//This script is for miscellanious mods that only need a single tweak.
+//Tweaks that aren't worth a dedicated event call.
 
 const MiscRecipes = (event) => {
   //AlekishipsRecipes
   event.remove({ id: "alekiships:crafting/cannon" });
   event.remove({ id: "alekiships:crafting/anchor" });
-
-  //AntiqueLegacyRecipes
-  event.recipes.kubejs.shapeless("antiquelegacy:fur_cloak_decoration", [
-    "tfc:large_raw_hide",
-    "#forge:string",
-  ]);
 
   //BeneathRecipes
   event.remove({ id: "beneath:collapse/nether_bricks" });
@@ -59,7 +53,7 @@ const MiscRecipes = (event) => {
   event.replaceInput(
     { id: "create_connected:crafting/kinetics/kinetic_battery" },
     "#railways:internal/plates/iron_plates",
-    "#forge:plates/steel",
+    "tfc:metal/sheet/steel",
   );
 
   //Railways
@@ -79,7 +73,7 @@ const MiscData = (event) => {
   event.itemHeat("vintageimprovements:steel_spring", 1.429, 924.0, 1232.0);
 };
 
-//If a tag doesn't want to be removed, check the JSON file for the tag. If it was added to a tag through another tag, that tag will have to go.
+//If a tag doesn't want to be removed, check for the JSON file for the tag. If it was added to a tag through another tag, that tag will have to go.
 // Ensure you have also removed the collapse recipe when removing blocks from the collapse tags.
 const MiscBlockTags = (event) => {
   //BeneathBlockTags

@@ -33,6 +33,8 @@ const CreateRecipes = (event) => {
   event.remove({ id: "create:campfire_cooking/bread" });
   event.remove({ id: "create:smelting/bread" });
   event.remove({ id: "create:smoking/bread" });
+  event.remove({ id: "create:crafting/kinetics/wrench" });
+  event.remove({ id: "create:crafting/kinetics/goggles" });
 
   event.remove({ id: /^create:crushing\/.*_horse_armor$/ });
   event.remove({ id: /^create:crushing\/.*_ore$/ });
@@ -140,16 +142,10 @@ const CreateRecipes = (event) => {
     "#forge:ingots/gold",
     "#forge:rods/gold",
   );
-  event.replaceInput({ id: "create:crafting/kinetics/goggles" }, "#forge:glass", "tfc:lens");
-  event.replaceInput(
-    { id: "create:crafting/kinetics/goggles" },
-    "#forge:string",
-    "#magistuarmory:leather_strips",
-  );
   event.replaceInput(
     { id: "create:crafting/kinetics/empty_blaze_burner" },
     "#forge:plates/iron",
-    "#forge:plates/steel",
+    "tfc:metal/sheet/steel",
   );
   event.replaceInput({ id: /^create:crafting\/kinetics\/.*filter$/ }, "#minecraft:wool", "minecraft:paper");
   event.replaceInput(
@@ -160,7 +156,7 @@ const CreateRecipes = (event) => {
   event.replaceInput(
     { id: "create:crafting/materials/electron_tube" },
     "#railways:internal/plates/iron_plates",
-    "#forge:plates/steel",
+    "tfc:metal/sheet/steel",
   );
   event.replaceInput(
     { id: "create:crafting/logistics/brass_funnel" },
@@ -193,7 +189,6 @@ const CreateRecipes = (event) => {
   //replace output
   event.replaceOutput({ id: "create:crushing/wool" }, "minecraft:string", "tfc:wool_cloth");
   event.replaceOutput({ id: "create:milling/wool" }, "minecraft:string", "tfc:wool_cloth");
-  event.replaceOutput({ output: "create:iron_sheet" }, "create:iron_sheet", "antiquelegacy:iron_plate");
   event.replaceOutput({ mod: "create" }, "create:zinc_ingot", "tfc:metal/ingot/zinc");
   event.replaceOutput({ mod: "create" }, "create:brass_ingot", "tfc:metal/ingot/brass");
 
@@ -212,7 +207,22 @@ const CreateRecipes = (event) => {
 
   //shaped
   event.recipes.kubejs
-    .shaped("create:basin", ["   ", "SCS", "AAA"], {
+    .shaped("create:goggles", ["SMS", "LBL"], {
+      S: "minecraft:leather",
+      M: "tfc:brass_mechanisms",
+      L: "tfc:lens",
+      B: "create:brass_sheet",
+    })
+    .id("twt:shaped/goggles");
+  event.recipes.kubejs
+    .shaped("create:wrench", [" B ", " C ", " W "], {
+      B: "tfc:metal/sheet/brass",
+      C: "create:cogwheel",
+      W: "supplementaries:wrench",
+    })
+    .id("twt:shaped/wrench");
+  event.recipes.kubejs
+    .shaped("create:basin", ["SCS", "AAA"], {
       A: "create:andesite_alloy",
       C: "tfc:crucible",
       S: "tfc:metal/sheet/wrought_iron",
@@ -220,7 +230,7 @@ const CreateRecipes = (event) => {
     .id("twt:shaped/basin");
   event.recipes.kubejs
     .shaped("create:steam_engine", [" S ", "SAS", "PCP"], {
-      S: "magistuarmory:steel_plate",
+      S: "tfc:metal/sheet/steel",
       A: "create:andesite_alloy",
       P: "tfc:steel_pump",
       C: "minecraft:copper_block",
@@ -229,7 +239,7 @@ const CreateRecipes = (event) => {
   event.recipes.kubejs
     .shaped("create:smart_chute", [" B ", "SCS", " E "], {
       B: "create:brass_sheet",
-      S: "magistuarmory:steel_plate",
+      S: "tfc:metal/sheet/steel",
       C: "create:chute",
       E: "create:electron_tube",
     })
@@ -241,7 +251,7 @@ const CreateRecipes = (event) => {
       C: "create:brass_casing",
       L: "#forge:leather",
       K: "minecraft:dried_kelp_block",
-      P: "#forge:plates/steel",
+      P: "tfc:metal/sheet/steel",
     })
     .id("twt:shaped/elevator_pulley");
   event.recipes.kubejs
@@ -276,7 +286,7 @@ const CreateRecipes = (event) => {
   event.recipes.kubejs
     .shaped("create:stock_link", [" T ", "SVS", " E "], {
       T: "create:transmitter",
-      S: "magistuarmory:steel_plate",
+      S: "tfc:metal/sheet/steel",
       V: "create:item_vault",
       E: "create:electron_tube",
     })
@@ -313,6 +323,15 @@ const CreateRecipes = (event) => {
     .apply_forging_bonus(false)
     .id("twt:anvil/golden_sheet");
   event.recipes.tfc
+    .anvil(Item.of("create:iron_sheet", 2), "tfc:metal/sheet/wrought_iron", [
+      "punch_any",
+      "punch_any",
+      "punch_any",
+    ])
+    .tier(3)
+    .apply_forging_bonus(false)
+    .id("twt:anvil/iron_sheet");
+  event.recipes.tfc
     .anvil(Item.of("create:brass_sheet", 2), "tfc:metal/sheet/brass", ["punch_any", "punch_any", "punch_any"])
     .tier(2)
     .apply_forging_bonus(false)
@@ -345,7 +364,7 @@ const CreateRecipes = (event) => {
 
   //Create pressing
   event.recipes.create
-    .pressing("magistuarmory:steel_plate", "#forge:ingots/steel")
+    .pressing("tfc:metal/sheet/steel", "#forge:ingots/steel")
     .id("twt:pressing/steel_plate");
 
   //Create Mechanical Saw
@@ -380,7 +399,7 @@ const CreateRecipes = (event) => {
       ]),
       event.recipes.create.deploying("create:incomplete_precision_mechanism", [
         "create:incomplete_precision_mechanism",
-        "magistuarmory:steel_plate",
+        "tfc:metal/sheet/steel",
       ]),
       event.recipes.create.pressing(
         "create:incomplete_precision_mechanism",
@@ -462,6 +481,10 @@ const CreateRecipes = (event) => {
     .heating("create:golden_sheet", 1060)
     .resultFluid(Fluid.of("tfc:metal/gold", 100))
     .id("twt:heating/golden_sheet");
+  event.recipes.tfc
+    .heating("create:iron_sheet", 1535)
+    .resultFluid(Fluid.of("tfc:metal/cast_iron", 100))
+    .id("twt:heating/iron_sheet");
 
   //TFC welding
   event.recipes.tfc
@@ -502,6 +525,7 @@ const CreateData = (event) => {
   event.itemHeat("create:copper_sheet", 2.257, 648.0, 864.0);
   event.itemHeat("create:brass_sheet", 2.257, 558.0, 744.0);
   event.itemHeat("create:golden_sheet", 2.257, 636.0, 848.0);
+  event.itemHeat("create:iron_sheet", 2.257, 921.0, 1228.0);
 
   event.itemHeat("create:fluid_pipe", 2.857, 648.0, 864.0);
 

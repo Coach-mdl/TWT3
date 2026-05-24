@@ -263,13 +263,9 @@ const TFCData = (event) => {
   event.itemHeat("tfc:steel_pipe", 0.171, null, null);
   event.itemHeat("tfc:brass_mechanisms", 1.429, 558.0, 744.0);
 
-  $ores.forEach((ore) => {
-    event.itemHeat(`tfc:powder/${ore}`, 0.4, null, null);
-  });
 };
 
 const TFCItemTags = (event) => {
-  event.add("tfc:hammers", "magistuarmory:blacksmith_hammer");
   event.add("tfc:saplings", [
     "tfc:wood/sapling/willow",
     "firmalife:plant/cocoa_sapling",

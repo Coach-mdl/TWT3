@@ -19,3 +19,7 @@ const ForgeItemTags = (event) => {
   event.add("forge:slimeballs", ["tfc:glue"]);
   event.add("forge:dusts/sulfur", "tfc:powder/sulfur");
 };
+
+const ForgeFluidTags = (event) => {
+  event.add("forge:fuel", ["tfc:tallow", "tfc:olive_oil", "firmalife:soybean_oil"]);
+};

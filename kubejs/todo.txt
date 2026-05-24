@@ -1,33 +1,15 @@
 //TODO
-DUPES:
-Some IE sheet pressing uses a single ingot instead of two. (Cast iron, Steel)
+Modpack is undergoing a major rewrite, with progression being changed.
 
-CHANGES:
-- Limit parcool. Change default keybinds.
-- Add consistency to Corail Tombstone.
-- Pig iron recipe for IE Arc Furnace.
-- Multiblock Electric Heater.
-- Offline food storage container.
-- Freezer block that cools items inside.
-- Center all power around Power Grid.
-- Blacklist most Power Grid blocks on ships.
-- V-Steel Anvil for endgame stuff.
+Phase 1: Prepare all recipes, tags, structures and any other basic compatibilites. Send test build to staff.
 
-CREATE:
-- Remove duplicate recipes.
-- Create recipes for glassworking products. (Fix inputs)
-- Add consistency between Create and Woodencog recipes.
-- Most addon ores do not have a woodencog mixing recipe.
+Phase 2: Create the core mod. This will include a number of mixins and
+such to alter the function of certain mods within the modpack. GitHub will not be public.
 
-NEXT UPDATE
+Phase 3: TFC Modular and other contributions to other mods will be made if necessary.
 
-ADDITIONS:
-- Vampirism
-- MCA
-- VS Clockwork (Prepare for crashes)
-- MAYBE look into that butchery mod. There's a few different ones.
-
-CHANGES:
-- Add winter forageables for new players. Requires Lychee
-- Add Adze module to TFC Modular. Probably wise to update the mod.
-
+Progression: Progression starts in the overworld, progressing as TFC does. Closer to spawn there may be
+low level structures that generate, but nothing too dangerous or overpowered. The player is expected to survive
+monster filled nights until they can gear up and venture outwards. Further out will be harder structures with
+tougher monsters within. (Designing some custom monsters with gimmicks may help these dungeons be more engaging). 
+Many of these dungeons may contain blueprints for firearms, items or machines.

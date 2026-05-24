@@ -45,6 +45,14 @@
 			holiday = true
 			decorated_holiday = true
 
+		[types.leaves_type.opposing_force]
+			apple = true
+			flowering_apple = true
+			fruitful_apple = true
+			infested_apple = true
+			flowering_infested_apple = true
+			fruitful_infested_apple = true
+
 #Disables specific entries
 [entries]
 

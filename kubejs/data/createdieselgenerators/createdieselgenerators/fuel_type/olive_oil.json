@@ -1,0 +1,20 @@
+{
+  "fluid": "#tfc:olive_oil",
+  "sound_pitch": 2,
+  "normal": {
+    "speed": 16,
+    "strength": 1024,
+    "burn_rate": 0.7
+  },
+  "modular": {
+    "speed": 16,
+    "strength": 2048,
+    "burn_rate": 0.7
+  },
+  "huge": {
+    "speed": 32,
+    "strength": 4096,
+    "burn_rate": 0.7
+  },
+  "burner_multiplier": 0.5
+}

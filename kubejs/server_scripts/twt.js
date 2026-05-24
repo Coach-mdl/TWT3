@@ -5,6 +5,8 @@
  * @param {Internal.RecipesEventJS} event
  */
 const TWTRecipes = (event) => {
+  const $nuggetcompat = ["minecraft:iron_nugget", "minecraft:gold_nugget", "create:copper_nugget"];
+
   //removal
   $nuggetcompat.forEach((nugget) => {
     event.remove({ not: { type: "tfc:anvil" }, output: `${nugget}` });
@@ -85,9 +87,9 @@ const TWTRecipes = (event) => {
 
     gold_nugget: { idPrefix: "minecraft:", fluid: "gold", MP: 1060, recipeIdAffix: "" },
     copper_nugget: { idPrefix: "create:", fluid: "copper", MP: 1080, recipeIdAffix: "" },
-    tin_nugget: { idPrefix: "antiquelegacy:", fluid: "tin", MP: 230, recipeIdAffix: "" },
     zinc_nugget: { idPrefix: "create:", fluid: "zinc", MP: 420, recipeIdAffix: "" },
     brass_nugget: { idPrefix: "create:", fluid: "brass", MP: 930, recipeIdAffix: "" },
+    iron_nugget: { idPrefix: "minecraft:", fluid: "cast_iron", MP: 1535, recipeIdAffix: "" },
   };
 
   Object.entries(DUSTS_AND_NUGGETS).forEach(([object, data]) => {
@@ -101,14 +103,14 @@ const TWTRecipes = (event) => {
 
   //TFC Smithing
   const INGOT_TO_NUGGET = {
-    gold: { ingotNS: "tfc", nuggetNS: "minecraft", tier: 1 },
-    copper: { ingotNS: "tfc", nuggetNS: "create", tier: 1 },
-    tin: { ingotNS: "tfc", nuggetNS: "antiquelegacy", tier: 1 },
-    zinc: { ingotNS: "tfc", nuggetNS: "antiquelegacy", tier: 1 },
-    brass: { ingotNS: "tfc", nuggetNS: "create", tier: 2 },
+    gold: { ingotNS: "tfc", prefix: "", nuggetNS: "minecraft", tier: 1 },
+    copper: { ingotNS: "tfc", prefix: "", nuggetNS: "create", tier: 1 },
+    zinc: { ingotNS: "tfc", prefix: "", nuggetNS: "create", tier: 1 },
+    brass: { ingotNS: "tfc", prefix: "", nuggetNS: "create", tier: 2 },
+    iron: { ingotNS: "tfc", prefix: "wrought_", nuggetNS: "minecraft", tier: 3 },
   };
   Object.entries(INGOT_TO_NUGGET).forEach(([metal, data]) => {
-    let ingot = `${data.ingotNS}:metal/ingot/${metal}`;
+    let ingot = `${data.ingotNS}:metal/ingot/${data.prefix}${metal}`;
     let nugget = `${data.nuggetNS}:${metal}_nugget`;
     let tier = data.tier;
 
@@ -214,15 +216,20 @@ const TWTRecipes = (event) => {
 
 const TWTData = (event) => {
   //Heat Definitions
+
   function nuggetheats(input) {
     event.itemHeat(input, 0.4, null, null);
   }
 
   nuggetheats("minecraft:gold_nugget");
   nuggetheats("create:copper_nugget");
-  nuggetheats("antiquelegacy:tin_nugget");
   nuggetheats("create:zinc_nugget");
   nuggetheats("create:brass_nugget");
+  nuggetheats("minecraft:iron_nugget");
+
+  $ores.forEach((ore) => {
+    event.itemHeat(`tfc:powder/${ore}`, 0.4, null, null);
+  });
 };
 
 const TWTItemTags = (event) => {
@@ -375,9 +382,10 @@ const ErrorSilencerBlockTags = (event) => {
   ]);
 };
 
+const ErrorSilencerRecipes = (event) => {};
+
 const ErrorSilencerData = (event) => {
   //Heat Definitions
   event.itemHeat("firmaciv:cannon", 3.057, null, null);
   event.itemHeat("tfcbetterbf:insulation", 3.057, null, null);
-  event.itemHeat("antiquelegacy:scale_thorax", 3.057, null, null);
 };

@@ -3,6 +3,3 @@
 JEIEvents.hideItems((event) => {
   event.hide("#jei:hidden_items");
 });
-JEIEvents.hideFluids((event) => {
-  event.hide("#jei:hidden_fluids");
-});

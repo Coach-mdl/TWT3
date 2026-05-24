@@ -210,3 +210,11 @@ config/sophisticatedcore-client.toml
 .zed/settings.json
 config/backpacked.client.toml
 data/create_repairDefaultResourcePacks.dat
+kubejs/server_scripts/exported_recipes.js
+circuits/
+.pg-native/
+.zed/
+exposures/
+**/*client.toml
+**/*client.json
+config/enchdesc.json

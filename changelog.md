@@ -6,23 +6,24 @@ There will be a server wipe with this update. The changes are too large to simpl
 
 MAJOR CHANGES:
 
-- Reworked inventory with petite inventory, which allows items to take up more than one slot.
+- Reworked inventory with (Do something about this)
 - Many brass age create parts have been moved to steel. Not all, but some.
 - A whole host of items are now acceptable TFC fuels.
 - Some recipes have more expensive variants that returns more of its output.
 - Create: Power grid takes the spotlight as the new energy mod, featuring realistic power. Unlocked at black steel.
+- Create: Diesel Generators replaced TFMG as TFMG is a bit wonky in 1.20.1.
 
 MINOR CHANGES:
 
 - Updated Forge to latest.
 - Fluid pipes can now be recycled and are now forged with a sheet. Lathe recipes are also available.
 - Ore deposits can be vibrated using a vibrator.
-- Actually quite a few items can be recycled. Keep an eye out!
+- Quite a few items can be recycled. Keep an eye out!
 - A bunch of stone slabs have been added to the "create:sleepers" tag.
 - TFC steel pipe can also be recycled because for some reason they couldn't
 - TNT now uses TFC sand.
 - Create chocolate now has food data.
-- Added a plethora of structures to explore (which are filled with artifacts and blueprints)
+- Added a plethora of structures to explore (which are filled with artifacts and blueprints).
 - The end is now accessible. Have fun breaking the game (Not that there's much there).
 - Added a new /tfcdate command which shows you the current date and time left until next season. (Can be used by the discord bot to get the date externally)
 - Fixed sequenced recipes for various glassworking products.
@@ -32,7 +33,7 @@ MINOR CHANGES:
 - Create filters now use paper instead of wool.
 - Create sheets now melt into their respective metals and can be forged at an anvil using a tfc sheet.
 - Building tools such as the wand of symmetry and extendo grip are now cheaper and can be obtained earlier (Literally copper age)
-- Epic knights woolen fabric recipe now outputs 4 woolen fabric.
+- Tallow, soybean and olive oil can be used as low-grade fuels in engines and burners.
 
 UNDER THE HOOD:
 
@@ -51,6 +52,8 @@ REMOVED:
 - Sort it Out!
 - Dynamic FPS (Client-Side)
 - Mindful Darkness (Client-Side)
+- All of Epic Knights
+- TFC: Hammer Time
 -
 - Sounds (Client-Side)
 - Sound Physics Remastered (Client-Side)
@@ -96,9 +99,9 @@ ADDED:
 - Backpacked
 - Corpse and compats
 - Traveller Tool Belt
-- Petite Inventory
 - Scorched Guns
 - Bridging Mod
+- Enchantment Discriptions
 
 - fix GPU memory leak (Client-Side)
 - Particle Rain (Client-Side)
@@ -129,6 +132,5 @@ ADDED:
 - The Endergetic Expansion + Abnormals
 - Smooth Boot Reloaded (Client-Side)
 
-Honestly I probably forgot a few here.
 UPDATED:
-Y E S
+Y E S (I lost track, I've been working on this for months.)

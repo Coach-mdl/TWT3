@@ -1,0 +1,20 @@
+{
+  "fluid": "#firmalife:soybean_oil",
+  "sound_pitch": 2,
+  "normal": {
+    "speed": 16,
+    "strength": 1024,
+    "burn_rate": 0.8
+  },
+  "modular": {
+    "speed": 16,
+    "strength": 2048,
+    "burn_rate": 0.8
+  },
+  "huge": {
+    "speed": 32,
+    "strength": 4096,
+    "burn_rate": 0.8
+  },
+  "burner_multiplier": 0.3
+}

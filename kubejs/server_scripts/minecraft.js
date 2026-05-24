@@ -14,6 +14,9 @@ const VanillaRecipes = (event) => {
   event.remove({ id: "minecraft:sandstone" });
   event.remove({ id: "minecraft:charcoal" });
   event.remove({ id: "minecraft:glass" });
+  event.remove({ id: "minecraft:golden_apple" });
+  event.remove({ id: "minecraft:golden_carrot" });
+  event.remove({ id: "minecraft:enchanted_golden_apple" });
 
   //replace input
   event.replaceInput({ id: "minecraft:grindstone" }, "minecraft:stone_slab", "tfc:handstone");
@@ -29,7 +32,6 @@ const VanillaRecipes = (event) => {
   );
   event.replaceInput({ id: "minecraft:stonecutter" }, "minecraft:stone", "#forge:stone");
   event.replaceInput({ id: "minecraft:stonecutter" }, "minecraft:iron_ingot", "#forge:ingots/wrought_iron");
-  event.replaceInput({ id: "minecraft:golden_carrot" }, "minecraft:carrot", "#forge:vegetables/carrot");
   event.replaceInput(
     { id: "minecraft:warped_fungus_on_a_stick" },
     "minecraft:fishing_rod",
@@ -41,6 +43,8 @@ const VanillaRecipes = (event) => {
     "minecraft:iron_trapdoor",
     "tfc:metal/sheet/wrought_iron",
   );
+  event.replaceInput({ input: "minecraft:apple" }, "minecraft:apple", "#tfc:foods/apples");
+  event.replaceInput({ input: "minecraft:carrot" }, "minecraft:carrot", "#forge:vegetables/carrot");
 
   //replace output
 
@@ -123,6 +127,28 @@ const VanillaData = (event) => {
 
   //size
   event.itemSize(/^minecraft:.*anvil$/, "huge", "very_heavy");
+
+  //nutrition
+  event.foodItem("minecraft:golden_carrot", (food) => {
+    food.hunger(2);
+    food.vegetables(3);
+    food.saturation(2);
+    food.decayModifier(0.5);
+  });
+  event.foodItem("minecraft:golden_apple", (food) => {
+    food.hunger(3);
+    food.fruit(3);
+    food.saturation(3);
+    food.water(10);
+    food.decayModifier(0.2);
+  });
+  event.foodItem("minecraft:enchanted_golden_apple", (food) => {
+    food.hunger(5);
+    food.fruit(5);
+    food.saturation(5);
+    food.water(30);
+    food.decayModifier(0);
+  });
 };
 
 const VanillaItemTags = (event) => {
