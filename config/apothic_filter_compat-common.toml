@@ -1,0 +1,12 @@
+
+[general]
+	#Master switch for the rarity mirror
+	enabled = true
+	#Top-level NBT key written to items
+	nbtKey = "apothic_rarity"
+	#How often to sweep player inventory in ticks
+	#Range: 1 ~ 200
+	tickInterval = 20
+	#Show the apothic_rarity NBT value as a tooltip line on items
+	showTooltip = true
+

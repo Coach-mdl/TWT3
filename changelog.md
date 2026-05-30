@@ -34,6 +34,7 @@ MINOR CHANGES:
 - Create sheets now melt into their respective metals and can be forged at an anvil using a tfc sheet.
 - Building tools such as the wand of symmetry and extendo grip are now cheaper and can be obtained earlier (Literally copper age)
 - Tallow, soybean and olive oil can be used as low-grade fuels in engines and burners.
+- Many TFC plated blocks can be used as grounding blocks for grounding rods.
 
 UNDER THE HOOD:
 

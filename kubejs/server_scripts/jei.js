@@ -7,7 +7,6 @@ const JEItags = (event) => {
     "minecraft:gold_ingot",
     "create:zinc_ingot",
     "create:brass_ingot",
-    "scguns:sulfur_dust",
     /^create_connected:copycat_.*/,
     "vintageimprovements:copper_sulfate",
     /^vintageimprovements:sulfur_.*$/,
@@ -24,6 +23,4 @@ const JEItags = (event) => {
     "createdieselgenerators:hammer",
     "createdieselgenerators:wire_cutters",
   ]);
-
-  event.add("jei:hidden_fluids", [/^vintageimprovements:sulfur_.*$/, "vintageimprovements:sulfuric_acid"]);
 };

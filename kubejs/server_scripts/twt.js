@@ -232,6 +232,21 @@ const TWTData = (event) => {
   });
 };
 
+const TWTEnchants = (event) => {
+  event.remove([
+    "minecraft:projectile_protection",
+    "minecraft:protection",
+    "minecraft:unbreaking",
+    "minecraft:mending",
+    "scguns:corroded",
+    "scguns:elemental_pop",
+    "scguns:heavy_shot",
+    "scguns:reclaimed",
+    "scguns:trigger_finger",
+    "scguns:lightweight",
+  ]);
+};
+
 const TWTItemTags = (event) => {
   event.add("twt:create_component_nuggets", ["minecraft:iron_nugget", "create:zinc_nugget"]);
   event.add("twt:corals", [

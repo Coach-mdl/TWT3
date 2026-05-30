@@ -534,6 +534,10 @@ const CreateData = (event) => {
   event.fuel("create:blaze_cake", 1600, 12400, 0.65);
   event.fuel("create:cardboard", 200, 400, 0.8);
 
+  //Sizes
+  event.itemSize("create:andesite_alloy", "large", "light");
+  event.itemSize("create:wrench", "large", "light");
+
   //Nutrition
   event.foodItem("create:builders_tea", (food) => {
     food.hunger(2);

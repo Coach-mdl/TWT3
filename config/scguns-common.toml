@@ -16,7 +16,7 @@
 		#Range: 0.0 ~ 1.0
 		growBoundingBoxAmount = 0.3
 		#Enables the check for head shots for players. Projectiles that hit the head of a player will have increased damage.
-		enableHeadShots = true
+		enableHeadShots = false
 		#The value to multiply the damage by if projectile hit the players head
 		#Range: 1.0 ~ 1.7976931348623157E308
 		headShotDamageMultiplier = 1.25
@@ -26,7 +26,7 @@
 		#Range: 0.0 ~ 1.0
 		knockbackStrength = 0.15
 		#If true, improves the accuracy of weapons by considering the ping of the player. This has no affect on singleplayer. This will add a little overhead if enabled.
-		improvedHitboxes = false
+		improvedHitboxes = true
 		#Damage dealt by the Enemy Guns
 		#Range: 0.0 ~ 1.7976931348623157E308
 		enemyBulletDamage = 4.5
@@ -42,12 +42,12 @@
 		#Range: 0.01 ~ 100.0
 		globalTurretDamageMultiplier = 1.0
 		#If true, the Brass Mask ritual will never spawn villagers. When disabled, it will spawn Dissidents instead based on the spawn chance below.
-		disableVillagerSpawning = false
+		disableVillagerSpawning = true
 		#When villager spawning is disabled, this is the chance (0.0 to 1.0) that a Dissident will spawn. If a Dissident doesn't spawn, nothing will be created from the ritual.
 		#Range: 0.0 ~ 1.0
 		dissidentSpawnChance = 0.1
 		#If true, guns will automatically start reloading when fired with an empty magazine if ammo is available
-		enableAutoReload = true
+		enableAutoReload = false
 		#If true, allows flamethrowers to place fire on blocks
 		enableFirePlacement = false
 		#If true, allows flamethrowers weapons to purify sculk blocks
@@ -89,7 +89,7 @@
 			#If true, allows heavy rounds to break blocks
 			enableBlockBreaking = false
 			#If true, allows beam weapons to mine blocks
-			enableBeamMining = true
+			enableBeamMining = false
 
 		[common.gameplay.gameplay]
 			#Set to false to disable the spawning of casing items when firing guns.
@@ -232,7 +232,7 @@
 	#Mini-Raid Configuration
 	[common.raids]
 		#If enabled, mini-raids can spawn at night based on player progression.
-		raidsEnabled = true
+		raidsEnabled = false
 		#Chance each night for a raid to spawn near a valid player (0.0 = never, 1.0 = always).
 		#Set to 0.0 to effectively disable raids without turning off the system entirely.
 		#Range: 0.0 ~ 1.0

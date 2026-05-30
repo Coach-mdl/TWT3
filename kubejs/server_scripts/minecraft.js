@@ -120,6 +120,7 @@ const VanillaData = (event) => {
   event.itemHeat("minecraft:anvil", 3.057, null, 1128);
   event.itemHeat("minecraft:chipped_anvil", 3.057, null, 1128);
   event.itemHeat("minecraft:damaged_anvil", 3.057, null, 1128);
+  event.itemHeat("minecraft:netherite_ingot", 2.857, 1125, 1325);
 
   //fuel
   event.fuel("minecraft:blaze_rod", 1825, 1100, 0.95);

@@ -1,0 +1,58 @@
+
+#.
+#Fluids-Related Features
+[fluids]
+	#.
+	#.
+	#Make Create Pump turn River Water into Water
+	turnRiverIntoWater = true
+
+	#.
+	#CobbleGen
+	[fluids.cobblegen]
+		#.
+		#Replace Create Pipe Fluid Collision results with TFC rocks
+		pipeFluidCollision = true
+		#.
+		#Replace Cobblegen results with locally generated TFC rocks
+		localizedTFCRock = true
+
+	#.
+	# TFC Fluid-Logged
+	[fluids.tfcFluidLogged]
+		#.
+		#Enables Hose Pulley handling of TFC fluid-logged block states
+		hosePulley = true
+		#.
+		#Enables Open Pipe handling of TFC fluid-logged block states
+		openPipe = true
+		#.
+		#Enables Contraptions handling of TFC fluid-logged block states
+		contraption = true
+		#.
+		#Enables Schematicannon handling of TFC fluid-logged block states
+		schematicannon = true
+
+#.
+#Heat-Related Features
+[heat]
+	#.
+	#Enable TFC blocks to (Super)Heat Create blocks
+	tfcHeatSources = true
+	#.
+	#Display Charcoal Forge in JEI (Super)Heated Recipes, if TFC Heat Sources is enabled
+	jeiHeatDisplay = true
+
+#.
+#Deployer-Related Features
+[deployer]
+	#.
+	#Enable Deployers to perform TFC-specific interactions
+	tfcInteractions = true
+	#.
+	#Enable Ignite/Extinguish interactions for Deployers when interacting with TFC-fueled blocks, if TFC interactions is enabled
+	tfcIgniteExtinguish = true
+	#.
+	#Enable Deployers to hydrate players
+	hydratePlayers = true
+

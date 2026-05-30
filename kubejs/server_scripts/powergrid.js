@@ -14,6 +14,9 @@ const PowergridRecipes = (event) => {
   event.remove({ id: "powergrid:cutting/copper_wire_cutting" });
   event.remove({ id: "powergrid:cutting/iron_wire_cutting" });
   event.remove({ id: "powergrid:cutting/gold_wire_cutting" });
+  event.remove({ id: "powergrid:crafting/wire_connector" });
+  event.remove({ id: "powergrid:crafting/heavy_wire_connector" });
+  event.remove({ id: "powergrid:crafting/device_connector" });
 
   //replaceInput
   event.replaceInput(
@@ -141,12 +144,26 @@ const PowergridRecipes = (event) => {
       C: "powergrid:electric_motor",
     })
     .id("twt:shaped/constant_speed_motor");
-  event.recipes.kubejs
-    .shaped(Item.of("powergrid:transformer_core", 4), ["SBS", "SBS", "SBS"], {
-      S: "tfc:metal/sheet/steel",
-      B: "tfc:metal/sheet/black_steel",
+  event
+    .shaped(Item.of("powergrid:wire_connector"), ["   ", " A ", " B "], {
+      B: "create:andesite_alloy",
+      A: "tfc:metal/rod/copper",
     })
-    .id("twt:shaped/transformer_core");
+    .id("twt:shaped/wire_connector");
+  event
+    .shaped(Item.of("powergrid:heavy_wire_connector"), [" A ", " A ", " B "], {
+      A: "tfc:metal/rod/wrought_iron",
+      B: "minecraft:terracotta",
+    })
+    .id("twt:shaped/heavy_wire_connector");
+  event
+    .shaped(Item.of("powergrid:device_connector"), ["   ", "ABA", "CDC"], {
+      C: "create:andesite_alloy",
+      D: "powergrid:diode",
+      B: "powergrid:socket",
+      A: "powergrid:wire_connector",
+    })
+    .id("twt:shaped/device_connector");
 
   //mechanical_crafting
   event.recipes.create
@@ -195,6 +212,28 @@ const PowergridRecipes = (event) => {
     .transitionalItem("powergrid:incomplete_electrical_gizmo")
     .loops(1)
     .id("twt:sequenced/electrical_gizmo");
+  event.recipes.create
+    .sequenced_assembly(Item.of("powergrid:transformer_core", 2), "powergrid:resistive_coil", [
+      event.recipes.create.deploying("powergrid:incomplete_transformer_core", [
+        "powergrid:incomplete_transformer_core",
+        "tfc:metal/sheet/steel",
+      ]),
+      event.recipes.create.deploying("powergrid:incomplete_transformer_core", [
+        "powergrid:incomplete_transformer_core",
+        "tfc:metal/sheet/black_steel",
+      ]),
+      event.recipes.create.deploying("powergrid:incomplete_transformer_core", [
+        "powergrid:incomplete_transformer_core",
+        "tfc:metal/sheet/steel",
+      ]),
+      event.recipes.create.cutting(
+        "powergrid:incomplete_transformer_core",
+        "powergrid:incomplete_transformer_core",
+      ),
+    ])
+    .transitionalItem("powergrid:incomplete_transformer_core")
+    .loops(1)
+    .id("twt:sequenced/transformer_core");
 
   //Magnetization
   event
@@ -262,4 +301,19 @@ const PowergridRecipes = (event) => {
     .heating("powergrid:golden_wire", 1060)
     .resultFluid(Fluid.of("tfc:metal/gold", 50))
     .id("twt:heating/golden_wire");
+};
+
+const PowergridBlockTags = (event) => {
+  event.add("powergrid:conductive_ground", [
+    /^tfc:metal\/block\/silver.*/,
+    /^tfc:metal\/block\/sterling_silver.*/,
+    /^tfc:metal\/block\/copper.*/,
+    /^tfc:metal\/block\/gold.*/,
+    /^tfc:metal\/block\/silver.*/,
+    /^tfc:metal\/block\/zinc.*/,
+    /^tfc:metal\/block\/nickel.*/,
+    /^tfc:metal\/block\/wrought_iron.*/,
+    "tfc:metal/bars/wrought_iron",
+    "tfc:metal/bars/copper",
+  ]);
 };

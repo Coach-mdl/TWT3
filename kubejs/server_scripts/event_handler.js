@@ -153,11 +153,17 @@ ServerEvents.tags("item", (event) => {
 
 ServerEvents.tags("block", (event) => {
   ErrorSilencerBlockTags(event);
+  PowergridBlockTags(event);
+  YoHooksBlockTags(event);
   MiscBlockTags(event);
 });
 
 ServerEvents.tags("fluid", (event) => {
   ForgeFluidTags(event);
+});
+
+ServerEvents.tags("entity_type", (event) => {
+  ScgunsEntityTags(event);
 });
 
 MoreJSEvents.structureAfterPlace((event) => {
@@ -178,6 +184,7 @@ TFCEvents.data((event) => {
   ScgunsData(event);
   MiscData(event);
   AetherData(event);
+  YoHooksData(event);
   IronchestsData(event);
 });
 
@@ -199,6 +206,10 @@ ServerEvents.recipes((event) => {
   WaystonesRecipes(event);
   HandcraftedRecipes(event);
   IronchestRecipes(event);
+});
+
+MoreJSEvents.filterAvailableEnchantments((event) => {
+  TWTEnchants(event);
 });
 
 ServerEvents.commandRegistry((event) => {
