@@ -12,6 +12,8 @@ MAJOR CHANGES:
 - Some recipes have more expensive variants that returns more of its output.
 - Create: Power grid takes the spotlight as the new energy mod, featuring realistic power. Unlocked at black steel.
 - Create: Diesel Generators replaced TFMG as TFMG is a bit wonky in 1.20.1.
+- The crucible now holds 12000mb. Normally they only hold 1000mb more than a small vessel.
+- New biomes with new monsters, loot and dungeons.
 
 MINOR CHANGES:
 
@@ -35,6 +37,7 @@ MINOR CHANGES:
 - Building tools such as the wand of symmetry and extendo grip are now cheaper and can be obtained earlier (Literally copper age)
 - Tallow, soybean and olive oil can be used as low-grade fuels in engines and burners.
 - Many TFC plated blocks can be used as grounding blocks for grounding rods.
+- Removed various Farmer's Delight recipes that have a better Survivor's Delight counterpart.
 
 UNDER THE HOOD:
 

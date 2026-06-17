@@ -22,5 +22,7 @@ const JEItags = (event) => {
     "vintageimprovements:curving_press",
     "createdieselgenerators:hammer",
     "createdieselgenerators:wire_cutters",
+
+    "#twt:fd_disabled_items",
   ]);
 };

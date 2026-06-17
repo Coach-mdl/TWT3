@@ -35,6 +35,7 @@ const CreateRecipes = (event) => {
   event.remove({ id: "create:smoking/bread" });
   event.remove({ id: "create:crafting/kinetics/wrench" });
   event.remove({ id: "create:crafting/kinetics/goggles" });
+  event.remove({ id: "create:crafting/materials/red_sand_paper" });
 
   event.remove({ id: /^create:crushing\/.*_horse_armor$/ });
   event.remove({ id: /^create:crushing\/.*_ore$/ });
@@ -104,6 +105,8 @@ const CreateRecipes = (event) => {
 
   event.remove({ id: "create:mechanical_crafting/wand_of_symmetry" });
   event.remove({ id: "create:mechanical_crafting/extendo_grip" });
+
+  event.remove({ id: /^tfc_food_compat:mixing\/.*$/ });
 
   //replace input
   event.replaceInput(
@@ -361,11 +364,6 @@ const CreateRecipes = (event) => {
     .mixing(Fluid.of("create:honey", 250), "firmalife:raw_honey")
     .heated()
     .id("twt:mixing/honey");
-
-  //Create pressing
-  event.recipes.create
-    .pressing("tfc:metal/sheet/steel", "#forge:ingots/steel")
-    .id("twt:pressing/steel_plate");
 
   //Create Mechanical Saw
   event.recipes.create

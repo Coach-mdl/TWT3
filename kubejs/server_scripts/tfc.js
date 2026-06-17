@@ -7,42 +7,24 @@ const TFCRecipes = (event) => {
   //replace
 
   //Create Filling
-  function milkconversion(input) {
-    event.custom({
-      type: "create:filling",
-      ingredients: [
-        {
-          fluid: input,
-          amount: 250,
-        },
-        {
-          item: "minecraft:glass_bottle",
-        },
-      ],
-      results: [
-        {
-          item: "farmersdelight:milk_bottle",
-        },
-      ],
-    });
+  function milkconversion(input, id) {
+    event.recipes.create
+      .filling("farmersdelight:milk_bottle", [Fluid.of(input, 250), "minecraft:glass_bottle"])
+      .id("twt:filling/" + id + "_to_milk_bottle");
   }
 
-  milkconversion("firmalife:coconut_milk");
-  milkconversion("firmalife:yak_milk");
-  milkconversion("firmalife:goat_milk");
+  milkconversion("firmalife:coconut_milk", "coconut_milk");
+  milkconversion("firmalife:yak_milk", "yak_milk");
+  milkconversion("firmalife:goat_milk", "goat_milk");
 
   //Why did I never think of combining forEach's like this?
   $grains.forEach((grain) => {
-    event.recipes.create
-      .milling(Item.of(`tfc:food/${grain}_flour`, 2), `tfc:food/${grain}_grain`)
-      .id(`twt:milling/${grain}_flour`);
-
     event.recipes.create
       .splashing(Item.of(`tfc:food/${grain}_dough`, 2), `tfc:food/${grain}_flour`)
       .id(`twt:splashing/${grain}_flatbread_dough`);
 
     event.recipes.create
-      .mixing(`firmalife:food/${grain}_dough`, [
+      .mixing(Item.of(`firmalife:food/${grain}_dough`, 4), [
         `tfc:food/${grain}_flour`,
         "#tfc:sweetener",
         Fluid.of("firmalife:yeast_starter", 250),
@@ -262,7 +244,6 @@ const TFCData = (event) => {
   event.itemHeat("tfc:metal/bucket/red_steel", 2.0, 1000, 1200);
   event.itemHeat("tfc:steel_pipe", 0.171, null, null);
   event.itemHeat("tfc:brass_mechanisms", 1.429, 558.0, 744.0);
-
 };
 
 const TFCItemTags = (event) => {

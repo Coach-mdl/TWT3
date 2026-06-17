@@ -17,6 +17,9 @@ const VanillaRecipes = (event) => {
   event.remove({ id: "minecraft:golden_apple" });
   event.remove({ id: "minecraft:golden_carrot" });
   event.remove({ id: "minecraft:enchanted_golden_apple" });
+  event.remove({ id: "minecraft:smooth_stone_slab" });
+
+  event.remove({ not: { type: "firmalife:oven" }, output: "minecraft:pumpkin_pie" });
 
   //replace input
   event.replaceInput({ id: "minecraft:grindstone" }, "minecraft:stone_slab", "tfc:handstone");
@@ -49,42 +52,59 @@ const VanillaRecipes = (event) => {
   //replace output
 
   //shaped
-  event.recipes.kubejs.shaped("minecraft:anvil", ["DDD", " C ", "CCC"], {
-    D: "tfc:metal/double_ingot/cast_iron",
-    C: "tfc:metal/ingot/cast_iron",
-  });
+  event.recipes.kubejs
+    .shaped("minecraft:anvil", ["DDD", " C ", "CCC"], {
+      D: "tfc:metal/double_ingot/cast_iron",
+      C: "tfc:metal/ingot/cast_iron",
+    })
+    .id("twt:shaped/anvil");
 
   //shapeless
-  event.shapeless(Item.of("minecraft:glass_bottle", 1), ["#tfc:glass_bottles"]);
-
-  //Stonecutting
-  event.stonecutting(Item.of("minecraft:iron_bars", 8), "#forge:ingots/iron");
+  event
+    .shapeless(Item.of("minecraft:glass_bottle", 1), ["#tfc:glass_bottles"])
+    .id("twt:shapeless/glass_bottle");
 
   //Furnace
-  event.smelting("minecraft:charcoal", "#tfc:pit_kiln_logs").xp(0.35);
-  event.smelting("minecraft:glass", "tfc:silica_glass_batch").xp(0.35);
-  event.smelting("minecraft:orange_stained_glass", "tfc:hematitic_glass_batch").xp(0.35);
-  event.smelting("minecraft:green_stained_glass", "tfc:olivine_glass_batch").xp(0.35);
-  event.smelting("minecraft:blue_stained_glass", "tfc:volcanic_glass_batch").xp(0.35);
+  event.smelting("minecraft:charcoal", "#tfc:pit_kiln_logs").xp(0.35).id("twt:smelting/charcoal");
+  event.smelting("minecraft:glass", "tfc:silica_glass_batch").xp(0.35).id("twt:smelting/glass");
+  event
+    .smelting("minecraft:orange_stained_glass", "tfc:hematitic_glass_batch")
+    .xp(0.35)
+    .id("twt:smelting/orange_stained_glass");
+  event
+    .smelting("minecraft:green_stained_glass", "tfc:olivine_glass_batch")
+    .xp(0.35)
+    .id("twt:smelting/green_stained_glass");
+  event
+    .smelting("minecraft:blue_stained_glass", "tfc:volcanic_glass_batch")
+    .xp(0.35)
+    .id("twt:smelting/blue_stained_glass");
 
   //TFC Welding
   event.recipes.tfc.welding("minecraft:anvil", "minecraft:chipped_anvil", "tfc:metal/ingot/cast_iron");
-  event.recipes.tfc.welding(
-    "minecraft:chipped_anvil",
-    "minecraft:damaged_anvil",
-    "tfc:metal/ingot/cast_iron",
-  );
-  event.recipes.tfc.welding("minecraft:anvil", "minecraft:damaged_anvil", "tfc:metal/double_ingot/cast_iron");
-  event.recipes.tfc.welding("minecraft:bucket", "tfc:metal/bucket/blue_steel", "tfc:metal/bucket/red_steel");
+  event.recipes.tfc
+    .welding("minecraft:chipped_anvil", "minecraft:damaged_anvil", "tfc:metal/ingot/cast_iron")
+    .id("twt:welding/damaged_anvil_repair");
+  event.recipes.tfc
+    .welding("minecraft:anvil", "minecraft:damaged_anvil", "tfc:metal/double_ingot/cast_iron")
+    .id("twt:welding/chipped_anvil_repair");
+  event.recipes.tfc
+    .welding("minecraft:bucket", "tfc:metal/bucket/blue_steel", "tfc:metal/bucket/red_steel")
+    .id("twt:welding/bucket");
 
   //TFC Heating
-  event.recipes.tfc.heating("minecraft:anvil", 1535).resultFluid(Fluid.of("tfc:metal/cast_iron", 1000));
+  event.recipes.tfc
+    .heating("minecraft:anvil", 1535)
+    .resultFluid(Fluid.of("tfc:metal/cast_iron", 1000))
+    .id("twt:heating/anvil");
   event.recipes.tfc
     .heating("minecraft:chipped_anvil", 1535)
-    .resultFluid(Fluid.of("tfc:metal/cast_iron", 900));
+    .resultFluid(Fluid.of("tfc:metal/cast_iron", 900))
+    .id("twt:heating/chipped_anvil");
   event.recipes.tfc
     .heating("minecraft:damaged_anvil", 1535)
-    .resultFluid(Fluid.of("tfc:metal/cast_iron", 800));
+    .resultFluid(Fluid.of("tfc:metal/cast_iron", 800))
+    .id("twt:heating/damaged_anvil");
 
   //Create Compacting
   function panecompacting(output, input, id) {

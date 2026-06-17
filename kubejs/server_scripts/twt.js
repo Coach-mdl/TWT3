@@ -37,63 +37,79 @@ const TWTRecipes = (event) => {
 
   //Shapeless
   $ores.forEach((ore) => {
-    event.recipes.tfc.extra_products_shapeless_crafting(
-      [{ item: `tfc:ore/small_${ore}`, count: 1 }],
+    event.recipes.tfc
+      .extra_products_shapeless_crafting(
+        [{ item: `tfc:ore/small_${ore}`, count: 1 }],
+        event.recipes.tfc.damage_inputs_shapeless_crafting(
+          event.recipes.minecraft.crafting_shapeless(`tfc:ore/normal_${ore}`, [
+            "#tfc:hammers",
+            `tfc:ore/rich_${ore}`,
+          ]),
+        ),
+      )
+      .id(`twt:advanced_shapeless/rich_${ore}_downcraft`);
+  });
+  event.recipes.tfc
+    .extra_products_shapeless_crafting(
+      [{ item: `firmalife:ore/small_chromite`, count: 1 }],
       event.recipes.tfc.damage_inputs_shapeless_crafting(
-        event.recipes.minecraft.crafting_shapeless(`tfc:ore/normal_${ore}`, [
+        event.recipes.minecraft.crafting_shapeless(`firmalife:ore/normal_chromite`, [
           "#tfc:hammers",
-          `tfc:ore/rich_${ore}`,
+          `firmalife:ore/rich_chromite`,
         ]),
       ),
-    );
-  });
-  event.recipes.tfc.extra_products_shapeless_crafting(
-    [{ item: `firmalife:ore/small_chromite`, count: 1 }],
-    event.recipes.tfc.damage_inputs_shapeless_crafting(
-      event.recipes.minecraft.crafting_shapeless(`firmalife:ore/normal_chromite`, [
-        "#tfc:hammers",
-        `firmalife:ore/rich_chromite`,
-      ]),
-    ),
-  );
+    )
+    .id(`twt:advanced_shapeless/rich_chromite_downcraft`);
+
+  event
+    .shapeless(Item.of("minecraft:fire_charge"), ["minecraft:flint", "kubejs:sin_stone"])
+    .id("twt:shapeless/fire_charge");
 
   //Solid Metal Blocks: Shaped
-  function blockCrafting(input, output) {
-    event.recipes.kubejs.shaped(output, [" S ", "SBS", " S "], {
-      S: input,
-      B: "#forge:smooth_stone",
-    });
+  function blockCrafting(input, output, id) {
+    event.recipes.kubejs
+      .shaped(output, [" S ", "SBS", " S "], {
+        S: input,
+        B: "#forge:smooth_stone",
+      })
+      .id("twt:shaped/" + id);
   }
-  blockCrafting("tfc:metal/sheet/wrought_iron", "minecraft:iron_block");
-  blockCrafting("tfc:metal/sheet/copper", "minecraft:copper_block");
-  blockCrafting("tfc:metal/sheet/zinc", "create:zinc_block");
-  blockCrafting("tfc:metal/sheet/brass", "create:brass_block");
-  blockCrafting("tfc:metal/sheet/gold", "minecraft:gold_block");
+  blockCrafting("tfc:metal/sheet/wrought_iron", "minecraft:iron_block", "iron_block");
+  blockCrafting("tfc:metal/sheet/copper", "minecraft:copper_block", "copper_block");
+  blockCrafting("tfc:metal/sheet/zinc", "create:zinc_block", "zinc_block");
+  blockCrafting("tfc:metal/sheet/brass", "create:brass_block", "brass_block");
+  blockCrafting("tfc:metal/sheet/gold", "minecraft:gold_block", "gold_block");
 
   //TFC Heating
   const DUSTS_AND_NUGGETS = {
-    hematite: { idPrefix: "tfc:powder/", fluid: "cast_iron", MP: 1535, recipeIdAffix: "_powder" },
-    magnetite: { idPrefix: "tfc:powder/", fluid: "cast_iron", MP: 1535, recipeIdAffix: "_powder" },
-    limonite: { idPrefix: "tfc:powder/", fluid: "cast_iron", MP: 1535, recipeIdAffix: "_powder" },
-    sphalerite: { idPrefix: "tfc:powder/", fluid: "zinc", MP: 420, recipeIdAffix: "_powder" },
-    tetrahedrite: { idPrefix: "tfc:powder/", fluid: "copper", MP: 1080, recipeIdAffix: "_powder" },
-    malachite: { idPrefix: "tfc:powder/", fluid: "copper", MP: 1080, recipeIdAffix: "_powder" },
-    native_copper: { idPrefix: "tfc:powder/", fluid: "copper", MP: 1080, recipeIdAffix: "_powder" },
-    cassiterite: { idPrefix: "tfc:powder/", fluid: "tin", MP: 230, recipeIdAffix: "_powder" },
-    bismuthinite: { idPrefix: "tfc:powder/", fluid: "bismuth", MP: 270, recipeIdAffix: "_powder" },
-    garnierite: { idPrefix: "tfc:powder/", fluid: "nickel", MP: 1453, recipeIdAffix: "_powder" },
-    native_gold: { idPrefix: "tfc:powder/", fluid: "gold", MP: 1060, recipeIdAffix: "_powder" },
-    native_silver: { idPrefix: "tfc:powder/", fluid: "silver", MP: 961, recipeIdAffix: "_powder" },
+    hematite: { idPrefix: "tfc:powder/", fluid: "tfc:metal/cast_iron", MP: 1535, recipeIdAffix: "_powder" },
+    magnetite: { idPrefix: "tfc:powder/", fluid: "tfc:metal/cast_iron", MP: 1535, recipeIdAffix: "_powder" },
+    limonite: { idPrefix: "tfc:powder/", fluid: "tfc:metal/cast_iron", MP: 1535, recipeIdAffix: "_powder" },
+    sphalerite: { idPrefix: "tfc:powder/", fluid: "tfc:metal/zinc", MP: 420, recipeIdAffix: "_powder" },
+    tetrahedrite: { idPrefix: "tfc:powder/", fluid: "tfc:metal/copper", MP: 1080, recipeIdAffix: "_powder" },
+    malachite: { idPrefix: "tfc:powder/", fluid: "tfc:metal/copper", MP: 1080, recipeIdAffix: "_powder" },
+    native_copper: { idPrefix: "tfc:powder/", fluid: "tfc:metal/copper", MP: 1080, recipeIdAffix: "_powder" },
+    cassiterite: { idPrefix: "tfc:powder/", fluid: "tfc:metal/tin", MP: 230, recipeIdAffix: "_powder" },
+    bismuthinite: { idPrefix: "tfc:powder/", fluid: "tfc:metal/bismuth", MP: 270, recipeIdAffix: "_powder" },
+    garnierite: { idPrefix: "tfc:powder/", fluid: "tfc:metal/nickel", MP: 1453, recipeIdAffix: "_powder" },
+    native_gold: { idPrefix: "tfc:powder/", fluid: "tfc:metal/gold", MP: 1060, recipeIdAffix: "_powder" },
+    native_silver: { idPrefix: "tfc:powder/", fluid: "tfc:metal/silver", MP: 961, recipeIdAffix: "_powder" },
 
-    gold_nugget: { idPrefix: "minecraft:", fluid: "gold", MP: 1060, recipeIdAffix: "" },
-    copper_nugget: { idPrefix: "create:", fluid: "copper", MP: 1080, recipeIdAffix: "" },
-    zinc_nugget: { idPrefix: "create:", fluid: "zinc", MP: 420, recipeIdAffix: "" },
-    brass_nugget: { idPrefix: "create:", fluid: "brass", MP: 930, recipeIdAffix: "" },
-    iron_nugget: { idPrefix: "minecraft:", fluid: "cast_iron", MP: 1535, recipeIdAffix: "" },
+    gold_nugget: { idPrefix: "minecraft:", fluid: "tfc:metal/gold", MP: 1060, recipeIdAffix: "" },
+    copper_nugget: { idPrefix: "create:", fluid: "tfc:metal/copper", MP: 1080, recipeIdAffix: "" },
+    zinc_nugget: { idPrefix: "create:", fluid: "tfc:metal/zinc", MP: 420, recipeIdAffix: "" },
+    brass_nugget: { idPrefix: "create:", fluid: "tfc:metal/brass", MP: 930, recipeIdAffix: "" },
+    iron_nugget: { idPrefix: "minecraft:", fluid: "tfc:metal/cast_iron", MP: 1535, recipeIdAffix: "" },
+    anthralite_nugget: {
+      idPrefix: "scguns:",
+      fluid: "kubejs:molten_anthralite",
+      MP: 1435,
+      recipeIdAffix: "",
+    },
   };
 
   Object.entries(DUSTS_AND_NUGGETS).forEach(([object, data]) => {
-    let fluid = `tfc:metal/${data.fluid}`;
+    let fluid = data.fluid;
     let item = `${data.idPrefix}${object}`;
     let temperature = data.MP;
     let recipeId = `twt:heating/${object}${data.recipeIdAffix}`;
@@ -103,14 +119,15 @@ const TWTRecipes = (event) => {
 
   //TFC Smithing
   const INGOT_TO_NUGGET = {
-    gold: { ingotNS: "tfc", prefix: "", nuggetNS: "minecraft", tier: 1 },
-    copper: { ingotNS: "tfc", prefix: "", nuggetNS: "create", tier: 1 },
-    zinc: { ingotNS: "tfc", prefix: "", nuggetNS: "create", tier: 1 },
-    brass: { ingotNS: "tfc", prefix: "", nuggetNS: "create", tier: 2 },
-    iron: { ingotNS: "tfc", prefix: "wrought_", nuggetNS: "minecraft", tier: 3 },
+    gold: { ingotNS: "tfc:metal/ingot/", prefix: "", affix: "", nuggetNS: "minecraft", tier: 1 },
+    copper: { ingotNS: "tfc:metal/ingot/", prefix: "", affix: "", nuggetNS: "create", tier: 1 },
+    zinc: { ingotNS: "tfc:metal/ingot/", prefix: "", affix: "", nuggetNS: "create", tier: 1 },
+    brass: { ingotNS: "tfc:metal/ingot/", prefix: "", affix: "", nuggetNS: "create", tier: 2 },
+    iron: { ingotNS: "tfc:metal/ingot/", prefix: "wrought_", affix: "", nuggetNS: "minecraft", tier: 3 },
+    anthralite: { ingotNS: "scguns:", prefix: "", affix: "_ingot", nuggetNS: "scguns", tier: 3 },
   };
   Object.entries(INGOT_TO_NUGGET).forEach(([metal, data]) => {
-    let ingot = `${data.ingotNS}:metal/ingot/${data.prefix}${metal}`;
+    let ingot = `${data.ingotNS}${data.prefix}${metal}${data.affix}`;
     let nugget = `${data.nuggetNS}:${metal}_nugget`;
     let tier = data.tier;
 
@@ -169,20 +186,16 @@ const TWTRecipes = (event) => {
   });
   //Create Deploying
   const NUGGET_DATA = {
-    gold: { ingotNS: "tfc", ingotPrefix: "", nuggetNS: "minecraft" },
-    copper: { ingotNS: "tfc", ingotPrefix: "", nuggetNS: "create" },
-    tin: { ingotNS: "tfc", ingotPrefix: "", nuggetNS: "antiquelegacy" },
-    zinc: { ingotNS: "tfc", ingotPrefix: "", nuggetNS: "create" },
-    brass: { ingotNS: "tfc", ingotPrefix: "", nuggetNS: "create" },
-    iron: { ingotNS: "tfc", ingotPrefix: "wrought_", nuggetNS: "minecraft" },
-    steel: { ingotNS: "tfc", ingotPrefix: "", nuggetNS: "magistuarmory" },
-    black_bronze: { ingotNS: "tfc", ingotPrefix: "", nuggetNS: "knightsofterrafirma" },
-    bismuth_bronze: { ingotNS: "tfc", ingotPrefix: "", nuggetNS: "knightsofterrafirma" },
-    bronze: { ingotNS: "tfc", ingotPrefix: "", nuggetNS: "antiquelegacy" },
+    gold: { ingotNS: "tfc:metal/ingot/", prefix: "", affix: "", nuggetNS: "minecraft" },
+    copper: { ingotNS: "tfc:metal/ingot/", prefix: "", affix: "", nuggetNS: "create" },
+    zinc: { ingotNS: "tfc:metal/ingot/", prefix: "", affix: "", nuggetNS: "create" },
+    brass: { ingotNS: "tfc:metal/ingot/", prefix: "", affix: "", nuggetNS: "create" },
+    iron: { ingotNS: "tfc:metal/ingot/", prefix: "wrought_", affix: "", nuggetNS: "minecraft" },
+    anthralite: { ingotNS: "scguns:", prefix: "", affix: "_ingot", nuggetNS: "scguns" },
   };
 
   Object.entries(NUGGET_DATA).forEach(([metal, data]) => {
-    let ingot = `${data.ingotNS}:metal/ingot/${data.ingotPrefix}${metal}`;
+    let ingot = `${data.ingotNS}${data.prefix}${metal}${data.affix}`;
     let nugget = `${data.nuggetNS}:${metal}_nugget`;
 
     event.recipes.create
@@ -226,6 +239,7 @@ const TWTData = (event) => {
   nuggetheats("create:zinc_nugget");
   nuggetheats("create:brass_nugget");
   nuggetheats("minecraft:iron_nugget");
+  nuggetheats("scguns:anthralite_nugget");
 
   $ores.forEach((ore) => {
     event.itemHeat(`tfc:powder/${ore}`, 0.4, null, null);
@@ -244,6 +258,7 @@ const TWTEnchants = (event) => {
     "scguns:reclaimed",
     "scguns:trigger_finger",
     "scguns:lightweight",
+    "apotheosis:capturing",
   ]);
 };
 

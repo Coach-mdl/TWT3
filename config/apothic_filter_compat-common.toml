@@ -2,7 +2,7 @@
 [general]
 	#Master switch for the rarity mirror
 	enabled = true
-	#Top-level NBT key written to items
+	#Top-level NBT key written to items. Client and server must match for the tooltip.
 	nbtKey = "apothic_rarity"
 	#How often to sweep player inventory in ticks
 	#Range: 1 ~ 200
