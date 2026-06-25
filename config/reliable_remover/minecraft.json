@@ -1,0 +1,15 @@
+[
+  {
+    "action": "remove",
+    "items": [
+      "minecraft:iron_ingot",
+      "minecraft:copper_ingot",
+      "minecraft:gold_ingot",
+      "minecraft:furnace",
+      "minecraft:blast_furnace",
+      "minecraft:smoker",
+      "minecraft:campfire",
+      "minecraft:soul_campfire"
+    ]
+  }
+]

@@ -1,0 +1,25 @@
+[
+  {
+    "action": "remove",
+    "items": [
+      "vintageimprovements:sulfuric_acid",
+      "vintageimprovements:copper_sulfate",
+      "vintageimprovements:vacuum_chamber",
+      "vintageimprovements:curving_press",
+      "vintageimprovements:ironwood_spring"
+    ]
+  },
+  {
+    "action": "remove",
+    "patterns": [
+      "/^vintageimprovements:sulfur_.*$/",
+      "/^vintageimprovements:vanadium_.*/",
+      "/^vintageimprovements:(?!iron|steel).*_spring$/",
+      "/^vintageimprovements:small_.*_spring$/",
+      "/^vintageimprovements:.*_rod$/",
+      "/^vintageimprovements:.*_wire$/",
+      "/^vintageimprovements:.*_sheet$/",
+      "/^vintageimprovements:.*_curving_head$/"
+    ]
+  }
+]

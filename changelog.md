@@ -58,12 +58,12 @@ REMOVED:
 - Mindful Darkness (Client-Side)
 - All of Epic Knights
 - TFC: Hammer Time
+- Supplementaries
 -
 - Sounds (Client-Side)
 - Sound Physics Remastered (Client-Side)
 - Oculus (Client-Side)
-- Advanced TFC Tech (Client-Side)
-- Sacks 'n' Such
+- Advanced TFC Tech
 - Macaws everything
 - Corail Tombstone
 - WoodenCog
@@ -106,6 +106,8 @@ ADDED:
 - Scorched Guns
 - Bridging Mod
 - Enchantment Discriptions
+- Reliable Remover
+- Reliable Recipes
 
 - fix GPU memory leak (Client-Side)
 - Particle Rain (Client-Side)

@@ -1,72 +1,22 @@
 "use strict";
 
-
 const HandcraftedRecipes = (event) => {
-    //removal
-    event.remove({id: 'handcrafted:hammer'})
+  //SHAPED
+  event
+    .shaped("handcrafted:hammer", [" L", "S "], {
+      L: "#minecraft:logs",
+      S: "#forge:rods/wooden",
+    })
+    .id("twt:shaped/decor_hammer");
+  event
+    .shaped("handcrafted:hammer", ["L ", " S"], {
+      L: "#minecraft:logs",
+      S: "#forge:rods/wooden",
+    })
+    .id("twt:shaped/decor_hammer_2");
+};
 
-    //replace
-    event.replaceInput(
-        {mod: 'handcrafted'},
-        'minecraft:iron_ingot',
-        'tfc:metal/ingot/wrought_iron'
-    )
-    event.replaceInput(
-        {mod: 'handcrafted'},
-        'minecraft:iron_bars',
-        'tfc:metal/bars/wrought_iron'
-    )
-    event.replaceInput(
-        {mod: 'handcrafted'},
-        'minecraft:gold_ingot',
-        'tfc:metal/ingot/gold'
-    )
-    event.replaceInput(
-        {mod: 'handcrafted'},
-        'minecraft:sweet_berries',
-        '#forge:fruits/berries'
-    )
-    event.replaceInput(
-        {mod: 'handcrafted'},
-        'minecraft:glass_bottle',
-        'tfc:empty_jar'
-    )
-    event.replaceInput(
-        {mod: 'handcrafted'},
-        'minecraft:cod',
-        'tfc:food/cod'
-    )
-    event.replaceInput(
-        {mod: 'handcrafted'},
-        'minecraft:salmon',
-        'tfc:food/salmon'
-    )
-    event.replaceInput(
-        {mod: 'handcrafted'},
-        'minecraft:tropical_fish',
-        'tfc:food/tropical_fish'
-    )
-
-    //SHAPED
-    event.shaped('handcrafted:hammer',
-        [
-            ' L',
-            'S '
-        ],
-        {
-            L: '#minecraft:logs',
-            S: '#forge:rods/wooden'
-        }
-    )
-    event.shaped('handcrafted:hammer',
-        [
-            'L ',
-            ' S'
-        ],
-        {
-            L: '#minecraft:logs',
-            S: '#forge:rods/wooden'
-        }
-    )
-
-}
+const handcraftedItemTags = (event) => {
+  event.add("handcrafted:counter_materials", "tfc:rock/raw/schist");
+  event.add("handcrafted:trim_materials", "tfc:rock/raw/schist");
+};

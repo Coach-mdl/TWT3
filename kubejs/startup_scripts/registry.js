@@ -66,6 +66,11 @@ StartupEvents.registry("item", (event) => {
     .create("unprepared_iron_coil", "basic")
     .displayName(Text.translatable("item.kubejs.unprepared_iron_coil"))
     .texture("vintageimprovements:item/small_iron_spring");
+  event
+    .create("wrought_iron_toolkit", "basic")
+    .displayName(Text.translatable("item.kubeks.wrought_iron_toolkit"))
+    .texture("scguns:item/repair_kit")
+    .maxDamage(30);
 
   //SCGuns Stuff
   event.create("unfinished_adrien_helmet", "basic").texture("scguns:item/adrien_helm_2d");
@@ -111,6 +116,17 @@ StartupEvents.registry("item", (event) => {
   event.create("unfinished_scrap_leggings", "basic").texture("scguns:item/scrap_leggings");
   event.create("unfinished_scrap_boots", "basic").texture("scguns:item/scrap_boots");
 
+  //Endergetic
+  create("poise_lumber", "basic")
+    .displayName(Text.translatable("item.kubejs.poise_lumber"))
+    .texture("tfc:item/wood/lumber")
+    .color(0, 0x841eba);
+  //Aether
+  create("skyroot_lumber", "basic")
+    .displayName(Text.translatable("item.kubejs.skyroot_lumber"))
+    .texture("tfc:item/wood/lumber")
+    .color(0, 0xa2ab9d);
+
   //Sin Biome Stuff
   const SIN_SLATE_DATA = {
     Axe: { id: "axe", type: "axe", damage: 7 },
@@ -134,7 +150,7 @@ StartupEvents.registry("item", (event) => {
         .displayName(Text.translatable(`item.kubejs.sin_slate_${data.id}`))
         .texture(`tfc:item/stone/${data.id}`)
         .fireResistant(true)
-        .maxDamage(damage)
+        .maxDamage(120)
         .glow(true)
         .color(0, 0xff2700)
         .tier("igneous_extrusive");
@@ -160,16 +176,6 @@ StartupEvents.registry("item", (event) => {
         .color(0, 0xff2700);
     }
   });
-  // event
-  //   .create("sin_slate_axe", "axe")
-  //   .displayName("Sin Slate Axe")
-  //   .tooltip(Text.translatable("tooltip.kubejs.cursed_rock"))
-  //   .texture("tfc:item/stone/axe")
-  //   .fireResistant(true)
-  //   .maxDamage(7)
-  //   .glow(true)
-  //   .color(0, 0xff2700)
-  //   .tier("igneous_extrusive");
 });
 
 StartupEvents.registry("fluid", (event) => {

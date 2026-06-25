@@ -3,7 +3,7 @@
 
 //Picked up this trick from TFG.
 /*
- This file loads all events in a specific order. This is more modular than setting a priority.
+ This file loads all server-side scripts in a specific order. This is more modular than setting a priority.
  Furthermore, separating recipes by mod makes it easier to find errors and generally makes it safer if something goes
  wrong. The TWT namespace will be the home for any functions that bridge across mods or things that don't quite
  fit anywhere else such as recipes with multiple outputs. Scripts load in typical top to bottom fashion.
@@ -21,8 +21,10 @@ ServerEvents.tags("item", (event) => {
   TFCItemTags(event);
   ScgunsItemTags(event);
   AetherItemTags(event);
+  backpackedItemTags(event);
+  handcraftedItemTags(event);
   FarmersDelightItemTags(event);
-  JEItags(event);
+  RecipeViewerTags(event);
 });
 
 ServerEvents.tags("block", (event) => {

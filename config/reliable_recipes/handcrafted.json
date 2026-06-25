@@ -1,0 +1,18 @@
+[
+  {
+    "action": "replace_input",
+    "target": "minecraft:glass_bottle",
+    "replacement": "tfc:empty_jar",
+    "mod": "handcrafted"
+  },
+  {
+    "action": "replace_input",
+    "target": "minecraft:sweet_berries",
+    "replacement": "#forge:fruits/berries/red",
+    "mod": "handcrafted"
+  },
+  {
+    "action": "remove",
+    "id": "handcrafted:hammer"
+  }
+]

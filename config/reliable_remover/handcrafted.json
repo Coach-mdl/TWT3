@@ -1,0 +1,26 @@
+[
+  {
+    "action": "remove",
+    "items": ["handcrafted:oven"]
+  },
+  {
+    "action": "remove",
+    "patterns": [
+      "/^handcrafted:(?!crimson|warped|frozen).*_bench$/",
+      "/^handcrafted:(?!crimson|warped).*_couch$/",
+      "/^handcrafted:(?!crimson|warped).*_chair$/",
+      "/^handcrafted:(?!crimson|warped).*_dining_bench$/",
+      "/^handcrafted:(?!crimson|warped).*_side_table$/",
+      "/^handcrafted:(?!crimson|warped).*_desk$/",
+      "/^handcrafted:(?!crimson|warped).*_nightstand$/",
+      "/^handcrafted:(?!crimson|warped).*_table$/",
+      "/^handcrafted:(?!crimson|warped).*_fancy_bed$/",
+      "/^handcrafted:(?!crimson|warped).*_counter$/",
+      "/^handcrafted:(?!crimson|warped).*_cupboard$/",
+      "/^handcrafted:(?!crimson|warped).*_drawer$/",
+      "/^handcrafted:(?!crimson|warped).*_shelf$/",
+      "/^handcrafted:(?!crimson|warped|bricks|blackstone).*_pillar_trim$/",
+      "/^handcrafted:(?!crimson|warped|bricks|blackstone).*_corner_trim$/"
+    ]
+  }
+]

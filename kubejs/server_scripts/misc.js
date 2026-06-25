@@ -10,6 +10,8 @@ const MiscRecipes = (event) => {
   //BeneathRecipes
   event.remove({ id: "beneath:collapse/nether_bricks" });
   event.remove({ id: "beneath:collapse/nether_brick_decor" });
+  event.remove({ id: "beneath:collapse/blackstone" });
+  event.remove({ id: "beneath:collapse/blackstone_decor" });
 
   event.recipes.create
     .milling("minecraft:slime_ball", "beneath:raw_slime")
@@ -77,9 +79,9 @@ const MiscData = (event) => {
 // Ensure you have also removed the collapse recipe when removing blocks from the collapse tags.
 const MiscBlockTags = (event) => {
   //BeneathBlockTags
-  event.remove("tfc:can_collapse", "#beneath:nether_bricks");
-  event.remove("tfc:can_trigger_collapse", "#beneath:nether_bricks");
-  event.remove("tfc:can_start_collapse", "#beneath:nether_bricks");
+  event.remove("tfc:can_collapse", ["#beneath:nether_bricks", "#beneath:blackstone"]);
+  event.remove("tfc:can_trigger_collapse", ["#beneath:nether_bricks", "#beneath:blackstone"]);
+  event.remove("tfc:can_start_collapse", ["#beneath:nether_bricks", "#beneath:blackstone"]);
 
   event.add("yo_hooks:iron_repairable", "tfc:metal/wrought_iron");
 };

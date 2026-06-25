@@ -29,11 +29,11 @@
 		[types.wood_type.aether]
 			skyroot = true
 
-		[types.wood_type.endergetic]
-			poise = true
-
 		[types.wood_type.createdieselgenerators]
 			chip_wood = true
+
+		[types.wood_type.endergetic]
+			poise = true
 
 	[types.leaves_type]
 

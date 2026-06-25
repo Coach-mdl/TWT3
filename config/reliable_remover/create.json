@@ -1,0 +1,15 @@
+[
+  {
+    "action": "remove",
+    "items": [
+      "create:zinc_ingot",
+      "create:brass_ingot",
+      "createdieselgenerators:hammer",
+      "createdieselgenerators:wire_cutters"
+    ]
+  },
+  {
+    "action": "remove",
+    "patterns": ["/^create_connected:copycat_.*/"]
+  }
+]

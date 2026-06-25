@@ -221,3 +221,4 @@ config/enchdesc.json
 fieldguide_cache/
 config/crash_assistant/scripts/log_analysis/example.jexl
 config/crash_assistant/scripts/startup/example.jexl
+
