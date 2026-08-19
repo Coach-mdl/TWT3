@@ -500,6 +500,146 @@
       "emptyChestLootTable": "",
       "lootTablesOverrideMap": {}
     },
+    "extradelight:barn": {
+      "replacementPreset": "overworld-common",
+      "emptyChestLootTable": "",
+      "lootTablesOverrideMap": {}
+    },
+    "extradelight:camp1": {
+      "replacementPreset": "overworld-common",
+      "emptyChestLootTable": "",
+      "lootTablesOverrideMap": {}
+    },
+    "extradelight:camp2": {
+      "replacementPreset": "overworld-common",
+      "emptyChestLootTable": "",
+      "lootTablesOverrideMap": {}
+    },
+    "extradelight:doll_circle": {
+      "replacementPreset": "overworld-common",
+      "emptyChestLootTable": "",
+      "lootTablesOverrideMap": {}
+    },
+    "extradelight:doll_circle1": {
+      "replacementPreset": "overworld-common",
+      "emptyChestLootTable": "",
+      "lootTablesOverrideMap": {}
+    },
+    "extradelight:doll_circle2": {
+      "replacementPreset": "overworld-common",
+      "emptyChestLootTable": "",
+      "lootTablesOverrideMap": {}
+    },
+    "extradelight:doll_circle3": {
+      "replacementPreset": "overworld-common",
+      "emptyChestLootTable": "",
+      "lootTablesOverrideMap": {}
+    },
+    "extradelight:doll_circle4": {
+      "replacementPreset": "overworld-common",
+      "emptyChestLootTable": "",
+      "lootTablesOverrideMap": {}
+    },
+    "extradelight:fountain": {
+      "replacementPreset": "overworld-common",
+      "emptyChestLootTable": "",
+      "lootTablesOverrideMap": {}
+    },
+    "extradelight:hauntedhouse": {
+      "replacementPreset": "overworld-common",
+      "emptyChestLootTable": "",
+      "lootTablesOverrideMap": {}
+    },
+    "extradelight:pumpkin_patch2": {
+      "replacementPreset": "overworld-common",
+      "emptyChestLootTable": "",
+      "lootTablesOverrideMap": {}
+    },
+    "extradelight:pumpkin_patch3": {
+      "replacementPreset": "overworld-common",
+      "emptyChestLootTable": "",
+      "lootTablesOverrideMap": {}
+    },
+    "extradelight:pumpkin_patch4": {
+      "replacementPreset": "overworld-common",
+      "emptyChestLootTable": "",
+      "lootTablesOverrideMap": {}
+    },
+    "extradelight:pumpkin_patch5": {
+      "replacementPreset": "overworld-common",
+      "emptyChestLootTable": "",
+      "lootTablesOverrideMap": {}
+    },
+    "extradelight:pumpkin_pile1": {
+      "replacementPreset": "overworld-common",
+      "emptyChestLootTable": "",
+      "lootTablesOverrideMap": {}
+    },
+    "extradelight:rail_stop": {
+      "replacementPreset": "overworld-common",
+      "emptyChestLootTable": "",
+      "lootTablesOverrideMap": {}
+    },
+    "extradelight:sacrifice": {
+      "replacementPreset": "overworld-common",
+      "emptyChestLootTable": "",
+      "lootTablesOverrideMap": {}
+    },
+    "extradelight:sacrifice2": {
+      "replacementPreset": "overworld-common",
+      "emptyChestLootTable": "",
+      "lootTablesOverrideMap": {}
+    },
+    "extradelight:sign": {
+      "replacementPreset": "overworld-common",
+      "emptyChestLootTable": "",
+      "lootTablesOverrideMap": {}
+    },
+    "extradelight:table1": {
+      "replacementPreset": "overworld-common",
+      "emptyChestLootTable": "",
+      "lootTablesOverrideMap": {}
+    },
+    "extradelight:table2": {
+      "replacementPreset": "overworld-common",
+      "emptyChestLootTable": "",
+      "lootTablesOverrideMap": {}
+    },
+    "extradelight:table3": {
+      "replacementPreset": "overworld-common",
+      "emptyChestLootTable": "",
+      "lootTablesOverrideMap": {}
+    },
+    "extradelight:table4": {
+      "replacementPreset": "overworld-common",
+      "emptyChestLootTable": "",
+      "lootTablesOverrideMap": {}
+    },
+    "hexerei:baba_yaga_hut": {
+      "replacementPreset": "overworld-common",
+      "emptyChestLootTable": "",
+      "lootTablesOverrideMap": {}
+    },
+    "hexerei:dark_coven": {
+      "replacementPreset": "overworld-common",
+      "emptyChestLootTable": "",
+      "lootTablesOverrideMap": {}
+    },
+    "hexerei:nature_coven": {
+      "replacementPreset": "overworld-common",
+      "emptyChestLootTable": "",
+      "lootTablesOverrideMap": {}
+    },
+    "hexerei:owl_post_office": {
+      "replacementPreset": "overworld-common",
+      "emptyChestLootTable": "",
+      "lootTablesOverrideMap": {}
+    },
+    "hexerei:witch_hut": {
+      "replacementPreset": "overworld-common",
+      "emptyChestLootTable": "",
+      "lootTablesOverrideMap": {}
+    },
     "irons_spellbooks:ancient_battleground": {
       "replacementPreset": "overworld-common",
       "emptyChestLootTable": "",

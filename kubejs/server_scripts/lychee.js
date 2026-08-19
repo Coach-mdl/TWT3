@@ -1,3 +1,3 @@
 "use strict";
 
-const LycheeRecipes = (event) => {};
+const lycheeRecipes = (event) => {};

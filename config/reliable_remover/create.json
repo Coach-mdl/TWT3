@@ -5,7 +5,9 @@
       "create:zinc_ingot",
       "create:brass_ingot",
       "createdieselgenerators:hammer",
-      "createdieselgenerators:wire_cutters"
+      "createdieselgenerators:wire_cutters",
+      "create:dough",
+      "create:wheat_flour"
     ]
   },
   {

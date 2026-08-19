@@ -12,7 +12,36 @@
     "mod": "handcrafted"
   },
   {
+    "action": "replace_input",
+    "target": "minecraft:gold_block",
+    "replacement": "tfc:metal/sheet/gold",
+    "mod": "handcrafted"
+  },
+  {
     "action": "remove",
     "id": "handcrafted:hammer"
+  },
+  {
+    "action": "remove",
+    "pattern": ["/^everycomp:hc\/tfc\/.*$/"]
+  },
+  {
+    "action": "remove",
+    "pattern": ["/^handcrafted:(crimson|warped)_.*$/"]
+  },
+  {
+    "action": "remove",
+    "id": [
+      "/^minecraft:.*_sheet_from_.*_dye$/",
+      "/^minecraft:.*_cushion_from_.*_dye$/",
+      "/^handcrafted:.*_sheet$/",
+      "/^handcrafted:.*_cushion$/",
+      "/^handcrafted:.*_.*_trim$/",
+      "/^handcrafted:.*_trophy$/",
+      "/^handcrafted:.*_plate$/",
+      "/^handcrafted:.*_cup$/",
+      "/^handcrafted:.*_bowl$/",
+      "/^handcrafted:.*_crockery_combo$/"
+    ]
   }
 ]

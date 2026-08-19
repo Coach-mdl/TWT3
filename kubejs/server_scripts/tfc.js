@@ -3,9 +3,7 @@
 /**
  * @param {Internal.RecipesEventJS} event
  */
-const TFCRecipes = (event) => {
-  //replace
-
+const tfcRecipes = (event) => {
   //Create Filling
   function milkconversion(input, id) {
     event.recipes.create
@@ -238,7 +236,7 @@ const TFCRecipes = (event) => {
   });
 };
 
-const TFCData = (event) => {
+const tfcData = (event) => {
   //Heat Definitions
   event.itemHeat("tfc:metal/bucket/blue_steel", 2.0, 1000, 1200);
   event.itemHeat("tfc:metal/bucket/red_steel", 2.0, 1000, 1200);
@@ -246,7 +244,7 @@ const TFCData = (event) => {
   event.itemHeat("tfc:brass_mechanisms", 1.429, 558.0, 744.0);
 };
 
-const TFCItemTags = (event) => {
+const tfcItemTags = (event) => {
   event.add("tfc:saplings", [
     "tfc:wood/sapling/willow",
     "firmalife:plant/cocoa_sapling",

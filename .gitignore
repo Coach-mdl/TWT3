@@ -222,3 +222,21 @@ fieldguide_cache/
 config/crash_assistant/scripts/log_analysis/example.jexl
 config/crash_assistant/scripts/startup/example.jexl
 
+config/Hexerei-common.toml
+config/seriousplayeranimations/client.json5
+config/inline/client-config.toml
+config/hexcasting-common.toml
+config/locks/lock_types/_example.json.disabled
+config/locks/lockpick_types/_example.json.disabled
+config/searchyouritems-common.toml
+config/showcaser/showcaser-client-config.json
+config/vss-client-config.json
+panoptic/grabs/1786463795868.png
+panoptic/inspections.json
+panoptic/last_selected.txt
+panoptic/last_tab.txt
+panoptic/mod_filter.txt
+panoptic/screengrabs.json
+panoptic/seedheight
+panoptic/seedmap_hidden.txt
+panoptic/seedmap_history.txt

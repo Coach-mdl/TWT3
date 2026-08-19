@@ -1,7 +1,7 @@
 "use strict";
 
 
-const WaystonesRecipes = (event) => {
+const waystonesRecipes = (event) => {
 
     //replace
     event.replaceInput(

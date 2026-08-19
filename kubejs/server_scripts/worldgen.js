@@ -1,6 +1,6 @@
 "use strict";
 
-const worldgen = (event) => {
+const twtWorldgen = (event) => {
   //HARDENS UNDERGROUND STRUCTURES, now covers DFC stone
 
   const STONE_MAP = [
@@ -28,7 +28,7 @@ const worldgen = (event) => {
     return 0;
   }
 
-  const level = event.worldGenLevel;
+  const level = event.twtWorldgenLevel;
   let replaced = 0;
 
   event.intersectionBoxes.forEach((box) => {

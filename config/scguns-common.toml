@@ -16,7 +16,7 @@
 		#Range: 0.0 ~ 1.0
 		growBoundingBoxAmount = 0.3
 		#Enables the check for head shots for players. Projectiles that hit the head of a player will have increased damage.
-		enableHeadShots = false
+		enableHeadShots = true
 		#The value to multiply the damage by if projectile hit the players head
 		#Range: 1.0 ~ 1.7976931348623157E308
 		headShotDamageMultiplier = 1.25

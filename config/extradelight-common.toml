@@ -1,0 +1,33 @@
+
+#Debug Mode
+[debug]
+	#Enable Debug Mode for Development
+	enableDebug = false
+
+#Recipe Book
+[recipe_book]
+	#Should the Oven have a Recipe Book available on its interface?
+	enableRecipeBookOven = false
+
+#Recipe Integration
+[recipes]
+	#Disable selected recipes from Farmer's Delight when Extra Delight
+	#provides a replacement recipe using its own ingredients.
+	#
+	#true: Better integration with Extra Delight's recipes and ingredients.
+	#false: Keep the original recipes, making the game generally easier.
+	disableReplacedDelightRecipes = true
+
+#Mint
+[mint_spread]
+	#Should mint spread?
+	shouldMintSpread = true
+	#How fast should mint spread? (Higher number = slower)
+	#Range: 1 ~ 100
+	mintSpreadRate = 6
+
+#Spooky Things
+[spooky]
+	#All Year Spooky
+	allYearSpooky = false
+

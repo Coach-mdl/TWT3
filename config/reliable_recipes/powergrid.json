@@ -1,0 +1,142 @@
+[
+  {
+    "action": "remove_recipe",
+    "id": [
+      "powergrid:mechanical_crafting/basin_heater",
+      "powergrid:crafting/constant_speed_motor",
+      "powergrid:crafting/wire_cutter",
+      "powergrid:crafting/copper_coil",
+      "powergrid:crafting/resistive_coil",
+      "powergrid:cutting/copper_wire_cutting",
+      "powergrid:cutting/iron_wire_cutting",
+      "powergrid:cutting/gold_wire_cutting",
+      "powergrid:crafting/wire_connector",
+      "powergrid:crafting/heavy_wire_connector",
+      "powergrid:crafting/device_connector"
+    ]
+  },
+  {
+    "action": "replace_input",
+    "target": "minecraft:copper_block",
+    "replacement": ["tfc:metal/block/copper"],
+    "id": "powergrid:deploying/copper_plating"
+  },
+  {
+    "action": "replace_input",
+    "target": "powergrid:zinc_sheet",
+    "replacement": ["#forge:ingots/zinc"],
+    "id": "powergrid:item_application/conductive_casing"
+  },
+  {
+    "action": "replace_input",
+    "target": "create:andesite_casing",
+    "replacement": ["tfc:metal/block/black_steel"],
+    "id": "powergrid:item_application/conductive_casing"
+  },
+  {
+    "action": "replace_input",
+    "target": "#forge:plates/iron",
+    "replacement": ["tfc:metal/sheet/steel"],
+    "id": "powergrid:crafting/growth_lamp"
+  },
+  {
+    "action": "replace_input",
+    "target": "#forge:plates/iron",
+    "replacement": ["tfc:metal/sheet/steel"],
+    "id": "powergrid:crafting/light_bulb"
+  },
+  {
+    "action": "replace_input",
+    "target": "#forge:plates/iron",
+    "replacement": ["tfc:metal/sheet/steel"],
+    "id": "powergrid:crafting/heating_coil"
+  },
+  {
+    "action": "replace_input",
+    "target": "#forge:crops/potato",
+    "replacement": ["tfc:food/potato"],
+    "id": "powergrid:crafting/potato_battery"
+  },
+  {
+    "action": "replace_input",
+    "target": "create:andesite_alloy",
+    "replacement": ["tfc:metal/sheet/steel"],
+    "id": "powergrid:mechanical_crafting/generator_induction_rotor"
+  },
+  {
+    "action": "replace_input",
+    "target": "create:shaft",
+    "replacement": ["tfc:metal/rod/black_steel"],
+    "id": "powergrid:mechanical_crafting/generator_induction_rotor"
+  },
+  {
+    "action": "replace_input",
+    "target": "create:andesite_alloy",
+    "replacement": ["tfc:metal/sheet/zinc"],
+    "id": "powergrid:mechanical_crafting/generator_large_induction_rotor"
+  },
+  {
+    "action": "replace_input",
+    "target": "#forge:plates/iron",
+    "replacement": ["tfc:metal/sheet/steel"]
+  },
+  {
+    "action": "replace_input",
+    "target": "create:andesite_casing",
+    "replacement": ["powergrid:conductive_casing"],
+    "id": "powergrid:mechanical_crafting/generator_commutator"
+  },
+  {
+    "action": "replace_input",
+    "target": "create:andesite_alloy",
+    "replacement": ["tfc:metal/rod/black_steel"],
+    "id": "powergrid:mechanical_crafting/generator_commutator"
+  },
+  {
+    "action": "replace_input",
+    "target": "tfc:metal/ingot/wrought_iron",
+    "replacement": ["tfc:metal/ingot/black_steel"],
+    "id": "powergrid:crafting/hv_breaker"
+  },
+  {
+    "action": "replace_input",
+    "target": "tfc:metal/ingot/wrought_iron",
+    "replacement": ["tfc:metal/ingot/black_steel"],
+    "id": "powergrid:crafting/contactor"
+  },
+  {
+    "action": "replace_input",
+    "target": "minecraft:coal_block",
+    "replacement": ["tfc:ore/lignite"],
+    "id": "powergrid:crafting/power_resistor"
+  },
+  {
+    "action": "replace_input",
+    "target": "#forge:plates/iron",
+    "replacement": ["tfc:metal/sheet/steel"],
+    "id": "powergrid:crafting/electric_motor"
+  },
+  {
+    "action": "replace_input",
+    "target": "#forge:plates/iron",
+    "replacement": ["tfc:metal/sheet/steel"],
+    "id": "powergrid:crafting/fuse_holder"
+  },
+  {
+    "action": "replace_input",
+    "target": "create:andesite_casing",
+    "replacement": ["powergrid:conductive_casing"],
+    "id": "powergrid:crafting/fuse_holder"
+  },
+  {
+    "action": "replace_input",
+    "target": "#forge:plates/iron",
+    "replacement": ["tfc:metal/double_ingot/wrought_iron"],
+    "id": "powergrid:crafting/electromagnet"
+  },
+  {
+    "action": "replace_input",
+    "target": "create:dough",
+    "replacement": ["#forge:dough"]
+  }
+]

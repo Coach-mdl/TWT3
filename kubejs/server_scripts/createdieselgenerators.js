@@ -1,6 +1,6 @@
 "use strict";
 
-const CDGRecipes = (event) => {
+const cdgRecipes = (event) => {
   //event.printAllTypes();
 
   //removals
@@ -101,10 +101,11 @@ const CDGRecipes = (event) => {
         Item.of("create:electron_tube", 4),
         Item.of("create:precision_mechanism", 2),
         Item.of("tfc:brass_mechanisms", 2),
+        Item.of("create:wrench", 1),
       ],
       event.recipes.tfc.damage_inputs_shapeless_crafting(
         event.recipes.minecraft.crafting_shapeless("createdieselgenerators:diesel_engine", [
-          "supplementaries:wrench",
+          "create:wrench",
           "#tfc:hammers",
           "createdieselgenerators:large_diesel_engine",
         ]),

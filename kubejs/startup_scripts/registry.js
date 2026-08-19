@@ -6,7 +6,7 @@ Platform.mods.kubejs.name = "Together We Thrive";
  * @param {Internal.RegistryEventJS} event
  */
 
-StartupEvents.registry("item", (event) => {
+const twtItemRegistry = (event) => {
   //Item registry. Server must be RESTARTED to register changes. Make sure to test elsewhere first to avoid repeat restarts.
   //Item requires dependency: Fusion
   event
@@ -117,12 +117,14 @@ StartupEvents.registry("item", (event) => {
   event.create("unfinished_scrap_boots", "basic").texture("scguns:item/scrap_boots");
 
   //Endergetic
-  create("poise_lumber", "basic")
+  event
+    .create("poise_lumber", "basic")
     .displayName(Text.translatable("item.kubejs.poise_lumber"))
     .texture("tfc:item/wood/lumber")
     .color(0, 0x841eba);
   //Aether
-  create("skyroot_lumber", "basic")
+  event
+    .create("skyroot_lumber", "basic")
     .displayName(Text.translatable("item.kubejs.skyroot_lumber"))
     .texture("tfc:item/wood/lumber")
     .color(0, 0xa2ab9d);
@@ -176,9 +178,9 @@ StartupEvents.registry("item", (event) => {
         .color(0, 0xff2700);
     }
   });
-});
+};
 
-StartupEvents.registry("fluid", (event) => {
+const twtFluidRegistry = (event) => {
   event
     .create("impure_anthralite")
     .displayName("Impure Anthralite")
@@ -197,9 +199,9 @@ StartupEvents.registry("fluid", (event) => {
     .thickTexture(0xa3c3c3)
     .bucketColor(0xa3c3c3)
     .noBlock();
-});
+};
 
-StartupEvents.registry("block", (event) => {
+const twtBlockRegistry = (event) => {
   //Sin Biome
   event
     .create("sin_stone", "tfc:loose_rock")
@@ -232,4 +234,4 @@ StartupEvents.registry("block", (event) => {
   event.create("smooth_sin_slate").displayName("Smooth Sin Slate");
   event.create("chiseled_sin_slate").displayName("Chiseled Sin Slate");
   event.create("sin_magma").displayName("Sin Magma");
-});
+};

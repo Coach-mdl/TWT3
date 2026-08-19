@@ -1,11 +1,8 @@
 "use strict";
-//
+
 //This is going to be a big one.
 
-const ScgunsRecipes = (event) => {
-  //Removals
-  // event.remove({ not: { type: "scguns:lightning_battery" }, mod: "scguns" });
-
+const scgunsRecipes = (event) => {
   //Shaped
   event
     .shaped(Item.of("scguns:range_finder"), [" A ", "BCD", "EA "], {
@@ -15,7 +12,7 @@ const ScgunsRecipes = (event) => {
       B: "powergrid:potato_battery",
       E: "scguns:gun_grip",
     })
-    .id("twt:shaped/range_finder");
+    .id("twt:scguns/shaped/range_finder");
 
   event
     .shaped(Item.of("scguns:laser_sight"), ["AB ", "CDE", "   "], {
@@ -25,7 +22,7 @@ const ScgunsRecipes = (event) => {
       D: "tfc:lamp_glass",
       A: "powergrid:potato_battery",
     })
-    .id("twt:shaped/laser_sight");
+    .id("twt:scguns/shaped/laser_sight");
 
   event.recipes.tfc
     .damage_inputs_shaped_crafting(
@@ -36,7 +33,7 @@ const ScgunsRecipes = (event) => {
         D: "#tfc:knives",
       }),
     )
-    .id("twt:advanced_shaped/gun_grip");
+    .id("twt:scguns/advanced_shaped/gun_grip");
 
   event.recipes.tfc
     .damage_inputs_shaped_crafting(
@@ -46,7 +43,7 @@ const ScgunsRecipes = (event) => {
         C: "#tfc:knives",
       }),
     )
-    .id("twt:advanced_shaped/wooden_stock");
+    .id("twt:scguns/advanced_shaped/wooden_stock");
 
   event.recipes.tfc
     .damage_inputs_shaped_crafting(
@@ -64,7 +61,7 @@ const ScgunsRecipes = (event) => {
         0,
       ),
     )
-    .id("twt:advanced_shaped/light_stock");
+    .id("twt:scguns/advanced_shaped/light_stock");
 
   event.recipes.tfc
     .damage_inputs_shaped_crafting(
@@ -78,7 +75,7 @@ const ScgunsRecipes = (event) => {
         C: "scguns:anthralite_nugget",
       }),
     )
-    .id("twt:advanced_shaped/weighted_stock");
+    .id("twt:scguns/advanced_shaped/weighted_stock");
 
   event.recipes.tfc
     .damage_inputs_shaped_crafting(
@@ -91,7 +88,7 @@ const ScgunsRecipes = (event) => {
         E: "vintageimprovements:iron_spring",
       }),
     )
-    .id("twt:advanced_shaped/bump_stock");
+    .id("twt:scguns/advanced_shaped/bump_stock");
 
   event
     .shaped(Item.of("scguns:silencer"), ["ABA", "CDC", "ABA"], {
@@ -100,7 +97,138 @@ const ScgunsRecipes = (event) => {
       A: "#forge:string",
       B: "tfc:jute_fiber",
     })
-    .id("twt:shaped/silencer");
+    .id("twt:scguns/shaped/silencer");
+
+  event
+    .shaped(Item.of("scguns:pistol_ammo_box"), [" AB", "CDC", "ECE"], {
+      A: "minecraft:red_dye",
+      C: "create:cardboard",
+      B: "minecraft:black_dye",
+      E: "tfc:glue",
+      D: "scguns:small_copper_casing",
+    })
+    .id("twt:scguns/shaped/pistol_ammo_box");
+
+  event
+    .shaped(Item.of("scguns:rifle_ammo_box"), ["ABC", "BDB", "EBE"], {
+      B: "create:cardboard",
+      D: "scguns:medium_copper_casing",
+      A: "minecraft:light_gray_dye",
+      C: "minecraft:gray_dye",
+      E: "tfc:glue",
+    })
+    .id("twt:scguns/shaped/rifle_ammo_box");
+
+  event
+    .shaped(Item.of("scguns:shotgun_ammo_box"), ["ABC", "BDB", "BEB"], {
+      A: "minecraft:yellow_dye",
+      D: "scguns:shotgun_shell",
+      C: "minecraft:green_dye",
+      B: "create:cardboard",
+      E: "tfc:glue",
+    })
+    .id("twt:scguns/shaped/shotgun_ammo_box");
+
+  event
+    .shaped(Item.of("scguns:magnum_ammo_box"), ["ABA", "CDE", "AFA"], {
+      F: "minecraft:red_dye",
+      B: "scguns:ramrod_round",
+      A: "create:cardboard",
+      E: "minecraft:gray_dye",
+      C: "minecraft:black_dye",
+      D: "tfc:glue",
+    })
+    .id("twt:scguns/shaped/magnum_ammo_box");
+
+  event
+    .shaped(Item.of("scguns:energy_ammo_box"), ["ABA", "CDC", "EFE"], {
+      F: "tfc:metal/sheet/wrought_iron",
+      B: "tfc:metal/rod/wrought_iron",
+      D: "scguns:empty_cell",
+      E: "minecraft:orange_dye",
+      C: "create:iron_sheet",
+      A: "minecraft:gray_dye",
+    })
+    .id("twt:scguns/shaped/energy_ammo_box");
+
+  event
+    .shaped(Item.of("scguns:special_ammo_box"), ["ABA", "CDC", "EBE"], {
+      D: "scguns:powder_and_ball",
+      C: "tfc:metal/rod/wrought_iron",
+      B: "create:iron_sheet",
+      A: "minecraft:brown_dye",
+      E: "minecraft:black_dye",
+    })
+    .id("twt:scguns/shaped/special_ammo_box");
+
+  event
+    .shaped(Item.of("scguns:rocket_ammo_box"), ["ABA", "BCB", "ADA"], {
+      D: "tfc:metal/sheet/wrought_iron",
+      A: "minecraft:green_dye",
+      B: "create:iron_sheet",
+      C: "scguns:microjet",
+    })
+    .id("twt:scguns/shaped/rocket_ammo_box");
+
+  event.recipes.tfc
+    .damage_inputs_shaped_crafting(
+      event.shaped(Item.of("scguns:empty_casing_pouch"), [" A ", "BAC", "DED"], {
+        A: "sns:bound_leather_strip",
+        B: "#scguns:empty_casing",
+        D: "sns:reinforced_fiber",
+        E: "scguns:armor_pouches",
+        C: "tfc:bone_needle",
+      }),
+    )
+    .id("twt:scguns/advanced_shaped/empty_casing_pouch");
+
+  event.recipes.tfc
+    .damage_inputs_shaped_crafting(
+      event.shaped(Item.of("scguns:dishes_pouch"), [" A ", "BCB", "DED"], {
+        E: "scguns:heavy_armor_pouches",
+        B: "sns:bound_leather_strip",
+        D: "sns:reinforced_fiber",
+        A: "tfc:bone_needle",
+        C: "#scguns:dishes",
+      }),
+    )
+    .id("twt:scguns/advanced_shaped/dishes_pouch");
+
+  event.recipes.tfc
+    .damage_inputs_shaped_crafting(
+      event.shaped(Item.of("scguns:rock_pouch"), [" AB", "CDC", "AEA"], {
+        E: "scguns:heavy_armor_pouches",
+        A: "sns:bound_leather_strip",
+        C: "sns:reinforced_fiber",
+        D: "#scguns:rocks",
+        B: "tfc:bone_needle",
+      }),
+    )
+    .id("twt:scguns/advanced_shaped/rock_pouch");
+
+  event.recipes.tfc
+    .damage_inputs_shaped_crafting(
+      event.shaped(Item.of("scguns:armor_pouches"), ["ABC", "BDB", "BEB"], {
+        A: "sns:reinforced_fiber",
+        B: "sns:bound_leather_strip",
+        D: "sns:buckle",
+        E: "sns:unfinished_leather_sack",
+        C: "tfc:bone_needle",
+      }),
+    )
+    .id("twt:scguns/advanced_shaped/armor_pouches");
+
+  event.recipes.tfc
+    .damage_inputs_shaped_crafting(
+      event.shaped(Item.of("scguns:heavy_armor_pouches"), ["ABC", "DED", "DED"], {
+        A: "sns:reinforced_fiber",
+        D: "sns:bound_leather_strip",
+        B: "sns:buckle",
+        E: "sns:unfinished_leather_sack",
+        C: "tfc:bone_needle",
+      }),
+    )
+    .id("twt:scguns/advanced_shaped/heavy_armor_pouches");
 
   //TFC Anvil
   const SCGUNS_ANVIL_SHENANIGANS = {
@@ -155,32 +283,32 @@ const ScgunsRecipes = (event) => {
       .anvil(Item.of(output), data.in, data.rules)
       .tier(data.tier)
       .apply_forging_bonus(data.fb)
-      .id(`twt:anvil/${item}`);
+      .id(`twt:scguns/anvil/${item}`);
   });
 
   //TFC Welding
   event.recipes.tfc
     .welding("kubejs:anthralite_double_ingot", "scguns:anthralite_ingot", "scguns:anthralite_ingot")
-    .id("twt:welding/anthralite_double_ingot");
+    .id("twt:scguns/welding/anthralite_double_ingot");
   event.recipes.tfc
     .welding("kubejs:anthralite_double_sheet", "kubejs:anthralite_sheet", "kubejs:anthralite_sheet")
-    .id("twt:welding/anthralite_double_sheet");
+    .id("twt:scguns/welding/anthralite_double_sheet");
   event.recipes.tfc
     .welding("scguns:gun_magazine", "kubejs:anthralite_sheet", "vintageimprovements:iron_spring")
-    .id("twt:welding/gun_magazine");
+    .id("twt:scguns/welding/gun_magazine");
 
   //laser_cutting
   event.recipes.vintageimprovements
     .laser_cutting("scguns:gun_parts", "kubejs:anthralite_double_ingot")
     .energyCost(4000)
     .maxChargeRate(50)
-    .id("twt:laser_cutting/gun_parts");
+    .id("twt:scguns/laser_cutting/gun_parts");
 
   //Lathe
   event.recipes.vintageimprovements
     .turning("scguns:gun_barrel", "tfc:metal/tuyere/steel")
     .processingTime(400)
-    .id("twt:turning/gun_barrel");
+    .id("twt:scguns/turning/gun_barrel");
 
   //Sequenced Assembly
   event.recipes.create
@@ -195,7 +323,7 @@ const ScgunsRecipes = (event) => {
     ])
     .loops(1)
     .transitionalItem("scguns:gun_parts")
-    .id("twt:sequenced_assembly/heavy_gun_parts");
+    .id("twt:scguns/sequenced_assembly/heavy_gun_parts");
 
   event.recipes.create
     .sequenced_assembly("scguns:heavy_gun_barrel", "tfc:metal/tuyere/black_steel", [
@@ -214,7 +342,26 @@ const ScgunsRecipes = (event) => {
     ])
     .loops(1)
     .transitionalItem("tfc:metal/tuyere/black_steel")
-    .id("twt:sequenced_assembly/heavy_gun_barrel");
+    .id("twt:scguns/sequenced_assembly/heavy_gun_barrel");
+
+  event
+    .stonecutting(Item.of("scguns:anthralite_block", 16), "kubejs:anthralite_double_ingot")
+    .id("twt:scguns/stonecutting/anthralite_block");
+  event
+    .stonecutting(Item.of("scguns:anthralite_grate_pane", 16), "scguns:anthralite_grate")
+    .id("twt:scguns/stonecutting/anthralite_grate_pane");
+  event
+    .stonecutting("scguns:cut_anthralite", "scguns:anthralite_block")
+    .id("twt:scguns/stonecutting/cut_anthralite");
+  event
+    .stonecutting("scguns:anthralite_tiles", "scguns:anthralite_block")
+    .id("twt:scguns/stonecutting/anthralite_tiles");
+  event
+    .stonecutting("scguns:anthralite_block", "scguns:cut_anthralite")
+    .id("twt:scguns/stonecutting/anthralite_block_2");
+  event
+    .stonecutting("scguns:anthralite_block", "scguns:anthralite_tiles")
+    .id("twt:scguns/stonecutting/anthralite_block_3");
 
   //GUNS
   event
@@ -228,7 +375,7 @@ const ScgunsRecipes = (event) => {
       G: "scguns:repair_kit",
       H: "scguns:antique_blueprint",
     })
-    .id("twt:shaped/flintlock_pistol");
+    .id("twt:scguns/shaped/flintlock_pistol");
 
   //TFC Heating
   const SCGUNS_HEATING_DATA = {
@@ -324,7 +471,7 @@ const ScgunsRecipes = (event) => {
       .heating(input, `${data.MP}`)
       .resultFluid(Fluid.of(output, amount))
       .useDurability(true)
-      .id(`twt:heating/${object}`);
+      .id(`twt:scguns/heating/${object}`);
   });
 
   //TFC Casting
@@ -335,7 +482,7 @@ const ScgunsRecipes = (event) => {
       TFC.fluidStackIngredient(anthralite.f, 100),
       0.25,
     )
-    .id("twt:casting/anthralite_ingot");
+    .id("twt:scguns/casting/anthralite_ingot");
   event.recipes.tfc
     .casting(
       "scguns:depleted_diamond_steel_ingot",
@@ -343,7 +490,7 @@ const ScgunsRecipes = (event) => {
       TFC.fluidStackIngredient(anthralite.f, 100),
       0.25,
     )
-    .id("twt:casting/depleted_diamond_steel_ingot");
+    .id("twt:scguns/casting/depleted_diamond_steel_ingot");
   event.recipes.tfc
     .casting(
       "scguns:anthralite_ingot",
@@ -351,7 +498,7 @@ const ScgunsRecipes = (event) => {
       TFC.fluidStackIngredient(anthralite.f, 100),
       0.25,
     )
-    .id("twt:casting/anthralite_ingot_fire_mold");
+    .id("twt:scguns/casting/anthralite_ingot_fire_mold");
   event.recipes.tfc
     .casting(
       "scguns:depleted_diamond_steel_ingot",
@@ -359,10 +506,10 @@ const ScgunsRecipes = (event) => {
       TFC.fluidStackIngredient("kubejs:molten_diamond_steel", 100),
       0.25,
     )
-    .id("twt:casting/depleted_diamond_steel_ingot_fire_mold");
+    .id("twt:scguns/casting/depleted_diamond_steel_ingot_fire_mold");
 };
 
-const ScgunsData = (event) => {
+const scgunsData = (event) => {
   //TFC Fuels
   event.fuel("scguns:vehement_coal", 1825, 2200, 0.65);
 
@@ -445,18 +592,91 @@ const ScgunsData = (event) => {
     4,
     "kubejs:diamond_steel",
   );
+
+  const SCGUNS_ARMOR_STATS = {
+    anthralite_helmet: { piercing: 15, slashing: 4, crushing: 4 },
+    anthralite_chestplate: { piercing: 15, slashing: 4, crushing: 4 },
+    anthralite_leggings: { piercing: 15, slashing: 4, crushing: 4 },
+    anthralite_boots: { piercing: 15, slashing: 4, crushing: 4 },
+    scrap_helmet: { piercing: 10, slashing: 6, crushing: 3 },
+    scrap_chestplate: { piercing: 10, slashing: 6, crushing: 3 },
+    scrap_leggings: { piercing: 10, slashing: 6, crushing: 3 },
+    scrap_boots: { piercing: 10, slashing: 6, crushing: 3 },
+    adrien_helm: { piercing: 18, slashing: 6, crushing: 3 },
+    adrien_chestplate: { piercing: 18, slashing: 10, crushing: -5 },
+    adrien_leggings: { piercing: 18, slashing: 10, crushing: -5 },
+    adrien_boots: { piercing: 18, slashing: 10, crushing: -5 },
+    diamond_steel_helmet: { piercing: 13, slashing: 6, crushing: 3 },
+    diamond_steel_chestplate: { piercing: 13, slashing: 10, crushing: 7 },
+    diamond_steel_leggings: { piercing: 13, slashing: 10, crushing: 7 },
+    diamond_steel_boots: { piercing: 13, slashing: 10, crushing: 7 },
+    treated_brass_helmet: { piercing: 20, slashing: 10, crushing: 10 },
+    treated_brass_chestplate: { piercing: 20, slashing: 10, crushing: 10 },
+    treated_brass_leggings: { piercing: 20, slashing: 10, crushing: 10 },
+    treated_brass_boots: { piercing: 20, slashing: 10, crushing: 10 },
+    cog_knight_helmet: { piercing: 30, slashing: 15, crushing: 12 },
+    cog_knight_chestplate: { piercing: 30, slashing: 15, crushing: 12 },
+    cog_knight_leggings: { piercing: 30, slashing: 15, crushing: 12 },
+    cog_knight_boots: { piercing: 30, slashing: 15, crushing: 12 },
+    redcoat_hat: { piercing: 0, slashing: 5, crushing: 0 },
+    redcoat_coat: { piercing: 0, slashing: 5, crushing: 0 },
+    redcoat_pants: { piercing: 0, slashing: 5, crushing: 0 },
+    redcoat_boots: { piercing: 0, slashing: 5, crushing: 0 },
+    ridgetop: { piercing: 1, slashing: 3, crushing: 0 },
+    brass_mask: { piercing: 7, slashing: 7, crushing: 5 },
+    iron_mask: { piercing: 10, slashing: 7, crushing: 5 },
+  };
+  Object.entries(SCGUNS_ARMOR_STATS).forEach(([item, data]) => {
+    event.itemDamageResistance(`scguns:${item}`, data.piercing, data.slashing, data.crushing);
+  });
 };
 
-const ScgunsItemTags = (event) => {
-  // event.add("jei:hidden_items", ["#scguns:disableditems"]);
+const scgunsItemTags = (event) => {
   event.add("scguns:entity_blacklisted_gun", "#scguns:disableditems");
   event.add("scguns:viventrum_banned_items", "#scguns:disableditems");
+
+  event.add("scguns:dishes", [
+    "tfc:ceramic/bowl",
+    "tfc:empty_jar",
+    "firmalife:pie_pan",
+    /^firmalife:empty_.*_wine_bottle$/,
+    /^tfc:.*_glass_bottle$/,
+  ]);
+  event.add("scguns:rocks", [
+    "#forge:cobblestone",
+    "#rnr:loose_rock_items",
+    "beneath:nether_pebble",
+    "beneath:blackstone_pebble",
+  ]);
 
   event.add("tfc:pileable_ingots", ["scguns:anthralite_ingot", "scguns:diamond_steel_ingot"]);
   event.add("tfc:pileable_sheets", ["kubejs:anthralite_sheet", "kubejs:diamond_steel_sheet"]);
   event.add("tfc:pileable_double_ingots", [
     "kubejs:anthralite_double_ingot",
     "kubejs:diamond_steel_double_ingot",
+  ]);
+
+  event.add("curios:sidearms", [
+    "scguns:tl_runner",
+    "scguns:krauser",
+    "scguns:micina",
+    "scguns:m22_waltz",
+    "scguns:osgood_50",
+    "scguns:blasphemy",
+    "scguns:raygun",
+    "scguns:prima_materia",
+    "scguns:rat_king_and_queen",
+    "scguns:flintlock_pistol",
+    "scguns:longarm",
+    "scguns:pax",
+    "scguns:defender_pistol",
+    "scguns:trenchur",
+    "scguns:auvtomag",
+    "scguns:brawler",
+    "scguns:hyperbaria",
+    "scguns:sequoia",
+    "scguns:mokova",
+    "scguns:mak_mkii",
   ]);
 
   event.add("tfc:deals_piercing_damage", [
@@ -493,6 +713,7 @@ const ScgunsItemTags = (event) => {
     "scguns:grandle_og",
     "scguns:grandle",
     "scguns:cogloader",
+    "scguns:gattaler",
     "scguns:freyr",
     "scguns:vulcanic_repeater",
     "scguns:trotters",
@@ -512,7 +733,7 @@ const ScgunsItemTags = (event) => {
     "scguns:rg_jigsaw",
     "scguns:truant",
     "scguns:howler",
-    "scguns:gattaler",
+    "scguns:thunderhead",
     "scguns:terra_incognita",
   ]);
   event.add("tfc:deals_crushing_damage", [
@@ -531,14 +752,14 @@ const ScgunsItemTags = (event) => {
     "scguns:drill_conversion",
     "scguns:intertial",
     "scguns:jackhammer",
-    "scguns:thunderhead",
+
     "scguns:dozier_rl",
     "scguns:super_shotgun",
     "scguns:mangalitsa",
   ]);
 };
 
-const ScgunsBlockTags = (event) => {
+const scgunsBlockTags = (event) => {
   event.add("scguns:metal/detectable", [
     "#forge:ores/iron",
     "#forge:ores/copper",
@@ -563,10 +784,10 @@ const ScgunsBlockTags = (event) => {
   ]);
 };
 
-const ScgunsFluidTags = (event) => {
+const scgunsFluidTags = (event) => {
   event.add("tfc:usable_in_ingot_mold", ["kubejs:molten_anthralite", "kubejs:molten_diamond_steel"]);
 };
 
-const ScgunsEntityTags = (event) => {
+const scgunsEntityTags = (event) => {
   //event.add("tfc:deals_piercing_damage", ["opposing_force:tomahawk"]);
 };

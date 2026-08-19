@@ -4,7 +4,7 @@
  * @param {Internal.RecipesEventJS} event
  */
 
-const CreateRecipes = (event) => {
+const createRecipes = (event) => {
   //removal
   event.remove({ id: "create:crafting/materials/zinc_ingot_from_compacting" });
   event.remove({ id: "create:crafting/materials/brass_ingot_from_compacting" });
@@ -200,37 +200,36 @@ const CreateRecipes = (event) => {
     .shapeless(Item.of("create:tree_fertilizer", 2), [
       "#minecraft:small_flowers",
       "#minecraft:small_flowers",
-      "#twt:corals",
+      "#twt:create/corals",
       "minecraft:bone_meal",
     ])
-    .id("twt:shapeless/tree_fertilizer");
-  event.recipes.kubejs
-    .shapeless(Item.of("create:dough"), ["#tfc:foods/dough", "#tfc:foods/flour"])
-    .id("twt:shapeless/create_dough");
+    .id("twt:create/shapeless/tree_fertilizer");
+ 
 
   //shaped
   event.recipes.kubejs
     .shaped("create:goggles", ["SMS", "LBL"], {
-      S: "minecraft:leather",
+      S: "sns:leather_strip",
       M: "tfc:brass_mechanisms",
       L: "tfc:lens",
       B: "create:brass_sheet",
     })
-    .id("twt:shaped/goggles");
+    .id("twt:create/shaped/goggles");
   event.recipes.kubejs
-    .shaped("create:wrench", [" B ", " C ", " W "], {
+    .shaped("create:wrench", [" B ", " C ", "LW "], {
       B: "tfc:metal/sheet/brass",
       C: "create:cogwheel",
-      W: "supplementaries:wrench",
+      W: "tfc:metal/rod/brass",
+      L: "minecraft:leather",
     })
-    .id("twt:shaped/wrench");
+    .id("twt:create/shaped/wrench");
   event.recipes.kubejs
     .shaped("create:basin", ["SCS", "AAA"], {
       A: "create:andesite_alloy",
       C: "tfc:crucible",
       S: "tfc:metal/sheet/wrought_iron",
     })
-    .id("twt:shaped/basin");
+    .id("twt:create/shaped/basin");
   event.recipes.kubejs
     .shaped("create:steam_engine", [" S ", "SAS", "PCP"], {
       S: "tfc:metal/sheet/steel",
@@ -238,7 +237,7 @@ const CreateRecipes = (event) => {
       P: "tfc:steel_pump",
       C: "minecraft:copper_block",
     })
-    .id("twt:shaped/steam_engine");
+    .id("twt:create/shaped/steam_engine");
   event.recipes.kubejs
     .shaped("create:smart_chute", [" B ", "SCS", " E "], {
       B: "create:brass_sheet",
@@ -246,7 +245,7 @@ const CreateRecipes = (event) => {
       C: "create:chute",
       E: "create:electron_tube",
     })
-    .id("twt:shaped/smart_chute");
+    .id("twt:create/shaped/smart_chute");
 
   event.recipes.kubejs
     .shaped("create:elevator_pulley", ["RCR", "LKL", " P "], {
@@ -256,7 +255,7 @@ const CreateRecipes = (event) => {
       K: "minecraft:dried_kelp_block",
       P: "tfc:metal/sheet/steel",
     })
-    .id("twt:shaped/elevator_pulley");
+    .id("twt:create/shaped/elevator_pulley");
   event.recipes.kubejs
     .shaped("create:mechanical_crafter", ["RER", "cCc", "RWR"], {
       R: "tfc:metal/rod/steel",
@@ -265,7 +264,7 @@ const CreateRecipes = (event) => {
       C: "create:brass_casing",
       W: "minecraft:crafting_table",
     })
-    .id("twt:shaped/mechanical_crafter");
+    .id("twt:create/shaped/mechanical_crafter");
   event.recipes.kubejs
     .shaped("create:rotation_speed_controller", ["BMB", "ESE", "RCR"], {
       B: "tfc:metal/sheet/brass",
@@ -275,7 +274,7 @@ const CreateRecipes = (event) => {
       R: "tfc:metal/rod/steel",
       C: "create:brass_casing",
     })
-    .id("twt:shaped/rotation_speed_controller");
+    .id("twt:create/shaped/rotation_speed_controller");
   event.recipes.kubejs
     .shaped("create:mechanical_arm", ["SBJ", "BE ", "MCM"], {
       S: "tfc:metal/double_ingot/steel",
@@ -285,7 +284,7 @@ const CreateRecipes = (event) => {
       M: "create:precision_mechanism",
       C: "create:brass_casing",
     })
-    .id("twt:shaped/mechanical_arm");
+    .id("twt:create/shaped/mechanical_arm");
   event.recipes.kubejs
     .shaped("create:stock_link", [" T ", "SVS", " E "], {
       T: "create:transmitter",
@@ -293,14 +292,14 @@ const CreateRecipes = (event) => {
       V: "create:item_vault",
       E: "create:electron_tube",
     })
-    .id("twt:shaped/stock_link");
+    .id("twt:create/shaped/stock_link");
   event.recipes.kubejs
     .shaped("create:wand_of_symmetry", [" P ", " B ", " R "], {
       P: "tfc:metal/sheet/zinc",
       B: "create:copper_sheet",
       R: "tfc:metal/rod/copper",
     })
-    .id("twt:shaped/wand_of_symmetry");
+    .id("twt:create/shaped/wand_of_symmetry");
   event.recipes.kubejs
     .shaped("create:extendo_grip", ["SHS", "SMS", "SRS"], {
       S: "#balm:wooden_rods",
@@ -308,7 +307,7 @@ const CreateRecipes = (event) => {
       M: "create:copper_sheet",
       R: "tfc:metal/rod/copper",
     })
-    .id("twt:shaped/extendo_grip");
+    .id("twt:create/shaped/extendo_grip");
 
   //TFC Forging
   event.recipes.tfc
@@ -319,12 +318,12 @@ const CreateRecipes = (event) => {
     ])
     .tier(1)
     .apply_forging_bonus(false)
-    .id("twt:anvil/copper_sheet");
+    .id("twt:create/anvil/copper_sheet");
   event.recipes.tfc
     .anvil(Item.of("create:golden_sheet", 2), "tfc:metal/sheet/gold", ["punch_any", "punch_any", "punch_any"])
     .tier(1)
     .apply_forging_bonus(false)
-    .id("twt:anvil/golden_sheet");
+    .id("twt:create/anvil/golden_sheet");
   event.recipes.tfc
     .anvil(Item.of("create:iron_sheet", 2), "tfc:metal/sheet/wrought_iron", [
       "punch_any",
@@ -333,23 +332,23 @@ const CreateRecipes = (event) => {
     ])
     .tier(3)
     .apply_forging_bonus(false)
-    .id("twt:anvil/iron_sheet");
+    .id("twt:create/anvil/iron_sheet");
   event.recipes.tfc
     .anvil(Item.of("create:brass_sheet", 2), "tfc:metal/sheet/brass", ["punch_any", "punch_any", "punch_any"])
     .tier(2)
     .apply_forging_bonus(false)
-    .id("twt:anvil/brass_sheet");
+    .id("twt:create/anvil/brass_sheet");
   event.recipes.tfc
     .anvil(Item.of("create:fluid_pipe", 2), "tfc:metal/sheet/copper", ["bend_any", "bend_any", "bend_any"])
     .tier(1)
     .apply_forging_bonus(false)
-    .id("twt:anvil/fluid_pipe");
+    .id("twt:create/anvil/fluid_pipe");
 
   //Create Mixing
   event.recipes.create
-    .mixing("create:andesite_alloy", ["#twt:create_component_nuggets", "tfc:rock/raw/andesite"])
+    .mixing("create:andesite_alloy", ["#twt:create/create_component_nuggets", "tfc:rock/raw/andesite"])
     .heated()
-    .id("twt:mixing/andesite_alloy");
+    .id("twt:create/mixing/andesite_alloy");
 
   event.recipes.create
     .mixing(Fluid.of("create:chocolate", 1000), [
@@ -358,27 +357,27 @@ const CreateRecipes = (event) => {
       Fluid.of("minecraft:milk", 1000),
     ])
     .heated()
-    .id("twt:mixing/chocolate");
+    .id("twt:create/mixing/chocolate");
 
   event.recipes.create
     .mixing(Fluid.of("create:honey", 250), "firmalife:raw_honey")
     .heated()
-    .id("twt:mixing/honey");
+    .id("twt:create/mixing/honey");
 
   //Create Mechanical Saw
   event.recipes.create
     .cutting(Item.of("create:belt_connector", 2), "minecraft:leather")
     .processingTime(50)
-    .id("twt:cutting/belt_connector_from_saw");
+    .id("twt:create/cutting/belt_connector_from_saw");
 
   //Create Emptying
   event.recipes.create
     .emptying([Fluid.of("create:honey", 250), "tfc:empty_jar"], "firmalife:jar/honey")
-    .id("twt:emptying/honey");
+    .id("twt:create/emptying/honey");
 
   event.recipes.create
     .filling("firmalife:jar/honey", [Fluid.of("create:honey", 250), "tfc:empty_jar"])
-    .id("twt:filling/honey");
+    .id("twt:create/filling/honey");
 
   //Create Sequenced Assembly
   event.recipes.create
@@ -406,7 +405,7 @@ const CreateRecipes = (event) => {
     ])
     .transitionalItem("create:incomplete_precision_mechanism")
     .loops(1)
-    .id("twt:sequenced/precision_mechanism_1x");
+    .id("twt:create/sequenced/precision_mechanism_1x");
   event.recipes.create
     .sequenced_assembly(Item.of("create:precision_mechanism", 4), "tfc:metal/sheet/gold", [
       event.recipes.create.deploying("create:incomplete_precision_mechanism", [
@@ -436,7 +435,7 @@ const CreateRecipes = (event) => {
     ])
     .transitionalItem("create:incomplete_precision_mechanism")
     .loops(1)
-    .id("twt:sequenced/precision_mechanism_4x");
+    .id("twt:create/sequenced/precision_mechanism_4x");
   event.recipes.create
     .sequenced_assembly(Item.of("create:sturdy_sheet", 4), "tfc:metal/ingot/steel", [
       event.recipes.create.filling("create:unprocessed_obsidian_sheet", [
@@ -448,7 +447,7 @@ const CreateRecipes = (event) => {
     ])
     .transitionalItem("create:unprocessed_obsidian_sheet")
     .loops(1)
-    .id("twt:sequenced/sturdy_sheet_4x");
+    .id("twt:create/sequenced/sturdy_sheet_4x");
   event.recipes.create
     .sequenced_assembly(Item.of("create:sturdy_sheet", 16), "tfc:metal/ingot/black_steel", [
       event.recipes.create.filling("create:unprocessed_obsidian_sheet", [
@@ -460,61 +459,61 @@ const CreateRecipes = (event) => {
     ])
     .transitionalItem("create:unprocessed_obsidian_sheet")
     .loops(1)
-    .id("twt:sequenced/sturdy_sheet_16x");
+    .id("twt:create/sequenced/sturdy_sheet_16x");
 
   //TFC heating
   event.recipes.tfc
     .heating("create:copper_sheet", 1080)
     .resultFluid(Fluid.of("tfc:metal/copper", 100))
-    .id("twt:heating/copper_sheet");
+    .id("twt:create/heating/copper_sheet");
   event.recipes.tfc
     .heating("create:fluid_pipe", 1080)
     .resultFluid(Fluid.of("tfc:metal/copper", 100))
-    .id("twt:heating/fluid_pipe");
+    .id("twt:create/heating/fluid_pipe");
   event.recipes.tfc
     .heating("create:brass_sheet", 930)
     .resultFluid(Fluid.of("tfc:metal/brass", 100))
-    .id("twt:heating/brass_sheet");
+    .id("twt:create/heating/brass_sheet");
   event.recipes.tfc
     .heating("create:golden_sheet", 1060)
     .resultFluid(Fluid.of("tfc:metal/gold", 100))
-    .id("twt:heating/golden_sheet");
+    .id("twt:create/heating/golden_sheet");
   event.recipes.tfc
     .heating("create:iron_sheet", 1535)
     .resultFluid(Fluid.of("tfc:metal/cast_iron", 100))
-    .id("twt:heating/iron_sheet");
+    .id("twt:create/heating/iron_sheet");
 
   //TFC welding
   event.recipes.tfc
     .welding("create:netherite_backtank", "create:copper_backtank", "tfc:metal/chestplate/red_steel")
-    .id("twt:welding/netherite_backtank");
+    .id("twt:create/welding/netherite_backtank");
   event.recipes.tfc
     .welding("create:netherite_diving_boots", "create:copper_diving_boots", "tfc:metal/boots/red_steel")
-    .id("twt:welding/netherite_diving_boots");
+    .id("twt:create/welding/netherite_diving_boots");
   event.recipes.tfc
     .welding("create:netherite_diving_helmet", "create:copper_diving_helmet", "tfc:metal/helmet/red_steel")
-    .id("twt:welding/netherite_diving_helmet");
+    .id("twt:create/welding/netherite_diving_helmet");
   event.recipes.tfc
     .welding("minecraft:netherite_leggings", "tfc:metal/greaves/copper", "tfc:metal/greaves/red_steel")
-    .id("twt:welding/netherite_leggings");
+    .id("twt:create/welding/netherite_leggings");
 
   //TFC Knapping
   event.recipes.tfc
     .knapping(Item.of("create:belt_connector"), "tfc:leather", ["xxxxx", "xxxxx", "x   x", "xxxxx", "xxxxx"])
-    .id("twt:knapping/belt_connector_from_leather");
+    .id("twt:create/knapping/belt_connector_from_leather");
 
   //lathe
   event.recipes.vintageimprovements
     .turning(Item.of("create:fluid_pipe", 4), "tfc:metal/double_ingot/copper")
     .processingTime(200)
-    .id("twt:turning/fluid_pipe_2x");
+    .id("twt:create/turning/fluid_pipe_2x");
   event.recipes.vintageimprovements
     .turning(Item.of("create:fluid_pipe", 8), "minecraft:copper_block")
     .processingTime(600)
-    .id("twt:turning/fluid_pipe_8x");
+    .id("twt:create/turning/fluid_pipe_8x");
 };
 
-const CreateData = (event) => {
+const createData = (event) => {
   //TFC Heat Definitions
   event.itemHeat("create:copper_backtank", 22.857, 648.0, 864.0);
   event.itemHeat("create:copper_diving_boots", 11.429, 648.0, 864.0);
@@ -551,7 +550,57 @@ const CreateData = (event) => {
   });
 };
 
-const CreateItemTags = (event) => {
+const createItemTags = (event) => {
   event.add("create:sleepers", "#forge:smooth_stone_slab");
   event.add("create:sandpaper", "tfc:sandpaper");
+  event.add("create:windows", [
+    "everycomp:c/createdieselgenerators/chip_wood_window",
+    "everycomp:c/tfc/acacia_window",
+    "everycomp:c/tfc/ash_window",
+    "everycomp:c/tfc/aspen_window",
+    "everycomp:c/tfc/birch_window",
+    "everycomp:c/tfc/blackwood_window",
+    "everycomp:c/tfc/chestnut_window",
+    "everycomp:c/tfc/douglas_fir_window",
+    "everycomp:c/tfc/hickory_window",
+    "everycomp:c/tfc/kapok_window",
+    "everycomp:c/tfc/oak_window",
+    "everycomp:c/tfc/maple_window",
+    "everycomp:c/tfc/mangrove_window",
+    "everycomp:c/tfc/palm_window",
+    "everycomp:c/tfc/pine_window",
+    "everycomp:c/tfc/rosewood_window",
+    "everycomp:c/tfc/sequoia_window",
+    "everycomp:c/tfc/white_cedar_window",
+    "everycomp:c/tfc/sycamore_window",
+    "everycomp:c/tfc/spruce_window",
+    "everycomp:c/tfc/willow_window",
+    "everycomp:c/aether/skyroot_window",
+    "everycomp:c/endergetic/poise_window",
+  ]);
+  event.add("create:window_panes", [
+    "everycomp:c/createdieselgenerators/chip_wood_window_pane",
+    "everycomp:c/tfc/acacia_window_pane",
+    "everycomp:c/tfc/ash_window_pane",
+    "everycomp:c/tfc/aspen_window_pane",
+    "everycomp:c/tfc/birch_window_pane",
+    "everycomp:c/tfc/blackwood_window_pane",
+    "everycomp:c/tfc/hickory_window_pane",
+    "everycomp:c/tfc/douglas_fir_window_pane",
+    "everycomp:c/tfc/chestnut_window_pane",
+    "everycomp:c/tfc/kapok_window_pane",
+    "everycomp:c/tfc/mangrove_window_pane",
+    "everycomp:c/tfc/maple_window_pane",
+    "everycomp:c/tfc/oak_window_pane",
+    "everycomp:c/tfc/rosewood_window_pane",
+    "everycomp:c/tfc/pine_window_pane",
+    "everycomp:c/tfc/palm_window_pane",
+    "everycomp:c/tfc/sequoia_window_pane",
+    "everycomp:c/tfc/spruce_window_pane",
+    "everycomp:c/tfc/sycamore_window_pane",
+    "everycomp:c/tfc/white_cedar_window_pane",
+    "everycomp:c/endergetic/poise_window_pane",
+    "everycomp:c/aether/skyroot_window_pane",
+    "everycomp:c/tfc/willow_window_pane",
+  ]);
 };

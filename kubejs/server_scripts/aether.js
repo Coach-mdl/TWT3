@@ -1,4 +1,4 @@
-const AetherRecipes = (event) => {
+const aetherRecipes = (event) => {
   //Remove
   event.remove({ id: "aether:iron_gloves" });
   event.remove({ id: "aether:golden_gloves" });
@@ -53,7 +53,7 @@ const AetherRecipes = (event) => {
     .id("twt:knapping/leather_gloves");
 };
 
-const AetherData = (event) => {
+const aetherData = (event) => {
   event.itemHeat("aether:iron_gloves", 1, null, 1128);
   event.itemHeat("aether:golden_gloves", 1, null, 1128);
   event.itemHeat("aether:iron_pendant", 1, null, 1128);
@@ -123,11 +123,11 @@ const AetherData = (event) => {
   });
 };
 
-const AetherLoot = (event) => {
+const aetherLoot = (event) => {
   event
     .addEntityLootModifier("aether:sheepuff")
     .replaceLoot("minecraft:mutton", "tfc:food/mutton")
     .replaceLoot("minecraft:white_wool", "tfc:medium_sheepskin_hide");
 };
 
-const AetherItemTags = (event) => {};
+const aetherItemTags = (event) => {};

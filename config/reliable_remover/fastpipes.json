@@ -1,0 +1,21 @@
+[
+  {
+    "action": "remove",
+    "items": [
+      "fastpipes:netherite_barrel",
+      "fastpipes:diamond_barrel",
+      "fastpipes:gold_barrel",
+      "fastpipes:iron_barrel",
+      "fastpipes:copper_barrel",
+      "fastpipes:oak_barrel",
+      "fastpipes:copper_barrel_upgrade",
+      "fastpipes:iron_barrel_upgrade",
+      "fastpipes:gold_barrel_upgrade",
+      "fastpipes:diamond_barrel_upgrade",
+      "fastpipes:netherite_barrel_upgrade",
+      "fastpipes:basic_item_pipe",
+      "fastpipes:improved_item_pipe",
+      "fastpipes:improved_item_pipe"
+    ]
+  }
+]

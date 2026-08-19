@@ -4,7 +4,7 @@
 /**
  * @param {Internal.RecipesEventJS} event
  */
-const TWTRecipes = (event) => {
+const twtRecipes = (event) => {
   const $nuggetcompat = ["minecraft:iron_nugget", "minecraft:gold_nugget", "create:copper_nugget"];
 
   //removal
@@ -35,35 +35,46 @@ const TWTRecipes = (event) => {
   //replace output
   event.replaceOutput({ output: "minecraft:amethyst_shard" }, "minecraft:amethyst_shard", "tfc:gem/amethyst");
 
-  //Shapeless
-  $ores.forEach((ore) => {
+  const orePieceIds = Ingredient.of("#tfc:ore_pieces").itemIds;
+  const richOres = orePieceIds.filter((id) => id.includes("rich_"));
+
+  richOres.forEach((richId) => {
+    const normalId = richId.replace("ore/rich_", "ore/normal_");
+    const poorId = richId.replace("ore/rich_", "ore/poor_");
+    const smallId = richId.replace("ore/rich_", "ore/small_");
+    const powderId = richId.replace("ore/rich_", "powder/");
+
     event.recipes.tfc
       .extra_products_shapeless_crafting(
-        [{ item: `tfc:ore/small_${ore}`, count: 1 }],
+        [{ item: smallId, count: 1 }],
         event.recipes.tfc.damage_inputs_shapeless_crafting(
-          event.recipes.minecraft.crafting_shapeless(`tfc:ore/normal_${ore}`, [
-            "#tfc:hammers",
-            `tfc:ore/rich_${ore}`,
-          ]),
+          event.recipes.minecraft.crafting_shapeless(normalId, ["#tfc:hammers", richId]),
         ),
       )
-      .id(`twt:advanced_shapeless/rich_${ore}_downcraft`);
+      .id(`twt:twt/advanced_shapeless/${richId.split(":")[1].replace("ore/", "")}_downcraft`);
+
+    event.recipes.tfc
+      .extra_products_shapeless_crafting(
+        [{ item: poorId, count: 1 }],
+        event.recipes.tfc.damage_inputs_shapeless_crafting(
+          event.recipes.minecraft.crafting_shapeless(smallId, ["#tfc:hammers", normalId]),
+        ),
+      )
+      .id(`twt:twt/advanced_shapeless/${normalId.split(":")[1].replace("ore/", "")}_downcraft`);
+
+    event.recipes.tfc
+      .extra_products_shapeless_crafting(
+        [{ item: powderId, count: 1 }],
+        event.recipes.tfc.damage_inputs_shapeless_crafting(
+          event.recipes.minecraft.crafting_shapeless(smallId, ["#tfc:hammers", poorId]),
+        ),
+      )
+      .id(`twt:twt/advanced_shapeless/${poorId.split(":")[1].replace("ore/", "")}_downcraft`);
   });
-  event.recipes.tfc
-    .extra_products_shapeless_crafting(
-      [{ item: `firmalife:ore/small_chromite`, count: 1 }],
-      event.recipes.tfc.damage_inputs_shapeless_crafting(
-        event.recipes.minecraft.crafting_shapeless(`firmalife:ore/normal_chromite`, [
-          "#tfc:hammers",
-          `firmalife:ore/rich_chromite`,
-        ]),
-      ),
-    )
-    .id(`twt:advanced_shapeless/rich_chromite_downcraft`);
 
   event
     .shapeless(Item.of("minecraft:fire_charge"), ["minecraft:flint", "kubejs:sin_stone"])
-    .id("twt:shapeless/fire_charge");
+    .id("twt:twt/shapeless/fire_charge");
 
   //Solid Metal Blocks: Shaped
   function blockCrafting(input, output, id) {
@@ -72,7 +83,7 @@ const TWTRecipes = (event) => {
         S: input,
         B: "#forge:smooth_stone",
       })
-      .id("twt:shaped/" + id);
+      .id("twt:twt/shaped/" + id);
   }
   blockCrafting("tfc:metal/sheet/wrought_iron", "minecraft:iron_block", "iron_block");
   blockCrafting("tfc:metal/sheet/copper", "minecraft:copper_block", "copper_block");
@@ -112,7 +123,7 @@ const TWTRecipes = (event) => {
     let fluid = data.fluid;
     let item = `${data.idPrefix}${object}`;
     let temperature = data.MP;
-    let recipeId = `twt:heating/${object}${data.recipeIdAffix}`;
+    let recipeId = `twt:twt/heating/${object}${data.recipeIdAffix}`;
 
     event.recipes.tfc.heating(item, temperature).resultFluid(Fluid.of(fluid, 5)).id(recipeId);
   });
@@ -135,7 +146,7 @@ const TWTRecipes = (event) => {
       .anvil(Item.of(nugget, 20), ingot, ["punch_any", "punch_any", "punch_any"])
       .tier(tier)
       .apply_forging_bonus(false)
-      .id(`twt:anvil/${metal}_nugget`);
+      .id(`twt:twt/anvil/${metal}_nugget`);
   });
 
   //Create Cutting, Holy Overengineering
@@ -167,7 +178,7 @@ const TWTRecipes = (event) => {
           inputPath,
         )
         .processingTime(time)
-        .id(`twt:cutting/${wood}_lumber_from_${wood}_${type}`);
+        .id(`twt:twt/cutting/${wood}_lumber_from_${wood}_${type}`);
     });
   });
 
@@ -182,7 +193,7 @@ const TWTRecipes = (event) => {
         getNamespace(wood) + `:wood/log/${wood}`,
       )
       .processingTime(600)
-      .id(`twt:cutting/stripped_${wood}_from_${wood}_log`);
+      .id(`twt:twt/cutting/stripped_${wood}_from_${wood}_log`);
   });
   //Create Deploying
   const NUGGET_DATA = {
@@ -201,7 +212,7 @@ const TWTRecipes = (event) => {
     event.recipes.create
       .deploying(Item.of(nugget, 20), [ingot, "#tfc:chisels"])
       .keepHeldItem()
-      .id(`twt:deploying/${metal}_nugget`);
+      .id(`twt:twt/deploying/${metal}_nugget`);
   });
 
   //Create Mixing
@@ -223,11 +234,11 @@ const TWTRecipes = (event) => {
     let powder = `tfc:powder/${ore}`;
     let metal = `tfc:metal/${data.fluid}`;
 
-    event.recipes.create.mixing([Fluid.of(metal, 5)], [Item.of(powder)]).id(`twt:mixing/${ore}`);
+    event.recipes.create.mixing([Fluid.of(metal, 5)], [Item.of(powder)]).id(`twt:twt/mixing/${ore}`);
   });
 };
 
-const TWTData = (event) => {
+const twtData = (event) => {
   //Heat Definitions
 
   function nuggetheats(input) {
@@ -246,7 +257,7 @@ const TWTData = (event) => {
   });
 };
 
-const TWTEnchants = (event) => {
+const twtEnchants = (event) => {
   event.remove([
     "minecraft:projectile_protection",
     "minecraft:protection",
@@ -262,9 +273,9 @@ const TWTEnchants = (event) => {
   ]);
 };
 
-const TWTItemTags = (event) => {
-  event.add("twt:create_component_nuggets", ["minecraft:iron_nugget", "create:zinc_nugget"]);
-  event.add("twt:corals", [
+const twtItemTags = (event) => {
+  event.add("twt:twt/create_component_nuggets", ["minecraft:iron_nugget", "create:zinc_nugget"]);
+  event.add("twt:twt/corals", [
     "minecraft:tube_coral",
     "minecraft:brain_coral",
     "minecraft:bubble_coral",
@@ -281,7 +292,7 @@ const TWTItemTags = (event) => {
   event.add("survivorsdelight:food_model_coating", "forge:slimeballs");
 };
 
-const TWTCommands = (event) => {
+const twtCommands = (event) => {
   //Command: /tfcdate : returns in game date and time.
 
   const { commands: Commands } = event;
@@ -360,11 +371,11 @@ const TWTCommands = (event) => {
   }
 };
 
-const ErrorSilencerItemTags = (event) => {
+const errorSilencerItemTags = (event) => {
   event.add("tfc:pileable_sheets", "minecraft:barrier");
 };
 
-const ErrorSilencerBlockTags = (event) => {
+const errorSilencerBlockTags = (event) => {
   event.add("tfc:can_landslide", [
     /^rnr:rock\/.*\/.*$/,
     /^rnr:.*_.*_flagstones$/,
@@ -391,6 +402,7 @@ const ErrorSilencerBlockTags = (event) => {
     "endergetic:ender_fire",
     "powergrid:string_light_block",
     "powergrid:acid",
+    "powergrid:factory_light_light",
     /^farmersdelight:wild_.*$/,
     "rnr:fluid/concrete",
     "mca:infernal_flame",
@@ -409,12 +421,13 @@ const ErrorSilencerBlockTags = (event) => {
     "vintageimprovements:sulfuric_acid",
     "bigreactors:steam",
     /^bigreactors:.*_fluid$/,
+    "butchercraft:blood_fluid_block",
   ]);
 };
 
-const ErrorSilencerRecipes = (event) => {};
+const errorSilencerRecipes = (event) => {};
 
-const ErrorSilencerData = (event) => {
+const errorSilencerData = (event) => {
   //Heat Definitions
   event.itemHeat("firmaciv:cannon", 3.057, null, null);
   event.itemHeat("tfcbetterbf:insulation", 3.057, null, null);

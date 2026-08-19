@@ -4,7 +4,7 @@
  * @param {Internal.RecipesEventJS} event
  */
 
-const YoHooksRecipes = (event) => {
+const yohooksRecipes = (event) => {
   event.remove({ mod: "yo_hooks" });
 
   event.recipes.tfc
@@ -112,14 +112,14 @@ const YoHooksRecipes = (event) => {
     .id("twt:heating/diamond_hook_head");
 };
 
-const YoHooksData = (event) => {
+const yoHooksData = (event) => {
   event.itemHeat("yo_hooks:gold_hook_head", 2.857, 636, 848);
   event.itemHeat("yo_hooks:iron_hook_head", 2.857, 921, 1228);
   event.itemHeat("yo_hooks:diamond_hook_head", 2.857, 1048, 1315);
   event.itemHeat("yo_hooks:netherite_hook_head", 2.857, 1125, 1325);
 };
 
-const YoHooksBlockTags = (event) => {
+const yohooksBlockTags = (event) => {
   event.add("yo_hooks:fragile", [
     /^tfc:rock\/spike\/.*$/,
     "beneath:haunted_spike",

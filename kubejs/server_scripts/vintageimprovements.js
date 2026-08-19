@@ -3,7 +3,7 @@
 /**
  * @param {Internal.RecipesEventJS} event
  */
-const VintageimprovementsRecipes = (event) => {
+const vintageimprovementsRecipes = (event) => {
   //Removals
   event.remove({ id: "vintageimprovements:crushing/scoria" });
   event.remove({ id: "vintageimprovements:crushing/scoria_recycling" });
@@ -177,7 +177,7 @@ const VintageimprovementsRecipes = (event) => {
     .id("twt:centrifugation/brine");
 };
 
-const VintageimprovementsItemTags = (event) => {
+const vintageimprovementsItemTags = (event) => {
   event.add("vintageimprovements:custom_hammering_blocks", [
     "tfc:metal/block/wrought_iron_slab",
     "tfc:metal/block/steel_slab",

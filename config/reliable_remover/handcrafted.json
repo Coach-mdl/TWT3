@@ -1,7 +1,14 @@
 [
   {
     "action": "remove",
-    "items": ["handcrafted:oven"]
+    "items": [
+      "handcrafted:oven",
+      "handcrafted:skeleton_horse_trophy",
+      "handcrafted:evoker_trophy",
+      "handcrafted:pillager_trophy",
+      "handcrafted:vindicator_trophy",
+      "handcrafted:witch_trophy"
+    ]
   },
   {
     "action": "remove",

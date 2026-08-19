@@ -68,7 +68,10 @@
       "farmersdelight:gleaming_salad_block",
       "farmersdelight:cooking/dog_food",
       "farmersdelight:horse_feed",
-      "farmersdelight:sweet_berry_cookie"
+      "farmersdelight:sweet_berry_cookie",
+      "farmersdelight:cooking_pot",
+      "farmersdelight:cutting_board_from_beam",
+      "farmersdelight:canvas"
     ]
   },
   {
@@ -76,5 +79,21 @@
     "target": "#forge:straw",
     "replacement": ["farmersdelight:straw"],
     "id": "farmersdelight:rope"
+  },
+  {
+    "action": "replace_input",
+    "target": "minecraft:golden_carrot",
+    "replacement": ["survivorsdelight:golden_carrot"]
+  },
+  {
+    "action": "replace_input",
+    "target": "farmersdelight:tomato_sauce",
+    "replacement": ["firmalife:food/tomato_sauce"]
+  },
+  {
+    "action": "replace_output",
+    "target": "farmersdelight:tomato_sauce",
+    "replacement": ["firmalife:food/tomato_sauce"],
+    "id": "farmersdelight:cooking/tomato_sauce"
   }
 ]

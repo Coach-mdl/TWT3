@@ -9,7 +9,12 @@
       "minecraft:blast_furnace",
       "minecraft:smoker",
       "minecraft:campfire",
-      "minecraft:soul_campfire"
+      "minecraft:soul_campfire",
+      "minecraft:golden_carrot"
     ]
+  },
+  {
+    "action": "remove_drops",
+    "items": ["minecraft:barrel"]
   }
 ]

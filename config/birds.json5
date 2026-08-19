@@ -1,0 +1,13 @@
+{
+	heightOffset: 15.0,
+	heightRange: 120.0,
+	separationInfluence: 0.1,
+	separationRange: 2.0,
+	alignmentInfluence: 0.4,
+	cohesionInfluence: 0.04,
+	minSpeed: 0.3,
+	maxSpeed: 0.7,
+	spawnWeight: 50,
+	spawnMinGroup: 7,
+	spawnMaxGroup: 10
+}

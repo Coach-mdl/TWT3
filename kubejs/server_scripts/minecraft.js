@@ -1,6 +1,6 @@
 "use strict";
 
-const VanillaRecipes = (event) => {
+const vanillaRecipes = (event) => {
   //removal
   event.remove({ id: /^minecraft:.*_ingot_from_nuggets$/ });
   event.remove({ id: "minecraft:tripwire_hook" });
@@ -135,7 +135,7 @@ const VanillaRecipes = (event) => {
   });
 };
 
-const VanillaData = (event) => {
+const minecraftData = (event) => {
   //Heat Definitions
   event.itemHeat("minecraft:anvil", 3.057, null, 1128);
   event.itemHeat("minecraft:chipped_anvil", 3.057, null, 1128);
@@ -172,7 +172,7 @@ const VanillaData = (event) => {
   });
 };
 
-const VanillaItemTags = (event) => {
+const minecraftItemTags = (event) => {
   event.add("minecraft:compasses", "firmaciv:firmaciv_compass");
   event.add("c:gems/lapis", "tfc:gem/lapis_lazuli");
 };

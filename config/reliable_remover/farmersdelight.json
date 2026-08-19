@@ -45,7 +45,10 @@
       "farmersdelight:rice_bale",
       "farmersdelight:straw_bale",
       "farmersdelight:rice_bag",
-      "farmersdelight:skillet"
+      "farmersdelight:skillet",
+      "farmersdelight:fried_egg",
+      "farmersdelight:tomato_sauce",
+      "farmersdelight:nether_salad"
     ]
   }
 ]

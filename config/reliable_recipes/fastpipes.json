@@ -1,0 +1,28 @@
+[
+  {
+    "action": "remove_recipe",
+    "output": [
+      "fastpipes:basic_energy_pipe",
+      "fastpipes:basic_extractor_attachment",
+      "fastpipes:improved_extractor_attachment",
+      "fastpipes:advanced_extractor_attachment",
+      "fastpipes:elite_extractor_attachment",
+      "fastpipes:ultimate_extractor_attachment",
+      "fastpipes:basic_inserter_attachment",
+      "fastpipes:sensor_attachment",
+      "fastpipes:improved_inserter_attachment",
+      "fastpipes:advanced_inserter_attachment",
+      "fastpipes:elite_inserter_attachment",
+      "fastpipes:ultimate_inserter_attachment",
+      "fastpipes:void_attachment",
+      "fastpipes:basic_energy_pipe",
+      "fastpipes:improved_energy_pipe",
+      "fastpipes:advanced_energy_pipe",
+      "fastpipes:elite_energy_pipe",
+      "fastpipes:ultimate_energy_pipe",
+      "fastpipes:ultimate_fluid_pipe",
+      "fastpipes:advanced_item_pipe",
+      "fastpipes:terminal"
+    ]
+  }
+]

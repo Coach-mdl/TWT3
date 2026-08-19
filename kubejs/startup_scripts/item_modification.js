@@ -1,4 +1,3 @@
 //priority = 3
 
-ItemEvents.modification((event) => {});
-
+const twtItemModification = (event) => {};

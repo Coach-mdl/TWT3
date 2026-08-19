@@ -105,7 +105,7 @@ ADDED:
 - Traveller Tool Belt
 - Scorched Guns
 - Bridging Mod
-- Enchantment Discriptions
+- Enchantment Descriptions
 - Reliable Remover
 - Reliable Recipes
 

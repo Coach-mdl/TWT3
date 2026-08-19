@@ -2,7 +2,7 @@
 
 //Tweaks that aren't worth a dedicated event call.
 
-const MiscRecipes = (event) => {
+const miscRecipes = (event) => {
   //AlekishipsRecipes
   event.remove({ id: "alekiships:crafting/cannon" });
   event.remove({ id: "alekiships:crafting/anchor" });
@@ -63,7 +63,7 @@ const MiscRecipes = (event) => {
   event.replaceInput({ input: "minecraft:iron_ingot" }, "minecraft:iron_ingot", "#forge:ingots/wrought_iron");
 };
 
-const MiscData = (event) => {
+const miscData = (event) => {
   //powergrid
   event.itemHeat("powergrid:zinc_sheet", 2.257, 252.0, 336.0);
   event.itemHeat("powergrid:wire", 1.429, 648.0, 864.0);
@@ -77,7 +77,7 @@ const MiscData = (event) => {
 
 //If a tag doesn't want to be removed, check for the JSON file for the tag. If it was added to a tag through another tag, that tag will have to go.
 // Ensure you have also removed the collapse recipe when removing blocks from the collapse tags.
-const MiscBlockTags = (event) => {
+const miscBlockTags = (event) => {
   //BeneathBlockTags
   event.remove("tfc:can_collapse", ["#beneath:nether_bricks", "#beneath:blackstone"]);
   event.remove("tfc:can_trigger_collapse", ["#beneath:nether_bricks", "#beneath:blackstone"]);

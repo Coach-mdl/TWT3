@@ -1,6 +1,6 @@
 "use strict";
 
-const ForgeItemTags = (event) => {
+const forgeItemTags = (event) => {
   event.add("forge:gems/amethyst", "tfc:gem/amethyst");
   event.add("forge:rods/gold", "tfc:plant/goldenrod");
 
@@ -20,6 +20,6 @@ const ForgeItemTags = (event) => {
   event.add("forge:dusts/sulfur", "tfc:powder/sulfur");
 };
 
-const ForgeFluidTags = (event) => {
+const forgeFluidTags = (event) => {
   event.add("forge:fuel", ["tfc:tallow", "tfc:olive_oil", "firmalife:soybean_oil"]);
 };

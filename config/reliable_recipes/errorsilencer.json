@@ -1,0 +1,10 @@
+[
+  {
+    "action": "remove_recipe",
+    "id": ["ironchests:netherite_chest", "ironchests:netherite_barrel", "ironchests:netherite_upgrade"]
+  },
+  {
+    "action": "remove_recipe",
+    "output": ["createadditionallogistics:network_monitor"]
+  }
+]

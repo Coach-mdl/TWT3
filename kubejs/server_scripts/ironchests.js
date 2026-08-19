@@ -1,6 +1,6 @@
 "use strict";
 
-const IronchestRecipes = (event) => {
+const ironchestRecipes = (event) => {
   //removal
   event.remove({ id: /^ironchests:.*_dolly$/ });
   event.remove({ id: /^ironchests:key.*/ });
@@ -62,7 +62,7 @@ const IronchestRecipes = (event) => {
   });
 };
 
-const IronchestsData = (event) => {
+const ironchestsData = (event) => {
   //Heat Definitions
   event.itemHeat("ironchests:key", 0.8, null, null);
   event.itemHeat("ironchests:key_ring", 2.0, null, null);

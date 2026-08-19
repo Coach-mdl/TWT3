@@ -2,11 +2,13 @@
 
 //Client-Side script loader
 ClientEvents.lang("en_us", (event) => {
-  twt_lang(event);
+  twtLangEnUs(event);
 });
 
-ItemEvents.tooltip((event) => {});
+ItemEvents.tooltip((event) => {
+  twtArmorTooltips(event);
+});
 
 EmiPlusPlusEvents.registerGroups((event) => {
-  singleGroups(event);
+  EMIXX(event);
 });
